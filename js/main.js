@@ -2,19 +2,15 @@ function enviarWhatsApp() {
     // 200120262012 extraemos los datos de los campos del formulario de contacto
     const nombre = document.getElementById('nombreCompleto').value;
     const correo = document.getElementById('correoEmpresa').value;
-    const origen = document.getElementById('origen').value;
-    const destino = document.getElementById('destino').value;
-    const carga = document.getElementById('tipoCarga').value;
+    const proyecto = document.getElementById('tipoProyecto').value;
     const detalles = document.getElementById('detalles').value;
 
     // 200120262013 creamos la estructura del mensaje
-    const textoMensaje = `¡Hola OMCAR TRACK! 👋\n` +
-                         `Solicito una cotización de transporte:\n\n` +
+    const textoMensaje = `¡Hola ARHEZ TECH! 👋\n` +
+                         `Solicito una cotización de proyecto:\n\n` +
                          `👤 Nombre: ${nombre}\n` +
                          `📧 Correo: ${correo}\n` +
-                         `📍 Origen: ${origen}\n` +
-                         `🏁 Destino: ${destino}\n` +
-                         `📦 Carga: ${carga}\n` +
+                         `📦 Proyecto: ${proyecto}\n` +
                          `📝 Detalles: ${detalles}`;
 
     // 200120262013 codificamos el mensaje para la URL
