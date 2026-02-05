@@ -17,144 +17,87 @@
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<style>
+		body {
+			background-color: #f0f2f5;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			min-height: 100vh;
+		}
+		.card-cv {
+			border: none;
+			border-top: 5px solid  #06071b;
+			transition: transform 0.3s;
+		}
+		.card-cv:hover {
+			transform: translateY(-5px); 
+		}
 		.profile-img {
-			width: 150px;
-			height: 150px;
+			width: 120px;
+			height: 120px;
 			object-fit: cover;
-			border: 5px solid white;
-		}
-		.section-title {
-			border-bottom: 2px solid #8dee12;
-			padding-bottom: 10px;
-			margin-bottom: 20px;
-			text-transform: uppercase;
-			letter-spacing: 1px;
-		}
-		.job-item {
-			border-left: 3px solid #dee2e6;
-			padding-left: 20px;
-			margin-bottom: 30px;
+			border: 4px solid white;
+			box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 		}
 	</style>
 </head>
 <body>
-	<div class="container py-5">
-		<div class="card shadow-lg overflow-hidden border-0">
-			<div class="row g-0">
-				<div class="col-lg-4 bg-primary text-white p-5 text-center text-lg-start">
-					<!-- 020220262037 foto de perfil -->
-					<div class="text-center mb-4">
-						<img src="assets/img/foto-perfil.jpg" alt="Foto de perfil" class="rounded-circle profile-img shadow">
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-md-6 col-lg-4">
+				<div class="card card-cv shadow-lg p-3 mb-5 bg-body rounded">
+					<div class="text-center mt-3">
+						<img src="assets/img/foto-perfil.jpg" alt="Foto de Perfil" class="rounded-circle profile-img mb-3">
+						<h3 class="mb-0">Ing. Pablo Aranda</h3>
+						<p class="text-muted">Ingeniero / Programador / Viajero / Emprendedor</p>
 					</div>
-					<h2 class="fw-bold text-center mb-1">Ing. Pablo Aranda</h2>
-					<p class="text-center text-light opacity-75 mb-4">Ingeniero / Programador / Viajero / Emprendedor</p>
-					<hr class="border-light opacity-25">
-					<!-- 020220262051 contacto -->
-					<div class="mb-5">
-						<h5 class="text-uppercase fw-bold mb-3">Contacto</h5>
-						<ul class="list-unstyled">
-							<li class="mb-2"><i class="bi bi-envelope-fill me-2"></i> arhez.tech@gmail.com</li>
-							<li class="mb-2"><i class="bi bi-facebook me-2"></i> @arhez.tech</li>
-							<li class="mb-2"><i class="bi bi-instagram me-2"></i> @pabloarandahdz</li>
-							<li class="mb-2"><i class="bi bi-threads me-2"></i> @pabloarandahdz</li>
-							<!--<li class="mb-2"><i class="bi bi-twitter-x me-2"></i> @pabloarandahdz</li>-->
-							<li class="mb-2"><i class="bi bi-tiktok me-2"></i> @pabloarandahdz</li>
-							<li class="mb-2"><i class="bi bi-linkedin me-2"></i> in/pabloarandahdz</li>
-							<li class="mb-2"><i class="bi bi-geo-alt-fill me-2"></i> Querétaro, México</li>
-						</ul>
-					</div>
-					<!-- 020220262054 habilidades -->
-					<div class="mb-5">
-						<h5 class="text-uppercase fw-bold mb-3">Habilidades</h5>
-						<label class="form-label mt-2">HTML5 / CSS3</label>
-						<div class="progress" style="height: 6px;">
-							<div class="progress-bar bg-secondary" role="progressbar" style="width: 90%"></div>
+
+					<div class="card-body">
+						<div class="mb-4 text-center">
+							<p class="card-text small">
+								Ingeniero con más de 3 años de experiencia en optimización de Cadena de Suministros y Operaciones. Enfocado en alinear la producción con la estrategia comercial para reducir costos y mejorar márgenes. Con sólida capacidad de negociación con stakeholders clave para maximizar la rentabilidad.
+							</p>
 						</div>
-						<label class="form-label mt-2">Bootstrap 5</label>
-						<div class="progress" style="height: 6px;">
-							<div class="progress-bar bg-secondary" role="progressbar" style="width: 90%"></div>
-						</div>
-						<label class="form-label mt-2">JavaScript</label>
-						<div class="progress" style="height: 6px;">
-							<div class="progress-bar bg-secondary" role="progressbar" style="width: 80%"></div>
-						</div>
-						<label class="form-label mt-2">Python</label>
-						<div class="progress" style="height: 6px;">
-							<div class="progress-bar bg-secondary" role="progressbar" style="width: 80%"></div>
-						</div>
-						<label class="form-label mt-2">Django</label>
-						<div class="progress" style="height: 6px;">
-							<div class="progress-bar bg-secondary" role="progressbar" style="width: 70%"></div>
-						</div>
-						<label class="form-label mt-2">SQL</label>
-						<div class="progress" style="height: 6px;">
-							<div class="progress-bar bg-secondary" role="progressbar" style="width: 80%"></div>
-						</div>
-					</div>
-					<!-- 020220262057 idiomas -->
-					<div class="mb-5">
-						<h5 class="text-uppercase fw-bold mb-3">Idiomas</h5>
-						<ul class="list-unstyled">
-							<li>Español <span class="badge bg-secondary text-primary float-end">Nativo</span></li>
-							<li class="mt-2">Inglés <span class="badge bg-secondary text-primary float-end">B1</span></li>
-						</ul>
-					</div>
-				</div>
-				<!-- 020220262058 perfil profesional -->
-				<div class="col-lg-8 bg-white p-5">
-					<div class="mb-5">
-						<h3 class="section-title text-primary">Perfil Profesional</h3>
-						<p class="text-muted">
-							Ingeniero con sólida trayectoria en la optimización de la cadena de suministro y gestión operativa. Especialista en integrar la planeación de producción con estrategias comerciales para maximizar la rentabilidad. Experto en negociación estratégica con proveedores y cierre de ventas de alto volumen, garantizando eficiencia logística y altos estándares de calidad en procesos.
-						</p>
-					</div>
-					<!-- 020220262100 experiencia laboral -->
-					<div class="mb-5">
-						<h3 class="section-title text-primary">Experiencia Laboral</h3>
-						<div class="job-item">
-							<h5 class="fw-bold">CEO</h5>
-							<p class="text-primary mb-1">ARHEZ TECH / 2026 - Presente</p>
-							<p class="text-muted small"><em>Querétaro, MX</em></p>
-							<ul class="text-muted">
-								<li>Definición de la visión tecnológica y comercial de la empresa, alineando el desarrollo de software con las necesidades del mercado para crear soluciones escalables.</li>
-								<li>Supervisión integral de proyectos tecnológicos, desde la toma de requerimientos y arquitectura hasta el despliegue y mantenimiento, garantizando calidad y cumplimiento de plazos.</li>
-								<li>Desarrollo de propuestas de valor para la captación de clientes, negociación de contratos y gestión de recursos para asegurar la rentabilidad y sostenibilidad de los proyectos.</li>
+						<hr>
+						<div class="mb-4">
+							<h6 class="text-uppercase text-primary fw-bold small">Contacto</h6>
+							<ul class="list-unstyled">
+								<li class="mb-2"><i class="bi bi-envelope-fill me-2"></i> arhez.tech@gmail.com</li>
+								<li class="mb-2"><i class="bi bi-facebook me-2"></i> @arhez.tech</li>
+								<li class="mb-2"><i class="bi bi-instagram me-2"></i> @pabloarandahdz</li>
+								<li class="mb-2"><i class="bi bi-threads me-2"></i> @pabloarandahdz</li>
+								<!--<li class="mb-2"><i class="bi bi-twitter-x me-2"></i> @pabloarandahdz</li>-->
+								<li class="mb-2"><i class="bi bi-tiktok me-2"></i> @pabloarandahdz</li>
+								<li class="mb-2"><i class="bi bi-linkedin me-2"></i> in/pabloarandahdz</li>
+								<li class="mb-2"><i class="bi bi-geo-alt-fill me-2"></i> Querétaro, México</li>
 							</ul>
 						</div>
-						<div class="job-item">
-							<h5 class="fw-bold">Gerente</h5>
-							<p class="text-primary mb-1">Licores y Destilados / 2022 - 2026</p>
-							<p class="text-muted small"><em>Querétaro, MX</em></p>
-							<ul class="text-muted">
-								<li>Dirección y alineación estratégica de las áreas administrativas y productivas, optimizando la comunicación entre áreas y el flujo de trabajo.</li>
-								<li>Gestión estratégica del aprovisionamiento de materia prima, liderando la negociación de precios y tiempos de entrega con proveedores y garantizando la trazabilidad completa del inventario.</li>
-								<li>Diseño y supervisión del plan maestro de producción, asegurando el cumplimiento estricto de cronogramas y metas operativas.</li>
-								<li>Coordinación eficiente de la distribución de producto terminado y gestión de transporte, garantizando la puntualidad en las entregas al cliente final.</li>
-								<li>Desarrollo de relaciones comerciales para el cierre de ventas y administración efectiva de la recuperación de cartera (cobranza).</li>
-							</ul>
+						<div class="mb-3">
+							<h6 class="text-uppercase text-primary fw-bold small">Conocimientos y Aptitudes</h6>
+							<div class="d-flex flex-wrap gap-2">
+								<span class="badge bg-light text-dark border">Gestión de Operaciones</span>
+								<span class="badge bg-light text-dark border">Gestión de Proyectos</span>
+								<span class="badge bg-light text-dark border">Gestión de la Cadena de Suministro</span>
+								<span class="badge bg-light text-dark border">Gestión de Control de Calidad</span>
+								<span class="badge bg-light text-dark border">Gestión de Mantenimiento Industrial TPM</span>
+								<span class="badge bg-light text-dark border">Lean Manufacturing</span>
+								<span class="badge bg-light text-dark border">Lean Six Sigma</span>
+							</div>
+						</div>
+						<div>
+							<div class="d-flex flex-wrap gap-2">
+								<span class="badge bg-secondary text-primary">HTML5</span>
+								<span class="badge bg-secondary text-primary">CSS3</span>
+								<span class="badge bg-secondary text-primary">Javascript</span>
+								<span class="badge bg-secondary text-primary">Python</span>
+								<span class="badge bg-secondary text-primary">Django</span>
+							</div>
 						</div>
 					</div>
-					<!-- 020220262120 educacion -->
-					<div class="mb-5">
-						<h3 class="section-title text-primary">Educación</h3>
-						<div class="d-flex justify-content-between mb-3">
-							<div>
-								<h5 class="fw-bold mb-0">Ingeniería en Gestión Industrial</h5>
-								<p class="text-muted mb-0">UNADM</p>
-							</div>
-							<div class="text-end">
-								<span class="badge bg-secondary">2019 - 2023</span>
-							</div>
-						</div>
-						<div class="d-flex justify-content-between">
-							<div>
-								<h5 class="fw-bold mb-0">Técnico en Programación</h5>
-								<p class="text-muted mb-0">Centro de Bachillerato Tecnológico Industrial y de Servicios No. 145</p>
-							</div>
-							<div class="text-end">
-								<span class="badge bg-secondary">2015 - 2018</span>
-							</div>
-						</div>
+					<div class="card-footer bg-white border-0 text-center pb-3">
+						<a href="#" class="btn btn-outline-primary w-100 rounded-pill">
+							<i class="bi bi-download me-2"></i>Descargar CV
+						</a>
 					</div>
 				</div>
 			</div>
