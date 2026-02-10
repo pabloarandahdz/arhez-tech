@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Centro Médico Salud Vital</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <style>
+    /* 090220262120 estilos personalizados */
+    .hero-section {
+      background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7)), url('assets/img/hospital.jpg');
+      background-size: cover;
+      background-position: center;
+      height: 80vh;
+      display: flex;
+      align-items: center;
+    }
+    .service-card:hover {
+      transform: translateY(-5px);
+      transition: transform 0.3s;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+    }
+  </style>
+</head>
+<body>
+  <!-- 090220262121 navegacion y seccion principal o de inicio -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold text-primary" href="#">
+        <i class="bi bi-heart-pulse-fill"></i> Salud Vital
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto align-items-center">
+          <li class="nav-item"><a class="nav-link active" href="#inicio">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="#servicios">Servicios</a></li>
+          <li class="nav-item"><a class="nav-link" href="#nosotros">Nosotros</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+          <li class="nav-item ms-lg-3">
+            <a href="#contacto" class="btn btn-primary rounded-pill px-4">Agendar Cita</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <section id="inicio" class="hero-section">
+    <div class="container text-center">
+      <h1 class="display-3 fw-bold mb-4">Tu salud en manos expertas</h1>
+      <p class="lead text-muted mb-5">Atención médica integral, humana y de calidad para ti y tu familia.</p>
+      <div class="d-flex justify-content-center gap-3">
+        <a href="#contacto" class="btn btn-primary btn-lg">Reservar Cita</a>
+        <a href="#servicios" class="btn btn-outline-dark btn-lg">Ver Servicios</a>
+      </div>
+    </div>
+  </section>
+  <!-- 090220262122 seccion de servicios -->
+  <section id="servicios" class="py-5 bg-light">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h6 class="text-primary text-uppercase ls-2">Especialidades</h6>
+        <h2 class="fw-bold">Nuestros Servicios Médicos</h2>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card h-100 border-0 shadow-sm service-card p-3">
+            <div class="card-body text-center">
+              <div class="display-5 text-primary mb-3"><i class="bi bi-person-heart"></i></div>
+              <h4 class="card-title">Medicina General</h4>
+              <p class="card-text text-muted">Diagnóstico y tratamiento para enfermedades comunes, chequeos preventivos y control de salud.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 border-0 shadow-sm service-card p-3">
+            <div class="card-body text-center">
+              <div class="display-5 text-success mb-3"><i class="bi bi-emoji-smile"></i></div>
+              <h4 class="card-title">Pediatría</h4>
+              <p class="card-text text-muted">Cuidado especializado para bebés, niños y adolescentes. Vacunación y control de crecimiento.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 border-0 shadow-sm service-card p-3">
+            <div class="card-body text-center">
+              <div class="display-5 text-danger mb-3"><i class="bi bi-activity"></i></div>
+              <h4 class="card-title">Cardiología</h4>
+              <p class="card-text text-muted">Estudios del corazón, electrocardiogramas y seguimiento de hipertensión arterial.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- 090220262122 seccion de nosotros -->
+  <section id="nosotros" class="py-5">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6">
+          <img src="assets/img/doctora.jpg" alt="Doctor" class="img-fluid rounded-3 shadow">
+        </div>
+        <div class="col-lg-6 mt-4 mt-lg-0 ps-lg-5">
+          <h6 class="text-primary text-uppercase">Conoce al equipo</h6>
+          <h2 class="fw-bold mb-4">Dra. María González</h2>
+          <p class="lead text-muted">Especialista en Medicina Interna con más de 15 años de experiencia cuidando a pacientes.</p>
+          <p>En Salud Vital, creemos que la medicina debe ser empática. Nos tomamos el tiempo necesario para escucharte y entender tus necesidades específicas.</p>
+          <ul class="list-unstyled mt-4">
+            <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i> Atención personalizada</li>
+            <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i> Tecnología de última generación</li>
+            <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i> Instalaciones cómodas y seguras</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- 090220262123 seccion de contacto -->
+  <section id="contacto" class="py-5 bg-primary text-white">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 mb-4 mb-lg-0">
+          <h2 class="fw-bold mb-4">Agenda tu cita hoy</h2>
+          <form class="bg-white p-4 rounded-3 text-dark shadow">
+            <div class="mb-3">
+              <label for="nombre" class="form-label">Nombre Completo</label>
+              <input type="text" class="form-control" id="nombre" placeholder="Juan Pérez">
+            </div>
+            <div class="mb-3">
+              <label for="telefono" class="form-label">Teléfono</label>
+              <input type="tel" class="form-control" id="telefono" placeholder="55 1234 5678">
+            </div>
+            <div class="mb-3">
+              <label for="mensaje" class="form-label">Mensaje o Síntomas (Opcional)</label>
+              <textarea class="form-control" id="mensaje" rows="3"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary w-100"><span class="bi bi-whatsapp"></span> Solicitar Cita</button>
+          </form>
+        </div>
+        <!-- 090220262123 otra informacion de contacto -->
+        <div class="col-lg-6 d-flex flex-column justify-content-center ps-lg-5">
+          <h3>Información de Contacto</h3>
+          <p class="mb-4 opacity-75">Estamos ubicados en el centro de la ciudad para tu comodidad.</p>
+          <div class="d-flex mb-3">
+            <div class="fs-4 me-3"><i class="bi bi-geo-alt"></i></div>
+            <div>
+              <h5 class="mb-0">Dirección</h5>
+              <p class="opacity-75">Av. Reforma 123, Ciudad de México</p>
+            </div>
+          </div>
+          <div class="d-flex mb-3">
+            <div class="fs-4 me-3"><i class="bi bi-telephone"></i></div>
+            <div>
+              <h5 class="mb-0">Llámanos</h5>
+              <p class="opacity-75">+52 55 1234 5678</p>
+            </div>
+          </div>
+          <div class="d-flex mb-3">
+            <div class="fs-4 me-3"><i class="bi bi-clock"></i></div>
+            <div>
+              <h5 class="mb-0">Horario</h5>
+              <p class="opacity-75">Lun - Vie: 9:00 AM - 6:00 PM</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- 090220262124 pie de pagina -->
+  <footer class="bg-dark text-white py-4 text-center">
+    <div class="container">
+      <p class="mb-0">&copy; 2023 Centro Médico Salud Vital. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
