@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PowerFit Gym | Tu mejor versión</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        /* Estilos personalizados mínimos para complementar Bootstrap */
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+        
+        .section-padding {
+            padding: 80px 0;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            transition: 0.3s;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        /* Color de acento para el gimnasio (Amarillo/Dorado estándar) */
+        .text-accent {
+            color: #ffc107;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-uppercase" href="#">
+                <i class="fas fa-dumbbell text-warning me-2"></i>PowerFit
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="#inicio">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#clases">Clases</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#planes">Planes</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+                    <li class="nav-item ms-lg-3">
+                        <a href="#unete" class="btn btn-warning fw-bold">Únete Ahora</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section id="inicio" class="hero-section text-center text-white">
+        <div class="container">
+            <h1 class="display-1 fw-bold mb-4">SUPERA TUS <span class="text-warning">LÍMITES</span></h1>
+            <p class="lead mb-5 fs-4">Entrenamiento funcional, pesas y cardio en un ambiente diseñado para ganar.</p>
+            <a href="#planes" class="btn btn-warning btn-lg px-5 py-3 fw-bold">Empezar Hoy</a>
+            <a href="#clases" class="btn btn-outline-light btn-lg px-5 py-3 ms-2">Ver Clases</a>
+        </div>
+    </section>
+
+    <section id="clases" class="section-padding bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h6 class="text-warning fw-bold text-uppercase">Nuestras Clases</h6>
+                <h2 class="fw-bold display-5">Entrena a tu manera</h2>
+            </div>
+
+            
+
+            <div class="row g-4 mt-3">
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm text-center p-4">
+                        <div class="card-body">
+                            <i class="fas fa-running fa-3x text-warning mb-3"></i>
+                            <h3 class="card-title fw-bold">Cardio Hiit</h3>
+                            <p class="card-text text-muted">Quema calorías al máximo con nuestros entrenamientos de alta intensidad por intervalos.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm text-center p-4">
+                        <div class="card-body">
+                            <i class="fas fa-dumbbell fa-3x text-warning mb-3"></i>
+                            <h3 class="card-title fw-bold">Musculación</h3>
+                            <p class="card-text text-muted">Zona de peso libre y máquinas de última generación para hipertrofia y fuerza.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm text-center p-4">
+                        <div class="card-body">
+                            <i class="fas fa-heartbeat fa-3x text-warning mb-3"></i>
+                            <h3 class="card-title fw-bold">Cross Training</h3>
+                            <p class="card-text text-muted">Entrenamiento funcional variado ejecutado a alta intensidad para resistencia total.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="planes" class="section-padding bg-dark text-white">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h6 class="text-warning fw-bold text-uppercase">Membresías</h6>
+                <h2 class="fw-bold display-5">Elige tu Plan</h2>
+            </div>
+            
+            <div class="row g-4 justify-content-center">
+                <div class="col-md-4">
+                    <div class="card bg-secondary text-white border-0 h-100">
+                        <div class="card-body text-center p-5">
+                            <h4 class="fw-bold">Básico</h4>
+                            <h2 class="display-4 fw-bold my-3">$29<span class="fs-5">/mes</span></h2>
+                            <ul class="list-unstyled lh-lg mb-4">
+                                <li><i class="fas fa-check text-warning me-2"></i>Acceso Sala de Pesas</li>
+                                <li><i class="fas fa-check text-warning me-2"></i>Casilleros</li>
+                                <li class="text-muted"><i class="fas fa-times me-2"></i>Clases Grupales</li>
+                                <li class="text-muted"><i class="fas fa-times me-2"></i>Sauna</li>
+                            </ul>
+                            <button class="btn btn-outline-light w-100">Seleccionar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card bg-warning text-dark border-0 h-100 transform-scale">
+                        <div class="card-header text-center bg-transparent border-dark fw-bold text-uppercase py-3">Más Popular</div>
+                        <div class="card-body text-center p-5">
+                            <h4 class="fw-bold">Pro</h4>
+                            <h2 class="display-4 fw-bold my-3">$49<span class="fs-5">/mes</span></h2>
+                            <ul class="list-unstyled lh-lg mb-4">
+                                <li><i class="fas fa-check text-dark me-2"></i>Acceso Total 24/7</li>
+                                <li><i class="fas fa-check text-dark me-2"></i>Clases Grupales Ilimitadas</li>
+                                <li><i class="fas fa-check text-dark me-2"></i>Entrenador Personal (1 sesión)</li>
+                                <li><i class="fas fa-check text-dark me-2"></i>Acceso a Sauna</li>
+                            </ul>
+                            <button class="btn btn-dark w-100">Seleccionar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card bg-secondary text-white border-0 h-100">
+                        <div class="card-body text-center p-5">
+                            <h4 class="fw-bold">Elite</h4>
+                            <h2 class="display-4 fw-bold my-3">$89<span class="fs-5">/mes</span></h2>
+                            <ul class="list-unstyled lh-lg mb-4">
+                                <li><i class="fas fa-check text-warning me-2"></i>Todo lo del plan Pro</li>
+                                <li><i class="fas fa-check text-warning me-2"></i>Entrenador Personal Semanal</li>
+                                <li><i class="fas fa-check text-warning me-2"></i>Nutricionista</li>
+                                <li><i class="fas fa-check text-warning me-2"></i>Ropa de regalo</li>
+                            </ul>
+                            <button class="btn btn-outline-light w-100">Seleccionar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contacto" class="bg-black text-white pt-5 pb-3">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <h4 class="text-warning mb-4">PowerFit</h4>
+                    <p>Transformamos vidas a través del deporte. Únete a la comunidad más fuerte de la ciudad.</p>
+                    <div class="d-flex gap-3">
+                        <a href="#" class="text-white"><i class="fab fa-facebook fa-lg"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-instagram fa-lg"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-twitter fa-lg"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <h4 class="mb-4">Enlaces Rápidos</h4>
+                    <ul class="list-unstyled">
+                        <li><a href="#inicio" class="text-white-50 text-decoration-none">Inicio</a></li>
+                        <li><a href="#clases" class="text-white-50 text-decoration-none">Clases</a></li>
+                        <li><a href="#planes" class="text-white-50 text-decoration-none">Membresía</a></li>
+                        <li><a href="#contacto" class="text-white-50 text-decoration-none">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h4 class="mb-4">Visítanos</h4>
+                    <p><i class="fas fa-map-marker-alt text-warning me-2"></i> Av. Principal 123, Ciudad</p>
+                    <p><i class="fas fa-phone text-warning me-2"></i> +1 234 567 890</p>
+                    <p><i class="fas fa-envelope text-warning me-2"></i> info@powerfit.com</p>
+                </div>
+            </div>
+            <hr class="my-4 border-secondary">
+            <div class="text-center text-secondary">
+                <small>&copy; 2023 PowerFit Gym. Todos los derechos reservados.</small>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
