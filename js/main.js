@@ -1,29 +1,4 @@
-function enviarWhatsApp() {
-    // 200120262012 extraemos los datos de los campos del formulario de contacto
-    const nombre = document.getElementById('nombreCompleto').value;
-    const correo = document.getElementById('correoEmpresa').value;
-    const proyecto = document.getElementById('tipoProyecto').value;
-    const detalles = document.getElementById('detalles').value;
-
-    // 200120262013 creamos la estructura del mensaje
-    const textoMensaje = `¡Hola ARHEZ TECH! 👋\n` +
-`Solicito una cotización de proyecto:\n\n` +
-`👤 Nombre: ${nombre}\n` +
-`📧 Correo: ${correo}\n` +
-`📦 Proyecto: ${proyecto}\n` +
-`📝 Detalles: ${detalles}`;
-
-    // 200120262013 codificamos el mensaje para la URL
-const mensajeCodificado = encodeURIComponent(textoMensaje);
-
-    // 200120262013 número de teléfono de whatsapp al que se enviarán los mensajes
-const telefono = "524272777153";
-
-    // 200120262013 creamos el enlace por el cual se abrirá la plataforma de whatsapp y cargará el mensaje codificado
-const urlWhatsapp = `https://api.whatsapp.com/send?phone=${telefono}&text=${mensajeCodificado}`;
-
-window.open(urlWhatsapp, '_blank');
-}
+const whatsappNumber = "524272777153"; 
 
 //150220262110 cuadro estadistico de seccion de impacto
 const ctxClean = document.getElementById('impactChartClean').getContext('2d');
@@ -103,4 +78,30 @@ new Chart(ctxClean, {
             }
         }
     }
+});
+
+//150220262313 envio de mensajes por whatsapp
+function sendToWhatsapp(text) {
+    const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(text)}`;
+    window.open(url, '_blank');
+}
+function sendGeneralWhatsapp() {
+    sendToWhatsapp("Hola Arhez Tech, me interesa saber más.");
+}
+function selectPlan(plan) {
+    sendToWhatsapp(`Hola Arhez Tech, me interesa el plan: *${plan}*.`);
+}
+function submitForm(event) {
+    event.preventDefault();
+    const n = document.getElementById('nombre').value;
+    const t = document.getElementById('tipo').value;
+    const m = document.getElementById('mensaje').value;
+    sendToWhatsapp(`Hola, soy ${n}. Me interesa: *${t}*. Mensaje: ${m}`);
+}
+function scrollToSection(id) {
+    document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+}
+document.querySelectorAll('.hover-accent').forEach(icon => {
+    icon.addEventListener('mouseover', () => icon.style.color = 'var(--accent-green)');
+    icon.addEventListener('mouseout', () => icon.style.color = 'white');
 });

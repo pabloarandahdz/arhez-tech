@@ -437,7 +437,142 @@
 			</div>
 		</div>
 	</section>
-	
+	<!-- 150220262308 seccion de contacto -->
+	<section id="contacto" class="contact-section-pro">
+		<div class="container">
+			<div class="row justify-content-center mb-5">
+				<div class="col-lg-8 text-center">
+					<span class="badge bg-white border text-primary-custom px-3 py-2 rounded-pill mb-3 fw-bold">
+						HABLEMOS DE NEGOCIOS
+					</span>
+					<h2 class="display-5 fw-extra-bold text-primary-custom">
+						Inicia tu transformación<br>hoy mismo.
+					</h2>
+					<p class="text-muted lead mt-3">
+						Estamos listos para escuchar tu idea y convertirla en código.
+					</p>
+				</div>
+			</div>
+			<div class="row g-5">
+				<div class="col-lg-5">
+					<h4 class="fw-bold mb-4 text-primary-custom">Preguntas Frecuentes</h4>
+					<div class="accordion accordion-flush mb-5" id="faqAccordion">
+						<div class="accordion-item faq-item">
+							<h2 class="accordion-header">
+								<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+									¿Cuál es el tiempo de entrega promedio?
+								</button>
+							</h2>
+							<div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+								<div class="accordion-body text-muted small">
+									Depende del alcance. Una Landing Page toma entre 3-4 días hábiles. Un sitio corporativo completo entre 3-4 semanas. Proyectos a medida se estiman tras el diagnóstico.
+								</div>
+							</div>
+						</div>
+						<div class="accordion-item faq-item">
+							<h2 class="accordion-header">
+								<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+									¿Ofrecen garantía o soporte?
+								</button>
+							</h2>
+							<div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+								<div class="accordion-body text-muted small">
+									Sí. Todos nuestros proyectos incluyen 3 meses de garantía técnica post-lanzamiento para asegurar estabilidad. También contamos con planes de soporte técnico mensual.
+								</div>
+							</div>
+						</div>
+						<div class="accordion-item faq-item">
+							<h2 class="accordion-header">
+								<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+									¿Necesito tener el contenido listo?
+								</button>
+							</h2>
+							<div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+								<div class="accordion-body text-muted small">
+									No es obligatorio. Podemos trabajar con "Lorem Ipsum" (texto de relleno) para la estructura, pero recomendamos tener textos e imágenes reales antes de la etapa final para optimizar el SEO.
+								</div>
+							</div>
+						</div>
+					</div>
+					<h5 class="fw-bold mb-3 text-primary-custom">Síguenos</h5>
+					<div class="d-flex gap-3">
+						<a href="https://facebook.com" target="_blank" class="social-btn" title="Facebook">
+							<i class="fab fa-facebook-f"></i>
+						</a>
+						<a href="https://instagram.com" target="_blank" class="social-btn" title="Instagram">
+							<i class="fab fa-instagram"></i>
+						</a>
+						<a href="mailto:contacto@arheztech.com" class="social-btn" title="Correo">
+							<i class="fas fa-envelope"></i>
+						</a>
+						<a href="https://wa.me/5215500000000" target="_blank" class="social-btn" title="WhatsApp">
+							<i class="fab fa-whatsapp"></i>
+						</a>
+					</div>
+				</div>
+				<div class="col-lg-7">
+					<div class="form-wrapper">
+						<h4 class="fw-bold mb-4 text-primary-custom">Envíanos un mensaje</h4>
+						<form id="contactForm" onsubmit="submitForm(event)">
+							<div class="row g-4">
+								<div class="col-md-6">
+									<label for="nombre" class="form-label-pro">Nombre Completo</label>
+									<input type="text" id="nombre" class="form-control-pro" placeholder="Ej. Juan Pérez" required>
+								</div>
+								<div class="col-md-6">
+									<label for="correo" class="form-label-pro">Correo Corporativo</label>
+									<input type="email" id="correo" class="form-control-pro" placeholder="Ej. juan@empresa.com" required>
+								</div>
+								<div class="col-12">
+									<label for="tipo" class="form-label-pro">Tipo de Proyecto</label>
+									<select id="tipo" class="form-select-pro" required>
+										<option value="" disabled selected>Selecciona una opción...</option>
+										<option value="Landing Page">Landing Page</option>
+										<option value="Sitio Corporativo">Sitio Web Corporativo</option>
+										<option value="Solución a Medida">Desarrollo a Medida / Software</option>
+										<option value="Consultoría TI">Consultoría TI</option>
+									</select>
+								</div>
+								<div class="col-12">
+									<label for="mensaje" class="form-label-pro">Cuéntanos sobre tu proyecto</label>
+									<textarea id="mensaje" class="form-control-pro" placeholder="Describe brevemente tus necesidades..." required></textarea>
+								</div>
+								<div class="col-12">
+									<button type="submit" class="btn-submit-pro btn-arhez-dark">
+										Enviar a WhatsApp <i class="fab fa-whatsapp fa-lg ms-2"></i>
+									</button>
+									<div class="text-center mt-3">
+										<small class="text-muted">
+											<i class="fas fa-lock me-1"></i> Tus datos están 100% protegidos.
+										</small>
+									</div>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<footer class="py-5 text-center">
+		<div class="container">
+			<h4 class="fw-bold mb-3 text-white">Arhez Tech</h4>
+			<p class="text-white-50 mb-4">Impulsando la transformación digital con calidad garantizada.</p>
+			<div class="d-flex justify-content-center gap-4 mb-4">
+				<a href="https://facebook.com" target="_blank" class="text-white hover-accent" style="font-size: 1.5rem; transition: color 0.3s;">
+					<i class="fab fa-facebook-f"></i>
+				</a>
+				<a href="https://instagram.com" target="_blank" class="text-white hover-accent" style="font-size: 1.5rem; transition: color 0.3s;">
+					<i class="fab fa-instagram"></i>
+				</a>
+				<a href="mailto:contacto@arheztech.com" class="text-white hover-accent" style="font-size: 1.5rem; transition: color 0.3s;">
+					<i class="fas fa-envelope"></i>
+				</a>
+			</div>
+			<small class="text-white-50">&copy; 2026 Arhez Tech. Derechos reservados.</small>
+		</div>
+	</footer>
 	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js" integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
