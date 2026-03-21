@@ -95,14 +95,16 @@
 							Explorar servicios
 						</a>
 					</div>
-					<div class="mt-4 pt-4 border-top border-secondary border-opacity-25 d-flex gap-4">
-						<div>
-							<h4 class="text-white mb-0 fw-bold">100%</h4>
-							<small class="text-muted">Enfoque a resultados</small>
+					<div class="mt-4 pt-4 border-top border-secondary border-opacity-25 d-flex gap-2 gap-md-4">
+						<div class="p-3 rounded border border-light border-opacity-25 flex-fill"
+							style="background: rgba(255,255,255,0.05); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);">
+							<h4 class="text-accent mb-0 fw-bold">100%</h4>
+							<small class="text-white fw-semibold">Enfoque a resultados</small>
 						</div>
-						<div>
-							<h4 class="text-white mb-0 fw-bold">+48%</h4>
-							<small class="text-muted">Crecimiento promedio</small>
+						<div class="p-3 rounded border border-light border-opacity-25 flex-fill"
+							style="background: rgba(255,255,255,0.05); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);">
+							<h4 class="text-accent mb-0 fw-bold">+48%</h4>
+							<small class="text-white fw-semibold">Crecimiento promedio</small>
 						</div>
 					</div>
 				</div>
@@ -149,28 +151,36 @@
 
 
 	<!-- 200320262115 Soluciones Segmentadas -->
-	<section id="soluciones" class="arhez-section" style="background: #fbfbfb;">
-		<div class="container">
+	<section id="soluciones" class="arhez-section position-relative overflow-hidden" style="background: #fbfbfb;">
+		<!-- Blobs de fondo para cristal -->
+		<div class="position-absolute rounded-circle"
+			style="width: 500px; height: 500px; background: rgba(56, 189, 248, 0.15); filter: blur(80px); top: 5%; left: -150px; z-index: 0; pointer-events: none;">
+		</div>
+		<div class="position-absolute rounded-circle"
+			style="width: 500px; height: 500px; background: rgba(141, 238, 18, 0.12); filter: blur(80px); bottom: 5%; right: -150px; z-index: 0; pointer-events: none;">
+		</div>
 
-			<div class="split-feature">
+		<div class="container position-relative z-1">
+
+			<div class="split-feature p-4 p-lg-5 rounded-5 border border-white shadow-sm"
+				style="background: rgba(255, 255, 255, 0.6); backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px);">
 				<div class="flex-grow-1">
 					<span class="badge bg-primary-dark text-white mb-3 px-3 py-2 rounded-pill">Presencia Digital</span>
 					<h2 class="section-title">Desarrollo Web Orientado a Conversión</h2>
 					<p class="lead text-muted mb-4">
-						Diseñamos tiendas online, corporativos y landing pages ultrarrápidas pensadas exclusivamente
-						para generar ventas.
+						Diseñamos tiendas online, sitios web corporativos y landing pages pensadas en generar ventas.
 					</p>
 					<ul class="list-unstyled mb-4">
 						<li class="mb-3 d-flex align-items-center"><i class="fas fa-check text-accent fs-5 me-3"></i>
 							Sitios optimizados para SEO y Google.</li>
 						<li class="mb-3 d-flex align-items-center"><i class="fas fa-check text-accent fs-5 me-3"></i>
-							Diseño responsivo y adaptable a cualquier celular.</li>
+							Diseño responsivo y adaptable.</li>
 						<li class="mb-3 d-flex align-items-center"><i class="fas fa-check text-accent fs-5 me-3"></i>
-							Arquitectura pensada para alta retención de usuarios.</li>
+							Arquitectura escalable.</li>
 					</ul>
 					<a href="#contacto"
-						class="fw-bold text-primary-dark text-decoration-none border-bottom border-dark pb-1">Saber más
-						sobre desarrollo web <i class="fas fa-arrow-right ms-2"></i></a>
+						class="fw-bold text-primary-dark text-decoration-none border-bottom border-dark pb-1">Quiero un
+						proyecto web<i class="fas fa-arrow-right ms-2"></i></a>
 				</div>
 				<div class="flex-shrink-0" style="width: 100%; max-width: 500px;">
 					<img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=800"
@@ -178,9 +188,11 @@
 				</div>
 			</div>
 
-			<div class="split-feature">
+			<div class="split-feature p-4 p-lg-5 rounded-5 border border-white shadow-sm"
+				style="background: rgba(255, 255, 255, 0.6); backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px);">
 				<div class="flex-grow-1">
-					<span class="badge bg-primary-dark text-white mb-3 px-3 py-2 rounded-pill">Operativa Escalar</span>
+					<span class="badge bg-primary-dark text-white mb-3 px-3 py-2 rounded-pill">Automatización de
+						procesos</span>
 					<h2 class="section-title">Soluciones de Software a Medida</h2>
 					<p class="lead text-muted mb-4">
 						Desarrollamos sistemas que se adaptan a las reglas exactas de tu negocio. No más limitaciones de
@@ -190,9 +202,9 @@
 						<li class="mb-3 d-flex align-items-center"><i class="fas fa-check text-accent fs-5 me-3"></i>
 							ERPs y CRMs personalizados.</li>
 						<li class="mb-3 d-flex align-items-center"><i class="fas fa-check text-accent fs-5 me-3"></i>
-							Diseño de bases de datos seguras.</li>
+							Diseño de bases de datos.</li>
 						<li class="mb-3 d-flex align-items-center"><i class="fas fa-check text-accent fs-5 me-3"></i>
-							Automatización de procesos rutinarios.</li>
+							Ingeniería de procesos.</li>
 					</ul>
 					<a href="#contacto"
 						class="fw-bold text-primary-dark text-decoration-none border-bottom border-dark pb-1">Cotizar
@@ -317,7 +329,7 @@
 						<ul class="list-unstyled mb-5 flex-grow-1 text-muted">
 							<li class="mb-2"><i class="fas fa-check text-accent me-2"></i> Desarrollo CRM/ERP</li>
 							<li class="mb-2"><i class="fas fa-check text-accent me-2"></i> Bases de datos y APIs</li>
-							<li class="mb-2"><i class="fas fa-check text-accent me-2"></i> Diseño de procesos</li>
+							<li class="mb-2"><i class="fas fa-check text-accent me-2"></i> Ingeniería de procesos</li>
 							<li class="mb-2"><i class="fas fa-check text-accent me-2"></i> Consultoría TI</li>
 						</ul>
 						<button

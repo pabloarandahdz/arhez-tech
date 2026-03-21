@@ -132,14 +132,16 @@ body {
 
 @media (max-width: 991px) {
     .navbar-collapse {
-        background-color: var(--primary-dark);
+        background-color: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
         position: absolute;
         top: var(--navbar-height);
         left: 0;
         right: 0;
         padding: 20px;
-        border-bottom: 2px solid var(--accent-green);
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
     }
 }
 
