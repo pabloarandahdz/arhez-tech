@@ -49,6 +49,9 @@
 							href="#soluciones">Soluciones</a>
 					</li>
 
+					<li class="nav-item"><a class="nav-link text-primary-dark fw-semibold"
+							href="#proyectos">Proyectos</a>
+					</li>
 					<li class="nav-item"><a class="nav-link text-primary-dark fw-semibold" href="#planes">Precios</a>
 					</li>
 					<li class="nav-item">
@@ -219,6 +222,84 @@
 		</div>
 	</section>
 
+	<!-- 210320261900 Proyectos / Casos de Éxito -->
+	<section id="proyectos" class="projects-section">
+		<div class="container text-center mb-5">
+			<span class="badge bg-primary-dark text-white mb-3 px-3 py-2 rounded-pill">Impacto Real</span>
+			<h2 class="section-title">Nuestros Casos de Éxito</h2>
+			<p class="lead text-muted mx-auto" style="max-width: 700px;">
+				Soluciones tecnológicas que han transformado la operación y escalabilidad de nuestros clientes.
+			</p>
+		</div>
+
+		<div class="container">
+			<div class="row g-4 justify-content-center">
+				<!-- Proyecto 1: Arhez Shop -->
+				<div class="col-lg-4 col-md-6">
+					<div class="project-card shadow-lg"
+						onclick="window.open('https://arhez-shop.netlify.app', '_blank')">
+						<img id="projectImg1" src="assets/img/project-shop.png" alt="Arhez Shop POS">
+						<div class="project-overlay">
+							<span class="project-tag">Sales</span>
+							<h3 class="project-title">Arhez Shop</h3>
+							<p class="project-description">Plataforma integral de gestión de negocios comerciales.</p>
+							<a href="https://arhez-shop.netlify.app" target="_blank" class="btn-project-view">
+								Ver Proyecto <i class="fas fa-external-link-alt"></i>
+							</a>
+						</div>
+					</div>
+				</div>
+
+				<!-- Proyecto 2: Arhez Logistics -->
+				<div class="col-lg-4 col-md-6">
+					<div class="project-card shadow-lg">
+						<img id="projectImg2" src="assets/img/project-analytics.png" alt="Arhez Analytics">
+						<div class="project-overlay">
+							<span class="project-tag">Engineering</span>
+							<h3 class="project-title">Arhez Analytics</h3>
+							<p class="project-description">Plataforma integral de investigación y
+								análisis de datos.</p>
+							<span class="btn-project-view" onclick="scrollToSection('contacto')">
+								Solicitar Demo <i class="fas fa-arrow-right"></i>
+							</span>
+						</div>
+					</div>
+				</div>
+
+				<!-- Proyecto 3: Arhez Connect -->
+				<div class="col-lg-4 col-md-12">
+					<div class="project-card shadow-lg">
+						<img id="projectImg3" src="assets/img/project-enterprise.png" alt="Arhez Enterprise">
+						<div class="project-overlay">
+							<span class="project-tag">Supply Chain</span>
+							<h3 class="project-title">Arhez Enterprise</h3>
+							<p class="project-description">Plataforma integral de ingeniería en gestión industrial.</p>
+							<span class="btn-project-view" onclick="scrollToSection('contacto')">
+								Solicitar Demo <i class="fas fa-arrow-right"></i>
+							</span>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Logotipos de Clientes (Estilo Shopify/Apple) -->
+			<div class="client-logo-grid mt-5 pt-5 border-top border-light opacity-50">
+				<div class="px-4 py-2 opacity-50">
+					<h4 class="fw-bold mb-0">ENGINEERING</h4>
+				</div>
+				<div class="px-4 py-2 opacity-50">
+					<h4 class="fw-bold mb-0">SUPPLY CHAIN</h4>
+				</div>
+				<div class="px-4 py-2 opacity-50">
+					<h4 class="fw-bold mb-0">RESEARCH</h4>
+				</div>
+				<div class="px-4 py-2 opacity-50">
+					<h4 class="fw-bold mb-0">SALES</h4>
+				</div>
+			</div>
+		</div>
+	</section>
+
 	<!-- 200320262115 Proceso -->
 	<section class="arhez-section position-relative overflow-hidden" style="background: #fbfbfb;">
 		<!-- Decoración sutil Blur -->
@@ -386,7 +467,8 @@
 					<form id="contactForm" class="row g-3" onsubmit="submitForm(event)">
 						<div class="col-md-6">
 							<label class="form-label fw-bold">Nombre</label>
-							<input id="contactName" type="text" class="form-control form-control-lg bg-light border-0" required>
+							<input id="contactName" type="text" class="form-control form-control-lg bg-light border-0"
+								required>
 						</div>
 						<div class="col-md-6">
 							<label class="form-label fw-bold">Correo</label>
@@ -404,8 +486,8 @@
 						</div>
 						<div class="col-12">
 							<label class="form-label fw-bold">Mensaje</label>
-							<textarea id="contactMessage" class="form-control form-control-lg bg-light border-0" rows="4"
-								required></textarea>
+							<textarea id="contactMessage" class="form-control form-control-lg bg-light border-0"
+								rows="4" required></textarea>
 						</div>
 						<div class="col-12 mt-4">
 							<button type="submit" class="btn w-100 fw-bold py-3 fs-5 rounded-pill btn-arhez-dark-solid">
