@@ -93,9 +93,9 @@ function selectPlan(plan) {
 }
 function submitForm(event) {
     event.preventDefault();
-    const n = document.getElementById('nombre').value;
-    const t = document.getElementById('tipo').value;
-    const m = document.getElementById('mensaje').value;
+    const n = document.getElementById('contactName').value;
+    const t = document.getElementById('contactSolution').value;
+    const m = document.getElementById('contactMessage').value;
     sendToWhatsapp(`Hola, soy ${n}. Me interesa: *${t}*. Mensaje: ${m}`);
 }
 function scrollToSection(id) {
