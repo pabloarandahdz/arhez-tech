@@ -142,6 +142,14 @@ const demoData = {
             { type: 'SaaS Ultra', title: 'SaaS Ultra - Gimnasio', desc: 'Software de control de acceso. Membresías recurrentes, app para socios y retención automatizada.', url: 'demos/gimnasio/ultra.html' },
             { type: 'Sitio Corporativo', title: 'Sitio Corporativo - Gimnasio', desc: 'Experiencia inmersiva de tu marca fitness. Perfiles de entrenadores, descripción de disciplinas y tienda de suplementos.', url: 'demos/gimnasio/corporativo.html' }
         ]
+    },
+    comercial: {
+        icon: 'fa-store',
+        options: [
+            { type: 'Landing Page', title: 'Landing Page - Comercial', desc: 'Campañas de captación B2B y prospección. Generación de leads calificados y presentación rápida de servicios.', url: 'demos/comercial/landing.html' },
+            { type: 'SaaS Ultra', title: 'SaaS Ultra - Comercial', desc: 'Plataforma ERP comercial. Gestión de inventarios, CRM para seguimiento de ventas y facturación.', url: 'demos/comercial/ultra.html' },
+            { type: 'Sitio Corporativo', title: 'Sitio Corporativo - Comercial', desc: 'Presencia empresarial. Catálogos digitales de productos, cultura institucional y canales B2B para inversores.', url: 'demos/comercial/corporativo.html' }
+        ]
     }
 };
 
