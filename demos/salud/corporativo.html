@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sitio Corporativo Salud - Arhez Demos</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --corp-primary: #1e3a8a; /* Deep Blue */
+            --corp-secondary: #0284c7; /* Light Blue */
+            --corp-accent: #f59e0b; /* Amber */
+            --text-dark: #0f172a;
+            --text-light: #64748b;
+            --bg-gray: #f8fafc;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            color: var(--text-dark);
+            background-color: white;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            color: var(--corp-primary);
+        }
+
+        /* Topbar */
+        .top-bar {
+            background-color: var(--corp-primary);
+            color: white;
+            font-size: 0.85rem;
+            padding: 8px 0;
+        }
+        .top-bar a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .top-bar a:hover {
+            color: var(--corp-accent);
+        }
+
+        /* Navbar */
+        .navbar-corp {
+            background-color: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(8px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            padding: 15px 0;
+            transition: all 0.3s ease;
+        }
+        .navbar-corp .nav-link {
+            color: var(--text-dark);
+            font-weight: 500;
+            margin: 0 10px;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: color 0.3s;
+        }
+        .navbar-corp .nav-link:hover {
+            color: var(--corp-secondary);
+        }
+        
+        /* Back to Arhez */
+        .back-to-arhez {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            background: #1e293b;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 50px;
+            z-index: 2000;
+            font-weight: 700;
+            text-decoration: none;
+            font-size: 0.95rem;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.25);
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: flex;
+            align-items: center;
+        }
+        .back-to-arhez:hover {
+            background: var(--corp-primary);
+            color: white;
+            transform: scale(1.05);
+        }
+
+        /* Hero Corporate */
+        .corp-hero {
+            position: relative;
+            height: 80vh;
+            min-height: 600px;
+            background: url("https://images.unsplash.com/photo-1538108149393-fbbd81895907?auto=format&fit=crop&q=80&w=1600") center/cover no-repeat;
+            display: flex;
+            align-items: center;
+        }
+        .corp-hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(90deg, rgba(30, 58, 138, 0.9) 0%, rgba(30, 58, 138, 0.4) 60%, transparent 100%);
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            color: white;
+            max-width: 600px;
+        }
+
+        /* Essential Action Bar */
+        .action-bar {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 -20px 40px rgba(0,0,0,0.1);
+            transform: translateY(-50%);
+            z-index: 10;
+            position: relative;
+        }
+        .action-item {
+            text-align: center;
+            padding: 30px 20px;
+            transition: all 0.3s;
+            border-right: 1px solid #e2e8f0;
+            cursor: pointer;
+            text-decoration: none;
+            color: var(--text-dark);
+            display: block;
+        }
+        .action-item:last-child { border-right: none; }
+        .action-item:hover {
+            background-color: var(--corp-primary);
+            color: white;
+            border-radius: 12px;
+        }
+        .action-icon {
+            font-size: 2.5rem;
+            color: var(--corp-secondary);
+            margin-bottom: 15px;
+            transition: color 0.3s;
+        }
+        .action-item:hover .action-icon { color: var(--corp-accent); }
+
+        /* Departments */
+        .dept-card {
+            border: none;
+            background: var(--bg-gray);
+            border-radius: 0;
+            border-left: 4px solid transparent;
+            transition: all 0.3s;
+        }
+        .dept-card:hover {
+            background: white;
+            border-left-color: var(--corp-secondary);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transform: translateX(10px);
+        }
+
+        /* Doctor Directory */
+        .doc-directory {
+            background-color: var(--corp-primary);
+            color: white;
+            position: relative;
+            padding: 100px 0;
+        }
+        .doc-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            color: var(--text-dark);
+            transition: transform 0.3s;
+        }
+        .doc-card:hover { transform: translateY(-10px); }
+        .doc-img {
+            height: 350px;
+            object-fit: cover;
+            width: 100%;
+        }
+
+        /* Buttons */
+        .btn-corp {
+            background-color: var(--corp-accent);
+            color: white;
+            font-weight: 600;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 4px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+            text-decoration: none;
+            display: inline-block;
+            transition: background 0.3s;
+        }
+        .btn-corp:hover {
+            background-color: #d97706;
+            color: white;
+        }
+        
+        .btn-corp-outline {
+            background-color: transparent;
+            color: white;
+            font-weight: 600;
+            padding: 10px 28px;
+            border: 2px solid white;
+            border-radius: 4px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s;
+        }
+        .btn-corp-outline:hover {
+            background-color: white;
+            color: var(--corp-primary);
+        }
+
+        /* Blog News */
+        .news-card img {
+            height: 220px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        /* Footer */
+        .footer-corp {
+            background-color: #0f172a;
+            color: #cbd5e1;
+            padding: 80px 0 40px;
+            font-size: 0.9rem;
+        }
+        .footer-corp h5 {
+            color: white;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        .footer-corp ul li a {
+            color: #cbd5e1;
+            text-decoration: none;
+            transition: color 0.2s;
+            line-height: 2;
+        }
+        .footer-corp ul li a:hover { color: var(--corp-secondary); }
+    </style>
+</head>
+<body>
+
+    <!-- Topbar -->
+    <div class="top-bar d-none d-md-block">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <span class="me-4"><i class="fas fa-phone-alt me-2 text-warning"></i> Urgencias: (55) 1234-5678</span>
+                    <span><i class="fas fa-map-marker-alt me-2"></i> Av. Principal 123, Ciudad de México</span>
+                </div>
+                <div class="col-md-6 text-end">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Back Button -->
+    <a href="../../index.html#demos" class="back-to-arhez"><i class="fas fa-arrow-left me-2"></i>Volver al Menú</a>
+
+    <!-- Main Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-corp sticky-top">
+        <div class="container">
+            
+            <a class="navbar-brand fw-bold fs-3 text-dark d-flex align-items-center" href="#">
+                <i class="fas fa-hospital-symbol fs-2 me-2" style="color: var(--corp-primary);"></i> 
+                <span style="font-family: 'Playfair Display', serif; color: var(--corp-primary);">Centro Médico<br><span class="fs-6 d-block text-secondary" style="font-family: 'Plus Jakarta Sans'; font-weight: 400; letter-spacing: 3px; line-height: 0.5;">INTERNACIONAL</span></span>
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navCorporate">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navCorporate">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="#">Institución</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#especialidades">Especialidades</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#directorio">Directorio Médico</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#noticias">Noticias</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="corp-hero">
+        <div class="container hero-content">
+            <span class="badge bg-primary px-3 py-2 text-uppercase letter-spacing mb-3" style="font-size: 0.8rem; background-color: var(--corp-secondary) !important;">Hospital de Especialidades</span>
+            <h1 class="display-3 fw-bold text-white mb-4">Investigación, Cuidado y Excelencia Médica.</h1>
+            <p class="lead mb-5" style="color: #e2e8f0;">Lideramos la transformación de la atención médica en Latinoamérica mediante tecnología de vanguardia y un enfoque humano inquebrantable.</p>
+            <div class="d-flex gap-3">
+                <a href="#directorio" class="btn-corp">Encontrar un Médico</a>
+                <a href="#" class="btn-corp-outline">Conoce el Hospital</a>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Departments & Excellence -->
+    <section id="especialidades" class="py-5 mt-4">
+        <div class="container">
+            <div class="row mb-5 align-items-end">
+                <div class="col-md-8">
+                    <h6 class="text-uppercase fw-bold text-muted mb-2" style="letter-spacing: 2px;">Nuestros Servicios</h6>
+                    <h2 class="display-5 fw-bold">Centros de Excelencia Clínica</h2>
+                </div>
+                <div class="col-md-4 text-md-end">
+                    <a href="#" class="text-decoration-none fw-bold" style="color: var(--corp-secondary);">Ver todos los departamentos <i class="fas fa-arrow-right ms-1"></i></a>
+                </div>
+            </div>
+
+            <div class="row g-4">
+                <!-- Dept List -->
+                <div class="col-lg-4">
+                    <div class="card dept-card p-4 h-100">
+                        <i class="fas fa-heartbeat fs-1 mb-3" style="color: var(--corp-primary);"></i>
+                        <h4 class="fw-bold" style="font-family: 'Plus Jakarta Sans';">Instituto de Cardiología</h4>
+                        <p class="text-muted mb-0 mt-2">Diagnóstico temprano, cirugía cardiovascular avanzada y rehabilitación postoperatoria integral.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card dept-card p-4 h-100">
+                        <i class="fas fa-brain fs-1 mb-3" style="color: var(--corp-primary);"></i>
+                        <h4 class="fw-bold" style="font-family: 'Plus Jakarta Sans';">Neurología y Neurocirugía</h4>
+                        <p class="text-muted mb-0 mt-2">Tratamientos pioneros para trastornos del sistema nervioso, tumores cerebrales y columna vertebral.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card dept-card p-4 h-100">
+                        <i class="fas fa-ribbon fs-1 mb-3" style="color: var(--corp-primary);"></i>
+                        <h4 class="fw-bold" style="font-family: 'Plus Jakarta Sans';">Centro Oncológico</h4>
+                        <p class="text-muted mb-0 mt-2">Atención multidisciplinaria contra el cáncer, quimioterapia de última generación y radioterapia de precisión.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Medical Directory Feature -->
+    <section id="directorio" class="doc-directory">
+        <div class="container">
+            <div class="text-center mb-5 pb-3">
+                <h2 class="text-white display-5 fw-bold mb-3">Conozca a nuestros Especialistas</h2>
+                <p class="lead text-white-50 mx-auto" style="max-width: 700px;">Nuestro cuerpo médico está conformado por más de 500 especialistas certificados, muchos de ellos líderes de opinión y académicos reconocidos internacionalmente.</p>
+            </div>
+            
+            <div class="row g-4 mb-5">
+                <div class="col-lg-3 col-md-6">
+                    <div class="doc-card shadow-lg">
+                        <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&q=80&w=600" class="doc-img" alt="Médico">
+                        <div class="p-4 text-center">
+                            <h5 class="fw-bold mb-1" style="font-family: 'Plus Jakarta Sans';">Dr. Arturo Valdéz</h5>
+                            <p class="text-muted small mb-0">Jefe de Cirugía Oncológica</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="doc-card shadow-lg">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=600" class="doc-img" alt="Médica">
+                        <div class="p-4 text-center">
+                            <h5 class="fw-bold mb-1" style="font-family: 'Plus Jakarta Sans';">Dra. Silvia Romano</h5>
+                            <p class="text-muted small mb-0">Directora de Pediatría</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="doc-card shadow-lg">
+                        <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&q=80&w=600" class="doc-img" alt="Médico">
+                        <div class="p-4 text-center">
+                            <h5 class="fw-bold mb-1" style="font-family: 'Plus Jakarta Sans';">Dr. Emilio Castro</h5>
+                            <p class="text-muted small mb-0">Cardiología Intervencionista</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="doc-card shadow-lg">
+                        <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&q=80&w=600" class="doc-img" alt="Médico">
+                        <div class="p-4 text-center">
+                            <h5 class="fw-bold mb-1" style="font-family: 'Plus Jakarta Sans';">Dr. Fernando Ruiz</h5>
+                            <p class="text-muted small mb-0">Neurología Clínica</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+
+        </div>
+    </section>
+
+    <!-- News & Blog -->
+    <section id="noticias" class="py-5 my-5">
+        <div class="container">
+            <h2 class="display-6 fw-bold mb-5 text-center">Noticias y Avances Médicos</h2>
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <div class="news-card">
+                        <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&q=80&w=800" class="w-100 mb-3" alt="Noticia">
+                        <span class="text-uppercase text-muted small fw-bold">Investigación</span>
+                        <h4 class="mt-2 fw-bold" style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.25rem;">Nueva tecnología láser para cirugías oculares adquirida por el Centro</h4>
+                        <p class="text-muted">El equipamento de última generación permitirá reducir el tiempo de recuperación de los pacientes en un 40%.</p>
+                        <a href="#" class="text-decoration-none fw-bold" style="color: var(--corp-primary);">Leer artículo <i class="fas fa-chevron-right ms-1" style="font-size: 0.8rem;"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="news-card">
+                        <img src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&q=80&w=800" class="w-100 mb-3" alt="Noticia">
+                        <span class="text-uppercase text-muted small fw-bold">Institucional</span>
+                        <h4 class="mt-2 fw-bold" style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.25rem;">Reconocimiento al Hospital de Especialidades por estándares de calidad</h4>
+                        <p class="text-muted">Certificadora Internacional galardona a la institución por sus estrictos protocolos de atención humana.</p>
+                        <a href="#" class="text-decoration-none fw-bold" style="color: var(--corp-primary);">Leer artículo <i class="fas fa-chevron-right ms-1" style="font-size: 0.8rem;"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="news-card">
+                        <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&q=80&w=800" class="w-100 mb-3" alt="Noticia">
+                        <span class="text-uppercase text-muted small fw-bold">Prevención</span>
+                        <h4 class="mt-2 fw-bold" style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.25rem;">Guía nutricional para el cuidado del corazón en adultos mayores</h4>
+                        <p class="text-muted">Nuestros cardiólogos comparten los mejores hábitos alimenticios para prevenir enfermedades coronarias.</p>
+                        <a href="#" class="text-decoration-none fw-bold" style="color: var(--corp-primary);">Leer artículo <i class="fas fa-chevron-right ms-1" style="font-size: 0.8rem;"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-corp">
+        <div class="container">
+            <div class="row g-4 mb-5">
+                <div class="col-lg-4">
+                    <h3 class="fw-bold mb-4" style="font-family: 'Playfair Display', serif; color: white;">
+                        <i class="fas fa-hospital-symbol me-2" style="color: var(--corp-secondary);"></i> CMI
+                    </h3>
+                    <p class="mb-4 pe-lg-5">Dedicados a preservar la salud y fomentar la investigación médica continua con trato cálido, seguro y eficiente.</p>
+                    <div class="d-flex gap-3">
+                        <a href="#" class="btn btn-outline-light rounded-circle" style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center;"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="btn btn-outline-light rounded-circle" style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center;"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="btn btn-outline-light rounded-circle" style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center;"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4">
+                    <h5 class="mb-4">Para Pacientes</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Guía de Ingreso</a></li>
+                        <li><a href="#">Seguros Médicos</a></li>
+                        <li><a href="#">Portal de Pacientes</a></li>
+                        <li><a href="#">Directorio</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-4">
+                    <h5 class="mb-4">Institución</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Sobre Nosotros</a></li>
+                        <li><a href="#">Misión y Visión</a></li>
+                        <li><a href="#">Carreras Médicas</a></li>
+                        <li><a href="#">Notocias</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-4">
+                    <h5 class="mb-4">Contacto de Emergencia</h5>
+                    <div class="p-3 mb-3" style="background: rgba(255,255,255,0.05); border-radius: 8px;">
+                        <h3 class="mb-0 text-white" style="font-family: 'Plus Jakarta Sans';">(55) 1234-5678</h3>
+                        <small class="text-warning">Atención 24/7</small>
+                    </div>
+                    <p class="mb-1"><i class="fas fa-map-marker-alt me-2 text-muted"></i> Av. Principal 123, Ciudad de México, CP 00000</p>
+                    <p><i class="fas fa-envelope me-2 text-muted"></i> urgencias@cminternacional.com</p>
+                </div>
+            </div>
+            <hr style="border-color: rgba(255,255,255,0.1);">
+            <div class="row text-center text-md-start pt-3">
+                <div class="col-md-6 mb-2 mb-md-0">
+                    <small>&copy; 2026 Centro Médico Internacional. Desarrollado por Arhez Tech.</small>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <small><a href="#" class="text-muted text-decoration-none me-3">Aviso de Privacidad</a> <a href="#" class="text-muted text-decoration-none">Términos Legales</a></small>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
