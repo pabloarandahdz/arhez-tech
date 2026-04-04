@@ -48,7 +48,9 @@
 					<li class="nav-item"><a class="nav-link text-primary-dark fw-semibold"
 							href="#soluciones">Soluciones</a>
 					</li>
-
+					<li class="nav-item"><a class="nav-link text-primary-dark fw-semibold"
+							href="#demos">Demos</a>
+					</li>
 					<li class="nav-item"><a class="nav-link text-primary-dark fw-semibold"
 							href="#proyectos">Proyectos</a>
 					</li>
@@ -221,6 +223,8 @@
 		</div>
 	</section>
 
+
+
 	<!-- 210320261900 Proyectos / Casos de Éxito -->
 	<section id="proyectos" class="projects-section">
 		<div class="container text-center mb-5">
@@ -339,6 +343,41 @@
 						<p class="text-muted small">Lanzamiento, soporte y monitoreo en vivo.</p>
 					</div>
 				</div>
+			</div>
+		</div>
+	</section>
+	<!-- 040420261600 Demos -->
+	<section id="demos" class="arhez-section position-relative overflow-hidden" style="background: #fbfbfb; padding: 100px 0;">
+		<div class="container text-center mb-5">
+			<span class="badge bg-accent text-dark mb-3 px-3 py-2 rounded-pill fw-bold" style="box-shadow: 0 4px 15px rgba(141, 238, 18, 0.3);">Experimenta la Calidad</span>
+			<h2 class="section-title text-primary-dark fw-bold mb-3">Explora Nuestros Demos</h2>
+			<p class="lead text-muted mx-auto" style="max-width: 700px;">
+				Selecciona tu industria y descubre todas las opciones disponibles para potenciar tu presencia digital.
+			</p>
+		</div>
+
+		<div class="container">
+			<!-- Sector Selector -->
+			<div class="row justify-content-center mb-5">
+				<div class="col-12 d-flex flex-wrap justify-content-center gap-3" id="demo-sectors">
+					<button class="btn-demo-sector active" data-sector="salud">
+						<i class="fas fa-heartbeat fs-3 mb-2 text-accent" style="text-shadow: 0 0 10px rgba(141,238,18,0.5);"></i><br><span class="fw-bold">Salud</span>
+					</button>
+					<button class="btn-demo-sector" data-sector="construccion">
+						<i class="fas fa-hard-hat fs-3 mb-2 text-accent" style="text-shadow: 0 0 10px rgba(141,238,18,0.5);"></i><br><span class="fw-bold">Construcción</span>
+					</button>
+					<button class="btn-demo-sector" data-sector="alimentos">
+						<i class="fas fa-utensils fs-3 mb-2 text-accent" style="text-shadow: 0 0 10px rgba(141,238,18,0.5);"></i><br><span class="fw-bold">Alimentos</span>
+					</button>
+					<button class="btn-demo-sector" data-sector="gimnasio">
+						<i class="fas fa-dumbbell fs-3 mb-2 text-accent" style="text-shadow: 0 0 10px rgba(141,238,18,0.5);"></i><br><span class="fw-bold">Gimnasio</span>
+					</button>
+				</div>
+			</div>
+
+			<!-- Result Presentation (Grid) -->
+			<div class="row g-4 justify-content-center" id="demo-results-container">
+				<!-- Tarjetas dinámicas generadas por JS -->
 			</div>
 		</div>
 	</section>
