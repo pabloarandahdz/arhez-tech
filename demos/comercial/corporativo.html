@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Maka Retail Group - Inversores y Corporativo</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --retail-bg: #ffffff; 
+            --retail-text: #1a1a1a; 
+            --retail-accent: #8b7355; /* Muted corporate bronze/gold */
+            --retail-gray-light: #f8f9fa;
+            --retail-gray-border: #e5e7eb;
+        }
+
+        body {
+            font-family: 'Jost', sans-serif;
+            color: var(--retail-text);
+            background-color: var(--retail-bg);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            color: var(--retail-text);
+        }
+
+        /* Topbar */
+        .retail-topbar {
+            background-color: var(--retail-gray-light);
+            padding: 10px 0;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 1px solid var(--retail-gray-border);
+        }
+
+        /* Navbar */
+        .retail-nav {
+            background-color: rgba(255, 255, 255, 0.98);
+            padding: 20px 0;
+            border-bottom: 1px solid var(--retail-gray-border);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+        }
+        .retail-brand {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--retail-text);
+            text-decoration: none;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+        .retail-nav .nav-link {
+            color: #4b5563;
+            font-weight: 500;
+            margin: 0 15px;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+        .retail-nav .nav-link:hover { color: var(--retail-accent); }
+
+        /* Buttons */
+        .btn-retail-corp {
+            background-color: var(--retail-text);
+            color: white;
+            padding: 12px 28px;
+            font-weight: 500;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border: 1px solid var(--retail-text);
+            border-radius: 0;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s;
+        }
+        .btn-retail-corp:hover {
+            background-color: white;
+            color: var(--retail-text);
+        }
+        .btn-retail-outline {
+            background-color: transparent;
+            color: var(--retail-text);
+            padding: 12px 28px;
+            font-weight: 500;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border: 1px solid var(--retail-text);
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s;
+        }
+        .btn-retail-outline:hover {
+            background-color: var(--retail-text);
+            color: white;
+        }
+
+        /* Hero SECTION */
+        .retail-corp-hero {
+            position: relative;
+            height: 70vh;
+            min-height: 550px;
+            background: url("https://picsum.photos/seed/corporateretail/1600/900") center/cover no-repeat;
+            display: flex;
+            align-items: center;
+        }
+        .retail-corp-hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(90deg, #ffffff 0%, rgba(255,255,255,0.7) 50%, rgba(255,255,255,0) 100%);
+        }
+        .hero-corp-title {
+            font-size: 4rem;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        /* Stats Safe Grid */
+        .corp-stats-section {
+            background-color: white;
+            border-bottom: 1px solid var(--retail-gray-border);
+            padding: 60px 0;
+        }
+        .stat-corp-block {
+            text-align: center;
+            border-right: 1px solid var(--retail-gray-border);
+            padding: 0 20px;
+        }
+        .stat-corp-block:last-child { border-right: none; }
+        .stat-num {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            color: var(--retail-text);
+            line-height: 1;
+        }
+        .stat-label {
+            color: #6b7280;
+            font-weight: 500;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-top: 15px;
+        }
+
+        /* Divisions Group */
+        .divisions-section {
+            padding: 100px 0;
+            background-color: var(--retail-gray-light);
+        }
+        .corp-card {
+            background: white;
+            border: 1px solid var(--retail-gray-border);
+            border-radius: 0;
+            transition: all 0.4s ease;
+            height: 100%;
+        }
+        .corp-card:hover {
+            box-shadow: 0 15px 30px rgba(0,0,0,0.05);
+            transform: translateY(-5px);
+        }
+        .corp-img {
+            height: 350px;
+            width: 100%;
+            object-fit: cover;
+            filter: grayscale(20%);
+        }
+        .corp-content { padding: 40px; }
+
+        /* Supply Chain / ESG */
+        .supply-section {
+            background-color: var(--retail-text);
+            color: white;
+        }
+        .supply-img {
+            min-height: 600px;
+            height: 100%;
+            background: url("https://picsum.photos/seed/ateliercorporate3/1600/800") center/cover no-repeat;
+        }
+        
+        .timeline-item {
+            border-left: 1px solid rgba(255,255,255,0.2);
+            padding-left: 20px;
+            margin-bottom: 30px;
+            position: relative;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -5px;
+            top: 0;
+            width: 9px;
+            height: 9px;
+            border-radius: 50%;
+            background-color: var(--retail-accent);
+        }
+
+        /* Footer */
+        .retail-corp-footer {
+            background-color: white;
+            padding: 80px 0 40px;
+            border-top: 1px solid var(--retail-gray-border);
+        }
+        .retail-corp-footer h5 {
+            color: var(--retail-text);
+            font-family: 'Jost', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 25px;
+        }
+        .retail-corp-footer a {
+            color: #6b7280;
+            text-decoration: none;
+            transition: color 0.2s;
+            line-height: 2.2;
+            font-size: 0.9rem;
+        }
+        .retail-corp-footer a:hover { color: var(--retail-text); }
+
+        /* Return Control (Styled as minimalist fashion) */
+        .back-to-arhez {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            background: white;
+            color: var(--retail-text);
+            padding: 12px 24px;
+            border-radius: 0;
+            z-index: 2000;
+            font-family: 'Jost', sans-serif;
+            font-weight: 500;
+            text-transform: uppercase;
+            text-decoration: none;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            border: 1px solid var(--retail-text);
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+        }
+        .back-to-arhez:hover {
+            background: var(--retail-text);
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .hero-corp-title { font-size: 3rem; }
+            .stat-corp-block { border-right: none; margin-bottom: 30px; border-bottom: 1px solid var(--retail-gray-border); padding-bottom: 30px; }
+            .stat-corp-block:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+            .retail-corp-hero::before { background: rgba(255,255,255,0.9); }
+        }
+    </style>
+</head>
+<body>
+
+    <a href="../../index.html#demos" class="back-to-arhez">Volver al Menú</a>
+
+    <!-- Topbar -->
+    <div class="retail-topbar d-none d-md-block">
+        <div class="container d-flex justify-content-between align-items-center">
+            <div>
+                <span class="me-4"><i class="fas fa-globe-americas me-2" style="color: var(--retail-accent);"></i> Presencia en 15 Naciones</span>
+                <span>Bolsa de Valores: MKAG</span>
+            </div>
+            <div class="d-flex gap-4">
+                <a href="#" class="text-decoration-none text-secondary">Accionistas</a>
+                <a href="#" class="text-decoration-none text-secondary">Aviso de Privacidad</a>
+                <a href="#" class="text-decoration-none text-secondary">Portal de Medios</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg retail-nav sticky-top">
+        <div class="container">
+            <a class="retail-brand" href="#">MAKA GROUP</a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navRetailCorp">
+                <i class="fas fa-bars fs-3" style="color: var(--retail-text);"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navRetailCorp">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="#empresa">Nuestra Empresa</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#marcas">Marcas</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#suministro">Cadena de Suministro</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Talento</a></li>
+                </ul>
+                <div class="d-none d-lg-block">
+                    <a href="https://wa.me/numero" class="btn-retail-corp" style="padding: 10px 20px;"><i class="fab fa-whatsapp me-2"></i> Relación Comercial</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <header class="retail-corp-hero">
+        <div class="container position-relative" style="z-index: 5;">
+            <div class="row">
+                <div class="col-lg-6">
+                    <span class="d-block mb-3 text-uppercase fw-semibold" style="letter-spacing: 3px; color: var(--retail-accent); font-size: 0.85rem;">Holding de Moda Internacional</span>
+                    <h1 class="hero-corp-title">Redefiniendo <br>el Retail global.</h1>
+                    <p class="lead mb-5" style="font-weight: 400; color: #4b5563; font-size: 1.15rem; line-height: 1.8;">Operamos con excelencia y responsabilidad a través de 3 continentes, democratizando el acceso a la moda sostenible y el diseño de alta calidad técnica.</p>
+                    <div class="d-flex gap-3">
+                        <a href="#marcas" class="btn-retail-corp">Ver Portafolio</a>
+                        <a href="https://wa.me/numero" class="btn-retail-outline">Reporte Inversores</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Stats Grid -->
+    <section class="corp-stats-section">
+        <div class="container">
+            <div class="row g-0">
+                <div class="col-md-3 stat-corp-block">
+                    <div class="stat-num">1.2K</div>
+                    <div class="stat-label">Tiendas Operativas</div>
+                </div>
+                <div class="col-md-3 stat-corp-block">
+                    <div class="stat-num">45M</div>
+                    <div class="stat-label">Prendas Vendidas (2025)</div>
+                </div>
+                <div class="col-md-3 stat-corp-block">
+                    <div class="stat-num">18K</div>
+                    <div class="stat-label">Colaboradores Directos</div>
+                </div>
+                <div class="col-md-3 stat-corp-block">
+                    <div class="stat-num">65%</div>
+                    <div class="stat-label">Energía Renovable</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Divisiones / Marcas -->
+    <section id="marcas" class="divisions-section">
+        <div class="container">
+            <div class="text-center mx-auto mb-5 pb-3" style="max-width: 700px;">
+                <h2 class="display-5 mb-3">Modelos de Negocio</h2>
+                <p style="color: #6b7280; font-size: 1.1rem;">Nuestro portafolio de marcas ataca distintos segmentos demográficos y psicográficos sin canibalizar el mercado, asegurando rentabilidad cruzada.</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <div class="corp-card">
+                        <img src="https://picsum.photos/seed/fashioncorporate1/800/800" class="corp-img" alt="Maka Studio">
+                        <div class="corp-content text-center">
+                            <span class="d-block mb-3" style="font-family: 'Playfair Display'; font-weight: 700; font-size: 1.4rem;">MAKA Studio</span>
+                            <p class="mb-4 text-muted" style="line-height: 1.6;">Nuestra división *Fast-Premium*. Colecciones dinámicas de ropa femenina y masculina con rotación quincenal. Abarca el 65% de la utilidad bruta del holding.</p>
+                            <a href="#" class="btn-retail-outline w-100">Expansión Inmobiliaria</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <div class="corp-card">
+                        <img src="https://picsum.photos/seed/shoescorporate2/800/800" class="corp-img" alt="Maka Leather">
+                        <div class="corp-content text-center">
+                            <span class="d-block mb-3" style="font-family: 'Playfair Display'; font-weight: 700; font-size: 1.4rem;">MAKA Footwear</span>
+                            <p class="mb-4 text-muted" style="line-height: 1.6;">Línea de calzado de lujo accesible. Manufacturado en clústeres peleteros certificados para garantizar el más alto estándar de trazabilidad y resistencia.</p>
+                            <a href="#" class="btn-retail-outline w-100">Proveedores Internacionales</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Supply Chain / ESG -->
+    <section id="suministro" class="supply-section">
+        <div class="container-fluid p-0">
+            <div class="row g-0">
+                <div class="col-lg-6 supply-img"></div>
+                <div class="col-lg-6 d-flex align-items-center">
+                    <div class="p-5 p-xl-5" style="max-width: 600px;">
+                        <span style="color: var(--retail-accent); letter-spacing: 2px; text-transform: uppercase; font-size: 0.8rem; font-weight: 600;">Sostenibilidad Corporativa (ESG)</span>
+                        <h2 class="display-4 mb-4 mt-2" style="color: white;">Trazabilidad Absoluta.</h2>
+                        <p class="mb-5" style="color: #9ca3af; font-size: 1.1rem; font-weight: 300;">Nos hemos fijado el ambicioso reto de alcanzar la neutralidad de carbono para 2030, reconfigurando nuestros centros de distribución y fábricas aliadas.</p>
+                        
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <h5 style="color: white;">Eco-Textiles Activos</h5>
+                                <p class="small text-white-50 mb-0">Más del 40% del algodón utilizado durante 2025 cuenta con certificación "Better Cotton Initiative".</p>
+                            </div>
+                            <div class="timeline-item">
+                                <h5 style="color: white;">Logística de Última Milla</h5>
+                                <p class="small text-white-50 mb-0">Reducción del 15% en emisiones gracias a nuestra red de entregas optimizadas con Inteligencia Artificial.</p>
+                            </div>
+                            <div class="timeline-item">
+                                <h5 style="color: white;">Condiciones Laborales Justas</h5>
+                                <p class="small text-white-50 mb-0">Auditorías semestrales externas garantizan salario digno en toda nuestra cadena de subcontratación global.</p>
+                            </div>
+                        </div>
+                        
+                        <a href="https://wa.me/numero" class="btn mt-4" style="background-color: white; color: var(--retail-text); padding: 15px 30px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; border-radius: 0;">Solicitar Auditoría ESG</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Corporate Footer -->
+    <footer class="retail-corp-footer">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-lg-5 pe-lg-5 mb-4 mb-lg-0">
+                    <h2 class="mb-4" style="font-family: 'Playfair Display'; font-weight: 700; letter-spacing: 2px;">MAKA GROUP</h2>
+                    <p style="color: #6b7280; font-weight: 400;">Controlando integralmente el diseño, fabricación y distribución a nivel internacional. Sede central corporativa: Zona Financiera, CDMX.</p>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h5>El Grupo</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Reportes Anuales</a></li>
+                        <li><a href="#">Gobernanza Corporativa</a></li>
+                        <li><a href="#">Directorio de Marcas</a></li>
+                        <li><a href="#">Carreras Corporativas</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <h5>Línea Directa Corporativa</h5>
+                    <p class="small mb-3" style="color: #6b7280;">Línea confidencial destinada a brokers inmobiliarios para locales comerciales y ofertas B2B de manufactura.</p>
+                    <a href="https://wa.me/numero" class="btn w-100 py-3 d-flex align-items-center justify-content-center" style="background-color: var(--retail-gray-light); color: var(--retail-text); border: 1px solid var(--retail-gray-border); border-radius: 0; font-weight: 500; text-transform: uppercase;">
+                        <i class="fab fa-whatsapp fs-5 me-2"></i> Mesa de Negocios
+                    </a>
+                </div>
+            </div>
+            
+            <div class="row mt-4 pt-4" style="border-top: 1px solid var(--retail-gray-border); font-size: 0.85rem;">
+                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0 text-muted">
+                    &copy; 2026 Maka Retail Group S.A.B. de C.V.
+                </div>
+                <div class="col-md-6 text-center text-md-end text-muted">
+                    Plataforma web desarrollada e implementada por Arhez Tech.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
