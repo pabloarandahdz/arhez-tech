@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Salud - Arhez Demos</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --health-primary: #0f766e; /* Trustworthy Teal */
+            --health-light: #ccfbf1;
+            --health-dark: #115e59;
+            --health-accent: #0ea5e9; /* Sky blue */
+            --text-main: #1e293b;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            color: var(--text-main);
+            background-color: #f8fafc;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Outfit', sans-serif;
+        }
+
+        /* Nav */
+        .health-nav {
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+
+        /* Hero */
+        .health-hero {
+            padding: 160px 0 100px;
+            background: linear-gradient(135deg, #f0fdfa 0%, #e0f2fe 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-blob {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: var(--health-light);
+            border-radius: 50%;
+            filter: blur(80px);
+            top: -200px;
+            right: -100px;
+            z-index: 0;
+        }
+
+        .hero-img-wrapper {
+            position: relative;
+            z-index: 2;
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: 0 25px 50px -12px rgba(15, 118, 110, 0.25);
+            border: 4px solid white;
+        }
+
+        .hero-img-wrapper > img {
+            width: 100%;
+            height: auto;
+            transform: scale(1.05);
+            transition: transform 0.5s ease;
+            object-fit: cover;
+            aspect-ratio: 4 / 5;
+        }
+
+        .hero-img-wrapper:hover > img {
+            transform: scale(1);
+        }
+
+        /* Forms */
+        .floating-form {
+            background: white;
+            border-radius: 24px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+            position: relative;
+            z-index: 5;
+            border: 1px solid rgba(15, 118, 110, 0.1);
+        }
+
+        .form-control-health {
+            background-color: #f8fafc;
+            border: 2px solid transparent;
+            border-radius: 12px;
+            padding: 14px 20px;
+            transition: all 0.3s;
+        }
+
+        .form-control-health:focus {
+            background-color: white;
+            border-color: var(--health-primary);
+            box-shadow: 0 0 0 4px rgba(15, 118, 110, 0.1);
+        }
+
+        .btn-health {
+            background-color: var(--health-primary);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-weight: 700;
+            border: none;
+            text-decoration: none;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .btn-health:hover {
+            background-color: var(--health-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(15, 118, 110, 0.3);
+            color: white;
+        }
+
+        .btn-health-outline {
+            background-color: transparent;
+            color: var(--health-primary);
+            padding: 13px 28px;
+            border-radius: 50px;
+            font-weight: 700;
+            border: 2px solid var(--health-primary);
+            text-decoration: none;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .btn-health-outline:hover {
+            background-color: var(--health-primary);
+            color: white;
+        }
+
+        /* Features */
+        .feature-card {
+            background: white;
+            border-radius: 20px;
+            padding: 35px 25px;
+            text-align: center;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 1px solid rgba(0,0,0,0.03);
+            height: 100%;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 20px 40px rgba(15, 118, 110, 0.1);
+            border-color: var(--health-light);
+        }
+
+        .icon-wrapper {
+            width: 80px;
+            height: 80px;
+            background: var(--health-light);
+            color: var(--health-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin: 0 auto 20px;
+            transition: all 0.3s;
+        }
+
+        .feature-card:hover .icon-wrapper {
+            background: var(--health-primary);
+            color: white;
+            transform: rotateY(180deg);
+        }
+
+        /* Float WhatsApp */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25D366;
+            color: white;
+            width: 65px;
+            height: 65px;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
+            z-index: 1000;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            color: white;
+            box-shadow: 0 15px 30px rgba(37, 211, 102, 0.4);
+        }
+
+        /* Back to Arhez */
+        .back-to-arhez {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            background: var(--text-main);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 50px;
+            z-index: 2000;
+            font-weight: 700;
+            text-decoration: none;
+            font-size: 0.95rem;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.25);
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: flex;
+            align-items: center;
+        }
+        .back-to-arhez:hover {
+            background: var(--health-primary);
+            color: white;
+            transform: scale(1.05);
+        }
+
+    </style>
+</head>
+<body>
+
+    <a href="../../index.html#demos" class="back-to-arhez"><i class="fas fa-arrow-left me-2"></i>Volver al Menú</a>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg health-nav fixed-top shadow-sm py-3">
+        <div class="container">
+            <a class="navbar-brand fw-bold fs-3 text-dark d-flex align-items-center" style="font-family: 'Outfit', sans-serif;" href="#">
+                <i class="fas fa-plus-square text-teal me-2" style="color: var(--health-primary);"></i> Medi<span style="color: var(--health-primary);">Care</span>
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHealth">
+                <i class="fas fa-bars fs-3"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarHealth">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0 fw-semibold">
+                    <li class="nav-item"><a class="nav-link px-3" href="#servicios">Especialidades</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="#nosotros">Nuestros Médicos</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="#contacto">Contacto</a></li>
+                </ul>
+                <a href="#agenda" class="btn-health-outline">Agendar Cita Privada</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="health-hero">
+        <div class="hero-blob"></div>
+        <div class="container position-relative z-1">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-5 mb-lg-0 pe-lg-5">
+                    <div class="d-inline-block px-3 py-1 rounded-pill mb-4 fw-bold" style="background: white; color: var(--health-primary); border: 1px solid rgba(15,118,110,0.2);">
+                        <i class="fas fa-star text-warning me-1"></i> Clínica Certificada
+                    </div>
+                    <h1 class="display-4 fw-bolder mb-4" style="color: var(--health-dark);">
+                        Atención médica de <span style="color: var(--health-accent);">excelencia</span> para tu familia.
+                    </h1>
+                    <p class="lead mb-5 text-secondary" style="font-size: 1.15rem;">
+                        Programa tu cita en minutos, sin líneas de espera. Especialistas certificados listos para atenderte con la calidez y el profesionalismo que mereces.
+                    </p>
+                    
+                    <div class="floating-form" id="agenda">
+                        <h4 class="fw-bold mb-4">Solicítalo vía WhatsApp</h4>
+                        <form onsubmit="event.preventDefault(); window.open('https://wa.me/num?text=Hola,%20deseo%20agendar%20una%20cita.', '_blank');">
+                            <div class="mb-3">
+                                <label class="form-label fw-semibold text-muted small">Nombre y Apellido</label>
+                                <input type="text" class="form-control form-control-health" placeholder="Ej. Ana Martínez" required>
+                            </div>
+                            <div class="mb-4">
+                                <label class="form-label fw-semibold text-muted small">Especialidad Requerida</label>
+                                <select class="form-control form-control-health" required>
+                                    <option value="" disabled selected>Selecciona un área...</option>
+                                    <option>Medicina General</option>
+                                    <option>Pediatría</option>
+                                    <option>Ginecología</option>
+                                    <option>Nutrición</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn-health w-100 fs-5"><i class="fab fa-whatsapp fs-4 me-2 align-middle"></i> Agendar Cita Ahora</button>
+                        </form>
+                    </div>
+
+                </div>
+                <div class="col-lg-6 ps-lg-5">
+                    <div class="hero-img-wrapper">
+                        <!-- Default high quality placeholder image -->
+                        <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&q=80&w=1200" alt="Médico Profesional">
+                        
+                        <!-- Floating Review Box -->
+                        <div class="position-absolute bottom-0 start-0 m-4 p-3 bg-white rounded-4 shadow-lg d-flex align-items-center gap-3" style="animation: float 5s ease-in-out infinite;">
+                            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=200" class="rounded-circle" width="55" height="55" style="object-fit: cover;" alt="Opinion Cliente">
+                            <div>
+                                <div class="text-warning mb-1" style="font-size: 0.8rem;">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                </div>
+                                <p class="mb-0 fw-bold" style="font-size: 0.9rem;">"Excelente atención y rapidez."</p>
+                                <small class="text-muted text-truncate d-block" style="max-width: 150px;">- María González</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section id="servicios" class="py-5 my-5">
+        <div class="container">
+            <div class="text-center mb-5 pb-3">
+                <h2 class="fw-bold mb-3 display-5">Nuestras Especialidades</h2>
+                <p class="text-muted lead mx-auto" style="max-width: 600px;">Contamos con equipos de alta tecnología e instalaciones adaptadas para cuidar de tu salud integrálmente.</p>
+            </div>
+            
+            <div class="row g-4 mb-5">
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card">
+                        <div class="icon-wrapper">
+                            <i class="fas fa-stethoscope"></i>
+                        </div>
+                        <h4 class="fw-bold mb-3">Medicina General</h4>
+                        <p class="text-muted">Valoraciones completas, diagnósticos y tratamiento de enfermedades comunes y preventivas.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card">
+                        <div class="icon-wrapper">
+                            <i class="fas fa-baby"></i>
+                        </div>
+                        <h4 class="fw-bold mb-3">Pediatría</h4>
+                        <p class="text-muted">Cuidado especializado y seguimiento del desarrollo de infantes en un ambiente cálido.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card">
+                        <div class="icon-wrapper">
+                            <i class="fas fa-heartbeat"></i>
+                        </div>
+                        <h4 class="fw-bold mb-3">Cardiología</h4>
+                        <p class="text-muted">Estudios avanzados, electrocardiogramas y prevención de patologías cardiovasculares.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nuestros Médicos / Equipo -->
+    <section id="nosotros" class="py-5" style="background-color: #f1f5f9;">
+        <div class="container my-5">
+            <div class="text-center mb-5 pb-3">
+                <h2 class="fw-bold mb-3 display-5">Nuestro Equipo Médico</h2>
+                <p class="text-muted lead mx-auto" style="max-width: 600px;">Profesionales certificados con amplia experiencia y un trato humano excepcional.</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="card border-0 rounded-4 shadow-sm overflow-hidden h-100" style="transition: transform 0.3s;">
+                        <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&q=80&w=800" class="card-img-top" alt="Cardiólogo" style="height: 300px; object-fit: cover; object-position: top;">
+                        <div class="card-body text-center p-4">
+                            <span class="badge bg-light text-primary mb-2 px-3 py-2 rounded-pill">Cardiología</span>
+                            <h4 class="fw-bold mb-1">Dr. Roberto Sánchez</h4>
+                            <p class="text-muted small mb-3">Especialista en intervención cardiovascular avanzada con 15 años de experiencia.</p>
+                            <a href="#agenda" class="btn-health-outline btn-sm px-4">Agendar Cita</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="card border-0 rounded-4 shadow-sm overflow-hidden h-100" style="transition: transform 0.3s; transform: translateY(-15px);">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=800" class="card-img-top" alt="Pediatra" style="height: 300px; object-fit: cover; object-position: top;">
+                        <div class="card-body text-center p-4">
+                            <span class="badge bg-light text-primary mb-2 px-3 py-2 rounded-pill">Pediatría</span>
+                            <h4 class="fw-bold mb-1">Dra. Elena Ramos</h4>
+                            <p class="text-muted small mb-3">Dedicada al cuidado y bienestar infantil, experta en neonatología clínica.</p>
+                            <a href="#agenda" class="btn-health w-100 btn-sm">Agendar Cita</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="card border-0 rounded-4 shadow-sm overflow-hidden h-100" style="transition: transform 0.3s;">
+                        <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&q=80&w=800" class="card-img-top" alt="Medicina General" style="height: 300px; object-fit: cover; object-position: top;">
+                        <div class="card-body text-center p-4">
+                            <span class="badge bg-light text-primary mb-2 px-3 py-2 rounded-pill">Medicina General</span>
+                            <h4 class="fw-bold mb-1">Dr. Carlos Mendoza</h4>
+                            <p class="text-muted small mb-3">Médico cirujano especializado en diagnóstico preventivo y cuidado integral.</p>
+                            <a href="#agenda" class="btn-health-outline btn-sm px-4">Agendar Cita</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5" style="border-top: 5px solid var(--health-primary);">
+        <div class="container text-center">
+            <h3 class="fw-bold mb-4" style="font-family: 'Outfit', sans-serif;"><i class="fas fa-plus-square text-teal me-2" style="color: var(--health-primary);"></i> MediCare</h3>
+            <p class="text-white-50 mb-4 mx-auto" style="max-width: 500px;">La mejor opción para construir tu presencia médica automatizada.</p>
+            <hr class="border-secondary mb-4 opacity-25">
+            <small class="text-white-50">Demo desarrollada por Arhez Tech. Todos los derechos reservados.</small>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Action Button -->
+    <a href="https://wa.me/numero" target="_blank" class="whatsapp-float">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- CSS specific Keyframes -->
+    <style>
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+    </style>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
