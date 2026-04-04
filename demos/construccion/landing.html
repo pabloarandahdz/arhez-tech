@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Construcción - Landing Page</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --const-primary: #FFB800; /* Safety Yellow / Orange-ish */
+            --const-dark: #1F2937; /* Super Dark Gray */
+            --const-black: #111827; /* Almost Black */
+            --const-light: #F3F4F6; /* Light Gray concrete */
+            --text-main: #374151;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: var(--text-main);
+            background-color: white;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            text-transform: uppercase;
+        }
+
+        /* Nav */
+        .const-nav {
+            background-color: var(--const-black);
+            padding: 15px 0;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+            transition: all 0.3s ease;
+        }
+        .const-nav .nav-link {
+            color: white;
+            font-weight: 500;
+            margin: 0 15px;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+        .const-nav .nav-link:hover {
+            color: var(--const-primary);
+        }
+
+        /* Buttons */
+        .btn-const {
+            background-color: var(--const-primary);
+            color: var(--const-black);
+            font-weight: 900;
+            padding: 14px 35px;
+            font-size: 0.95rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            border: none;
+            border-radius: 4px;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 10px 20px rgba(255, 184, 0, 0.2);
+        }
+        .btn-const:hover {
+            background-color: white;
+            color: var(--const-black);
+            transform: translateY(-4px);
+            box-shadow: 0 15px 30px rgba(255, 184, 0, 0.4);
+        }
+        
+        .btn-const-dark {
+            background-color: var(--const-dark);
+            color: white;
+            font-weight: 700;
+            padding: 14px 35px;
+            font-size: 0.95rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            border: 2px solid var(--const-dark);
+            border-radius: 4px;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s;
+        }
+        .btn-const-dark:hover {
+            background-color: var(--const-primary);
+            border-color: var(--const-primary);
+            color: var(--const-black);
+        }
+
+        /* Hero */
+        .const-hero {
+            position: relative;
+            padding: 160px 0 120px;
+            background: url("assets/hero.png") top center/cover no-repeat;
+            background-attachment: fixed;
+        }
+        .const-hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(135deg, rgba(17,24,39,0.9) 0%, rgba(17,24,39,0.4) 100%);
+        }
+
+        .hero-title-badge {
+            display: inline-block;
+            background: var(--const-primary);
+            color: var(--const-black);
+            font-weight: 900;
+            padding: 5px 15px;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+            transform: skew(-10deg);
+        }
+        .hero-title-badge span {
+            display: inline-block;
+            transform: skew(10deg);
+        }
+
+        /* Cotizador Form */
+        .quote-form-container {
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            border-bottom: 8px solid var(--const-primary);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+            position: relative;
+            z-index: 5;
+        }
+        .quote-input {
+            background-color: var(--const-light);
+            border: 1px solid #e5e7eb;
+            border-radius: 4px;
+            padding: 12px 20px;
+            font-family: 'Roboto', sans-serif;
+            transition: all 0.3s;
+        }
+        .quote-input:focus {
+            background-color: white;
+            border-color: var(--const-primary);
+            box-shadow: 0 0 0 3px rgba(255, 184, 0, 0.2);
+        }
+
+        /* Services */
+        .service-block {
+            background: var(--const-light);
+            padding: 40px 30px;
+            border-radius: 8px;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+            height: 100%;
+        }
+        .service-block::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; 
+            width: 5px; height: 100%;
+            background: var(--const-primary);
+            transition: width 0.3s;
+            z-index: 0;
+        }
+        .service-block:hover::before {
+            width: 100%;
+        }
+        .service-icon, .service-title, .service-desc {
+            position: relative;
+            z-index: 1;
+            transition: color 0.3s;
+        }
+        .service-icon {
+            font-size: 3rem;
+            color: var(--const-dark);
+            margin-bottom: 20px;
+        }
+        .service-block:hover * {
+            color: var(--const-black) !important;
+        }
+
+        /* Gallery */
+        .gallery-item {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            transition: transform 0.6s;
+        }
+        .gallery-overlay {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(17, 24, 39, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.4s;
+        }
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        /* Footer */
+        .const-footer {
+            background-color: var(--const-black);
+            color: white;
+            padding: 80px 0 40px;
+        }
+        
+        /* Floating Controls */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25D366;
+            color: white;
+            width: 65px;
+            height: 65px;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
+            z-index: 1000;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            color: white;
+            box-shadow: 0 15px 30px rgba(37, 211, 102, 0.5);
+        }
+
+        .back-to-arhez {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            background: white;
+            color: var(--const-black);
+            padding: 12px 24px;
+            border-radius: 50px;
+            z-index: 2000;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            text-transform: uppercase;
+            text-decoration: none;
+            font-size: 0.85rem;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: flex;
+            align-items: center;
+            border: 2px solid var(--const-black);
+        }
+        .back-to-arhez:hover {
+            background: var(--const-primary);
+            color: var(--const-black);
+            border-color: var(--const-primary);
+            transform: scale(1.05);
+        }
+
+    </style>
+</head>
+<body>
+
+    <a href="../../index.html#demos" class="back-to-arhez"><i class="fas fa-arrow-left me-2"></i>Volver al Menú</a>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg const-nav fixed-top">
+        <div class="container">
+            <a class="navbar-brand text-white fw-bold d-flex align-items-center" href="#" style="font-family: 'Montserrat', sans-serif; font-size: 1.8rem; letter-spacing: -1px;">
+                <i class="fas fa-hard-hat me-2" style="color: var(--const-primary);"></i>
+                ARCO<span style="color: var(--const-primary);">BUILD</span>
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navConst">
+                <i class="fas fa-bars text-white fs-2"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navConst">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="#servicios">Servicios</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#proyectos">Proyectos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#nosotros">Nosotros</a></li>
+                </ul>
+                <a href="#cotizar" class="btn-const-dark mt-3 mt-lg-0">Contáctanos</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="const-hero">
+        <div class="container position-relative z-1">
+            <div class="row align-items-center">
+                <div class="col-lg-7 mb-5 mb-lg-0 pe-lg-5">
+                    <div class="hero-title-badge">
+                        <span>LÍDERES EN DESARROLLO DE PROYECTOS</span>
+                    </div>
+                    <h1 class="display-3 fw-bold text-white mb-4 lh-base" style="letter-spacing: -1px;">
+                        CONSTRUIMOS EL FUTURO, CON <span style="color: var(--const-primary);">CIMIENTOS FIRMES.</span>
+                    </h1>
+                    <p class="lead mb-5 text-light" style="font-family: 'Roboto'; font-size: 1.2rem; opacity: 0.9;">
+                        Más de 20 años desarrollando infraestructura industrial, comercial y residencial de alto nivel. Si tienes un proyecto en mente, nuestro equipo de profesionales lo hace realidad.
+                    </p>
+                    <div class="d-flex flex-wrap gap-4 mt-2">
+                        <div class="d-flex align-items-center text-white">
+                            <i class="fas fa-check-circle fs-3 me-2" style="color: var(--const-primary);"></i>
+                            <span class="fw-bold text-uppercase" style="font-family: 'Montserrat';">Entrega a Tiempo</span>
+                        </div>
+                        <div class="d-flex align-items-center text-white">
+                            <i class="fas fa-check-circle fs-3 me-2" style="color: var(--const-primary);"></i>
+                            <span class="fw-bold text-uppercase" style="font-family: 'Montserrat';">Materiales Premium</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Lead Form / Cotizador -->
+                <div class="col-lg-5 ps-lg-4" id="cotizar">
+                    <div class="quote-form-container">
+                        <h3 class="fw-bold mb-2">Solicita una Cotización</h3>
+                        <p class="text-muted mb-4 small">Obtén un presupuesto preliminar sin compromiso en tu WhatsApp.</p>
+                        
+                        <form onsubmit="event.preventDefault(); window.open('https://wa.me/numero?text=Hola,%20deseo%20una%20cotización.', '_blank');">
+                            <div class="mb-3">
+                                <label class="form-label fw-bold small text-uppercase">Nombre Empresa / Personal</label>
+                                <input type="text" class="form-control quote-input" required placeholder="Ej. Constructora GDL">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label fw-bold small text-uppercase">Tipo de Obra</label>
+                                <select class="form-select quote-input" required>
+                                    <option value="" disabled selected>Selecciona infraestructura...</option>
+                                    <option>Nave Industrial</option>
+                                    <option>Obra Comercial (Plaza, Locales)</option>
+                                    <option>Desarrollo Residencial</option>
+                                    <option>Remodelación Estructural</option>
+                                    <option>Otro</option>
+                                </select>
+                            </div>
+                            <div class="mb-4">
+                                <label class="form-label fw-bold small text-uppercase">Área Estimada (m²)</label>
+                                <input type="number" class="form-control quote-input" placeholder="Ej. 1500" required>
+                            </div>
+                            <button type="submit" class="btn-const w-100 fs-6"><i class="fab fa-whatsapp fs-5 me-2 align-middle"></i> ENVIAR AL ASESOR</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section id="servicios" class="py-5 my-5">
+        <div class="container">
+            <div class="text-center mb-5 pb-4">
+                <h6 class="fw-bold letter-spacing" style="color: var(--const-dark);">CAPACIDADES TÉCNICAS</h6>
+                <h2 class="display-5 fw-bold text-dark">SERVICIOS DE LA CONSTRUCTORA</h2>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-block">
+                        <i class="fas fa-industry service-icon d-block"></i>
+                        <h4 class="fw-bold mb-3 service-title">Naves Industriales</h4>
+                        <p class="text-muted mb-0 service-desc" style="font-family: 'Roboto'; line-height: 1.6;">Construcción estructural en acero, pisos de alta resistencia y diseño especializado para la logística empresarial y manufactura.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-block">
+                        <i class="fas fa-building service-icon d-block"></i>
+                        <h4 class="fw-bold mb-3 service-title">Obra Comercial</h4>
+                        <p class="text-muted mb-0 service-desc" style="font-family: 'Roboto'; line-height: 1.6;">Plazas comerciales, edificios de oficinas y desarrollos de uso mixto cumpliendo las normas más estrictas de seguridad civil.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-block">
+                        <i class="fas fa-drafting-compass service-icon d-block"></i>
+                        <h4 class="fw-bold mb-3 service-title">Diseño e Ingeniería</h4>
+                        <p class="text-muted mb-0 service-desc" style="font-family: 'Roboto'; line-height: 1.6;">Cálculo estructural, diseño arquitectónico BIM y mecánica de suelos para avalar la viabilidad y rentabilidad del proyecto.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Gallery Feature -->
+    <section id="proyectos" class="py-5 bg-dark" style="position: relative;">
+        <!-- Yellow accent strip -->
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 5px; background: var(--const-primary);"></div>
+        
+        <div class="container py-5">
+            <div class="row align-items-end mb-5">
+                <div class="col-lg-8">
+                    <h6 class="fw-bold letter-spacing mb-2" style="color: var(--const-primary);">PORTAFOLIO DESTACADO</h6>
+                    <h2 class="display-5 fw-bold text-white mb-0">NUESTROS PROYECTOS RECIENTES</h2>
+                </div>
+                <div class="col-lg-4 text-lg-end mt-4 mt-lg-0">
+                    <a href="#cotizar" class="btn-const">COMPROBAR CALIDAD</a>
+                </div>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="gallery-item">
+                        <img src="assets/gallery1.png" alt="Edificio Fase 1">
+                        <div class="gallery-overlay">
+                            <div class="text-center">
+                                <h4 class="text-white fw-bold mb-1">COMPLEJO Boreal</h4>
+                                <span class="fw-bold" style="color: var(--const-primary); font-family: 'Roboto';">Estructura Vertical</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="gallery-item">
+                        <img src="assets/gallery2.png" alt="Cimientos">
+                        <div class="gallery-overlay">
+                            <div class="text-center">
+                                <h4 class="text-white fw-bold mb-1">NAVE LOGÍSTICA T4</h4>
+                                <span class="fw-bold" style="color: var(--const-primary); font-family: 'Roboto';">Colado Industrial</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="gallery-item">
+                        <img src="assets/gallery3.png" alt="Estrucutra Acero">
+                        <div class="gallery-overlay">
+                            <div class="text-center">
+                                <h4 class="text-white fw-bold mb-1">PUENTE SUR</h4>
+                                <span class="fw-bold" style="color: var(--const-primary); font-family: 'Roboto';">Obra Pública</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="const-footer text-center text-md-start">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <a class="text-white fw-bold d-flex align-items-center justify-content-center justify-content-md-start text-decoration-none" href="#" style="font-family: 'Montserrat', sans-serif; font-size: 2rem; letter-spacing: -1px;">
+                        ARCO<span style="color: var(--const-primary);">BUILD</span>
+                    </a>
+                </div>
+                <div class="col-md-4 text-center mb-4 mb-md-0">
+                    <p class="mb-0 text-light" style="font-family: 'Roboto';">Proyectos de Construcción de Alto Rendimiento.</p>
+                </div>
+                <div class="col-md-4 text-md-end">
+                    <a href="https://wa.me/numero" class="btn-const px-4 py-2" style="font-size: 0.85rem;"><i class="fab fa-whatsapp me-2"></i> CONTACTAR AHORA</a>
+                </div>
+            </div>
+            <hr class="border-secondary my-4 opacity-50">
+            <div class="text-center">
+                <small class="text-light" style="font-family: 'Roboto';">&copy; 2026 ArcoBuild Constructora S.A de C.V. Landing Page desarrollada por Arhez Tech.</small>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Action Button -->
+    <a href="https://wa.me/numero" target="_blank" class="whatsapp-float">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
