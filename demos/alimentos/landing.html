@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Restaurante - Landing Page</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --food-primary: #be123c; /* Deep Rose / Red */
+            --food-gold: #d4af37; /* Elegant Gold */
+            --food-dark: #09090b; /* Zinc 950 - Almost Black */
+            --food-gray: #18181b; /* Zinc 900 */
+            --text-light: #f4f4f5; /* Zinc 100 */
+            --text-muted: #a1a1aa; /* Zinc 400 */
+        }
+
+        body {
+            font-family: 'Jost', sans-serif;
+            color: var(--text-light);
+            background-color: var(--food-dark);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Cormorant Garamond', serif;
+            color: white;
+        }
+
+        /* Contrast Fixes */
+        .text-muted {
+            color: #d4d4d8 !important; /* Highly readable light gray */
+        }
+
+        /* Navbar */
+        .food-nav {
+            background-color: rgba(9, 9, 11, 0.85);
+            backdrop-filter: blur(15px);
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            transition: all 0.3s ease;
+        }
+        .food-nav .navbar-brand {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: white;
+        }
+        .food-nav .navbar-brand span { color: var(--food-primary); }
+        .food-nav .nav-link {
+            color: var(--text-light);
+            font-weight: 500;
+            margin: 0 15px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            transition: color 0.3s;
+        }
+        .food-nav .nav-link:hover { color: var(--food-gold); }
+
+        /* Hero */
+        .food-hero {
+            position: relative;
+            height: 100vh;
+            min-height: 700px;
+            background: url("assets/food_hero.png") center/cover no-repeat;
+            background-attachment: fixed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        .food-hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(to bottom, rgba(9,9,11,0.6) 0%, rgba(9,9,11,0.95) 100%);
+        }
+        .hero-content {
+            position: relative;
+            z-index: 5;
+            max-width: 800px;
+        }
+        .hero-subtitle {
+            font-family: 'Jost', sans-serif;
+            color: var(--food-gold);
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 20px;
+            display: block;
+        }
+        .hero-title {
+            font-size: 5rem;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 30px;
+            text-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        /* Buttons */
+        .btn-gold {
+            background-color: var(--food-gold);
+            color: var(--food-dark);
+            padding: 15px 40px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border: none;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.4s ease;
+        }
+        .btn-gold:hover {
+            background-color: white;
+            color: var(--food-dark);
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+            transform: translateY(-3px);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            color: white;
+            padding: 13px 38px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border: 1px solid rgba(255,255,255,0.3);
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.4s ease;
+        }
+        .btn-outline:hover {
+            border-color: var(--food-gold);
+            color: var(--food-gold);
+        }
+
+        /* Experience Features */
+        .feature-box {
+            text-align: center;
+            padding: 40px 20px;
+        }
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--food-primary);
+            margin-bottom: 20px;
+        }
+
+        /* Menu Highlights */
+        .menu-section {
+            background-color: var(--food-gray);
+            padding: 100px 0;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        .dish-card {
+            background-color: var(--food-dark);
+            border-radius: 0;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            height: 100%;
+        }
+        .dish-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+        }
+        .dish-img-wrapper {
+            position: relative;
+            overflow: hidden;
+            height: 350px;
+        }
+        .dish-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s ease;
+        }
+        .dish-card:hover .dish-img { transform: scale(1.08); }
+        .dish-price {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(9, 9, 11, 0.9);
+            color: var(--food-gold);
+            padding: 8px 15px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            backdrop-filter: blur(5px);
+        }
+        .dish-info {
+            padding: 30px;
+            text-align: center;
+        }
+
+        /* Footer */
+        .food-footer {
+            padding: 80px 0 30px;
+            text-align: center;
+        }
+
+        /* WhatsApp Float */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
+            z-index: 1000;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            color: white;
+            box-shadow: 0 15px 30px rgba(37, 211, 102, 0.5);
+        }
+
+        /* Return Control */
+        .back-to-arhez {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            background: rgba(9, 9, 11, 0.8);
+            backdrop-filter: blur(10px);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 50px;
+            z-index: 2000;
+            font-family: 'Jost', sans-serif;
+            font-weight: 500;
+            text-transform: uppercase;
+            text-decoration: none;
+            font-size: 0.85rem;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: flex;
+            align-items: center;
+        }
+        .back-to-arhez:hover {
+            background: var(--food-primary);
+            border-color: var(--food-primary);
+            color: white;
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 768px) {
+            .hero-title { font-size: 3rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <a href="../../index.html#demos" class="back-to-arhez"><i class="fas fa-arrow-left me-2"></i>Volver al Menú</a>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg food-nav fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">SAZÓN<span>&amp;</span>FUEGO</a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navFood">
+                <i class="fas fa-bars text-white fs-2"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navFood">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="#experiencia">La Experiencia</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#menu">Menú de Autor</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+                </ul>
+                <a href="#contacto" class="btn-outline d-none d-lg-inline-block" style="padding: 10px 25px; font-size: 0.8rem;">Reservar Mesa</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <header class="food-hero">
+        <div class="container hero-content">
+            <span class="hero-subtitle">Alta Gastronomía Contemporánea</span>
+            <h1 class="hero-title">El Arte de<br>Comer Bien</h1>
+            <p class="lead text-muted mb-5 mx-auto" style="max-width: 600px; font-weight: 300;">Una experiencia multisensorial donde ingredientes de origen, fuego y pasión convergen para crear momentos inolvidables.</p>
+            <a href="https://wa.me/numero" class="btn-gold mx-2 mb-3"><i class="fab fa-whatsapp me-2 fs-5 align-middle"></i> Reservar Ahora</a>
+            <a href="#menu" class="btn-outline mx-2 mb-3">Ver Platillos</a>
+        </div>
+    </header>
+
+    <!-- Experience -->
+    <section id="experiencia" class="py-5" style="margin: 80px 0;">
+        <div class="container">
+            <div class="row align-items-center mb-5 pb-5">
+                <div class="col-lg-6 mb-5 mb-lg-0 pe-lg-5">
+                    <h2 class="display-5 mb-4">Nuestra Filosofía</h2>
+                    <div style="width: 50px; height: 2px; background-color: var(--food-primary); margin-bottom: 30px;"></div>
+                    <p class="text-muted" style="font-size: 1.1rem; line-height: 1.8; font-weight: 300;">En Sazón &amp; Fuego honramos la riqueza de los ingredientes locales con técnicas de vanguardia internacional. Nuestro chef diseña cada temporada una carta que desafía el paladar, acompañada de una bodega con más de 200 etiquetas exclusivas curadas por nuestros sommeliers.</p>
+                    <p class="mt-4" style="font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-style: italic; color: var(--food-gold);">"No cocinamos, creamos memorias."</p>
+                </div>
+                <div class="col-lg-6">
+                    <div class="row g-4">
+                        <div class="col-sm-6">
+                            <div class="feature-box border border-secondary border-opacity-25 rounded h-100">
+                                <i class="fas fa-fire feature-icon"></i>
+                                <h4 class="mb-3 fs-5">Fuego Leña</h4>
+                                <p class="text-muted small mb-0">Uso exclusivo de maderas nobles para cocciones largas y ahumados perfectos.</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="feature-box border border-secondary border-opacity-25 rounded h-100">
+                                <i class="fas fa-wine-glass-alt feature-icon"></i>
+                                <h4 class="mb-3 fs-5">Cava Selecta</h4>
+                                <p class="text-muted small mb-0">Maridaje excepcional recomendado por expertos reconocidos.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Highlights -->
+    <section id="menu" class="menu-section">
+        <div class="container">
+            <div class="text-center mb-5 pb-4">
+                <span class="hero-subtitle">Muestra Gastronómica</span>
+                <h2 class="display-4">Especialidades del Chef</h2>
+            </div>
+            
+            <div class="row g-4 justify-content-center">
+                <!-- Dish 1 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="dish-card">
+                        <div class="dish-img-wrapper">
+                            <div class="dish-price">$850 MXN</div>
+                            <img src="assets/food_dish1.png" alt="Wagyu Steak" class="dish-img">
+                        </div>
+                        <div class="dish-info">
+                            <h4 class="mb-3">Wagyu al Carbón</h4>
+                            <p class="text-muted small mb-0 fw-light">Corte premium Ribeye asado lentamente con infusión de romero rústico, puré de ajo negro y sal de volcán.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Dish 2 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="dish-card">
+                        <div class="dish-img-wrapper">
+                            <div class="dish-price">$380 MXN</div>
+                            <img src="assets/food_dish2.png" alt="Pasta Artesanal" class="dish-img">
+                        </div>
+                        <div class="dish-info">
+                            <h4 class="mb-3">Pappardelle Pomodoro</h4>
+                            <p class="text-muted small mb-0 fw-light">Pasta fresca artesanal, salsa madre de tomates macerados, aceite de trufa blanca y albahaca naciente.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Dish 3 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="dish-card">
+                        <div class="dish-img-wrapper">
+                            <div class="dish-price">$260 MXN</div>
+                            <img src="assets/food_dish3.png" alt="Volcán Cacao" class="dish-img">
+                        </div>
+                        <div class="dish-info">
+                            <h4 class="mb-3">Volcán de Cacao 70%</h4>
+                            <p class="text-muted small mb-0 fw-light">Bizcocho fluido de chocolate oscuro ecuatoriano, lámina de oro comestible de 24k y coulis de frutos rojos.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-5 pt-4">
+                <a href="https://wa.me/numero" class="btn-outline">Solicitar Menú Completo (PDF)</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer / Contact -->
+    <footer id="contacto" class="food-footer">
+        <div class="container">
+            <h2 class="mb-4" style="font-size: 2.5rem;">SAZÓN<span>&amp;</span>FUEGO</h2>
+            <div class="row justify-content-center mb-5">
+                <div class="col-md-8 text-center text-muted fw-light">
+                    <p class="mb-2"><i class="fas fa-map-marker-alt me-2" style="color: var(--food-primary);"></i> Av. Gastronómica 190, Colonia Gema, CDMX.</p>
+                    <p class="mb-2"><i class="fas fa-clock me-2" style="color: var(--food-primary);"></i> Mar - Sab: 13:00 a 23:00 hw | Dom: 13:00 a 18:00 h</p>
+                    <p class="mb-0"><i class="fas fa-phone-alt me-2" style="color: var(--food-primary);"></i> Recepción: (55) 9999-0000</p>
+                </div>
+            </div>
+            <div class="d-flex justify-content-center gap-4 mb-5">
+                <a href="#" class="text-light fs-4"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="text-light fs-4"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="text-light fs-4"><i class="fas fa-envelope"></i></a>
+            </div>
+            <hr style="border-color: rgba(255,255,255,0.1);">
+            <p class="text-muted small mt-4 mb-0">&copy; 2026 Sazón &amp; Fuego Restaurant. Landing Page by Arhez Tech.</p>
+        </div>
+    </footer>
+
+    <!-- WhatsApp -->
+    <a href="https://wa.me/numero" target="_blank" class="whatsapp-float">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
