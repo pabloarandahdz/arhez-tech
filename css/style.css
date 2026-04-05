@@ -45,12 +45,12 @@ body {
 }
 
 /* --- 150220261954 sistema de botones --- */
-.btn-base {
+.btn-base, .btn-arhez-primary, .btn-arhez-green, .btn-arhez-dark, .btn-arhez-outline, .btn-arhez-plan-light, .btn-arhez-dark-solid {
     font-weight: 700;
     padding: 12px 30px;
     border-radius: 50px;
     transition: all 0.3s ease;
-    text-decoration: none;
+    text-decoration: none !important;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -60,14 +60,14 @@ body {
 
 /* 150220261954 boton para fondos oscuros */
 /* Usado en: Navbar, Hero, Plan Popular */
-.btn-arhez-green {
+.btn-arhez-green, .btn-arhez-primary {
     background-color: var(--accent-green);
     color: var(--primary-dark);
     border-color: var(--accent-green);
     box-shadow: 0 4px 15px rgba(141, 238, 18, 0.3);
 }
 
-.btn-arhez-green:hover {
+.btn-arhez-green:hover, .btn-arhez-primary:hover {
     background-color: #ffffff !important;
     color: var(--primary-dark) !important;
     border-color: #ffffff !important;
