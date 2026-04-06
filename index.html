@@ -236,50 +236,65 @@
 		</div>
 
 		<div class="container">
-			<div class="row g-4 justify-content-center">
-				<!-- Proyecto 1: Arhez Shop -->
-				<div class="col-lg-4 col-md-6">
-					<div class="project-card shadow-lg"
-						onclick="window.open('https://arhez-shop.netlify.app', '_blank')">
-						<img id="projectImg1" src="assets/img/project-shop.png" alt="Arhez Shop POS">
-						<div class="project-overlay">
-							<span class="project-tag">Sales</span>
-							<h3 class="project-title">Arhez Shop</h3>
-							<p class="project-description">Plataforma integral de gestión de negocios comerciales.</p>
-							<a href="https://arhez-shop.netlify.app" target="_blank" class="btn-project-view">
-								Ver Proyecto <i class="fas fa-external-link-alt"></i>
-							</a>
+			<div class="position-relative py-5">
+				<!-- Línea Vertical Central -->
+				<div class="d-none d-md-block position-absolute start-50 top-0 bottom-0 translate-middle-x" 
+					style="width: 2px; background: linear-gradient(to bottom, transparent, rgba(141, 238, 18, 0.6), transparent); z-index: 0;"></div>
+
+				<!-- Timeline Item 1: Arhez Shop -->
+				<div class="row align-items-center mb-5 position-relative z-1">
+					<div class="col-md-5 text-center text-md-end mb-4 mb-md-0">
+						<div class="pe-md-4">
+							<span class="badge bg-primary-dark text-white px-3 py-2 rounded-pill mb-2">Marzo 2026</span>
+							<h3 class="fw-bold mb-1" style="color: var(--primary-dark);">Arhez Shop</h3>
+							<p class="text-accent fw-semibold small mb-0" style="text-shadow: 0 0 10px rgba(141, 238, 18, 0.3);"><i class="fas fa-store me-1"></i> Sales & Retail</p>
+						</div>
+					</div>
+					<div class="col-md-2 d-none d-md-flex justify-content-center align-items-center position-relative">
+						<div class="rounded-circle bg-white" style="width: 20px; height: 20px; border: 4px solid var(--accent-green); box-shadow: 0 0 20px rgba(141, 238, 18, 0.8); z-index: 2;"></div>
+					</div>
+					<div class="col-md-5">
+						<div class="p-4 rounded-4 shadow-sm border border-light" style="background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);">
+							<p class="text-muted mb-3 m-0">Plataforma integral de gestión de negocios comerciales, inventario y punto de venta enfocado en escalabilidad.</p>
+							<a href="https://arhez-shop.netlify.app" target="_blank" class="fw-bold text-decoration-none px-4 py-2 border border-2 rounded-pill d-inline-block mt-2" style="color: var(--primary-dark); border-color: rgba(141, 238, 18, 0.5) !important;"><i class="fas fa-external-link-alt me-2 text-accent"></i>Ver Proyecto</a>
 						</div>
 					</div>
 				</div>
 
-				<!-- Proyecto 2: Arhez Logistics -->
-				<div class="col-lg-4 col-md-6">
-					<div class="project-card shadow-lg">
-						<img id="projectImg2" src="assets/img/project-analytics.png" alt="Arhez Analytics">
-						<div class="project-overlay">
-							<span class="project-tag">Engineering</span>
-							<h3 class="project-title">Arhez Analytics</h3>
-							<p class="project-description">Plataforma integral de investigación y
-								análisis de datos.</p>
-							<span class="btn-project-view" onclick="scrollToSection('contacto')">
-								Solicitar Demo <i class="fas fa-arrow-right"></i>
-							</span>
+				<!-- Timeline Item 2: Arhez Sports -->
+				<div class="row align-items-center mb-5 position-relative z-1">
+					<div class="col-md-5 order-2 order-md-1">
+						<div class="p-4 rounded-4 shadow-sm border border-light text-md-end mt-4 mt-md-0" style="background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);">
+							<p class="text-muted mb-0 m-0">Ecosistema integral para la organización y gestión de ligas, roles de juego, estadísticas y torneos de fútbol.</p>
+						</div>
+					</div>
+					<div class="col-md-2 order-1 order-md-2 d-none d-md-flex justify-content-center align-items-center position-relative">
+						<div class="rounded-circle bg-white" style="width: 20px; height: 20px; border: 4px solid var(--accent-green); box-shadow: 0 0 20px rgba(141, 238, 18, 0.8); z-index: 2;"></div>
+					</div>
+					<div class="col-md-5 text-center text-md-start order-1 order-md-3">
+						<div class="ps-md-4">
+							<span class="badge bg-primary-dark text-white px-3 py-2 rounded-pill mb-2">Abril 2026</span>
+							<h3 class="fw-bold mb-1" style="color: var(--primary-dark);">Arhez Sports</h3>
+							<p class="text-accent fw-semibold small mb-0" style="text-shadow: 0 0 10px rgba(141, 238, 18, 0.3);"><i class="fas fa-futbol me-1"></i> Sports & Tournaments</p>
 						</div>
 					</div>
 				</div>
 
-				<!-- Proyecto 3: Arhez Connect -->
-				<div class="col-lg-4 col-md-12">
-					<div class="project-card shadow-lg">
-						<img id="projectImg3" src="assets/img/project-enterprise.png" alt="Arhez Enterprise">
-						<div class="project-overlay">
-							<span class="project-tag">Supply Chain</span>
-							<h3 class="project-title">Arhez Enterprise</h3>
-							<p class="project-description">Plataforma integral de ingeniería en gestión industrial.</p>
-							<span class="btn-project-view" onclick="scrollToSection('contacto')">
-								Solicitar Demo <i class="fas fa-arrow-right"></i>
-							</span>
+				<!-- Timeline Item 3: Arhez Analytics -->
+				<div class="row align-items-center mb-2 position-relative z-1">
+					<div class="col-md-5 text-center text-md-end mb-4 mb-md-0">
+						<div class="pe-md-4">
+							<span class="badge bg-primary-dark text-white px-3 py-2 rounded-pill mb-2">Mayo 2026</span>
+							<h3 class="fw-bold mb-1" style="color: var(--primary-dark);">Arhez Analytics</h3>
+							<p class="text-accent fw-semibold small mb-0" style="text-shadow: 0 0 10px rgba(141, 238, 18, 0.3);"><i class="fas fa-chart-line me-1"></i> Data & Research</p>
+						</div>
+					</div>
+					<div class="col-md-2 d-none d-md-flex justify-content-center align-items-center position-relative">
+						<div class="rounded-circle bg-white" style="width: 20px; height: 20px; border: 4px solid var(--accent-green); box-shadow: 0 0 20px rgba(141, 238, 18, 0.8); z-index: 2;"></div>
+					</div>
+					<div class="col-md-5">
+						<div class="p-4 rounded-4 shadow-sm border border-light" style="background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);">
+							<p class="text-muted mb-0 m-0">Plataforma integral de investigación, dashboard corporativo, reportería inteligente y análisis de datos en tiempo real.</p>
 						</div>
 					</div>
 				</div>
@@ -288,13 +303,19 @@
 			<!-- Logotipos de Clientes (Estilo Shopify/Apple) -->
 			<div class="client-logo-grid mt-5 pt-5 border-top border-light opacity-50">
 				<div class="px-4 py-2 opacity-50">
+					<h4 class="fw-bold mb-0">RESEARCH</h4>
+				</div>
+				<div class="px-4 py-2 opacity-50">
+					<h4 class="fw-bold mb-0">ARTIFICIAL INTELLIGENCE</h4>
+				</div>
+				<div class="px-4 py-2 opacity-50">
 					<h4 class="fw-bold mb-0">ENGINEERING</h4>
 				</div>
 				<div class="px-4 py-2 opacity-50">
 					<h4 class="fw-bold mb-0">SUPPLY CHAIN</h4>
 				</div>
 				<div class="px-4 py-2 opacity-50">
-					<h4 class="fw-bold mb-0">RESEARCH</h4>
+					<h4 class="fw-bold mb-0">HUMAN RESOURCES</h4>
 				</div>
 				<div class="px-4 py-2 opacity-50">
 					<h4 class="fw-bold mb-0">SALES</h4>
