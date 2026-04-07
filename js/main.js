@@ -111,49 +111,57 @@ document.querySelectorAll('.hover-accent').forEach(icon => {
 
 //040420261600 logica de demos multi-opcion
 const demoData = {
-    salud: {
-        icon: 'fa-heartbeat',
-        options: [
-            { type: 'Landing Page', title: 'Landing Page - Salud', desc: 'Diseño optimizado para captación de pacientes, agenda integrada por WhatsApp y presencia móvil perfecta.', url: 'demos/salud/landing.html' },
-            { type: 'SaaS Ultra', title: 'SaaS Ultra - Salud', desc: 'Plataforma integral de gestión médica. Expedientes electrónicos, sistema avanzado de citas y panel administrativo.', url: 'demos/saas-ultra.html?industry=salud' },
-            { type: 'Sitio Corporativo', title: 'Sitio Corporativo - Salud', desc: 'Presencia web completa para clínicas y hospitales. Múltiples secciones, directorio de especialistas y blog de salud.', url: 'demos/salud/corporativo.html' }
-        ]
-    },
-    construccion: {
-        icon: 'fa-hard-hat',
-        options: [
-            { type: 'Landing Page', title: 'Landing Page - Construcción', desc: 'Captura prospectos para tus desarrollos. Galería de proyectos, formulario de cotización y diseño robusto.', url: 'demos/construccion/landing.html' },
-            { type: 'SaaS Ultra', title: 'SaaS Ultra - Construcción', desc: 'Gestor de proyectos de obra. Seguimiento de avances, cotizaciones dinámicas y portal para clientes.', url: 'demos/saas-ultra.html?industry=construccion' },
-            { type: 'Sitio Corporativo', title: 'Sitio Corporativo - Construcción', desc: 'Portafolio completo de tu constructora. Secciones detalladas de servicios, certificaciones y casos de éxito.', url: 'demos/construccion/corporativo.html' }
-        ]
-    },
-    alimentos: {
-        icon: 'fa-utensils',
-        options: [
-            { type: 'Landing Page', title: 'Landing Page - Alimentos', desc: 'Ideal para promociones o menú digital básico. Botón directo a pedidos por WhatsApp.', url: 'demos/alimentos/landing.html' },
-            { type: 'SaaS Ultra', title: 'SaaS Ultra - Alimentos', desc: 'Sistema POS integral. Gestión de mesas, pedidos online, inventario en tiempo real y facturación.', url: 'demos/saas-ultra.html?industry=alimentos' },
-            { type: 'Sitio Corporativo', title: 'Sitio Corporativo - Alimentos', desc: 'La casa digital de tu restaurante. Menú interactivo, historia del chef, galería de platillos y reservaciones.', url: 'demos/alimentos/corporativo.html' }
-        ]
-    },
-    gimnasio: {
-        icon: 'fa-dumbbell',
-        options: [
-            { type: 'Landing Page', title: 'Landing Page - Gimnasio', desc: 'Atrae nuevos socios con promociones de inscripción. Horarios, clases destacadas y contacto rápido.', url: 'demos/gimnasio/landing.html' },
-            { type: 'SaaS Ultra', title: 'SaaS Ultra - Gimnasio', desc: 'Software de control de acceso. Membresías recurrentes, app para socios y retención automatizada.', url: 'demos/saas-ultra.html?industry=gimnasio' },
-            { type: 'Sitio Corporativo', title: 'Sitio Corporativo - Gimnasio', desc: 'Experiencia inmersiva de tu marca fitness. Perfiles de entrenadores, descripción de disciplinas y tienda de suplementos.', url: 'demos/gimnasio/corporativo.html' }
-        ]
-    },
     comercial: {
         icon: 'fa-store',
         options: [
-            { type: 'Landing Page', title: 'Landing Page - Comercial', desc: 'Campañas de captación B2B y prospección. Generación de leads calificados y presentación rápida de servicios.', url: 'demos/comercial/landing.html' },
-            { type: 'SaaS Ultra', title: 'SaaS Ultra - Comercial', desc: 'Plataforma ERP comercial. Gestión de inventarios, CRM para seguimiento de ventas y facturación.', url: 'demos/saas-ultra.html?industry=comercial' },
-            { type: 'Sitio Corporativo', title: 'Sitio Corporativo - Comercial', desc: 'Presencia empresarial. Catálogos digitales de productos, cultura institucional y canales B2B para inversores.', url: 'demos/comercial/corporativo.html' }
+            { type: 'Landing Page', title: 'Landing Page Comercial', desc: 'Campañas de captación B2C. Generación de ventas y distribución rápida de catálogos.', url: 'demos/comercial/landing.html' },
+            { type: 'SaaS Ultra', title: 'SaaS Punto de Venta', desc: 'Plataforma integral comercial. Gestión de inventarios, CRM comercial y facturación automatizada.', url: 'demos/saas-ultra.html?industry=comercial' },
+            { type: 'Sitio Corporativo', title: 'Sitio Corporativo B2B/B2C', desc: 'Presencia empresarial líder. Catálogos digitales de miles de productos y cultura corporativa.', url: 'demos/comercial/corporativo.html' }
+        ]
+    },
+    salud: {
+        icon: 'fa-heartbeat',
+        options: [
+            { type: 'Landing Page', title: 'Landing Page Médica', desc: 'Diseño optimizado para captación rápida de pacientes y agendamiento 100% enfocado vía WhatsApp.', url: 'demos/salud/landing.html' },
+            { type: 'SaaS Ultra', title: 'SaaS Expediente Clínico', desc: 'Plataforma hiper-segura de salud. Expedientes electrónicos, sistema avanzado de citas en la nube.', url: 'demos/saas-ultra.html?industry=salud' },
+            { type: 'Sitio Corporativo', title: 'Sitio Corporativo Salud', desc: 'Presencia web jerárquica para clínicas. Directorio corporativo de especialistas y hospital.', url: 'demos/salud/corporativo.html' }
+        ]
+    },
+    bienesRaices: {
+        icon: 'fa-hard-hat',
+        options: [
+            { type: 'Landing Page', title: 'Landing Inmobiliaria', desc: 'Captura prospectos para tus preventas o residenciales. Galerías hermosas enfocadas a mostrar valor.', url: 'demos/construccion/landing.html' },
+            { type: 'SaaS Ultra', title: 'SaaS Gestión de Obras', desc: 'Software interno. Control financiero de obras, métricas en vivo y portal inmobiliario.', url: 'demos/saas-ultra.html?industry=construccion' },
+            { type: 'Sitio Corporativo', title: 'Sitio Constructora o Inmuebles', desc: 'Muestra a gran escala todos tus desarrollos y avances de obra con excelente reputación.', url: 'demos/construccion/corporativo.html' }
+        ]
+    },
+    otro: {
+        icon: 'fa-cubes',
+        options: [
+            { type: 'Landing Page', title: 'Landing Page a Medida', desc: 'Embudos de alta conversión. Diseño versátil para cualquier nicho o producto.', url: 'demos/general/landing.html' },
+            { type: 'SaaS Ultra', title: 'Software Integral Exclusivo', desc: 'Plataforma administrativa personalizada con las reglas de negocio de tu industria.', url: 'demos/saas-ultra.html?industry=general' },
+            { type: 'Sitio Corporativo', title: 'Sitio Web Corporativo', desc: 'Catálogos, portafolios y páginas institucionales impecables para tu sector.', url: 'demos/general/corporativo.html' }
+        ]
+    },
+    deportes: {
+        icon: 'fa-dumbbell',
+        options: [
+            { type: 'Landing Page', title: 'Landing Promociones Fit', desc: 'Flujo enfocado en cobrar y suscribir nuevos usuarios a retos funcionales e inscripciones de gimnasio.', url: 'demos/gimnasio/landing.html' },
+            { type: 'SaaS Ultra', title: 'SaaS Deportivo a Medida', desc: 'Acceso corporativo vía celular para socios, bloqueo de morosos, reservas de canchas y control mensual.', url: 'demos/saas-ultra.html?industry=gimnasio' },
+            { type: 'Sitio Corporativo', title: 'Sitio Instalaciones y Coaches', desc: 'Fotografías amplias de instalaciones, especialidades y staff de coaching para generar reputación.', url: 'demos/gimnasio/corporativo.html' }
+        ]
+    },
+    alimentosBebidas: {
+        icon: 'fa-utensils',
+        options: [
+            { type: 'Landing Page', title: 'Landing Menu Digital', desc: 'Promoción dinámica que muestra el menú e invita agresivamente a realizar reservas y pedidos telefónicos.', url: 'demos/alimentos/landing.html' },
+            { type: 'SaaS Ultra', title: 'SaaS Restaurantero POS', desc: 'Centro de control integral. Comandas ligadas a la cocina, control de stock e historial de platillos.', url: 'demos/saas-ultra.html?industry=alimentos' },
+            { type: 'Sitio Corporativo', title: 'Sitio Experiencia Gastronómica', desc: 'Sitio atmosférico que narra la experiencia del chef, la historia de la cocina y el ambiente del salón.', url: 'demos/alimentos/corporativo.html' }
         ]
     }
 };
 
-let currentSector = 'salud';
+let currentSector = 'comercial';
 
 function updateDemoView() {
     if (!demoData[currentSector]) return;
