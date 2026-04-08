@@ -485,6 +485,27 @@
                         ['VTA-4088', 'Distribuidor Norte', 'Ayer', 'Entregado']
                     ]
                 }
+            },
+            manufactura: { 
+                title: 'IndusPro ERP Industrial', 
+                icon: 'fa-industry', 
+                accent: '#F97316',
+                kpis: ['Eficiencia OEE', 'Órdenes Activas', 'Mantenimiento Pend.', 'Paro de Línea (hrs)'], 
+                menu: [
+                    { label: 'Panel de Producción', icon: 'fa-industry' },
+                    { label: 'Control de Calidad', icon: 'fa-clipboard-check' },
+                    { label: 'Almacén & Suministros', icon: 'fa-boxes' },
+                    { label: 'Mantenimiento 4.0', icon: 'fa-tools' },
+                    { label: 'Logística de Salida', icon: 'fa-truck-loading' }
+                ],
+                table: {
+                    headers: ['Línea ID', 'Producto en Celda', 'Estado de Turno', 'Nivel de Alerta'],
+                    rows: [
+                        ['L-01 (Norte)', 'Estructura Aluminio X4', 'Operando', 'Normal'],
+                        ['L-03 (Sur)', 'Placa Electrónica V2', 'Paro Técnico', 'Crítico'],
+                        ['L-02 (Oeste)', 'Ensamblaje Robótico', 'Mantenimiento', 'Preventivo']
+                    ]
+                }
             }
         };
 

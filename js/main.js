@@ -136,11 +136,11 @@ const demoData = {
         ]
     },
     otro: {
-        icon: 'fa-cubes',
+        icon: 'fa-industry',
         options: [
-            { type: 'Landing Page', title: 'Landing Page a Medida', desc: 'Embudos de alta conversión. Diseño versátil para cualquier nicho o producto.', url: 'demos/general/landing.html' },
-            { type: 'SaaS Ultra', title: 'Software Integral Exclusivo', desc: 'Plataforma administrativa personalizada con las reglas de negocio de tu industria.', url: 'demos/saas-ultra.html?industry=general' },
-            { type: 'Sitio Corporativo', title: 'Sitio Web Corporativo', desc: 'Catálogos, portafolios y páginas institucionales impecables para tu sector.', url: 'demos/general/corporativo.html' }
+            { type: 'Landing Page', title: 'Manufactura Inteligente', desc: 'Optimización industrial 4.0. Células robóticas, monitoreo predictivo y líneas automatizadas.', url: 'demos/manufactura/landing.html' },
+            { type: 'SaaS Ultra', title: 'ERP Industrial a Medida', desc: 'Control total de la cadena de suministro, gestión de fallos en planta y analítica de producción.', url: 'demos/saas-ultra.html?industry=manufactura' },
+            { type: 'Sitio Corporativo', title: 'Corporativo Industrial', desc: 'Presencia global para grandes plantas. Portafolio de maquinaria, certificaciones ISO e historia.', url: 'demos/manufactura/corporativo.html' }
         ]
     },
     deportes: {

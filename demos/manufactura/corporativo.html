@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>IndusPro Group - Liderazgo Industrial Global</title>
+    <meta name="description" content="Holdign internacional especializado en infraestructura industrial, robótica avanzada y gestión de cadena de suministro.">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --manu-primary: #F97316; /* Industrial Orange */
+            --manu-dark: #0F172A; /* Deep Space Blue */
+            --manu-gray: #1E293B; /* Slate 800 */
+            --manu-light: #F8FAFC;
+            --text-muted: #64748B;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--manu-dark);
+            background-color: white;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+        }
+
+        /* Topbar */
+        .corp-topbar {
+            background-color: var(--manu-dark);
+            padding: 8px 0;
+            font-size: 0.75rem;
+            color: #94A3B8;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        /* Navbar */
+        .corp-nav {
+            background-color: white;
+            padding: 18px 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s;
+        }
+        .corp-brand {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            font-size: 1.8rem;
+            color: var(--manu-dark);
+            text-decoration: none;
+            letter-spacing: -1px;
+        }
+        .corp-brand span { color: var(--manu-primary); }
+        
+        .corp-nav .nav-link {
+            color: var(--manu-dark);
+            font-weight: 600;
+            margin: 0 15px;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+        .corp-nav .nav-link:hover { color: var(--manu-primary); }
+
+        /* Hero */
+        .corp-hero {
+            position: relative;
+            padding: 140px 0 100px;
+            background: url("assets/corp_hero.png") center center/cover no-repeat;
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            color: white;
+        }
+        .corp-hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(90deg, rgba(15, 23, 42, 0.95), rgba(15, 23, 42, 0.4));
+        }
+
+        .hero-title {
+            font-size: 4rem;
+            line-height: 1.1;
+            margin-bottom: 25px;
+            letter-spacing: -2px;
+        }
+
+        /* Stats Section */
+        .corp-stats {
+            background-color: var(--manu-light);
+            padding: 80px 0;
+            border-bottom: 1px solid #E2E8F0;
+        }
+        .stat-card {
+            padding: 30px;
+            text-align: center;
+        }
+        .stat-number {
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: var(--manu-primary);
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1;
+        }
+        .stat-label {
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--text-muted);
+            margin-top: 15px;
+        }
+
+        /* Divisions Section */
+        .division-card {
+            background-color: white;
+            border: 1px solid #E2E8F0;
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.4s;
+            height: 100%;
+        }
+        .division-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 60px -15px rgba(0,0,0,0.1);
+            border-color: var(--manu-primary);
+        }
+        .division-img {
+            height: 250px;
+            width: 100%;
+            object-fit: cover;
+        }
+        .division-content {
+            padding: 40px;
+        }
+
+        /* B2B Strategic Section */
+        .strategic-section {
+            background-color: var(--manu-dark);
+            color: white;
+            padding: 100px 0;
+        }
+        .strategic-img {
+            border-radius: 30px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        }
+
+        /* Footer */
+        .corp-footer {
+            background-color: #0B0E14;
+            color: #94A3B8;
+            padding: 100px 0 50px;
+        }
+        .footer-logo {
+            color: white;
+            font-size: 2rem;
+            font-weight: 900;
+            margin-bottom: 25px;
+            display: block;
+        }
+        .footer-link {
+            color: #94A3B8;
+            text-decoration: none;
+            transition: color 0.3s;
+            display: block;
+            margin-bottom: 12px;
+            font-size: 0.9rem;
+        }
+        .footer-link:hover { color: white; }
+
+        /* Buttons */
+        .btn-manu-solid {
+            background-color: var(--manu-primary);
+            color: white;
+            padding: 16px 40px;
+            font-weight: 700;
+            border-radius: 12px;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s;
+            border: none;
+        }
+        .btn-manu-solid:hover {
+            background-color: #EA580C;
+            transform: translateY(-3px);
+            color: white;
+        }
+
+        .btn-manu-outline {
+            border: 2px solid white;
+            color: white;
+            padding: 14px 40px;
+            font-weight: 700;
+            border-radius: 12px;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s;
+        }
+        .btn-manu-outline:hover {
+            background-color: white;
+            color: var(--manu-dark);
+        }
+
+        /* Return Control */
+        .back-to-arhez {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            background: white;
+            color: var(--manu-dark);
+            padding: 12px 24px;
+            border-radius: 50px;
+            z-index: 2000;
+            font-weight: 800;
+            text-transform: uppercase;
+            text-decoration: none;
+            font-size: 0.8rem;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            border: 2px solid var(--manu-dark);
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+        }
+        .back-to-arhez:hover {
+            background: var(--manu-dark);
+            color: white;
+            transform: scale(1.05);
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- 0804262240 - Creación de Sitio Corporativo para Sector Manufactura (IndusPro Group) -->
+
+    <a href="../../index.html#demos" class="back-to-arhez"><i class="fas fa-arrow-left me-2"></i>Volver al Menú</a>
+
+    <!-- Topbar -->
+    <div class="corp-topbar d-none d-md-block">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <span class="me-4"><i class="fas fa-chart-line me-2" style="color: var(--manu-primary);"></i> IPG (NASDAQ): $184.20 (+1.2%)</span>
+                    <span><i class="fas fa-globe me-2"></i> Latam | USA | EU</span>
+                </div>
+                <div class="col-md-6 text-end">
+                    <a href="#" class="text-decoration-none text-reset me-4">Relación con Inversores</a>
+                    <a href="#" class="text-decoration-none text-reset">Sostenibilidad</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg corp-nav sticky-top">
+        <div class="container">
+            <a class="corp-brand" href="#">INDUS<span>PRO</span> GROUP</a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navCorp">
+                <i class="fas fa-bars text-dark fs-2"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navCorp">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="#">Grupo</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#divisiones">Divisiones</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#estrategia">Estrategia</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Gobierno Corp.</a></li>
+                </ul>
+                <a href="https://wa.me/524272777153" class="btn-manu-solid ms-lg-4 py-2 px-4 shadow-none" style="font-size: 0.8rem;">CONTACTO B2B</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <header class="corp-hero">
+        <div class="container position-relative" style="z-index: 5;">
+            <div class="row">
+                <div class="col-lg-10 col-xl-8">
+                    <span class="d-inline-block mb-3 fw-bold text-uppercase ls-2" style="color: var(--manu-primary);">Excelencia Operativa a Escala Global</span>
+                    <h1 class="hero-title">IMPULSANDO LA INFRAESTRUCTURA DEL MAÑANA.</h1>
+                    <p class="lead mb-5 opacity-90" style="max-width: 700px; font-size: 1.3rem;">Gestionamos un portafolio diversificado de empresas industriales líderes, comprometidas con la innovación tecnológica y el crecimiento sostenible en los mercados emergentes.</p>
+                    <div class="d-flex flex-wrap gap-4">
+                        <a href="#divisiones" class="btn-manu-solid">Nuestras Divisiones</a>
+                        <a href="#" class="btn-manu-outline">Reporte Anual 2026</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Stats -->
+    <section class="corp-stats">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="stat-card">
+                        <div class="stat-number">45</div>
+                        <div class="stat-label">Plantas Globales</div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="stat-card">
+                        <div class="stat-number">12k</div>
+                        <div class="stat-label">Colaboradores</div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="stat-card">
+                        <div class="stat-number">1.2B</div>
+                        <div class="stat-label">Ingresos Anuales ($)</div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="stat-card">
+                        <div class="stat-number">85%</div>
+                        <div class="stat-label">Procesos Automatizados</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Divisions -->
+    <section id="divisiones" class="py-5 my-5">
+        <div class="container py-lg-5">
+            <div class="text-center mb-5 pb-5">
+                <h2 class="display-5 fw-bold mb-3">CONSOLIDANDO INDUSTRIAS</h2>
+                <p class="text-muted mx-auto" style="max-width: 600px;">Nuestras unidades estratégicas operan bajo los más altos estándares de eficiencia y seguridad, liderando sus respectivos sectores.</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <div class="division-card">
+                        <img src="assets/automation.png" class="division-img" alt="Advanced Robotics">
+                        <div class="division-content">
+                            <h4 class="fw-bold mb-3">Robótica Avanzada</h4>
+                            <p class="text-muted mb-4 small">Líderes en diseño de células automatizadas y software de control predictivo para el sector automotriz y aeroespacial.</p>
+                            <a href="#" class="text-dark fw-bold text-decoration-none small">EXPLORAR DIVISIÓN <i class="fas fa-chevron-right ms-2 fs-7"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="division-card">
+                        <img src="assets/hero.png" class="division-img" alt="Infrastructure">
+                        <div class="division-content">
+                            <h4 class="fw-bold mb-3">Infraestructura Crítica</h4>
+                            <p class="text-muted mb-4 small">Desarrollo de naves industriales inteligentes y centros de logística de última generación con certificación LEED.</p>
+                            <a href="#" class="text-dark fw-bold text-decoration-none small">EXPLORAR DIVISIÓN <i class="fas fa-chevron-right ms-2 fs-7"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="division-card">
+                        <img src="assets/logistics.png" class="division-img" alt="Supply Chain">
+                        <div class="division-content">
+                            <h4 class="fw-bold mb-3">Supply Chain Tech</h4>
+                            <p class="text-muted mb-4 small">Gestión optimizada por IA para la cadena de suministro global, reduciendo tiempos de entrega y huella de carbono.</p>
+                            <a href="#" class="text-dark fw-bold text-decoration-none small">EXPLORAR DIVISIÓN <i class="fas fa-chevron-right ms-2 fs-7"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Strategy Section -->
+    <section id="estrategia" class="strategic-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-5 mb-lg-0 pe-lg-5 text-center text-lg-start">
+                    <h2 class="display-5 fw-bold mb-4">COMPROMETIDOS CON LA VISIÓN 2030</h2>
+                    <p class="lead mb-4 opacity-75">Nuestra estrategia se basa en tres pilares fundamentales para garantizar la longevidad del grupo y el valor para nuestros accionistas.</p>
+                    
+                    <div class="d-flex align-items-start mb-4">
+                        <div class="bg-primary p-3 rounded-circle me-3" style="background-color: var(--manu-primary) !important;"><i class="fas fa-atom text-white"></i></div>
+                        <div class="text-start">
+                            <h5 class="fw-bold">Innovación Disruptiva</h5>
+                            <p class="small opacity-75 mb-0">Inversión anual del 15% de EBIDTA en I+D para nuevas tecnologías de manufactura.</p>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-start mb-5">
+                        <div class="bg-primary p-3 rounded-circle me-3" style="background-color: var(--manu-primary) !important;"><i class="fas fa-leaf text-white"></i></div>
+                        <div class="text-start">
+                            <h5 class="fw-bold">Operación Cero Emisiones</h5>
+                            <p class="small opacity-75 mb-0">Transformación de todas nuestras plantas a energía 100% renovable para el cierre de la década.</p>
+                        </div>
+                    </div>
+                    <a href="https://wa.me/524272777153" class="btn-manu-solid">Alianzas Estratégicas</a>
+                </div>
+                <div class="col-lg-6">
+                    <img src="assets/quality.png" class="img-fluid strategic-img" alt="Operations Excellence">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="corp-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-5 mb-lg-0">
+                    <span class="footer-logo">INDUS<span style="color: var(--manu-primary);">PRO</span> GROUP</span>
+                    <p class="mb-5" style="max-width: 300px;">Holding líder en transformación industrial y gestión de activos tecnológicos a nivel global.</p>
+                    <div class="d-flex gap-3">
+                        <a href="#" class="btn btn-outline-light rounded-circle"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="btn btn-outline-light rounded-circle"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="btn btn-outline-light rounded-circle"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
+                    <h5 class="text-white fw-bold mb-4">Inversores</h5>
+                    <a href="#" class="footer-link">Resultados Trimestrales</a>
+                    <a href="#" class="footer-link">Acción IPG</a>
+                    <a href="#" class="footer-link">Hechos Relevantes</a>
+                    <a href="#" class="footer-link">Calendario Financiero</a>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
+                    <h5 class="text-white fw-bold mb-4">Gobierno</h5>
+                    <a href="#" class="footer-link">Junta Directiva</a>
+                    <a href="#" class="footer-link">Código Ético</a>
+                    <a href="#" class="footer-link">Cumplimiento</a>
+                    <a href="#" class="footer-link">Proveedores</a>
+                </div>
+                <div class="col-lg-4 col-md-4">
+                    <h5 class="text-white fw-bold mb-4">Relación Global</h5>
+                    <p class="small mb-4">Para consultas corporativas, medios o propuestas de adquisición, contacte a nuestro equipo de Relaciones Externas.</p>
+                    <a href="https://wa.me/524272777153" class="btn-manu-solid w-100 text-center"><i class="fab fa-whatsapp me-2 fs-5"></i> LinkedIn Corporate Hub</a>
+                </div>
+            </div>
+            <div class="row mt-5 pt-5 border-top border-secondary border-opacity-25 align-items-center">
+                <div class="col-md-6 mb-3 mb-md-0 text-center text-md-start">
+                    <small>&copy; 2026 IndusPro Group B.V. Todos los derechos reservados.</small>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <small>Diseñado por <span class="text-white fw-bold">Arhez Tech</span> | Transformación Digital a Medida</small>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
