@@ -262,6 +262,13 @@
 			<i class="fas fa-home"></i> Inicio
 		</button>
 	</div>
+	
+	<!-- Botón Volver al Sitio -->
+	<div id="exit-control" style="position: fixed; top: 25px; right: 25px; z-index: 1000;">
+		<a href="index.html" class="nav-btn" style="text-decoration: none; display: flex; align-items: center; gap: 8px; color: var(--primary-dark); border-color: rgba(6, 7, 27, 0.1); background: rgba(6, 7, 27, 0.05);">
+			<i class="fas fa-arrow-left"></i> Regresar al Sitio
+		</a>
+	</div>
 
 	<!-- Widget de Resumen Footer -->
 	<div class="summary-panel" id="summary-panel">
@@ -570,10 +577,21 @@
 
 		// Listener: Muestra menú superior solo si NO es la portada (Slide 0)
 		Reveal.on('slidechanged', event => {
+			const navControls = document.getElementById('nav-controls');
+			const exitBtn = document.getElementById('exit-control').querySelector('.nav-btn');
+
 			if(event.indexh > 0) {
-				document.getElementById('nav-controls').style.display = 'flex';
+				navControls.style.display = 'flex';
+				// Estilo para fondos oscuros
+				exitBtn.style.color = 'rgba(255,255,255,0.7)';
+				exitBtn.style.borderColor = 'rgba(255,255,255,0.1)';
+				exitBtn.style.background = 'rgba(255,255,255,0.05)';
 			} else {
-				document.getElementById('nav-controls').style.display = 'none';
+				navControls.style.display = 'none';
+				// Estilo para la portada (fondo blanco)
+				exitBtn.style.color = 'var(--primary-dark)';
+				exitBtn.style.borderColor = 'rgba(6, 7, 27, 0.1)';
+				exitBtn.style.background = 'rgba(6, 7, 27, 0.05)';
 			}
 		});
 
