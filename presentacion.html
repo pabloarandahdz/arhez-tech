@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -8,28 +9,36 @@
 	<!-- Reveal.js CSS -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reset.min.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.css">
-	
+
 	<!-- Reveal.js Theme -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/theme/black.min.css" id="theme">
 
 	<!-- Bootstrap Icons & Fontawesome -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-	<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-	
+	<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+		rel="stylesheet">
+
 	<style>
 		:root {
 			--primary-dark: #06071B;
 			--accent-green: #8DEE12;
 		}
-		
+
 		.reveal {
 			font-family: 'Plus Jakarta Sans', sans-serif;
 			background: var(--primary-dark);
 		}
-		
-		.text-accent { color: var(--accent-green) !important; }
-		
-		.reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5, .reveal h6 {
+
+		.text-accent {
+			color: var(--accent-green) !important;
+		}
+
+		.reveal h1,
+		.reveal h2,
+		.reveal h3,
+		.reveal h4,
+		.reveal h5,
+		.reveal h6 {
 			font-family: 'Plus Jakarta Sans', sans-serif;
 			font-weight: 700;
 			text-transform: none;
@@ -39,23 +48,25 @@
 		.reveal .slide-background {
 			background: radial-gradient(circle at top right, rgba(141, 238, 18, 0.08) 0%, var(--primary-dark) 80%);
 		}
-		
+
 		/* Inputs y Botones */
-		input[type="text"], input[type="email"], input[type="tel"] {
+		input[type="text"],
+		input[type="email"],
+		input[type="tel"] {
 			width: 100%;
 			max-width: 500px;
 			padding: 15px 25px;
 			font-size: 1.2rem;
 			border-radius: 50px;
 			border: 2px solid rgba(255, 255, 255, 0.2);
-			background: rgba(0,0,0,0.5);
+			background: rgba(0, 0, 0, 0.5);
 			color: white;
 			font-family: 'Plus Jakarta Sans', sans-serif;
 			margin-bottom: 20px;
 			transition: all 0.3s ease;
 			text-align: center;
 		}
-		
+
 		input:focus {
 			outline: none;
 			border-color: var(--accent-green);
@@ -75,7 +86,7 @@
 			transition: all 0.3s ease;
 			display: inline-block;
 		}
-		
+
 		.btn-primary:hover {
 			transform: scale(1.05);
 			box-shadow: 0 10px 20px rgba(141, 238, 18, 0.2);
@@ -92,8 +103,8 @@
 		}
 
 		.option-card {
-			background: rgba(255,255,255,0.05);
-			border: 2px solid rgba(255,255,255,0.1);
+			background: rgba(255, 255, 255, 0.05);
+			border: 2px solid rgba(255, 255, 255, 0.1);
 			border-radius: 12px;
 			padding: 20px 15px;
 			cursor: pointer;
@@ -111,42 +122,49 @@
 
 		/* Grid minificado para la sección de industria */
 		.options-grid.sm-grid .option-card {
-			min-width: 150px; /* Tarjetas más pequeñas */
+			min-width: 150px;
+			/* Tarjetas más pequeñas */
 			padding: 15px 10px;
 			flex-basis: 30%;
 		}
+
 		.options-grid.sm-grid .option-card i {
-			font-size: 1.5rem !important; /* Íconos más chicos */
+			font-size: 1.5rem !important;
+			/* Íconos más chicos */
 			margin-bottom: 8px !important;
 		}
+
 		.options-grid.sm-grid .option-card span {
 			font-size: 1rem !important;
 		}
-		
+
 		/* Contenedor escrolleable para lista larga de opciones */
 		.scrollable-options {
 			max-height: 50vh;
 			overflow-y: auto;
 			padding: 15px;
 			border-radius: 15px;
-			border: 1px solid rgba(255,255,255,0.05);
-			background: rgba(0,0,0,0.15);
+			border: 1px solid rgba(255, 255, 255, 0.05);
+			background: rgba(0, 0, 0, 0.15);
 		}
-		
+
 		/* Para que el scrollbar se vea estético */
 		.scrollable-options::-webkit-scrollbar {
 			width: 8px;
 		}
+
 		.scrollable-options::-webkit-scrollbar-track {
-			background: rgba(255, 255, 255, 0.05); 
+			background: rgba(255, 255, 255, 0.05);
 			border-radius: 10px;
 		}
+
 		.scrollable-options::-webkit-scrollbar-thumb {
-			background: rgba(141, 238, 18, 0.3); 
+			background: rgba(141, 238, 18, 0.3);
 			border-radius: 10px;
 		}
+
 		.scrollable-options::-webkit-scrollbar-thumb:hover {
-			background: var(--accent-green); 
+			background: var(--accent-green);
 		}
 
 		/* Etiquetas de precio y servicio especial */
@@ -163,7 +181,7 @@
 		}
 
 		.accent-card {
-			border-color: var(--accent-green); 
+			border-color: var(--accent-green);
 			background: rgba(141, 238, 18, 0.05);
 		}
 
@@ -188,11 +206,12 @@
 			padding: 15px 30px;
 			z-index: 100 !important;
 			color: white;
-			display: none; 
+			display: none;
 			font-family: 'Plus Jakarta Sans', sans-serif;
-			box-shadow: 0 -10px 30px rgba(0,0,0,0.5);
+			box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.5);
 			transition: all 0.3s ease;
 		}
+
 		.summary-container {
 			display: flex;
 			justify-content: space-between;
@@ -201,31 +220,91 @@
 			margin: 0 auto;
 			gap: 20px;
 		}
-		.summary-item { 
-			font-size: 0.9rem; flex: 1; text-align: center; border-right: 1px solid rgba(255,255,255,0.1);
+
+		.summary-item {
+			font-size: 0.9rem;
+			flex: 1;
+			text-align: center;
+			border-right: 1px solid rgba(255, 255, 255, 0.1);
 		}
-		.summary-item:last-of-type { border-right: none; }
-		.summary-label { color: rgba(255,255,255,0.5); display: block; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px;}
-		.summary-val { font-weight: 600; font-size: 1rem; color: white;}
-		
-		.summary-price-container { flex: 1.2; text-align: right; }
-		.summary-price-container span { color: rgba(255,255,255,0.5); font-size: 0.8rem; text-transform: uppercase; margin-right: 10px;}
-		.summary-price { font-size: 1.6rem; font-weight: 800; color: var(--accent-green); vertical-align: middle;}
+
+		.summary-item:last-of-type {
+			border-right: none;
+		}
+
+		.summary-label {
+			color: rgba(255, 255, 255, 0.5);
+			display: block;
+			font-size: 0.75rem;
+			text-transform: uppercase;
+			letter-spacing: 1px;
+		}
+
+		.summary-val {
+			font-weight: 600;
+			font-size: 1rem;
+			color: white;
+		}
+
+		.summary-price-container {
+			flex: 1.2;
+			text-align: right;
+		}
+
+		.summary-price-container span {
+			color: rgba(255, 255, 255, 0.5);
+			font-size: 0.8rem;
+			text-transform: uppercase;
+			margin-right: 10px;
+		}
+
+		.summary-price {
+			font-size: 1.6rem;
+			font-weight: 800;
+			color: var(--accent-green);
+			vertical-align: middle;
+		}
 
 		@media (max-width: 768px) {
-			.summary-panel { padding: 10px; }
-			.summary-container { flex-wrap: wrap; gap: 5px;}
-			.summary-item { border-right: none; flex: 45%; text-align: left; margin-bottom: 5px;}
-			.summary-price-container { flex: 100%; text-align: center; border-top: 1px dotted rgba(255,255,255,0.2); padding-top: 8px; margin-top: 5px;}
-			.summary-price { font-size: 1.3rem;}
-			.options-grid.sm-grid .option-card { flex-basis: 40%; min-width: 130px; }
+			.summary-panel {
+				padding: 10px;
+			}
+
+			.summary-container {
+				flex-wrap: wrap;
+				gap: 5px;
+			}
+
+			.summary-item {
+				border-right: none;
+				flex: 45%;
+				text-align: left;
+				margin-bottom: 5px;
+			}
+
+			.summary-price-container {
+				flex: 100%;
+				text-align: center;
+				border-top: 1px dotted rgba(255, 255, 255, 0.2);
+				padding-top: 8px;
+				margin-top: 5px;
+			}
+
+			.summary-price {
+				font-size: 1.3rem;
+			}
+
+			.options-grid.sm-grid .option-card {
+				flex-basis: 40%;
+				min-width: 130px;
+			}
 		}
 
 		/* Botones de Navegación Global */
 		.nav-btn {
-			background: rgba(255,255,255,0.05);
-			border: 1px solid rgba(255,255,255,0.1);
-			color: rgba(255,255,255,0.7);
+			background: rgba(255, 255, 255, 0.05);
+			border: 1px solid rgba(255, 255, 255, 0.1);
+			color: rgba(255, 255, 255, 0.7);
 			padding: 10px 18px;
 			border-radius: 50px;
 			font-size: 0.95rem;
@@ -234,6 +313,7 @@
 			transition: all 0.3s ease;
 			backdrop-filter: blur(10px);
 		}
+
 		.nav-btn:hover {
 			background: rgba(141, 238, 18, 0.2);
 			color: var(--accent-green);
@@ -242,15 +322,45 @@
 
 		/* Cards de Metodología */
 		.meth-card {
-			background: white; border: 2px solid white; border-radius: 12px; padding: 15px 10px; flex: 1 1 180px; max-width: 220px;
-			transition: all 0.3s ease; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; cursor: default;
+			background: white;
+			border: 2px solid white;
+			border-radius: 12px;
+			padding: 15px 10px;
+			flex: 1 1 180px;
+			max-width: 220px;
+			transition: all 0.3s ease;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: flex-start;
+			cursor: default;
 		}
-		.meth-card:hover { transform: translateY(-5px) scale(1.03); box-shadow: 0 10px 20px rgba(141, 238, 18, 0.3); background: var(--accent-green); border-color: var(--accent-green); }
-		.meth-card h1 { color: rgba(6, 7, 27, 0.15) !important; margin: 0; font-size: 2.8rem !important; line-height: 1; }
-		.meth-card h5 { margin-top: 8px; margin-bottom: 5px; color: var(--primary-dark) !important; font-weight: 800; font-size: 1.15rem !important; word-wrap: break-word; }
 
+		.meth-card:hover {
+			transform: translateY(-5px) scale(1.03);
+			box-shadow: 0 10px 20px rgba(141, 238, 18, 0.3);
+			background: var(--accent-green);
+			border-color: var(--accent-green);
+		}
+
+		.meth-card h1 {
+			color: rgba(6, 7, 27, 0.15) !important;
+			margin: 0;
+			font-size: 2.8rem !important;
+			line-height: 1;
+		}
+
+		.meth-card h5 {
+			margin-top: 8px;
+			margin-bottom: 5px;
+			color: var(--primary-dark) !important;
+			font-weight: 800;
+			font-size: 1.15rem !important;
+			word-wrap: break-word;
+		}
 	</style>
 </head>
+
 <body>
 
 	<!-- Controles Nativos Superiores -->
@@ -262,10 +372,11 @@
 			<i class="fas fa-home"></i> Inicio
 		</button>
 	</div>
-	
+
 	<!-- Botón Volver al Sitio -->
 	<div id="exit-control" style="position: fixed; top: 25px; right: 25px; z-index: 1000;">
-		<a href="index.html" class="nav-btn" style="text-decoration: none; display: flex; align-items: center; gap: 8px; color: var(--primary-dark); border-color: rgba(6, 7, 27, 0.1); background: rgba(6, 7, 27, 0.05);">
+		<a href="index.html" class="nav-btn"
+			style="text-decoration: none; display: flex; align-items: center; gap: 8px; color: var(--primary-dark); border-color: rgba(6, 7, 27, 0.1); background: rgba(6, 7, 27, 0.05);">
 			<i class="fas fa-arrow-left"></i> Regresar al Sitio
 		</a>
 	</div>
@@ -297,19 +408,27 @@
 
 	<div class="reveal">
 		<div class="slides">
-			
+
 			<!-- Slide 1: Portada (Fondo Blanco con Efectos Blur Glassmorphism) -->
 			<section data-background-color="#ffffff">
 				<!-- Shapes Blur detrás -->
-				<div style="position: absolute; top: -20vh; left: -10vw; width: 50vw; height: 50vw; background: rgba(56, 189, 248, 0.25); filter: blur(100px); border-radius: 50%; pointer-events: none; z-index: 0;"></div>
-				<div style="position: absolute; bottom: -20vh; right: -10vw; width: 50vw; height: 50vw; background: rgba(141, 238, 18, 0.25); filter: blur(100px); border-radius: 50%; pointer-events: none; z-index: 0;"></div>
-				
+				<div
+					style="position: absolute; top: -20vh; left: -10vw; width: 50vw; height: 50vw; background: rgba(56, 189, 248, 0.25); filter: blur(100px); border-radius: 50%; pointer-events: none; z-index: 0;">
+				</div>
+				<div
+					style="position: absolute; bottom: -20vh; right: -10vw; width: 50vw; height: 50vw; background: rgba(141, 238, 18, 0.25); filter: blur(100px); border-radius: 50%; pointer-events: none; z-index: 0;">
+				</div>
+
 				<!-- Contenido frontal -->
 				<div style="position: relative; z-index: 1;">
-					<img src="assets/img/logotipo.png" alt="Arhez Tech" style="max-height: 80px; background: transparent; border: none; box-shadow: none; margin-bottom: 40px;">
-					<h2 style="font-size: 3.5rem; color: var(--primary-dark);">Crea el futuro de<br>tu empresa <span class="text-accent" style="color: #65a30d !important;">hoy.</span></h2>
-					<p style="color: rgba(6, 7, 27, 0.6); font-size: 1.3rem; margin-bottom: 40px; font-weight: 500;">Presentación Ejecutiva y Cotizador Inteligente.</p>
-					<button class="btn-primary" onclick="Reveal.next()">Comenzar Recorrido <i class="fas fa-arrow-right ms-2"></i></button>
+					<img src="assets/img/logotipo.png" alt="Arhez Tech"
+						style="max-height: 80px; background: transparent; border: none; box-shadow: none; margin-bottom: 40px;">
+					<h2 style="font-size: 3.5rem; color: var(--primary-dark);">Crea el futuro de<br>tu empresa <span
+							class="text-accent" style="color: #65a30d !important;">hoy.</span></h2>
+					<p style="color: rgba(6, 7, 27, 0.6); font-size: 1.3rem; margin-bottom: 40px; font-weight: 500;">
+						Presentación Ejecutiva y Cotizador Inteligente.</p>
+					<button class="btn-primary" onclick="Reveal.next()">Comenzar Recorrido <i
+							class="fas fa-arrow-right ms-2"></i></button>
 				</div>
 			</section>
 
@@ -318,138 +437,181 @@
 				<h3>Nuestra <span class="text-accent">Misión</span></h3>
 				<div class="slide-card-dark">
 					<p style="font-size: 1.5rem; line-height: 1.6; font-style: italic;">
-						"Impulsar la transformación digital de nuestros clientes con soluciones tecnológicas integrales, diseñadas para escalar negocios, optimizar procesos y eliminar barreras técnicas con calidad garantizada."
+						"Impulsar la transformación digital de nuestros clientes con soluciones tecnológicas integrales,
+						diseñadas para escalar negocios, optimizar procesos y eliminar barreras técnicas con calidad
+						garantizada."
 					</p>
 				</div>
-				<button class="btn-primary" style="background: rgba(255,255,255,0.1); color: white;" onclick="Reveal.next()">Conocer Metodología <i class="fas fa-arrow-right ms-2"></i></button>
+				<button class="btn-primary" style="background: rgba(255,255,255,0.1); color: white;"
+					onclick="Reveal.next()">Conocer Metodología <i class="fas fa-arrow-right ms-2"></i></button>
 			</section>
 
 			<!-- Slide 3: Metodología -->
 			<section>
 				<h3>Nuestra <span class="text-accent">Metodología</span></h3>
-				<p style="color: rgba(255,255,255,0.6); font-size: 1.1rem; margin-bottom: 40px;">Flujo de trabajo estructurado para garantizar resultados.</p>
-				
+				<p style="color: rgba(255,255,255,0.6); font-size: 1.1rem; margin-bottom: 40px;">Flujo de trabajo
+					estructurado para garantizar resultados.</p>
+
 				<div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
 					<div class="meth-card">
 						<h1>01</h1>
 						<h5>Diagnóstico</h5>
-						<p style="font-size: 0.85rem; color: rgba(6, 7, 27, 0.8); margin-top: 5px; line-height: 1.4;">Analizamos tu modelo de negocio y procesos actuales para identificar necesidades técnicas reales.</p>
+						<p style="font-size: 0.85rem; color: rgba(6, 7, 27, 0.8); margin-top: 5px; line-height: 1.4;">
+							Analizamos tu modelo de negocio y procesos actuales para identificar necesidades técnicas
+							reales.</p>
 					</div>
 					<div class="meth-card">
 						<h1>02</h1>
 						<h5>Arquitectura</h5>
-						<p style="font-size: 0.85rem; color: rgba(6, 7, 27, 0.8); margin-top: 5px; line-height: 1.4;">Diseñamos meticulosamente la estructura del sistema, bases de datos y la interfaz gráfica.</p>
+						<p style="font-size: 0.85rem; color: rgba(6, 7, 27, 0.8); margin-top: 5px; line-height: 1.4;">
+							Diseñamos meticulosamente la estructura del sistema, bases de datos y la interfaz gráfica.
+						</p>
 					</div>
 					<div class="meth-card">
 						<h1>03</h1>
 						<h5>Construcción</h5>
-						<p style="font-size: 0.85rem; color: rgba(6, 7, 27, 0.8); margin-top: 5px; line-height: 1.4;">Programamos tu solución con metodologías ágiles, produciendo código seguro y altamente escalable.</p>
+						<p style="font-size: 0.85rem; color: rgba(6, 7, 27, 0.8); margin-top: 5px; line-height: 1.4;">
+							Programamos tu solución con metodologías ágiles, produciendo código seguro y altamente
+							escalable.</p>
 					</div>
 					<div class="meth-card">
 						<h1>04</h1>
 						<h5>Despliegue</h5>
-						<p style="font-size: 0.85rem; color: rgba(6, 7, 27, 0.8); margin-top: 5px; line-height: 1.4;">Implementamos en la nube, lanzamos en producción y garantizamos cobertura con soporte técnico continuo.</p>
+						<p style="font-size: 0.85rem; color: rgba(6, 7, 27, 0.8); margin-top: 5px; line-height: 1.4;">
+							Implementamos en la nube, lanzamos en producción y garantizamos cobertura con soporte
+							técnico continuo.</p>
 					</div>
 				</div>
-				<button class="btn-primary" onclick="Reveal.next()" style="margin-top: 40px;">Ver Roadmap 2026-2030 <i class="fas fa-calendar-alt ms-2"></i></button>
+				<button class="btn-primary" onclick="Reveal.next()" style="margin-top: 40px;">Ver Roadmap 2026-2030 <i
+						class="fas fa-calendar-alt ms-2"></i></button>
 			</section>
 
 			<!-- Slide 4: Roadmap Tecnológico -->
 			<section>
 				<h3>Nuestro <span class="text-accent">Roadmap</span> Tecnológico</h3>
-				<p style="color: rgba(255,255,255,0.6); font-size: 1.1rem; margin-bottom: 20px;">Sistemas proyectados para liderar cada industria.</p>
-				
+				<p style="color: rgba(255,255,255,0.6); font-size: 1.1rem; margin-bottom: 20px;">Sistemas proyectados
+					para liderar cada industria.</p>
+
 				<div class="scrollable-options" style="max-height: 55vh; padding: 20px;">
-					<div style="display: flex; flex-direction: column; gap: 15px; max-width: 800px; margin: 0 auto; text-align: left;">
+					<div
+						style="display: flex; flex-direction: column; gap: 15px; max-width: 800px; margin: 0 auto; text-align: left;">
 						<!-- 2026 -->
-						<div style="background: rgba(255,255,255,0.03); border-left: 4px solid var(--accent-green); padding: 12px 20px; border-radius: 0 12px 12px 0;">
-							<div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
-								<h4 style="margin: 0; color: white; font-size: 1.1rem;">Arhez Shop / Sports / Analytics / Hub</h4>
-								<span class="price-tag" style="margin: 0; font-size: 0.8rem; padding: 2px 10px;">2026</span>
+						<div
+							style="background: rgba(255,255,255,0.03); border-left: 4px solid var(--accent-green); padding: 12px 20px; border-radius: 0 12px 12px 0;">
+							<div
+								style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
+								<h4 style="margin: 0; color: white; font-size: 1.1rem;">Arhez Shop / Sports / Analytics
+									/ Hub</h4>
+								<span class="price-tag"
+									style="margin: 0; font-size: 0.8rem; padding: 2px 10px;">2026</span>
 							</div>
-							<p style="margin: 0; font-size: 0.85rem; color: rgba(255,255,255,0.5);">Ecosistema inicial: Retail, Deportes, Big Data y Capacitación (EdTech).</p>
+							<p style="margin: 0; font-size: 0.85rem; color: rgba(255,255,255,0.5);">Ecosistema inicial:
+								Retail, Deportes, Big Data y Capacitación (EdTech).</p>
 						</div>
 						<!-- 2027 -->
-						<div style="background: rgba(255,255,255,0.03); border-left: 4px solid #38bdf8; padding: 12px 20px; border-radius: 0 12px 12px 0;">
-							<div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
-								<h4 style="margin: 0; color: white; font-size: 1.1rem;">Arhez CRM / Arhez Supply Chain</h4>
-								<span class="price-tag" style="margin: 0; font-size: 0.8rem; padding: 2px 10px; background: rgba(56, 189, 248, 0.2); color: #38bdf8;">2027</span>
+						<div
+							style="background: rgba(255,255,255,0.03); border-left: 4px solid #38bdf8; padding: 12px 20px; border-radius: 0 12px 12px 0;">
+							<div
+								style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
+								<h4 style="margin: 0; color: white; font-size: 1.1rem;">Arhez CRM / Arhez Supply Chain
+								</h4>
+								<span class="price-tag"
+									style="margin: 0; font-size: 0.8rem; padding: 2px 10px; background: rgba(56, 189, 248, 0.2); color: #38bdf8;">2027</span>
 							</div>
-							<p style="margin: 0; font-size: 0.85rem; color: rgba(255,255,255,0.5);">Expansión operativa: Gestión de Clientes y Logística Avanzada.</p>
+							<p style="margin: 0; font-size: 0.85rem; color: rgba(255,255,255,0.5);">Expansión operativa:
+								Gestión de Clientes y Logística Avanzada.</p>
 						</div>
 						<!-- 2028 -->
-						<div style="background: rgba(255,255,255,0.03); border-left: 4px solid #a855f7; padding: 12px 20px; border-radius: 0 12px 12px 0;">
-							<div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
+						<div
+							style="background: rgba(255,255,255,0.03); border-left: 4px solid #a855f7; padding: 12px 20px; border-radius: 0 12px 12px 0;">
+							<div
+								style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
 								<h4 style="margin: 0; color: white; font-size: 1.1rem;">Arhez ERP</h4>
-								<span class="price-tag" style="margin: 0; font-size: 0.8rem; padding: 2px 10px; background: rgba(168, 85, 247, 0.2); color: #a855f7;">2028</span>
+								<span class="price-tag"
+									style="margin: 0; font-size: 0.8rem; padding: 2px 10px; background: rgba(168, 85, 247, 0.2); color: #a855f7;">2028</span>
 							</div>
-							<p style="margin: 0; font-size: 0.85rem; color: rgba(255,255,255,0.5);">Madurez empresarial: Control administrativo y financiero total.</p>
+							<p style="margin: 0; font-size: 0.85rem; color: rgba(255,255,255,0.5);">Madurez empresarial:
+								Control administrativo y financiero total.</p>
 						</div>
 						<!-- 2029 -->
-						<div style="background: rgba(255,255,255,0.03); border-left: 4px solid #ec4899; padding: 12px 20px; border-radius: 0 12px 12px 0;">
-							<div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
+						<div
+							style="background: rgba(255,255,255,0.03); border-left: 4px solid #ec4899; padding: 12px 20px; border-radius: 0 12px 12px 0;">
+							<div
+								style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
 								<h4 style="margin: 0; color: white; font-size: 1.1rem;">Arhez Suite</h4>
-								<span class="price-tag" style="margin: 0; font-size: 0.8rem; padding: 2px 10px; background: rgba(236, 72, 153, 0.2); color: #ec4899;">2029</span>
+								<span class="price-tag"
+									style="margin: 0; font-size: 0.8rem; padding: 2px 10px; background: rgba(236, 72, 153, 0.2); color: #ec4899;">2029</span>
 							</div>
-							<p style="margin: 0; font-size: 0.85rem; color: rgba(255,255,255,0.5);">Productividad unificada: Herramientas premium de colaboración global.</p>
+							<p style="margin: 0; font-size: 0.85rem; color: rgba(255,255,255,0.5);">Productividad
+								unificada: Herramientas premium de colaboración global.</p>
 						</div>
 						<!-- 2030 -->
-						<div style="background: rgba(255,255,255,0.03); border-left: 4px solid #f97316; padding: 12px 20px; border-radius: 0 12px 12px 0;">
-							<div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
+						<div
+							style="background: rgba(255,255,255,0.03); border-left: 4px solid #f97316; padding: 12px 20px; border-radius: 0 12px 12px 0;">
+							<div
+								style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
 								<h4 style="margin: 0; color: white; font-size: 1.1rem;">Arhez Labs</h4>
-								<span class="price-tag" style="margin: 0; font-size: 0.8rem; padding: 2px 10px; background: rgba(249, 115, 22, 0.2); color: #f97316;">2030</span>
+								<span class="price-tag"
+									style="margin: 0; font-size: 0.8rem; padding: 2px 10px; background: rgba(249, 115, 22, 0.2); color: #f97316;">2030</span>
 							</div>
-							<p style="margin: 0; font-size: 0.85rem; color: rgba(255,255,255,0.5);">Vanguardia tecnológica: Inteligencia Artificial y Tecnologías del Futuro.</p>
+							<p style="margin: 0; font-size: 0.85rem; color: rgba(255,255,255,0.5);">Vanguardia
+								tecnológica: Inteligencia Artificial y Tecnologías del Futuro.</p>
 						</div>
 					</div>
 				</div>
-				<button class="btn-primary" onclick="startWizard()" style="margin-top: 30px;">Iniciar Cotización <i class="fas fa-play ms-2"></i></button>
+				<button class="btn-primary" onclick="startWizard()" style="margin-top: 30px;">Iniciar Cotización <i
+						class="fas fa-play ms-2"></i></button>
 			</section>
 
 			<!-- Slide 4: Datos del Cliente (Inicio Cotizador) -->
 			<section>
-				<h3 style="margin-bottom: 10px;">Un gusto, <span class="text-accent">¿Con quién tenemos el placer?</span></h3>
-				<p style="color: rgba(255,255,255,0.6); margin-bottom: 40px;">Empezaremos por conocerte a ti y a tu negocio.</p>
-				
-				<input type="text" id="inputNombre" placeholder="Tu Nombre Completo" oninput="updateData('nombre', this.value)"><br>
-				<input type="text" id="inputEmpresa" placeholder="Nombre de tu Empresa" oninput="updateData('empresa', this.value)"><br>
-				
+				<h3 style="margin-bottom: 10px;">Un gusto, <span class="text-accent">¿Con quién tenemos el
+						placer?</span></h3>
+				<p style="color: rgba(255,255,255,0.6); margin-bottom: 40px;">Empezaremos por conocerte a ti y a tu
+					negocio.</p>
+
+				<input type="text" id="inputNombre" placeholder="Tu Nombre Completo"
+					oninput="updateData('nombre', this.value)"><br>
+				<input type="text" id="inputEmpresa" placeholder="Nombre de tu Empresa"
+					oninput="updateData('empresa', this.value)"><br>
+
 				<button class="btn-primary" onclick="Reveal.next()">Siguiente <i class="fas fa-check ms-2"></i></button>
 			</section>
 
 			<!-- Slide 5: Industria -->
 			<section>
 				<h3 style="margin-bottom: 10px;">¿En qué <span class="text-accent">industria</span> operas?</h3>
-				<p style="color: rgba(255,255,255,0.6); margin-bottom: 20px; font-size: 1.1rem;">Selecciona el giro de tu empresa.</p>
-				
+				<p style="color: rgba(255,255,255,0.6); margin-bottom: 20px; font-size: 1.1rem;">Selecciona el giro de
+					tu empresa.</p>
+
 				<div class="scrollable-options">
 					<div class="options-grid sm-grid">
 						<div class="option-card" onclick="selectAndNext('industria', 'Comercial')">
-							<i class="fas fa-store text-accent fa-2x mb-2" style="display:block;"></i> 
+							<i class="fas fa-store text-accent fa-2x mb-2" style="display:block;"></i>
 							<span style="font-size: 1.2rem; font-weight: 600;">Comercial</span>
 						</div>
 						<div class="option-card" onclick="selectAndNext('industria', 'Salud')">
-							<i class="fas fa-heartbeat text-accent fa-2x mb-2" style="display:block;"></i> 
+							<i class="fas fa-heartbeat text-accent fa-2x mb-2" style="display:block;"></i>
 							<span style="font-size: 1.2rem; font-weight: 600;">Salud</span>
 						</div>
 						<div class="option-card" onclick="selectAndNext('industria', 'Bienes Raíces o Construcción')">
-							<i class="fas fa-hard-hat text-accent fa-2x mb-2" style="display:block;"></i> 
+							<i class="fas fa-hard-hat text-accent fa-2x mb-2" style="display:block;"></i>
 							<span style="font-size: 1.2rem; font-weight: 600;">Bienes Raíces o<br>Construcción</span>
 						</div>
 						<div class="option-card" onclick="selectAndNext('industria', 'Manufactura')">
-							<i class="fas fa-industry text-accent fa-2x mb-2" style="display:block;"></i> 
+							<i class="fas fa-industry text-accent fa-2x mb-2" style="display:block;"></i>
 							<span style="font-size: 1.2rem; font-weight: 600;">Manufactura</span>
 						</div>
 						<div class="option-card" onclick="selectAndNext('industria', 'Otro')">
-							<i class="fas fa-cubes text-accent fa-2x mb-2" style="display:block;"></i> 
+							<i class="fas fa-cubes text-accent fa-2x mb-2" style="display:block;"></i>
 							<span style="font-size: 1.2rem; font-weight: 600;">Otro</span>
 						</div>
 						<div class="option-card" onclick="selectAndNext('industria', 'Deportes')">
-							<i class="fas fa-dumbbell text-accent fa-2x mb-2" style="display:block;"></i> 
+							<i class="fas fa-dumbbell text-accent fa-2x mb-2" style="display:block;"></i>
 							<span style="font-size: 1.2rem; font-weight: 600;">Deportes</span>
 						</div>
 						<div class="option-card" onclick="selectAndNext('industria', 'Alimentos y Bebidas')">
-							<i class="fas fa-utensils text-accent fa-2x mb-2" style="display:block;"></i> 
+							<i class="fas fa-utensils text-accent fa-2x mb-2" style="display:block;"></i>
 							<span style="font-size: 1.2rem; font-weight: 600;">Alimentos y<br>Bebidas</span>
 						</div>
 					</div>
@@ -459,46 +621,59 @@
 			<!-- Slide 6: Servicio Requerido -->
 			<section>
 				<h3 style="margin-bottom: 10px;">¿Qué <span class="text-accent">solución</span> buscas?</h3>
-				<p style="color: rgba(255,255,255,0.5); font-size: 0.9rem; margin-bottom: 30px; font-style: italic;">* Todos los precios mostrados son antes de impuestos.</p>
-				
+				<p style="color: rgba(255,255,255,0.5); font-size: 0.9rem; margin-bottom: 30px; font-style: italic;">*
+					Todos los precios mostrados son antes de impuestos.</p>
+
 				<div class="options-grid">
 					<!-- Plan Esencial -->
-					<div class="option-card" style="text-align: left; position: relative;" onclick="selectService('Plan Esencial (Promo 30%)', 2800)">
+					<div class="option-card" style="text-align: left; position: relative;"
+						onclick="selectService('Plan Esencial (Promo 30%)', 2800)">
 						<!-- Etiqueta de Promo -->
-						<div style="position: absolute; top: -12px; right: -12px; background: #ef4444; color: white; padding: 4px 12px; font-size: 0.75rem; font-weight: bold; border-radius: 20px; box-shadow: 0 4px 10px rgba(239, 68, 68, 0.4); z-index: 10;">
+						<div
+							style="position: absolute; top: -12px; right: -12px; background: #ef4444; color: white; padding: 4px 12px; font-size: 0.75rem; font-weight: bold; border-radius: 20px; box-shadow: 0 4px 10px rgba(239, 68, 68, 0.4); z-index: 10;">
 							<i class="fas fa-fire me-1"></i> -30% (18 al 30 Abr)
 						</div>
 						<h4 style="font-size: 1.4rem; margin-bottom: 0;">Esencial</h4>
-						<p id="desc-esencial" style="font-size: 0.8rem; color: rgba(255,255,255,0.6); margin: 5px 0 10px 0; min-height: 40px;">Ideal para validación rápida y generación de clientes potenciales.</p>
+						<p id="desc-esencial"
+							style="font-size: 0.8rem; color: rgba(255,255,255,0.6); margin: 5px 0 10px 0; min-height: 40px;">
+							Ideal para validación rápida y generación de clientes potenciales.</p>
 						<div class="price-tag" style="margin-bottom: 15px;">
-							<s style="color: rgba(255,255,255,0.5); font-size: 0.8em; margin-right: 5px;">$4,000</s> 
+							<s style="color: rgba(255,255,255,0.5); font-size: 0.8em; margin-right: 5px;">$4,000</s>
 							$2,800 <span style="font-size: 0.7em;">MXN</span>
 						</div>
-						<ul id="ul-esencial" style="font-size: 0.8rem; color: rgba(255,255,255,0.8); padding-left: 20px;">
+						<ul id="ul-esencial"
+							style="font-size: 0.8rem; color: rgba(255,255,255,0.8); padding-left: 20px;">
 							<li style="margin-bottom: 5px;">Landing Page (1 sección)</li>
 							<li style="margin-bottom: 5px;">Diseño Responsivo</li>
 							<li style="margin-bottom: 5px;">Formulario / WhatsApp</li>
 							<li style="margin-bottom: 5px;">Hosting y Dominio Web (1 año)</li>
 						</ul>
 					</div>
-					
+
 					<!-- Plan Enterprise -->
-					<div class="option-card accent-card" style="text-align: left;" onclick="selectService('Plan Enterprise', 12000)">
+					<div class="option-card accent-card" style="text-align: left;"
+						onclick="selectService('Plan Enterprise', 12000)">
 						<h4 style="font-size: 1.4rem; margin-bottom: 0;">Enterprise</h4>
-						<p id="desc-enterprise" style="font-size: 0.8rem; color: rgba(255,255,255,0.6); margin: 5px 0 10px 0; min-height: 40px;">Perfecto para empresas establecidas que buscan autoridad y posicionamiento.</p>
-						<div class="price-tag" style="margin-bottom: 15px;">$12,000 <span style="font-size: 0.7em;">MXN</span></div>
-						<ul id="ul-enterprise" style="font-size: 0.8rem; color: rgba(255,255,255,0.8); padding-left: 20px;">
+						<p id="desc-enterprise"
+							style="font-size: 0.8rem; color: rgba(255,255,255,0.6); margin: 5px 0 10px 0; min-height: 40px;">
+							Perfecto para empresas establecidas que buscan autoridad y posicionamiento.</p>
+						<div class="price-tag" style="margin-bottom: 15px;">$12,000 <span
+								style="font-size: 0.7em;">MXN</span></div>
+						<ul id="ul-enterprise"
+							style="font-size: 0.8rem; color: rgba(255,255,255,0.8); padding-left: 20px;">
 							<li style="margin-bottom: 5px;">Sitio Web Corporativo (5-7 secciones)</li>
 							<li style="margin-bottom: 5px;">Correos Corporativos</li>
 							<li style="margin-bottom: 5px;">Optimización SEO Integrada</li>
 							<li style="margin-bottom: 5px;">Hosting y Dominio Web (1 año)</li>
 						</ul>
 					</div>
-					
+
 					<!-- Plan Ultra -->
 					<div class="option-card" style="text-align: left;" onclick="selectService('Plan Ultra', 'Cotizar')">
 						<h4 style="font-size: 1.4rem; margin-bottom: 0;">Ultra</h4>
-						<p id="desc-ultra" style="font-size: 0.8rem; color: rgba(255,255,255,0.6); margin: 5px 0 10px 0; min-height: 40px;">Sistemas completamente a medida para optimizar flujos de trabajo.</p>
+						<p id="desc-ultra"
+							style="font-size: 0.8rem; color: rgba(255,255,255,0.6); margin: 5px 0 10px 0; min-height: 40px;">
+							Sistemas completamente a medida para optimizar flujos de trabajo.</p>
 						<div class="price-tag" style="margin-bottom: 15px;">Cotizar</div>
 						<ul id="ul-ultra" style="font-size: 0.8rem; color: rgba(255,255,255,0.8); padding-left: 20px;">
 							<li style="margin-bottom: 5px;">Plataforma SaaS a Medida</li>
@@ -513,20 +688,24 @@
 			<!-- Slide 7: Formato de Pago -->
 			<section>
 				<h3 style="margin-bottom: 40px;">Metodología de <span class="text-accent">Inversión</span></h3>
-				<p style="color: rgba(255,255,255,0.6); margin-bottom: 30px;">Selecciona el formato que más le convenga a tu administración.</p>
-				
+				<p style="color: rgba(255,255,255,0.6); margin-bottom: 30px;">Selecciona el formato que más le convenga
+					a tu administración.</p>
+
 				<div class="options-grid sm-grid" style="max-width: 600px;">
 					<div class="option-card" onclick="selectAndNext('metodoPago', 'Transferencia Bancaria')">
-						<i class="fas fa-university text-accent fa-2x mb-2" style="display:block; margin-bottom: 10px;"></i> 
+						<i class="fas fa-university text-accent fa-2x mb-2"
+							style="display:block; margin-bottom: 10px;"></i>
 						<span style="font-size: 1rem; font-weight: 600;">Transferencia</span>
 					</div>
 					<div class="option-card" onclick="selectAndNext('metodoPago', 'Pago con Tarjeta')">
-						<i class="fas fa-credit-card text-accent fa-2x mb-2" style="display:block; margin-bottom: 10px;"></i> 
+						<i class="fas fa-credit-card text-accent fa-2x mb-2"
+							style="display:block; margin-bottom: 10px;"></i>
 						<span style="font-size: 1rem; font-weight: 600;">Tarjeta</span>
 					</div>
 					<div class="option-card" onclick="selectAndNext('metodoPago', 'Efectivo')">
-						<i class="fas fa-money-bill-wave text-accent fa-2x mb-2" style="display:block; margin-bottom: 10px;"></i> 
-						<span style="font-size: 1rem; font-weight: 600;">Efectivo</span>
+						<i class="fas fa-money-bill-wave text-accent fa-2x mb-2"
+							style="display:block; margin-bottom: 10px;"></i>
+						<span style="font-size: 1rem; font-weight: 600;">Efectivo (zonas específicas)</span>
 					</div>
 				</div>
 			</section>
@@ -534,22 +713,28 @@
 			<!-- Slide 8: Cierre WhatsApp -->
 			<section>
 				<h3 style="margin-bottom: 10px;">Propuesta <span class="text-accent">Lista</span></h3>
-				<p style="color: rgba(255,255,255,0.8); margin-bottom: 30px;">Déjanos tu número de celular. Te escribiremos enseguida.</p>
-				
-				<input type="text" id="inputContacto" placeholder="Ej. 55 1234 5678" oninput="updateData('contacto', this.value)"><br>
-				
-				<button class="btn-primary" onclick="submitQuoteToWhatsApp()" style="font-size: 1.5rem; padding: 15px 50px;">
+				<p style="color: rgba(255,255,255,0.8); margin-bottom: 30px;">Déjanos tu número de celular. Te
+					escribiremos enseguida.</p>
+
+				<input type="text" id="inputContacto" placeholder="Ej. 55 1234 5678"
+					oninput="updateData('contacto', this.value)"><br>
+
+				<button class="btn-primary" onclick="submitQuoteToWhatsApp()"
+					style="font-size: 1.5rem; padding: 15px 50px;">
 					Enviar a WhatsApp <i class="fab fa-whatsapp ms-2"></i>
 				</button>
-				
+
 				<div style="margin-top: 40px; display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
-					<a href="#" onclick="resetWizard(); return false;" style="color: rgba(255,255,255,0.5); font-size: 1rem; text-decoration: none; border-bottom: 1px dotted rgba(255,255,255,0.5);">
+					<a href="#" onclick="resetWizard(); return false;"
+						style="color: rgba(255,255,255,0.5); font-size: 1rem; text-decoration: none; border-bottom: 1px dotted rgba(255,255,255,0.5);">
 						<i class="fas fa-undo" style="margin-right: 5px;"></i> Re-cotizar
 					</a>
-					<a href="canvas.html" style="color: var(--accent-green); font-size: 1rem; text-decoration: none; border-bottom: 1px dotted var(--accent-green);">
+					<a href="canvas.html"
+						style="color: var(--accent-green); font-size: 1rem; text-decoration: none; border-bottom: 1px dotted var(--accent-green);">
 						<i class="fas fa-project-diagram" style="margin-right: 5px;"></i> Modelo de Negocio
 					</a>
-					<a href="index.html" style="color: rgba(255,255,255,0.5); font-size: 1rem; text-decoration: none; border-bottom: 1px dotted rgba(255,255,255,0.5);">
+					<a href="index.html"
+						style="color: rgba(255,255,255,0.5); font-size: 1rem; text-decoration: none; border-bottom: 1px dotted rgba(255,255,255,0.5);">
 						<i class="fas fa-globe" style="margin-right: 5px;"></i> Ir a Inicio
 					</a>
 				</div>
@@ -587,7 +772,7 @@
 			const navControls = document.getElementById('nav-controls');
 			const exitBtn = document.getElementById('exit-control').querySelector('.nav-btn');
 
-			if(event.indexh > 0) {
+			if (event.indexh > 0) {
 				navControls.style.display = 'flex';
 				// Estilo para fondos oscuros
 				exitBtn.style.color = 'rgba(255,255,255,0.7)';
@@ -639,7 +824,7 @@
 				enterprise: { desc: "Plataformas hermosas para cadena/franquicias de autor.", bullets: ["Sitio Web Gastronomía (5-7 sec.)", "Correos Sucursales", "Optimización Posicionamiento Local", "Hosting y Dominio Web (1 año)"] },
 				ultra: { desc: "Software de alto rendimiento sin comisiones por tercero.", bullets: ["SaaS Delivery propio / APP Comedor", "Monitoreo de Comandas y Cocina", "Control de Insumos Integrado", "Hosting Escalonable Activo"] }
 			},
-			"default": {  
+			"default": {
 				esencial: { desc: "Ideal para validación rápida y generación de clientes potenciales.", bullets: ["Landing Page (1 sección)", "Diseño Responsivo", "Formulario / WhatsApp", "Hosting y Dominio Web (1 año)"] },
 				enterprise: { desc: "Perfecto para empresas establecidas que buscan autoridad y posicionamiento.", bullets: ["Sitio Web Corporativo (5-7 secciones)", "Correos Corporativos", "Optimización SEO Integrada", "Hosting y Dominio Web (1 año)"] },
 				ultra: { desc: "Sistemas a medida para flujos de trabajo hiper especializados.", bullets: ["Plataforma SaaS a Medida", "Panel de Administración", "Flujos y Automatizaciones Propios", "Soporte y Mantenimiento Prioritario"] }
@@ -648,13 +833,13 @@
 
 		function populateIndustryDetails(industryName) {
 			let info = industryInfo[industryName] || industryInfo["default"];
-			
+
 			document.getElementById('desc-esencial').innerText = info.esencial.desc;
 			document.getElementById('ul-esencial').innerHTML = info.esencial.bullets.map(b => `<li style="margin-bottom: 5px;">${b}</li>`).join('');
-			
+
 			document.getElementById('desc-enterprise').innerText = info.enterprise.desc;
 			document.getElementById('ul-enterprise').innerHTML = info.enterprise.bullets.map(b => `<li style="margin-bottom: 5px;">${b}</li>`).join('');
-			
+
 			document.getElementById('desc-ultra').innerText = info.ultra.desc;
 			document.getElementById('ul-ultra').innerHTML = info.ultra.bullets.map(b => `<li style="margin-bottom: 5px;">${b}</li>`).join('');
 		}
@@ -665,17 +850,17 @@
 				nombre: '', empresa: '', industria: '', servicio: '',
 				precio: 0, metodoPago: '', contacto: ''
 			};
-			
+
 			document.getElementById('inputNombre').value = '';
 			document.getElementById('inputEmpresa').value = '';
 			document.getElementById('inputContacto').value = '';
-			
+
 			document.getElementById('summary-panel').style.display = 'none';
 			updateSummaryUI();
-			
+
 			// Devolvemos el cotizador a valores generalistas
 			populateIndustryDetails("default");
-			
+
 			Reveal.slide(0);
 		}
 
@@ -692,11 +877,11 @@
 		function selectAndNext(key, value) {
 			formData[key] = value;
 			updateSummaryUI();
-			
+
 			if (key === 'industria') {
 				populateIndustryDetails(value);
 			}
-			
+
 			Reveal.next();
 		}
 
@@ -711,7 +896,7 @@
 			document.getElementById('sum-empresa').innerText = formData.empresa !== '' ? formData.empresa : '...';
 			document.getElementById('sum-industria').innerText = formData.industria !== '' ? formData.industria : '...';
 			document.getElementById('sum-servicio').innerText = formData.servicio !== '' ? formData.servicio : '...';
-			
+
 			if (typeof formData.precio === 'string') {
 				document.getElementById('sum-total').innerText = formData.precio;
 			} else if (formData.precio > 0) {
@@ -723,22 +908,22 @@
 
 		function submitQuoteToWhatsApp() {
 			let c = document.getElementById('inputContacto').value.trim();
-			if(c === '') {
+			if (c === '') {
 				alert("Por favor, ingresa tu número para contactarte por WhatsApp.");
 				return;
 			}
-			
-			let whatsappArhez = "524272777153"; 
-			
+
+			let whatsappArhez = "524272777153";
+
 			let wpMsg = `Hola Arhez Tech, he finalizado mi cotización interactiva y me interesa arrancar un proyecto:%0A%0A`;
-			wpMsg += `👤 *Cliente:* ${formData.nombre || 'No especificado'}%0A`;
+			wpMsg += `😎 *Cliente:* ${formData.nombre || 'No especificado'}%0A`;
 			wpMsg += `🏢 *Empresa:* ${formData.empresa || 'No definida'}%0A`;
 			wpMsg += `🏭 *Industria:* ${formData.industria}%0A`;
 			wpMsg += `🚀 *Plan seleccionado:* ${formData.servicio}%0A`;
-			
+
 			let precioText = typeof formData.precio === 'string' ? formData.precio : `$${formData.precio.toLocaleString()} MXN`;
 			wpMsg += `💰 *Presupuesto Estimado:* ${precioText}%0A`;
-			
+
 			wpMsg += `💳 *Método de Pago Preferido:* ${formData.metodoPago}%0A`;
 			wpMsg += `📞 *Mi número de contacto es:* ${c}%0A%0A`;
 			wpMsg += `¿Cuáles son los siguientes pasos?`;
@@ -747,4 +932,5 @@
 		}
 	</script>
 </body>
+
 </html>
