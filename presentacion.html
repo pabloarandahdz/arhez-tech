@@ -489,10 +489,10 @@
 					</div>
 					
 					<!-- Plan Ultra -->
-					<div class="option-card" style="text-align: left;" onclick="selectService('Plan Ultra', 36000)">
+					<div class="option-card" style="text-align: left;" onclick="selectService('Plan Ultra', 'Cotizar')">
 						<h4 style="font-size: 1.4rem; margin-bottom: 0;">Ultra</h4>
 						<p id="desc-ultra" style="font-size: 0.8rem; color: rgba(255,255,255,0.6); margin: 5px 0 10px 0; min-height: 40px;">Sistemas completamente a medida para optimizar flujos de trabajo.</p>
-						<div class="price-tag" style="margin-bottom: 15px;">$36,000 <span style="font-size: 0.7em;">MXN</span></div>
+						<div class="price-tag" style="margin-bottom: 15px;">Cotizar</div>
 						<ul id="ul-ultra" style="font-size: 0.8rem; color: rgba(255,255,255,0.8); padding-left: 20px;">
 							<li style="margin-bottom: 5px;">Plataforma SaaS a Medida</li>
 							<li style="margin-bottom: 5px;">Panel de Administración Avanzado</li>
@@ -705,8 +705,12 @@
 			document.getElementById('sum-industria').innerText = formData.industria !== '' ? formData.industria : '...';
 			document.getElementById('sum-servicio').innerText = formData.servicio !== '' ? formData.servicio : '...';
 			
-			if (formData.precio > 0) {
+			if (typeof formData.precio === 'string') {
+				document.getElementById('sum-total').innerText = formData.precio;
+			} else if (formData.precio > 0) {
 				document.getElementById('sum-total').innerText = '$' + formData.precio.toLocaleString();
+			} else {
+				document.getElementById('sum-total').innerText = '$0.00';
 			}
 		}
 
@@ -724,7 +728,10 @@
 			wpMsg += `🏢 *Empresa:* ${formData.empresa || 'No definida'}%0A`;
 			wpMsg += `🏭 *Industria:* ${formData.industria}%0A`;
 			wpMsg += `🚀 *Plan seleccionado:* ${formData.servicio}%0A`;
-			wpMsg += `💰 *Presupuesto Estimado:* $${formData.precio.toLocaleString()} MXN%0A`;
+			
+			let precioText = typeof formData.precio === 'string' ? formData.precio : `$${formData.precio.toLocaleString()} MXN`;
+			wpMsg += `💰 *Presupuesto Estimado:* ${precioText}%0A`;
+			
 			wpMsg += `💳 *Método de Pago Preferido:* ${formData.metodoPago}%0A`;
 			wpMsg += `📞 *Mi número de contacto es:* ${c}%0A%0A`;
 			wpMsg += `¿Cuáles son los siguientes pasos?`;

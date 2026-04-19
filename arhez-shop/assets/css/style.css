@@ -1,0 +1,197 @@
+/* 22032026 Estilos base para Arhez Shop - Landing Page */
+
+:root {
+    --primary-color: #F99D1C; /* Naranja Arhez */
+    --secondary-color: #FFB84D; /* Naranja Claro */
+    --accent-color: #FF8800; /* Naranja Fuerte */
+    --text-dark: #0B0E17;
+    --text-light: #637381;
+    --bg-dark: #fcfcfd;
+    --bg-card: rgba(255, 255, 255, 0.7);
+    --white: #ffffff;
+    --transition-base: all 0.3s ease-in-out;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: var(--text-dark);
+    background-color: var(--bg-dark);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Glassmorphism Classes */
+.glass-nav {
+    background: rgba(255, 255, 255, 0.85) !important;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05) !important;
+}
+
+.glass-card {
+    background: var(--bg-card) !important;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.4) !important;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.05);
+}
+
+.bg-primary-soft { background-color: rgba(249, 157, 28, 0.1); }
+.bg-success-soft { background-color: rgba(25, 135, 84, 0.1); }
+.bg-info-soft { background-color: rgba(13, 202, 240, 0.1); }
+
+/* Text gradients */
+.text-gradient {
+    background: linear-gradient(90deg, var(--accent-color), var(--primary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.bg-primary { background-color: var(--primary-color) !important; color: white; }
+.text-primary { color: var(--primary-color) !important; }
+.btn-primary { 
+    background: linear-gradient(45deg, var(--accent-color), var(--primary-color));
+    border: none;
+    color: white !important;
+}
+.btn-primary:hover {
+    background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+    box-shadow: 0 0 15px rgba(249, 157, 28, 0.4);
+    transform: translateY(-2px);
+    color: white !important;
+}
+
+.btn-outline-dark {
+    border: 1px solid var(--text-dark);
+    color: var(--text-dark);
+}
+.btn-outline-dark:hover {
+    background: var(--text-dark);
+    color: white;
+}
+
+.shadow-hover {
+    transition: var(--transition-base);
+}
+
+.shadow-hover:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 1rem 3rem rgba(0,0,0,0.08) !important;
+    border-color: rgba(249, 157, 28, 0.3) !important;
+}
+
+.icon-box {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+}
+
+/* Form Styles Override */
+.form-control {
+    background-color: var(--white) !important;
+    border: 1px solid rgba(0, 0, 0, 0.08) !important;
+    color: var(--text-dark) !important;
+}
+.form-control:focus {
+    background-color: var(--white) !important;
+    border-color: var(--primary-color) !important;
+    box-shadow: 0 0 0 0.25rem rgba(249, 157, 28, 0.25);
+}
+.form-control::placeholder {
+    color: var(--text-light) !important;
+}
+
+/* 22032026 Secciones específicas */
+
+.hero-section {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Orbs for glowing effect */
+.glow-orb-1, .glow-orb-2, .glow-orb-3 {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(100px);
+    z-index: -1;
+    opacity: 0.15;
+}
+
+.glow-orb-1 {
+    top: -5%;
+    left: -5%;
+    width: 400px;
+    height: 400px;
+    background: var(--accent-color);
+}
+
+.glow-orb-2 {
+    bottom: -10%;
+    right: -10%;
+    width: 500px;
+    height: 500px;
+    background: var(--primary-color);
+}
+
+.glow-orb-3 {
+    top: 30%;
+    left: 40%;
+    width: 300px;
+    height: 300px;
+    background: var(--secondary-color);
+    opacity: 0.1;
+}
+
+.hero-image-wrapper {
+    position: relative;
+    max-width: 100%;
+}
+
+.hero-image-wrapper::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, var(--primary-color), transparent);
+    border-radius: 16px;
+    opacity: 0.15;
+    z-index: -1;
+}
+
+/* Make sure text variables apply normally on light theme */
+.text-dark {
+    color: var(--text-dark) !important;
+}
+
+.text-muted {
+    color: var(--text-light) !important;
+}
+
+/* Modals */
+.modal-content {
+    background-color: var(--white);
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+/* 22032026 Responsive */
+
+@media (max-width: 991.98px) {
+    .navbar-collapse {
+        margin-top: 1rem;
+        padding: 1rem;
+        background: var(--bg-card);
+        backdrop-filter: blur(16px);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        border-radius: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.4);
+    }
+}

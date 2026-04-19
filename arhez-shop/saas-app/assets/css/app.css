@@ -1,0 +1,96 @@
+/* 22032026 app.css - Arhez Shop SaaS Core Styles */
+
+:root {
+    --primary-color: #F99D1C;
+    --secondary-dark: #0B0E17;
+    --sidebar-width: 260px;
+    --header-height: 70px;
+    --bg-light: #F8F9FA;
+    --border-color: rgba(0,0,0,0.08);
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-light);
+    color: var(--secondary-dark);
+}
+
+/* 22032026 Sidebar Layout */
+#sidebar {
+    width: var(--sidebar-width);
+    z-index: 1000;
+    transition: all 0.3s;
+    background-color: var(--secondary-dark) !important;
+}
+
+#main-content {
+    margin-left: var(--sidebar-width);
+    min-height: 100vh;
+}
+
+/* 22032026 Menu Navigation */
+.nav-link.menu-item {
+    color: rgba(255,255,255,0.7);
+    padding: 12px 20px;
+    border-radius: 8px;
+    margin-bottom: 5px;
+    transition: all 0.2s;
+    font-size: 0.95rem;
+}
+
+.nav-link.menu-item:hover {
+    background: rgba(255,255,255,0.1);
+    color: var(--primary-color);
+}
+
+.nav-link.menu-item.active {
+    background: var(--primary-color);
+    color: white !important;
+    font-weight: 600;
+}
+
+.nav-link.menu-item i {
+    font-size: 1.1rem;
+}
+
+.bg-secondary-dark {
+    background-color: #05070B !important;
+}
+
+/* 22032026 Botones y componentes personalizados */
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #e08b1a;
+    border-color: #e08b1a;
+    color: white;
+}
+
+.text-primary {
+    color: var(--primary-color) !important;
+}
+
+/* 22032026 Trazabilidad UI */
+.log-card {
+    border-left: 4px solid var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+@media (max-width: 991.98px) {
+    #sidebar {
+        left: calc(-1 * var(--sidebar-width));
+        position: fixed;
+        transition: left 0.3s ease;
+    }
+    #main-content {
+        margin-left: 0;
+    }
+    #sidebar.show {
+        left: 0;
+        box-shadow: 10px 0 30px rgba(0,0,0,0.5);
+    }
+}
