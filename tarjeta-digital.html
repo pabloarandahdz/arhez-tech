@@ -258,6 +258,7 @@
       border-color: rgba(141, 238, 18, 0.5);
       background: rgba(141, 238, 18, 0.04);
       box-shadow: 0 0 0 3px rgba(141, 238, 18, 0.08);
+      color: #fff;
     }
 
     .form-control::placeholder {
@@ -1249,12 +1250,16 @@
         colorText:  document.getElementById('colorText').value,
         logoDataUrl: logoDataUrl || null
       };
-      sessionStorage.setItem('arhez_card_data', JSON.stringify(formData));
+      try {
+        localStorage.setItem('arhez_card_data', JSON.stringify(formData));
+      } catch (e) {
+        console.error('Error saving storage:', e);
+      }
     }
 
-    // ── Restaurar datos del formulario desde sessionStorage ────────
+    // ── Restaurar datos del formulario desde localStorage ────────
     function restoreFormData() {
-      const raw = sessionStorage.getItem('arhez_card_data');
+      const raw = localStorage.getItem('arhez_card_data');
       if (!raw) return false;
       try {
         const d = JSON.parse(raw);
@@ -1293,22 +1298,19 @@
       }
     }
 
-    // ── Detectar ?paid=true → restaurar datos y descargar ─────────
+    // ── Detectar ?paid=true y auto-carga ──────────────────────────
     window.addEventListener('DOMContentLoaded', () => {
+      // 1. Siempre restaurar datos si hay guardados previamente
+      restoreFormData();
+      // 2. Generar tarjeta con lo que haya
+      generateCard();
+
+      // 3. Revisar si venimos de pago exitoso
       const params = new URLSearchParams(window.location.search);
       if (params.get('paid') === 'true') {
-        // Limpiar URL sin recargar
         history.replaceState({}, '', window.location.pathname);
-        // Restaurar datos guardados antes del pago
-        const restored = restoreFormData();
-        // Regenerar la tarjeta con los datos restaurados
-        generateCard();
-        if (restored) {
-          showToast('✅ ¡Pago confirmado! Generando tu PDF...');
-          setTimeout(() => downloadCard(), 1500);
-        } else {
-          showToast('✅ ¡Pago confirmado! Completa tu tarjeta y descárgala.');
-        }
+        showToast('✅ ¡Pago confirmado! Generando tu PDF con links...');
+        setTimeout(() => downloadCard(), 1500);
       }
     });
 
@@ -1506,10 +1508,13 @@
       document.querySelectorAll('.card-social-btn .arrow').forEach(el => {
         el.style.color = accentColor;
       });
+
+      // Autoguardar los datos simulando el clic
+      saveFormDataAndPay();
     }
 
     // Run once on load
-    generateCard();
+    // generateCard(); // Ya se llama en DOMContentLoaded ahora
 
     // ── DOWNLOAD PDF ───────────────────────────────────────────────
     async function downloadCard() {
@@ -1621,9 +1626,6 @@
         // 10. Guardar
         const fileName = `${bizName.replace(/\s+/g, '-').toLowerCase()}-tarjeta-arhez.pdf`;
         pdf.save(fileName);
-
-        // Limpiar datos temporales solo después de descarga exitosa
-        sessionStorage.removeItem('arhez_card_data');
 
         showToast('✅ ¡PDF con links descargado!');
 
