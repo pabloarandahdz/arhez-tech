@@ -1,0 +1,1576 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tarjeta Digital | Arhez Tech</title>
+  <meta name="description"
+    content="Crea tu tarjeta digital de negocio en segundos. Comparte tu WhatsApp, redes sociales y más con un solo enlace.">
+  <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+  <style>
+    :root {
+      --primary-dark: #06071B;
+      --accent-green: #8DEE12;
+      --accent-blue: #38BDF8;
+      --glass-bg: rgba(255, 255, 255, 0.06);
+      --glass-border: rgba(255, 255, 255, 0.12);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: var(--primary-dark);
+      color: #fff;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* ── BACKGROUND BLOBS ── */
+    .bg-blobs {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(100px);
+    }
+
+    .blob-1 {
+      width: 600px;
+      height: 600px;
+      background: rgba(141, 238, 18, 0.12);
+      top: -200px;
+      right: -100px;
+    }
+
+    .blob-2 {
+      width: 500px;
+      height: 500px;
+      background: rgba(56, 189, 248, 0.1);
+      bottom: -100px;
+      left: -100px;
+    }
+
+    .blob-3 {
+      width: 300px;
+      height: 300px;
+      background: rgba(141, 238, 18, 0.08);
+      top: 50%;
+      left: 40%;
+    }
+
+    /* ── NAV ── */
+    .top-nav {
+      position: relative;
+      z-index: 10;
+      padding: 20px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--glass-border);
+      background: rgba(6, 7, 27, 0.6);
+      backdrop-filter: blur(20px);
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+
+    .nav-logo img {
+      height: 32px;
+    }
+
+    .nav-logo-text {
+      font-size: 0.85rem;
+      color: rgba(255, 255, 255, 0.5);
+      font-weight: 500;
+    }
+
+    .nav-logo-text span {
+      color: var(--accent-green);
+      font-weight: 700;
+    }
+
+    .btn-back {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: rgba(255, 255, 255, 0.6);
+      text-decoration: none;
+      font-size: 0.875rem;
+      font-weight: 600;
+      padding: 8px 16px;
+      border: 1px solid var(--glass-border);
+      border-radius: 50px;
+      background: var(--glass-bg);
+      transition: all 0.2s;
+    }
+
+    .btn-back:hover {
+      color: #fff;
+      border-color: var(--accent-green);
+      background: rgba(141, 238, 18, 0.08);
+    }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 60px 20px 40px;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(141, 238, 18, 0.1);
+      border: 1px solid rgba(141, 238, 18, 0.3);
+      color: var(--accent-green);
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 6px 16px;
+      border-radius: 50px;
+      margin-bottom: 20px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+
+    .hero h1 .accent {
+      background: linear-gradient(135deg, var(--accent-green), var(--accent-blue));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero p {
+      color: rgba(255, 255, 255, 0.55);
+      font-size: 1.05rem;
+      max-width: 560px;
+      margin: 0 auto;
+    }
+
+    /* ── MAIN LAYOUT ── */
+    .builder-layout {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1fr 420px;
+      gap: 32px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px 80px;
+    }
+
+    @media (max-width: 900px) {
+      .builder-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .preview-col {
+        order: -1;
+      }
+    }
+
+    /* ── FORM PANEL ── */
+    .form-panel {
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: 24px;
+      padding: 36px;
+      backdrop-filter: blur(20px);
+    }
+
+    .section-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent-green);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .section-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--glass-border);
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: rgba(255, 255, 255, 0.7);
+      margin-bottom: 8px;
+    }
+
+    .form-control {
+      width: 100%;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--glass-border);
+      border-radius: 12px;
+      padding: 12px 16px;
+      color: #fff;
+      font-family: inherit;
+      font-size: 0.9rem;
+      transition: all 0.2s;
+      outline: none;
+    }
+
+    .form-control:focus {
+      border-color: rgba(141, 238, 18, 0.5);
+      background: rgba(141, 238, 18, 0.04);
+      box-shadow: 0 0 0 3px rgba(141, 238, 18, 0.08);
+    }
+
+    .form-control::placeholder {
+      color: rgba(255, 255, 255, 0.25);
+    }
+
+    .input-icon-wrap {
+      position: relative;
+    }
+
+    .input-icon-wrap .icon {
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: rgba(255, 255, 255, 0.3);
+      font-size: 0.95rem;
+      pointer-events: none;
+    }
+
+    .input-icon-wrap .form-control {
+      padding-left: 40px;
+    }
+
+    /* Logo upload */
+    .logo-upload-area {
+      border: 2px dashed var(--glass-border);
+      border-radius: 16px;
+      padding: 28px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.3s;
+      position: relative;
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .logo-upload-area:hover,
+    .logo-upload-area.dragover {
+      border-color: rgba(141, 238, 18, 0.5);
+      background: rgba(141, 238, 18, 0.04);
+    }
+
+    .logo-upload-area input[type="file"] {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      cursor: pointer;
+      width: 100%;
+      height: 100%;
+    }
+
+    .logo-upload-icon {
+      font-size: 2rem;
+      color: rgba(255, 255, 255, 0.2);
+      margin-bottom: 10px;
+    }
+
+    .logo-upload-text {
+      font-size: 0.82rem;
+      color: rgba(255, 255, 255, 0.4);
+    }
+
+    .logo-upload-text span {
+      color: var(--accent-green);
+      font-weight: 600;
+    }
+
+    #logoPreviewThumb {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--accent-green);
+      display: none;
+      margin: 0 auto 8px;
+    }
+
+    /* Color picker row */
+    .color-row {
+      display: flex;
+      gap: 12px;
+    }
+
+    .color-option {
+      flex: 1;
+    }
+
+    .color-option label {
+      font-size: 0.75rem;
+    }
+
+    .color-swatch-wrap {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--glass-border);
+      border-radius: 12px;
+      padding: 10px 14px;
+      cursor: pointer;
+      transition: border-color 0.2s;
+    }
+
+    .color-swatch-wrap:focus-within {
+      border-color: rgba(141, 238, 18, 0.4);
+    }
+
+    .color-swatch-wrap input[type="color"] {
+      width: 28px;
+      height: 28px;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      background: none;
+      padding: 0;
+    }
+
+    .color-swatch-wrap span {
+      font-size: 0.82rem;
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    /* Action buttons */
+    .btn-generate {
+      width: 100%;
+      background: linear-gradient(135deg, var(--accent-green), #5bc800);
+      color: #06071B;
+      font-weight: 800;
+      font-size: 1rem;
+      font-family: inherit;
+      border: none;
+      border-radius: 14px;
+      padding: 16px;
+      cursor: pointer;
+      transition: all 0.3s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 8px;
+    }
+
+    .btn-generate:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px rgba(141, 238, 18, 0.35);
+    }
+
+    .btn-generate:active {
+      transform: translateY(0);
+    }
+
+    .btn-download {
+      width: 100%;
+      background: rgba(255, 255, 255, 0.06);
+      color: #fff;
+      font-weight: 700;
+      font-size: 0.9rem;
+      font-family: inherit;
+      border: 1px solid var(--glass-border);
+      border-radius: 14px;
+      padding: 14px;
+      cursor: pointer;
+      transition: all 0.3s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .btn-download:hover {
+      border-color: rgba(141, 238, 18, 0.4);
+      background: rgba(141, 238, 18, 0.06);
+    }
+
+    /* ── PREVIEW COLUMN ── */
+    .preview-col {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .preview-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.35);
+      align-self: flex-start;
+    }
+
+    /* ── DIGITAL CARD ── */
+    #card-preview {
+      width: 380px;
+      min-height: 560px;
+      border-radius: 28px;
+      padding: 44px 32px 36px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 40px 80px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.08);
+      transition: all 0.4s ease;
+    }
+
+    #card-preview .card-bg-blob {
+      position: absolute;
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    #card-preview .card-brand {
+      position: absolute;
+      bottom: 16px;
+      right: 20px;
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      opacity: 0.3;
+      text-transform: uppercase;
+    }
+
+    /* Logo */
+    .card-logo-wrap {
+      position: relative;
+      z-index: 1;
+      margin-bottom: 20px;
+    }
+
+    .card-logo-wrap .logo-ring {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      padding: 3px;
+      background: conic-gradient(var(--accent-green), transparent, var(--accent-green));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .card-logo-wrap .logo-inner {
+      width: 94px;
+      height: 94px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      font-size: 2.4rem;
+      font-weight: 800;
+    }
+
+    #card-logo-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: none;
+    }
+
+    #card-logo-initials {
+      font-size: 2rem;
+      font-weight: 800;
+      line-height: 1;
+    }
+
+    /* Business info */
+    .card-biz-name {
+      position: relative;
+      z-index: 1;
+      font-size: 1.45rem;
+      font-weight: 800;
+      text-align: center;
+      margin-bottom: 6px;
+      letter-spacing: -0.01em;
+    }
+
+    .card-tagline {
+      position: relative;
+      z-index: 1;
+      font-size: 0.8rem;
+      font-weight: 500;
+      opacity: 0.5;
+      text-align: center;
+      margin-bottom: 28px;
+    }
+
+    /* Divider */
+    .card-divider {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      height: 1px;
+      background: rgba(255, 255, 255, 0.1);
+      margin-bottom: 24px;
+    }
+
+    /* Social buttons */
+    .card-socials {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .card-social-btn {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 13px 18px;
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      text-decoration: none;
+      color: inherit;
+      transition: all 0.25s;
+      cursor: pointer;
+    }
+
+    .card-social-btn:hover {
+      background: rgba(255, 255, 255, 0.12);
+      transform: translateX(4px);
+    }
+
+    .card-social-btn .icon-wrap {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+
+    .card-social-btn .btn-text {
+      flex: 1;
+    }
+
+    .card-social-btn .btn-label {
+      font-size: 0.68rem;
+      font-weight: 600;
+      opacity: 0.5;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      display: block;
+    }
+
+    .card-social-btn .btn-value {
+      font-size: 0.9rem;
+      font-weight: 600;
+      display: block;
+    }
+
+    .card-social-btn .arrow {
+      font-size: 0.75rem;
+      opacity: 0.3;
+    }
+
+    /* Icon colors */
+    .icon-wa {
+      background: #25D366;
+    }
+
+    .icon-fb {
+      background: #1877F2;
+    }
+
+    .icon-ig {
+      background: linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+    }
+
+    .icon-web {
+      background: rgba(141, 238, 18, 0.2);
+      color: var(--accent-green);
+    }
+
+    /* Placeholder state */
+    .card-placeholder {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      min-height: 300px;
+      gap: 12px;
+    }
+
+    .card-placeholder i {
+      font-size: 3rem;
+      opacity: 0.15;
+    }
+
+    .card-placeholder p {
+      font-size: 0.85rem;
+      opacity: 0.3;
+    }
+
+    /* ── PHONE MOCKUP FRAME ── */
+    .phone-frame {
+      position: relative;
+      width: 400px;
+    }
+
+    .phone-frame::before {
+      content: '';
+      position: absolute;
+      inset: -2px;
+      border-radius: 30px;
+      background: linear-gradient(135deg, rgba(141, 238, 18, 0.3), transparent, rgba(56, 189, 248, 0.2));
+      z-index: 0;
+    }
+
+    .phone-inner {
+      position: relative;
+      z-index: 1;
+      background: rgba(6, 7, 27, 0.8);
+      border-radius: 28px;
+      padding: 16px;
+      backdrop-filter: blur(20px);
+    }
+
+    /* Browser bar */
+    .browser-bar {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 0 4px 14px;
+      margin-bottom: 4px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .browser-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+    }
+
+    .browser-url {
+      flex: 1;
+      font-size: 0.65rem;
+      color: rgba(255, 255, 255, 0.25);
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 6px;
+      padding: 4px 10px;
+      text-align: center;
+      font-weight: 500;
+    }
+
+    /* ── TOOLTIPS/HINTS ── */
+    .hint {
+      font-size: 0.75rem;
+      color: rgba(255, 255, 255, 0.3);
+      margin-top: 6px;
+    }
+
+    /* ── STATS BAR ── */
+    .stats-bar {
+      display: flex;
+      gap: 16px;
+      width: 100%;
+    }
+
+    .stat-item {
+      flex: 1;
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: 16px;
+      padding: 16px;
+      text-align: center;
+    }
+
+    .stat-number {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--accent-green);
+    }
+
+    .stat-label {
+      font-size: 0.7rem;
+      color: rgba(255, 255, 255, 0.4);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    /* ── TOAST ── */
+    .toast-msg {
+      position: fixed;
+      bottom: 32px;
+      left: 50%;
+      transform: translateX(-50%) translateY(80px);
+      background: var(--accent-green);
+      color: #06071B;
+      font-weight: 700;
+      font-size: 0.875rem;
+      padding: 12px 24px;
+      border-radius: 50px;
+      z-index: 9999;
+      transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+      box-shadow: 0 8px 24px rgba(141, 238, 18, 0.4);
+    }
+
+    .toast-msg.show {
+      transform: translateX(-50%) translateY(0);
+    }
+
+    /* ── MAP EMBED ── */
+    .card-map-wrap {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      border-radius: 14px;
+      overflow: hidden;
+      margin-bottom: 14px;
+      display: none;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .card-map-wrap iframe {
+      width: 100%;
+      height: 150px;
+      border: none;
+      display: block;
+      filter: grayscale(20%) contrast(1.05);
+    }
+
+    .card-map-wrap .map-overlay {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      border-radius: 14px;
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.08);
+    }
+
+    /* ── PAYMENT MODAL ── */
+    .pay-modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(6, 7, 27, 0.85);
+      backdrop-filter: blur(12px);
+      z-index: 9000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s;
+    }
+    .pay-modal-overlay.open {
+      opacity: 1;
+      pointer-events: all;
+    }
+    .pay-modal {
+      background: #0f172a;
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 24px;
+      padding: 40px 36px;
+      max-width: 460px;
+      width: 100%;
+      transform: translateY(20px) scale(0.97);
+      transition: transform 0.35s cubic-bezier(0.34,1.56,0.64,1);
+      position: relative;
+    }
+    .pay-modal-overlay.open .pay-modal {
+      transform: translateY(0) scale(1);
+    }
+    .pay-modal-close {
+      position: absolute;
+      top: 16px; right: 20px;
+      background: none; border: none;
+      color: rgba(255,255,255,0.4);
+      font-size: 1.2rem; cursor: pointer;
+      transition: color 0.2s;
+    }
+    .pay-modal-close:hover { color: #fff; }
+    .pay-modal h3 {
+      font-size: 1.4rem; font-weight: 800;
+      color: #fff; margin-bottom: 6px;
+    }
+    .pay-modal .price-row {
+      display: flex; align-items: baseline; gap: 6px;
+      margin: 20px 0 16px;
+    }
+    .pay-modal .price-amount {
+      font-size: 3rem; font-weight: 800; color: #fff; line-height: 1;
+    }
+    .pay-modal .price-cur {
+      font-size: 1.1rem; font-weight: 700; color: var(--accent-green);
+    }
+    .pay-modal .price-note {
+      font-size: 0.72rem; color: rgba(255,255,255,0.3);
+      text-transform: uppercase; letter-spacing: 0.06em;
+    }
+    .pay-modal .feature-list {
+      list-style: none; padding: 0; margin: 0 0 28px;
+    }
+    .pay-modal .feature-list li {
+      display: flex; align-items: center; gap: 10px;
+      font-size: 0.88rem; color: rgba(255,255,255,0.65);
+      padding: 7px 0; border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+    .pay-modal .feature-list li:last-child { border-bottom: none; }
+    .pay-modal .feature-list li i { color: var(--accent-green); width: 16px; text-align: center; }
+    .btn-stripe {
+      width: 100%; padding: 16px;
+      background: linear-gradient(135deg, #8DEE12, #5bc800);
+      color: #06071B; font-weight: 800; font-size: 1rem;
+      font-family: inherit; border: none; border-radius: 14px;
+      cursor: pointer; display: flex; align-items: center;
+      justify-content: center; gap: 10px;
+      transition: all 0.3s;
+    }
+    .btn-stripe:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px rgba(141,238,18,0.4);
+    }
+    .pay-modal .secure-note {
+      text-align: center; margin-top: 14px;
+      font-size: 0.72rem; color: rgba(255,255,255,0.25);
+    }
+    .pay-modal .secure-note i { margin-right: 4px; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 480px) {
+      .phone-frame, #card-preview {
+        width: 100%;
+      }
+      .top-nav {
+        padding: 16px 20px;
+      }
+      .form-panel {
+        padding: 24px 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Background blobs -->
+  <div class="bg-blobs">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+  </div>
+
+  <!-- Navigation (mismo estilo que index.html) -->
+  <nav class="navbar navbar-expand-lg fixed-top navbar-arhez">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img class="logotipo" src="assets/img/logotipo.png" alt="Arhez Tech">
+      </a>
+      <a href="index.html" class="btn-arhez-primary ms-auto" style="padding: 8px 20px; font-size: 0.875rem;">
+        <i class="fas fa-arrow-left me-2"></i> Regresar
+      </a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <div class="hero">
+    <div class="hero-badge">
+      <i class="fas fa-id-card"></i>
+      Nuevo Servicio · Tarjetas Digitales
+    </div>
+    <h1>Tu negocio, en un solo <span class="accent">enlace inteligente.</span></h1>
+    <p>Diseña tu tarjeta digital profesional en segundos. Comparte tu WhatsApp, redes sociales y sitio web con un solo
+      toque.</p>
+  </div>
+
+  <!-- Builder -->
+  <div class="builder-layout">
+
+    <!-- FORM -->
+    <div class="form-panel">
+
+      <div class="section-label"><i class="fas fa-building"></i> Información del Negocio</div>
+
+      <!-- Logo Upload -->
+      <div class="form-group">
+        <label>Logotipo del Negocio</label>
+        <div class="logo-upload-area" id="logoUploadArea">
+          <input type="file" id="logoInput" accept="image/*">
+          <img id="logoPreviewThumb" alt="Logo preview">
+          <div id="logoUploadDefault">
+            <div class="logo-upload-icon"><i class="fas fa-cloud-upload-alt"></i></div>
+            <div class="logo-upload-text"><span>Haz clic o arrastra</span> tu logotipo aquí<br>PNG, JPG, SVG (máx.
+              5MB)</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Business Name -->
+      <div class="form-group">
+        <label for="bizName">Nombre del Negocio</label>
+        <div class="input-icon-wrap">
+          <i class="fas fa-store icon"></i>
+          <input class="form-control" type="text" id="bizName" placeholder="Ej. Papelería La Estrella"
+            maxlength="40">
+        </div>
+      </div>
+
+      <!-- Tagline -->
+      <div class="form-group">
+        <label for="bizTagline">Eslogan o Categoría <span style="opacity:0.4; font-weight:400">(opcional)</span></label>
+        <div class="input-icon-wrap">
+          <i class="fas fa-tag icon"></i>
+          <input class="form-control" type="text" id="bizTagline" placeholder="Ej. Distribución y venta al mayoreo"
+            maxlength="60">
+        </div>
+      </div>
+
+      <!-- Colors -->
+      <div class="form-group">
+        <label>Colores de la Tarjeta</label>
+        <div class="color-row">
+          <div class="color-option">
+            <label>Fondo</label>
+            <div class="color-swatch-wrap">
+              <input type="color" id="colorBg" value="#0f172a">
+              <span id="colorBgLabel">#0f172a</span>
+            </div>
+          </div>
+          <div class="color-option">
+            <label>Acento</label>
+            <div class="color-swatch-wrap">
+              <input type="color" id="colorAccent" value="#8DEE12">
+              <span id="colorAccentLabel">#8DEE12</span>
+            </div>
+          </div>
+          <div class="color-option">
+            <label>Texto</label>
+            <div class="color-swatch-wrap">
+              <input type="color" id="colorText" value="#ffffff">
+              <span id="colorTextLabel">#ffffff</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-label"><i class="fab fa-whatsapp"></i> Contacto y Redes Sociales</div>
+
+      <!-- WhatsApp -->
+      <div class="form-group">
+        <label for="waNumber">Número de WhatsApp</label>
+        <div class="input-icon-wrap">
+          <i class="fab fa-whatsapp icon" style="color: #25D366;"></i>
+          <input class="form-control" type="tel" id="waNumber" placeholder="Ej. 5212345678901 (con código de país)">
+        </div>
+        <div class="hint">Incluye el código de país sin + ni espacios. Ej: 521 para México</div>
+      </div>
+
+      <!-- Facebook -->
+      <div class="form-group">
+        <label for="fbUrl">Facebook</label>
+        <div class="input-icon-wrap">
+          <i class="fab fa-facebook icon" style="color: #1877F2;"></i>
+          <input class="form-control" type="text" id="fbUrl" placeholder="Ej. facebook.com/minegocio">
+        </div>
+      </div>
+
+      <!-- Instagram -->
+      <div class="form-group">
+        <label for="igUrl">Instagram</label>
+        <div class="input-icon-wrap">
+          <i class="fab fa-instagram icon" style="color: #E1306C;"></i>
+          <input class="form-control" type="text" id="igUrl" placeholder="Ej. @minegocio o instagram.com/mi...">
+        </div>
+      </div>
+
+      <!-- Web / Other -->
+      <div class="form-group">
+        <label for="webLabel">Etiqueta del enlace extra</label>
+        <div class="input-icon-wrap">
+          <i class="fas fa-tag icon"></i>
+          <input class="form-control" type="text" id="webLabel" placeholder="Ej. Sitio Web, TikTok, YouTube...">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="webUrl">Enlace adicional (URL completa)</label>
+        <div class="input-icon-wrap">
+          <i class="fas fa-link icon"></i>
+          <input class="form-control" type="url" id="webUrl" placeholder="https://...">
+        </div>
+      </div>
+
+      <!-- Dirección -->
+      <div class="section-label"><i class="fas fa-map-marker-alt"></i> Ubicación</div>
+      <div class="form-group">
+        <label for="bizAddress">Dirección del Negocio <span style="opacity:0.4; font-weight:400">(opcional)</span></label>
+        <div class="input-icon-wrap">
+          <i class="fas fa-map-marker-alt icon" style="color:#ef4444;"></i>
+          <input class="form-control" type="text" id="bizAddress" placeholder="Ej. Av. Reforma 123, Col. Centro, CDMX">
+        </div>
+        <div class="hint">Se mostrará un mapa en la tarjeta y un botón para abrir Google Maps.</div>
+      </div>
+
+      <!-- Buttons -->
+      <button class="btn-generate" onclick="generateCard()">
+        <i class="fas fa-magic"></i> Generar Vista Previa
+      </button>
+      <button class="btn-download" onclick="openPayModal()">
+        <i class="fas fa-file-pdf"></i> Descargar Tarjeta (PDF) · $99 MXN
+      </button>
+
+    </div>
+
+    <!-- PREVIEW -->
+    <div class="preview-col">
+
+      <div class="preview-label"><i class="fas fa-eye" style="margin-right:6px;"></i> Vista Previa en Tiempo Real</div>
+
+      <!-- Stats -->
+      <div class="stats-bar">
+        <div class="stat-item">
+          <div class="stat-number">∞</div>
+          <div class="stat-label">Compartidos</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">1</div>
+          <div class="stat-label">Enlace</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">0s</div>
+          <div class="stat-label">Setup</div>
+        </div>
+      </div>
+
+      <!-- Phone frame with card -->
+      <div class="phone-frame">
+        <div class="phone-inner">
+          <!-- Browser bar -->
+          <div class="browser-bar">
+            <div class="browser-dot" style="background:#ef4444;"></div>
+            <div class="browser-dot" style="background:#eab308;"></div>
+            <div class="browser-dot" style="background:#22c55e;"></div>
+            <div class="browser-url" id="urlBar">arhez.tech/card/tu-negocio</div>
+          </div>
+
+          <!-- Card -->
+          <div id="card-preview">
+            <!-- Dynamic blobs -->
+            <div class="card-bg-blob" id="cardBlob1"
+              style="width:200px; height:200px; top:-60px; right:-60px; filter:blur(60px);"></div>
+            <div class="card-bg-blob" id="cardBlob2"
+              style="width:160px; height:160px; bottom:-40px; left:-40px; filter:blur(50px);"></div>
+
+            <!-- Logo -->
+            <div class="card-logo-wrap">
+              <div class="logo-ring" id="cardLogoRing">
+                <div class="logo-inner" id="cardLogoInner">
+                  <img id="card-logo-img" alt="Logo">
+                  <span id="card-logo-initials">?</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Info -->
+            <div class="card-biz-name" id="cardBizName">Tu Negocio</div>
+            <div class="card-tagline" id="cardTagline">Eslogan o categoría</div>
+
+            <!-- Mapa de Google Maps (se muestra solo si hay dirección) -->
+            <div class="card-map-wrap" id="cardMapWrap">
+              <iframe id="cardMapIframe" src="" allowfullscreen="" loading="lazy"></iframe>
+              <div class="map-overlay"></div>
+            </div>
+
+            <div class="card-divider"></div>
+
+            <!-- Socials -->
+            <div class="card-socials" id="cardSocials">
+
+              <a class="card-social-btn" id="card-wa" href="#" target="_blank">
+                <div class="icon-wrap icon-wa"><i class="fab fa-whatsapp" style="color:#fff;"></i></div>
+                <div class="btn-text">
+                  <span class="btn-label">WhatsApp</span>
+                  <span class="btn-value" id="card-wa-value">+52 (000) 000-0000</span>
+                </div>
+                <i class="fas fa-chevron-right arrow"></i>
+              </a>
+
+              <a class="card-social-btn" id="card-fb" href="#" target="_blank">
+                <div class="icon-wrap icon-fb"><i class="fab fa-facebook-f" style="color:#fff;"></i></div>
+                <div class="btn-text">
+                  <span class="btn-label">Facebook</span>
+                  <span class="btn-value" id="card-fb-value">facebook.com/negocio</span>
+                </div>
+                <i class="fas fa-chevron-right arrow"></i>
+              </a>
+
+              <a class="card-social-btn" id="card-ig" href="#" target="_blank">
+                <div class="icon-wrap icon-ig"><i class="fab fa-instagram" style="color:#fff;"></i></div>
+                <div class="btn-text">
+                  <span class="btn-label">Instagram</span>
+                  <span class="btn-value" id="card-ig-value">@negocio</span>
+                </div>
+                <i class="fas fa-chevron-right arrow"></i>
+              </a>
+
+              <a class="card-social-btn" id="card-web" href="#" target="_blank">
+                <div class="icon-wrap icon-web"><i class="fas fa-globe"></i></div>
+                <div class="btn-text">
+                  <span class="btn-label" id="card-web-label">Sitio Web</span>
+                  <span class="btn-value" id="card-web-value">mi-negocio.com</span>
+                </div>
+                <i class="fas fa-chevron-right arrow"></i>
+              </a>
+
+              <a class="card-social-btn" id="card-address" href="#" target="_blank" style="display:none;">
+                <div class="icon-wrap" style="background:#ef4444;"><i class="fas fa-map-marker-alt" style="color:#fff;"></i></div>
+                <div class="btn-text">
+                  <span class="btn-label">Dirección</span>
+                  <span class="btn-value" id="card-address-value">Ver en Google Maps</span>
+                </div>
+                <i class="fas fa-chevron-right arrow"></i>
+              </a>
+
+            </div>
+
+            <div class="card-brand">Arhez Tech · Tarjeta Digital</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hint -->
+      <p style="font-size:0.75rem; color:rgba(255,255,255,0.3); text-align:center; max-width:380px;">
+        <i class="fas fa-info-circle"></i> La tarjeta se actualiza automáticamente mientras completas el formulario.
+        Usa "Descargar" para obtener una imagen PNG lista para compartir.
+      </p>
+
+    </div>
+  </div>
+
+  <!-- Payment Modal -->
+  <div class="pay-modal-overlay" id="payModal">
+    <div class="pay-modal">
+      <button class="pay-modal-close" onclick="closePayModal()"><i class="fas fa-times"></i></button>
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:4px;">
+        <span style="background:rgba(141,238,18,0.15);border:1px solid rgba(141,238,18,0.35);color:var(--accent-green);font-size:0.7rem;font-weight:800;padding:3px 10px;border-radius:50px;text-transform:uppercase;letter-spacing:0.06em;">Microservicio</span>
+      </div>
+      <h3>Descarga tu Tarjeta Digital</h3>
+      <p style="color:rgba(255,255,255,0.45);font-size:0.88rem;margin:0;">Pago único · Sin suscripción</p>
+
+      <div class="price-row">
+        <span class="price-amount">$99</span>
+        <span class="price-cur">MXN</span>
+      </div>
+      <div class="price-note">Pago único · Sin mensualidades</div>
+
+      <ul class="feature-list">
+        <li><i class="fas fa-file-pdf"></i> PDF con tu tarjeta en alta resolución</li>
+        <li><i class="fas fa-link"></i> Links activos (WhatsApp, redes sociales)</li>
+        <li><i class="fas fa-map-marker-alt"></i> Botón de Google Maps (si registraste dirección)</li>
+        <li><i class="fas fa-palette"></i> Colores y logo personalizados</li>
+        <li><i class="fas fa-infinity"></i> Sin límite de uso ni caducidad</li>
+      </ul>
+
+      <a id="stripeBtn" href="https://buy.stripe.com/9B67sD6ea8MCelp0QV4ow00" target="_blank"
+        class="btn-stripe" onclick="closePayModal()">
+        <i class="fas fa-credit-card"></i> Pagar con Stripe
+      </a>
+      <p class="secure-note"><i class="fas fa-lock"></i> Pago seguro procesado por Stripe · SSL</p>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast-msg" id="toast"></div>
+
+  <script>
+    const STRIPE_URL = 'https://buy.stripe.com/9B67sD6ea8MCelp0QV4ow00';
+
+    // ── Detectar ?paid=true → descargar automáticamente ───────────
+    window.addEventListener('DOMContentLoaded', () => {
+      const params = new URLSearchParams(window.location.search);
+      if (params.get('paid') === 'true') {
+        // Limpiar URL sin recargar
+        history.replaceState({}, '', window.location.pathname);
+        showToast('✅ ¡Pago confirmado! Generando tu PDF...');
+        setTimeout(() => downloadCard(), 1200);
+      }
+    });
+
+    // ── Modal de pago ──────────────────────────────────────────────
+    function openPayModal() {
+      document.getElementById('payModal').classList.add('open');
+    }
+    function closePayModal() {
+      document.getElementById('payModal').classList.remove('open');
+    }
+    // Cerrar al hacer clic fuera
+    document.getElementById('payModal').addEventListener('click', function(e) {
+      if (e.target === this) closePayModal();
+    });
+
+    // ── LIVE PREVIEW ──────────────────────────────────────────────
+    const inputs = ['bizName', 'bizTagline', 'waNumber', 'fbUrl', 'igUrl', 'webUrl', 'webLabel', 'bizAddress'];
+    inputs.forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.addEventListener('input', generateCard);
+    });
+
+    ['colorBg', 'colorAccent', 'colorText'].forEach(id => {
+      document.getElementById(id).addEventListener('input', function () {
+        document.getElementById(id + 'Label').textContent = this.value;
+        generateCard();
+      });
+    });
+
+    // Logo upload
+    const logoInput = document.getElementById('logoInput');
+    const logoThumb = document.getElementById('logoPreviewThumb');
+    const logoDefault = document.getElementById('logoUploadDefault');
+    const cardLogoImg = document.getElementById('card-logo-img');
+    const cardLogoInitials = document.getElementById('card-logo-initials');
+    let logoDataUrl = null;
+
+    logoInput.addEventListener('change', function () {
+      const file = this.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = e => {
+        logoDataUrl = e.target.result;
+        logoThumb.src = logoDataUrl;
+        logoThumb.style.display = 'block';
+        logoDefault.style.display = 'none';
+        cardLogoImg.src = logoDataUrl;
+        cardLogoImg.style.display = 'block';
+        cardLogoInitials.style.display = 'none';
+        generateCard();
+      };
+      reader.readAsDataURL(file);
+    });
+
+    // Drag & drop
+    const uploadArea = document.getElementById('logoUploadArea');
+    uploadArea.addEventListener('dragover', e => { e.preventDefault(); uploadArea.classList.add('dragover'); });
+    uploadArea.addEventListener('dragleave', () => uploadArea.classList.remove('dragover'));
+    uploadArea.addEventListener('drop', e => {
+      e.preventDefault();
+      uploadArea.classList.remove('dragover');
+      const file = e.dataTransfer.files[0];
+      if (file && file.type.startsWith('image/')) {
+        logoInput.files = e.dataTransfer.files;
+        logoInput.dispatchEvent(new Event('change'));
+      }
+    });
+
+    function getInitials(name) {
+      if (!name) return '?';
+      return name.split(' ').slice(0, 2).map(w => w[0]).join('').toUpperCase();
+    }
+
+    function formatWA(num) {
+      if (!num) return '+52 (000) 000-0000';
+      return '+' + num.replace(/\D/g, '');
+    }
+
+    function generateCard() {
+      const name = document.getElementById('bizName').value.trim();
+      const tagline = document.getElementById('bizTagline').value.trim();
+      const wa = document.getElementById('waNumber').value.trim();
+      const fb = document.getElementById('fbUrl').value.trim();
+      const ig = document.getElementById('igUrl').value.trim();
+      const web = document.getElementById('webUrl').value.trim();
+      const webLbl = document.getElementById('webLabel').value.trim() || 'Sitio Web';
+      const bgColor = document.getElementById('colorBg').value;
+      const accentColor = document.getElementById('colorAccent').value;
+      const textColor = document.getElementById('colorText').value;
+
+      const card = document.getElementById('card-preview');
+
+      // Colors
+      card.style.background = bgColor;
+      card.style.color = textColor;
+
+      // Blobs
+      document.getElementById('cardBlob1').style.background = accentColor + '40';
+      document.getElementById('cardBlob2').style.background = accentColor + '25';
+
+      // Logo ring
+      document.getElementById('cardLogoRing').style.background =
+        `conic-gradient(${accentColor}, transparent, ${accentColor})`;
+      document.getElementById('cardLogoInner').style.background = bgColor;
+      cardLogoInitials.style.color = accentColor;
+
+      // Name & tagline
+      document.getElementById('cardBizName').textContent = name || 'Tu Negocio';
+      document.getElementById('cardTagline').textContent = tagline || 'Eslogan o categoría';
+
+      // Initials if no logo
+      if (!logoDataUrl) {
+        cardLogoInitials.textContent = getInitials(name);
+        cardLogoInitials.style.display = 'block';
+        cardLogoImg.style.display = 'none';
+      }
+
+      // URL bar
+      const slug = name ? name.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '') : 'tu-negocio';
+      document.getElementById('urlBar').textContent = `arhez.tech/card/${slug}`;
+
+      // Social buttons color
+      document.querySelectorAll('.card-social-btn').forEach(btn => {
+        btn.style.background = `${textColor}0d`;
+        btn.style.borderColor = `${textColor}18`;
+        btn.style.color = textColor;
+      });
+
+      // WhatsApp
+      const waBtn = document.getElementById('card-wa');
+      const waClean = wa.replace(/\D/g, '');
+      document.getElementById('card-wa-value').textContent = wa ? formatWA(wa) : '+52 (000) 000-0000';
+      waBtn.href = wa ? `https://wa.me/${waClean}` : '#';
+
+      // Facebook — igual que Instagram: usuario, @usuario o URL completa
+      const fbBtn = document.getElementById('card-fb');
+      let fbUrl = '';
+      if (fb) {
+        if (fb.startsWith('http')) {
+          fbUrl = fb;                                      // URL completa
+        } else if (fb.startsWith('@')) {
+          fbUrl = 'https://facebook.com/' + fb.slice(1);  // @usuario
+        } else {
+          fbUrl = 'https://facebook.com/' + fb;           // cualquier texto → usuario
+        }
+      }
+      document.getElementById('card-fb-value').textContent = fb || 'facebook.com/negocio';
+      fbBtn.href = fbUrl || '#';
+
+      // Instagram
+      const igBtn = document.getElementById('card-ig');
+      let igHandle = ig;
+      if (ig && ig.startsWith('@')) igHandle = 'https://instagram.com/' + ig.slice(1);
+      else if (ig && !ig.startsWith('http')) igHandle = 'https://instagram.com/' + ig;
+      document.getElementById('card-ig-value').textContent = ig || '@negocio';
+      igBtn.href = igHandle || '#';
+
+      // Web / Other
+      const webBtn = document.getElementById('card-web');
+      document.getElementById('card-web-label').textContent = webLbl;
+      document.getElementById('card-web-value').textContent = web
+        ? web.replace(/^https?:\/\//, '')
+        : 'mi-negocio.com';
+      webBtn.href = web || '#';
+
+      // Dirección + Mapa
+      const address = document.getElementById('bizAddress').value.trim();
+      const addressBtn  = document.getElementById('card-address');
+      const mapWrap     = document.getElementById('cardMapWrap');
+      const mapIframe   = document.getElementById('cardMapIframe');
+      const mapsUrl     = address ? `https://www.google.com/maps?q=${encodeURIComponent(address)}` : '';
+      const mapsEmbed   = address ? `https://maps.google.com/maps?q=${encodeURIComponent(address)}&output=embed&z=15` : '';
+
+      if (address) {
+        // Mostrar mapa embed
+        mapWrap.style.display = 'block';
+        if (mapIframe.dataset.last !== mapsEmbed) {
+          mapIframe.src = mapsEmbed;
+          mapIframe.dataset.last = mapsEmbed;
+        }
+        // Mostrar botón dirección
+        addressBtn.style.display = 'flex';
+        document.getElementById('card-address-value').textContent =
+          address.length > 38 ? address.slice(0, 36) + '…' : address;
+        addressBtn.href = mapsUrl;
+      } else {
+        mapWrap.style.display = 'none';
+        mapIframe.src = '';
+        mapIframe.dataset.last = '';
+        addressBtn.style.display = 'none';
+        addressBtn.href = '#';
+      }
+
+      // Accent chevrons
+      document.querySelectorAll('.card-social-btn .arrow').forEach(el => {
+        el.style.color = accentColor;
+      });
+    }
+
+    // Run once on load
+    generateCard();
+
+    // ── DOWNLOAD PDF ───────────────────────────────────────────────
+    async function downloadCard() {
+      const card = document.getElementById('card-preview');
+      const bizName = document.getElementById('bizName').value.trim() || 'tarjeta-digital';
+
+      showToast('⚙️ Generando PDF...');
+
+      try {
+        // 1. Ocultar mapa iframe (html2canvas no puede renderizar iframes)
+        const mapWrapEl = document.getElementById('cardMapWrap');
+        const mapWasVisible = mapWrapEl && mapWrapEl.style.display !== 'none';
+        if (mapWasVisible) mapWrapEl.style.display = 'none';
+
+        // 2. Renderizar la tarjeta a canvas de alta resolución
+        const canvas = await html2canvas(card, {
+          scale: 3,
+          backgroundColor: null,
+          useCORS: true,
+          allowTaint: true,
+          logging: false
+        });
+
+        // Restaurar mapa tras captura
+        if (mapWasVisible) mapWrapEl.style.display = 'block';
+
+        const imgData = canvas.toDataURL('image/png');
+
+        // 2. Crear PDF tamaño A4 vertical
+        const { jsPDF } = window.jspdf;
+        const pdf = new jsPDF({
+          orientation: 'portrait',
+          unit: 'mm',
+          format: 'a4'
+        });
+
+        const pageW = pdf.internal.pageSize.getWidth();   // 210mm
+        const pageH = pdf.internal.pageSize.getHeight();  // 297mm
+
+        // 3. Dimensiones de la tarjeta — más grande (160mm de ancho)
+        const cardAspect = canvas.height / canvas.width;
+        const cardW = 160;
+        const cardH = cardW * cardAspect;
+
+        // 4. Centrar en la página
+        const x = (pageW - cardW) / 2;
+        const y = (pageH - cardH) / 2 - 8;
+
+        // 5. Fondo de página oscuro
+        pdf.setFillColor(6, 7, 27);
+        pdf.rect(0, 0, pageW, pageH, 'F');
+
+        // 6. Glow verde detrás de la tarjeta
+        pdf.setFillColor(141, 238, 18);
+        pdf.setGState(new pdf.GState({ opacity: 0.06 }));
+        pdf.roundedRect(x - 8, y - 8, cardW + 16, cardH + 16, 10, 10, 'F');
+        pdf.setGState(new pdf.GState({ opacity: 1 }));
+
+        // 7. Imagen de la tarjeta
+        pdf.addImage(imgData, 'PNG', x, y, cardW, cardH);
+
+        // 8. ── LINKS ACTIVOS ──────────────────────────────────────
+        //    Mappea cada botón del DOM a coordenadas en el PDF
+        const cardRect = card.getBoundingClientRect();
+        const scaleX  = cardW / cardRect.width;
+        const scaleY  = cardH / cardRect.height;
+
+        // Recopila los botones con sus URLs reales
+        const socialLinks = [
+          { id: 'card-wa' },
+          { id: 'card-fb' },
+          { id: 'card-ig' },
+          { id: 'card-web' },
+          { id: 'card-address' }
+        ];
+
+        socialLinks.forEach(({ id }) => {
+          const btn  = document.getElementById(id);
+          if (!btn) return;
+          const url  = btn.getAttribute('href');
+          if (!url || url === '#') return;
+
+          const btnRect = btn.getBoundingClientRect();
+
+          // Posición relativa dentro de la tarjeta
+          const relX = btnRect.left - cardRect.left;
+          const relY = btnRect.top  - cardRect.top;
+
+          // Coordenadas en el PDF (mm)
+          const lx = x + relX * scaleX;
+          const ly = y + relY * scaleY;
+          const lw = btnRect.width  * scaleX;
+          const lh = btnRect.height * scaleY;
+
+          // Agregar enlace clicable al PDF
+          pdf.link(lx, ly, lw, lh, { url });
+        });
+
+        // 9. Pie de página con marca
+        pdf.setFontSize(7);
+        pdf.setTextColor(141, 238, 18);
+        pdf.setFont('helvetica', 'bold');
+        pdf.text('ARHEZ TECH · Tarjetas Digitales para Negocios', pageW / 2, pageH - 12, { align: 'center' });
+        pdf.setTextColor(255, 255, 255);
+        pdf.setFont('helvetica', 'normal');
+        pdf.setFontSize(6);
+        pdf.text('arhez.tech', pageW / 2, pageH - 8, { align: 'center' });
+
+        // 10. Guardar
+        const fileName = `${bizName.replace(/\s+/g, '-').toLowerCase()}-tarjeta-arhez.pdf`;
+        pdf.save(fileName);
+
+        showToast('✅ ¡PDF con links descargado!');
+
+      } catch (e) {
+        showToast('❌ Error al generar PDF. Intenta de nuevo.');
+        console.error(e);
+      }
+    }
+
+    // ── TOAST ──────────────────────────────────────────────────────
+    function showToast(msg) {
+      const t = document.getElementById('toast');
+      t.textContent = msg;
+      t.classList.add('show');
+      setTimeout(() => t.classList.remove('show'), 3000);
+    }
+  </script>
+
+</body>
+
+</html>
