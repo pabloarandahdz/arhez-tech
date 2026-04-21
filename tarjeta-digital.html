@@ -1220,7 +1220,7 @@
       </ul>
 
       <a id="stripeBtn" href="https://buy.stripe.com/9B67sD6ea8MCelp0QV4ow00" target="_blank"
-        class="btn-stripe" onclick="closePayModal()">
+        class="btn-stripe" onclick="saveFormDataAndPay(); closePayModal();">
         <i class="fas fa-credit-card"></i> Pagar con Stripe
       </a>
       <p class="secure-note"><i class="fas fa-lock"></i> Pago seguro procesado por Stripe · SSL</p>
@@ -1233,14 +1233,82 @@
   <script>
     const STRIPE_URL = 'https://buy.stripe.com/9B67sD6ea8MCelp0QV4ow00';
 
-    // ── Detectar ?paid=true → descargar automáticamente ───────────
+    // ── Guardar datos del formulario antes de ir a Stripe ─────────
+    function saveFormDataAndPay() {
+      const formData = {
+        bizName:    document.getElementById('bizName').value,
+        bizTagline: document.getElementById('bizTagline').value,
+        waNumber:   document.getElementById('waNumber').value,
+        fbUrl:      document.getElementById('fbUrl').value,
+        igUrl:      document.getElementById('igUrl').value,
+        webUrl:     document.getElementById('webUrl').value,
+        webLabel:   document.getElementById('webLabel').value,
+        bizAddress: document.getElementById('bizAddress').value,
+        colorBg:    document.getElementById('colorBg').value,
+        colorAccent:document.getElementById('colorAccent').value,
+        colorText:  document.getElementById('colorText').value,
+        logoDataUrl: logoDataUrl || null
+      };
+      sessionStorage.setItem('arhez_card_data', JSON.stringify(formData));
+    }
+
+    // ── Restaurar datos del formulario desde sessionStorage ────────
+    function restoreFormData() {
+      const raw = sessionStorage.getItem('arhez_card_data');
+      if (!raw) return false;
+      try {
+        const d = JSON.parse(raw);
+        document.getElementById('bizName').value    = d.bizName    || '';
+        document.getElementById('bizTagline').value = d.bizTagline || '';
+        document.getElementById('waNumber').value   = d.waNumber   || '';
+        document.getElementById('fbUrl').value      = d.fbUrl      || '';
+        document.getElementById('igUrl').value      = d.igUrl      || '';
+        document.getElementById('webUrl').value     = d.webUrl     || '';
+        document.getElementById('webLabel').value   = d.webLabel   || '';
+        document.getElementById('bizAddress').value = d.bizAddress || '';
+        document.getElementById('colorBg').value    = d.colorBg    || '#0f172a';
+        document.getElementById('colorAccent').value= d.colorAccent|| '#8DEE12';
+        document.getElementById('colorText').value  = d.colorText  || '#ffffff';
+        document.getElementById('colorBgLabel').textContent     = d.colorBg    || '#0f172a';
+        document.getElementById('colorAccentLabel').textContent = d.colorAccent|| '#8DEE12';
+        document.getElementById('colorTextLabel').textContent   = d.colorText  || '#ffffff';
+        // Restaurar logo si existía
+        if (d.logoDataUrl) {
+          logoDataUrl = d.logoDataUrl;
+          const logoThumb = document.getElementById('logoPreviewThumb');
+          const logoDefault = document.getElementById('logoUploadDefault');
+          const cardLogoImg = document.getElementById('card-logo-img');
+          const cardLogoInitials = document.getElementById('card-logo-initials');
+          logoThumb.src = logoDataUrl;
+          logoThumb.style.display = 'block';
+          logoDefault.style.display = 'none';
+          cardLogoImg.src = logoDataUrl;
+          cardLogoImg.style.display = 'block';
+          cardLogoInitials.style.display = 'none';
+        }
+        return true;
+      } catch (e) {
+        console.error('Error restaurando datos:', e);
+        return false;
+      }
+    }
+
+    // ── Detectar ?paid=true → restaurar datos y descargar ─────────
     window.addEventListener('DOMContentLoaded', () => {
       const params = new URLSearchParams(window.location.search);
       if (params.get('paid') === 'true') {
         // Limpiar URL sin recargar
         history.replaceState({}, '', window.location.pathname);
-        showToast('✅ ¡Pago confirmado! Generando tu PDF...');
-        setTimeout(() => downloadCard(), 1200);
+        // Restaurar datos guardados antes del pago
+        const restored = restoreFormData();
+        // Regenerar la tarjeta con los datos restaurados
+        generateCard();
+        if (restored) {
+          showToast('✅ ¡Pago confirmado! Generando tu PDF...');
+          setTimeout(() => downloadCard(), 1500);
+        } else {
+          showToast('✅ ¡Pago confirmado! Completa tu tarjeta y descárgala.');
+        }
       }
     });
 
@@ -1553,6 +1621,9 @@
         // 10. Guardar
         const fileName = `${bizName.replace(/\s+/g, '-').toLowerCase()}-tarjeta-arhez.pdf`;
         pdf.save(fileName);
+
+        // Limpiar datos temporales solo después de descarga exitosa
+        sessionStorage.removeItem('arhez_card_data');
 
         showToast('✅ ¡PDF con links descargado!');
 
