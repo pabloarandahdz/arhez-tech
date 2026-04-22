@@ -139,7 +139,7 @@
       position: relative;
       z-index: 1;
       text-align: center;
-      padding: 60px 20px 40px;
+      padding: 110px 20px 40px;
     }
 
     .hero-badge {
@@ -188,7 +188,7 @@
       gap: 32px;
       max-width: 1200px;
       margin: 0 auto;
-      padding: 0 24px 80px;
+      padding: 0 24px 160px;
     }
 
     @media (max-width: 900px) {
@@ -330,7 +330,7 @@
       width: 72px;
       height: 72px;
       border-radius: 50%;
-      object-fit: cover;
+      object-fit: contain;
       border: 2px solid var(--accent-green);
       display: none;
       margin: 0 auto 8px;
@@ -456,10 +456,11 @@
       width: 380px;
       min-height: 560px;
       border-radius: 28px;
-      padding: 44px 32px 36px;
+      padding: 54px 32px 54px;
       display: flex;
       flex-direction: column;
       align-items: center;
+      justify-content: flex-start;
       position: relative;
       overflow: hidden;
       box-shadow: 0 40px 80px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.08);
@@ -516,7 +517,8 @@
     #card-logo-img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: contain;
+      background-color: #ffffff;
       display: none;
     }
 
@@ -544,7 +546,41 @@
       font-weight: 500;
       opacity: 0.5;
       text-align: center;
-      margin-bottom: 28px;
+      margin-bottom: 24px;
+    }
+
+    /* Business Details */
+    .card-details {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 14px;
+      padding: 16px;
+      margin-bottom: 20px;
+      text-align: center;
+      display: none;
+    }
+
+    .card-desc {
+      font-size: 0.85rem;
+      font-weight: 500;
+      opacity: 0.85;
+      margin-bottom: 12px;
+      line-height: 1.5;
+    }
+
+    .card-hours {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--accent-green);
+      background: rgba(141, 238, 18, 0.1);
+      padding: 6px 12px;
+      border-radius: 50px;
     }
 
     /* Divider */
@@ -565,6 +601,8 @@
       display: flex;
       flex-direction: column;
       gap: 12px;
+      margin-top: 20px;
+      margin-bottom: 20px;
     }
 
     .card-social-btn {
@@ -1049,6 +1087,23 @@
         </div>
       </div>
 
+      <!-- Detalles del Negocio -->
+      <div class="section-label"><i class="fas fa-info-circle"></i> Detalles del Negocio</div>
+      <div class="form-group">
+        <label for="bizDesc">Servicios o Productos</label>
+        <div class="input-icon-wrap">
+          <i class="fas fa-box-open icon" style="top: 14px; transform: none;"></i>
+          <textarea class="form-control" id="bizDesc" rows="3" placeholder="Ej. Venta de papelería, impresiones, envolturas de regalos..." style="resize: vertical;"></textarea>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="bizHours">Horario de Atención</label>
+        <div class="input-icon-wrap">
+          <i class="fas fa-clock icon"></i>
+          <input class="form-control" type="text" id="bizHours" placeholder="Ej. Lun-Vie: 9am - 6pm | Sáb: 10am - 2pm">
+        </div>
+      </div>
+
       <!-- Dirección -->
       <div class="section-label"><i class="fas fa-map-marker-alt"></i> Ubicación</div>
       <div class="form-group">
@@ -1123,6 +1178,14 @@
             <!-- Info -->
             <div class="card-biz-name" id="cardBizName">Tu Negocio</div>
             <div class="card-tagline" id="cardTagline">Eslogan o categoría</div>
+
+            <!-- Details (Description & Schedule) -->
+            <div class="card-details" id="cardDetails">
+              <div class="card-desc" id="cardDesc"></div>
+              <div class="card-hours" id="cardHoursWrap">
+                <i class="fas fa-clock"></i> <span id="cardHoursText"></span>
+              </div>
+            </div>
 
             <!-- Mapa de Google Maps (se muestra solo si hay dirección) -->
             <div class="card-map-wrap" id="cardMapWrap">
@@ -1244,6 +1307,8 @@
         igUrl:      document.getElementById('igUrl').value,
         webUrl:     document.getElementById('webUrl').value,
         webLabel:   document.getElementById('webLabel').value,
+        bizDesc:    document.getElementById('bizDesc').value,
+        bizHours:   document.getElementById('bizHours').value,
         bizAddress: document.getElementById('bizAddress').value,
         colorBg:    document.getElementById('colorBg').value,
         colorAccent:document.getElementById('colorAccent').value,
@@ -1270,6 +1335,8 @@
         document.getElementById('igUrl').value      = d.igUrl      || '';
         document.getElementById('webUrl').value     = d.webUrl     || '';
         document.getElementById('webLabel').value   = d.webLabel   || '';
+        document.getElementById('bizDesc').value    = d.bizDesc    || '';
+        document.getElementById('bizHours').value   = d.bizHours   || '';
         document.getElementById('bizAddress').value = d.bizAddress || '';
         document.getElementById('colorBg').value    = d.colorBg    || '#0f172a';
         document.getElementById('colorAccent').value= d.colorAccent|| '#8DEE12';
@@ -1327,7 +1394,7 @@
     });
 
     // ── LIVE PREVIEW ──────────────────────────────────────────────
-    const inputs = ['bizName', 'bizTagline', 'waNumber', 'fbUrl', 'igUrl', 'webUrl', 'webLabel', 'bizAddress'];
+    const inputs = ['bizName', 'bizTagline', 'waNumber', 'fbUrl', 'igUrl', 'webUrl', 'webLabel', 'bizDesc', 'bizHours', 'bizAddress'];
     inputs.forEach(id => {
       const el = document.getElementById(id);
       if (el) el.addEventListener('input', generateCard);
@@ -1392,6 +1459,8 @@
     function generateCard() {
       const name = document.getElementById('bizName').value.trim();
       const tagline = document.getElementById('bizTagline').value.trim();
+      const desc = document.getElementById('bizDesc').value.trim();
+      const hours = document.getElementById('bizHours').value.trim();
       const wa = document.getElementById('waNumber').value.trim();
       const fb = document.getElementById('fbUrl').value.trim();
       const ig = document.getElementById('igUrl').value.trim();
@@ -1420,6 +1489,31 @@
       // Name & tagline
       document.getElementById('cardBizName').textContent = name || 'Tu Negocio';
       document.getElementById('cardTagline').textContent = tagline || 'Eslogan o categoría';
+
+      // Description & Hours
+      const detailsWrap = document.getElementById('cardDetails');
+      const descEl = document.getElementById('cardDesc');
+      const hoursWrapEl = document.getElementById('cardHoursWrap');
+      const hoursTextEl = document.getElementById('cardHoursText');
+
+      if (desc || hours) {
+        detailsWrap.style.display = 'block';
+        if (desc) {
+          descEl.style.display = 'block';
+          descEl.textContent = desc;
+        } else {
+          descEl.style.display = 'none';
+        }
+        
+        if (hours) {
+          hoursWrapEl.style.display = 'inline-flex';
+          hoursTextEl.textContent = hours;
+        } else {
+          hoursWrapEl.style.display = 'none';
+        }
+      } else {
+        detailsWrap.style.display = 'none';
+      }
 
       // Initials if no logo
       if (!logoDataUrl) {
@@ -1504,10 +1598,17 @@
         addressBtn.href = '#';
       }
 
-      // Accent chevrons
+      // Accent chevrons and hours background
       document.querySelectorAll('.card-social-btn .arrow').forEach(el => {
         el.style.color = accentColor;
       });
+      document.getElementById('cardHoursWrap').style.color = accentColor;
+      // Provide a faded background for hours badge using accentColor
+      const hexToRgb = (hex) => {
+        const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+        return result ? `${parseInt(result[1], 16)}, ${parseInt(result[2], 16)}, ${parseInt(result[3], 16)}` : '141, 238, 18';
+      };
+      document.getElementById('cardHoursWrap').style.background = `rgba(${hexToRgb(accentColor)}, 0.1)`;
 
       // Autoguardar los datos simulando el clic
       saveFormDataAndPay();
@@ -1556,12 +1657,18 @@
 
         // 3. Dimensiones de la tarjeta — más grande (160mm de ancho)
         const cardAspect = canvas.height / canvas.width;
-        const cardW = 160;
-        const cardH = cardW * cardAspect;
+        let cardW = 160;
+        let cardH = cardW * cardAspect;
+
+        // Si la tarjeta resultante es más alta que el PDF, escalar para que encaje
+        if (cardH > pageH - 20) {
+          cardH = pageH - 20;
+          cardW = cardH / cardAspect;
+        }
 
         // 4. Centrar en la página
         const x = (pageW - cardW) / 2;
-        const y = (pageH - cardH) / 2 - 8;
+        const y = (pageH - cardH) / 2;
 
         // 5. Fondo de página oscuro
         pdf.setFillColor(6, 7, 27);
@@ -1613,15 +1720,11 @@
           pdf.link(lx, ly, lw, lh, { url });
         });
 
-        // 9. Pie de página con marca
-        pdf.setFontSize(7);
-        pdf.setTextColor(141, 238, 18);
-        pdf.setFont('helvetica', 'bold');
-        pdf.text('ARHEZ TECH · Tarjetas Digitales para Negocios', pageW / 2, pageH - 12, { align: 'center' });
+        // 9. Pie de página
         pdf.setTextColor(255, 255, 255);
         pdf.setFont('helvetica', 'normal');
-        pdf.setFontSize(6);
-        pdf.text('arhez.tech', pageW / 2, pageH - 8, { align: 'center' });
+        pdf.setFontSize(7);
+        pdf.text('arhez-tech.com', pageW / 2, pageH - 8, { align: 'center' });
 
         // 10. Guardar
         const fileName = `${bizName.replace(/\s+/g, '-').toLowerCase()}-tarjeta-arhez.pdf`;
