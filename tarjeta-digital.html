@@ -1132,25 +1132,36 @@
         <div style="font-size:0.85rem; font-weight:700; color:var(--accent-green); margin-bottom:12px; text-transform:uppercase; letter-spacing:1px;">
           <i class="fas fa-key"></i> Gestión de Tarjeta
         </div>
+        <div style="font-size: 0.8rem; color: rgba(255,255,255,0.5); margin-bottom: 15px; line-height: 1.4;">
+          Esta sección te permite administrar tu tarjeta una vez activada. La clave de edición es tu **llave maestra** para realizar cambios futuros.
+        </div>
+
         <div id="keyDisplay" style="display:none; margin-bottom:15px;">
-          <div style="font-size:0.75rem; color:rgba(255,255,255,0.5); margin-bottom:5px;">Tu clave de edición (¡No la pierdas!):</div>
+          <div style="font-size:0.75rem; color:rgba(255,255,255,0.5); margin-bottom:5px;">
+            <i class="fas fa-info-circle"></i> Tu clave de edición (Guárdala bien):
+          </div>
           <div style="display:flex; gap:10px; align-items:center;">
             <code id="accessKeyVal" style="background:rgba(0,0,0,0.3); padding:8px 12px; border-radius:8px; flex-grow:1; color:#fff; font-size:1rem; border:1px solid rgba(141,238,18,0.3);"></code>
-            <button onclick="copyAccessKey()" class="btn-arhez-primary" style="padding:8px; border-radius:8px;"><i class="fas fa-copy"></i></button>
+            <button onclick="copyAccessKey()" class="btn-arhez-primary" style="padding:8px; border-radius:8px;" title="Copiar Clave"><i class="fas fa-copy"></i></button>
           </div>
-          <div id="shareLinkArea" style="margin-top:15px;">
-             <div style="font-size:0.75rem; color:rgba(255,255,255,0.5); margin-bottom:5px;">Link Público:</div>
+          <p style="font-size:0.65rem; color:rgba(141,238,18,0.6); margin-top:5px;">Con esta clave puedes editar tu tarjeta gratis en el futuro.</p>
+
+          <div id="shareLinkArea" style="margin-top:20px;">
+             <div style="font-size:0.75rem; color:rgba(255,255,255,0.5); margin-bottom:5px;">
+               <i class="fas fa-share-alt"></i> Enlace Público para Clientes:
+             </div>
              <div style="display:flex; gap:10px; align-items:center;">
                <input id="publicLinkInput" readonly style="background:rgba(0,0,0,0.3); padding:8px 12px; border-radius:8px; flex-grow:1; color:#8DEE12; font-size:0.85rem; border:1px solid rgba(255,255,255,0.1); border-radius:8px;">
-               <button onclick="copyPublicLink()" class="btn-arhez-primary" style="padding:8px; border-radius:8px;"><i class="fas fa-share-alt"></i></button>
+               <button onclick="copyPublicLink()" class="btn-arhez-primary" style="padding:8px; border-radius:8px;" title="Copiar Enlace"><i class="fas fa-share-alt"></i></button>
              </div>
+             <p style="font-size:0.65rem; color:rgba(255,255,255,0.3); margin-top:5px;">Copia este link y pégalo en tu bio de Instagram o envíalo por WhatsApp.</p>
           </div>
         </div>
         
-        <div id="loginArea">
-          <p style="font-size:0.8rem; color:rgba(255,255,255,0.4); margin-bottom:10px;">¿Ya tienes una tarjeta? Edítala aquí:</p>
+        <div id="loginArea" style="border-top: 1px solid rgba(255,255,255,0.05); pt-15; margin-top:15px; padding-top:15px;">
+          <p style="font-size:0.8rem; color:rgba(255,255,255,0.4); margin-bottom:10px;">¿Ya tienes una tarjeta? Ingresa tu clave para editar:</p>
           <div style="display:flex; gap:8px;">
-            <input type="text" id="recoverKey" placeholder="Pega tu clave de 8 caracteres" style="flex-grow:1; background:rgba(0,0,0,0.3); border:1px solid rgba(255,255,255,0.1); color:#fff; padding:10px; border-radius:8px; font-size:0.9rem;">
+            <input type="text" id="recoverKey" placeholder="Ej: X7A9B2C1" style="flex-grow:1; background:rgba(0,0,0,0.3); border:1px solid rgba(255,255,255,0.1); color:#fff; padding:10px; border-radius:8px; font-size:0.9rem;">
             <button onclick="loadFromSupabase()" class="btn-arhez-primary" style="padding:10px 15px; border-radius:8px;"><i class="fas fa-sync"></i></button>
           </div>
         </div>
@@ -1422,9 +1433,14 @@
         if (currentAccessKey && currentAccessKey !== 'null') {
           document.getElementById('keyDisplay').style.display = 'block';
           document.getElementById('accessKeyVal').textContent = currentAccessKey;
-          const baseUrl = window.location.href.split('?')[0].split('#')[0].replace('tarjeta-digital.html', 'ver.html');
-          const publicUrl = `${baseUrl}?id=${currentCardSlug}`;
-          document.getElementById('publicLinkInput').value = publicUrl;
+          // Generar URL pública robusta (funciona con o sin .html, en local y web)
+          const currentUrl = new URL(window.location.href);
+          const path = currentUrl.pathname;
+          const lastSlash = path.lastIndexOf('/');
+          currentUrl.pathname = path.substring(0, lastSlash + 1) + 'ver.html';
+          currentUrl.search = '?id=' + currentCardSlug;
+          currentUrl.hash = '';
+          document.getElementById('publicLinkInput').value = currentUrl.toString();
         } else {
           document.getElementById('keyDisplay').style.display = 'none';
         }
@@ -1498,8 +1514,14 @@
 
       document.getElementById('keyDisplay').style.display = 'block';
       document.getElementById('accessKeyVal').textContent = currentAccessKey;
-      const baseUrl = window.location.href.split('?')[0].split('#')[0].replace('tarjeta-digital.html', 'ver.html');
-      document.getElementById('publicLinkInput').value = `${baseUrl}?id=${currentCardSlug}`;
+      
+      const currentUrl = new URL(window.location.href);
+      const path = currentUrl.pathname;
+      const lastSlash = path.lastIndexOf('/');
+      currentUrl.pathname = path.substring(0, lastSlash + 1) + 'ver.html';
+      currentUrl.search = '?id=' + currentCardSlug;
+      currentUrl.hash = '';
+      document.getElementById('publicLinkInput').value = currentUrl.toString();
       
       updateDownloadButton();
       generateCard();
