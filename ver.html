@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cargando Tarjeta... | Arhez Tech</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Supabase JS -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  
+  <style>
+    :root {
+      --primary-dark: #06071B;
+      --accent-green: #8DEE12;
+      --accent-blue: #38BDF8;
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: var(--primary-dark);
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+    
+    #card-container {
+      width: 100%;
+      max-width: 400px;
+      min-height: 100vh;
+      position: relative;
+      background: #0f172a;
+      overflow: hidden;
+      display: none;
+      box-shadow: 0 0 100px rgba(0,0,0,0.5);
+    }
+
+    .card-bg-blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(60px);
+      z-index: 0;
+      opacity: 0.6;
+    }
+
+    .card-logo-wrap {
+      text-align: center;
+      padding: 60px 20px 20px;
+      position: relative;
+      z-index: 1;
+    }
+    .logo-ring {
+      width: 100px; height: 100px;
+      border-radius: 50%; padding: 4px;
+      margin: 0 auto;
+      background: conic-gradient(var(--accent-green), transparent, var(--accent-green));
+    }
+    .logo-inner {
+      width: 100%; height: 100%;
+      border-radius: 50%;
+      background: #0f172a;
+      display: flex; align-items: center; justify-content: center;
+      overflow: hidden;
+      font-size: 2.5rem; font-weight: 800;
+    }
+    .logo-inner img { width: 100%; height: 100%; object-fit: cover; }
+
+    .card-biz-name {
+      text-align: center; font-size: 1.8rem; font-weight: 800;
+      margin-top: 15px; padding: 0 20px; position: relative; z-index: 1;
+    }
+    .card-tagline {
+      text-align: center; font-size: 0.95rem; opacity: 0.6;
+      margin-top: 5px; padding: 0 20px; position: relative; z-index: 1;
+    }
+
+    .card-details {
+      padding: 0 30px; margin-top: 25px; position: relative; z-index: 1;
+    }
+    .card-desc { font-size: 0.9rem; line-height: 1.6; opacity: 0.85; margin-bottom: 15px; text-align: center; }
+    .card-hours {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(255,255,255,0.06); padding: 6px 14px;
+      border-radius: 50px; font-size: 0.8rem; font-weight: 600;
+    }
+
+    .card-socials {
+      padding: 30px; display: flex; flex-direction: column; gap: 12px;
+      position: relative; z-index: 1;
+    }
+    .card-social-btn {
+      display: flex; align-items: center; gap: 15px;
+      padding: 14px 18px; border-radius: 16px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      color: inherit; text-decoration: none;
+      transition: transform 0.2s, background 0.2s;
+    }
+    .card-social-btn:hover { transform: translateY(-2px); background: rgba(255,255,255,0.08); }
+    
+    .icon-wrap {
+      width: 40px; height: 40px; border-radius: 12px;
+      display: flex; align-items: center; justify-content: center; font-size: 1.2rem;
+    }
+    .icon-wa { background: #25D366; }
+    .icon-fb { background: #1877F2; }
+    .icon-ig { background: linear-gradient(45deg, #f09433, #dc2743, #bc1888); }
+    .icon-web { background: var(--accent-blue); }
+
+    .btn-text { flex-grow: 1; display: flex; flex-direction: column; }
+    .btn-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px; opacity: 0.5; font-weight: 700; margin-bottom: 2px; }
+    .btn-value { font-size: 0.95rem; font-weight: 600; }
+
+    .card-brand {
+      text-align: center; padding: 40px 20px; font-size: 0.75rem; 
+      opacity: 0.3; letter-spacing: 1px; font-weight: 700;
+    }
+
+    /* Loading Spinner */
+    .loader {
+      border: 4px solid rgba(255,255,255,0.1);
+      border-top: 4px solid var(--accent-green);
+      border-radius: 50%; width: 40px; height: 40px;
+      animation: spin 1s linear infinite;
+    }
+    @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+
+    #error-msg { display: none; text-align: center; padding: 20px; }
+  </style>
+</head>
+<body>
+
+  <div id="loading" class="loader"></div>
+  
+  <div id="error-msg">
+    <i class="fas fa-exclamation-triangle fa-3x" style="color:#ef4444; margin-bottom:15px;"></i>
+    <h2>Tarjeta no encontrada</h2>
+    <p>El enlace podría ser incorrecto o la tarjeta ya no existe.</p>
+    <a href="tarjeta-digital.html" style="color:var(--accent-green); text-decoration:none; font-weight:700;">Crear mi propia tarjeta →</a>
+  </div>
+
+  <div id="card-container">
+    <div class="card-bg-blob" id="blob1" style="width:250px; height:250px; top:-80px; right:-80px;"></div>
+    <div class="card-bg-blob" id="blob2" style="width:200px; height:200px; bottom:-60px; left:-60px;"></div>
+
+    <div class="card-logo-wrap">
+      <div class="logo-ring" id="logoRing">
+        <div class="logo-inner" id="logoInner">
+          <img id="logoImg" style="display:none;">
+          <span id="logoInitials">?</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-biz-name" id="bizName"></div>
+    <div class="card-tagline" id="bizTagline"></div>
+
+    <div class="card-details" id="details">
+      <div class="card-desc" id="bizDesc"></div>
+      <div style="text-align:center;">
+        <div class="card-hours" id="hoursWrap">
+          <i class="fas fa-clock"></i> <span id="bizHours"></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-socials">
+      <a class="card-social-btn" id="link-wa" style="display:none;" target="_blank">
+        <div class="icon-wrap icon-wa"><i class="fab fa-whatsapp"></i></div>
+        <div class="btn-text"><span class="btn-label">WhatsApp</span><span class="btn-value" id="val-wa"></span></div>
+        <i class="fas fa-chevron-right" style="opacity:0.3;"></i>
+      </a>
+      <a class="card-social-btn" id="link-fb" style="display:none;" target="_blank">
+        <div class="icon-wrap icon-fb"><i class="fab fa-facebook-f"></i></div>
+        <div class="btn-text"><span class="btn-label">Facebook</span><span class="btn-value" id="val-fb"></span></div>
+        <i class="fas fa-chevron-right" style="opacity:0.3;"></i>
+      </a>
+      <a class="card-social-btn" id="link-ig" style="display:none;" target="_blank">
+        <div class="icon-wrap icon-ig"><i class="fab fa-instagram"></i></div>
+        <div class="btn-text"><span class="btn-label">Instagram</span><span class="btn-value" id="val-ig"></span></div>
+        <i class="fas fa-chevron-right" style="opacity:0.3;"></i>
+      </a>
+      <a class="card-social-btn" id="link-web" style="display:none;" target="_blank">
+        <div class="icon-wrap icon-web"><i class="fas fa-globe"></i></div>
+        <div class="btn-text"><span class="btn-label" id="lbl-web">Sitio Web</span><span class="btn-value" id="val-web"></span></div>
+        <i class="fas fa-chevron-right" style="opacity:0.3;"></i>
+      </a>
+      <a class="card-social-btn" id="link-address" style="display:none;" target="_blank">
+        <div class="icon-wrap" style="background:#ef4444;"><i class="fas fa-map-marker-alt"></i></div>
+        <div class="btn-text"><span class="btn-label">Ubicación</span><span class="btn-value">Ver en Google Maps</span></div>
+        <i class="fas fa-chevron-right" style="opacity:0.3;"></i>
+      </a>
+    </div>
+
+    <div class="card-brand">Arhez Tech · Tarjeta Digital</div>
+  </div>
+
+  <script>
+    const SUPABASE_URL = 'https://wrjqbyntrjepvkrtautz.supabase.co';
+    const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndyanFieW50cmplcHZrcnRhdXR6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQyMDQwMzUsImV4cCI6MjA4OTc4MDAzNX0.fd85s25NKWphVG0B6U_p3mog4q7R6ni0nWT1JUviLL0';
+    const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
+    async function loadCard() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const slug = urlParams.get('id');
+      
+      if (!slug) {
+        showError();
+        return;
+      }
+
+      const { data, error } = await supabaseClient
+        .from('digital_cards')
+        .select('card_data')
+        .eq('slug', slug)
+        .single();
+
+      if (error || !data) {
+        showError();
+        return;
+      }
+
+      const d = data.card_data;
+      renderCard(d);
+    }
+
+    function renderCard(d) {
+      document.title = d.bizName + " | Tarjeta Digital";
+      
+      const container = document.getElementById('card-container');
+      container.style.background = d.colorBg;
+      container.style.color = d.colorText;
+      
+      document.getElementById('blob1').style.background = d.colorAccent + '40';
+      document.getElementById('blob2').style.background = d.colorAccent + '25';
+      document.getElementById('logoRing').style.background = `conic-gradient(${d.colorAccent}, transparent, ${d.colorAccent})`;
+      document.getElementById('logoInner').style.background = d.colorBg;
+      document.getElementById('logoInitials').style.color = d.colorAccent;
+
+      document.getElementById('bizName').textContent = d.bizName;
+      document.getElementById('bizTagline').textContent = d.bizTagline || '';
+      document.getElementById('bizDesc').textContent = d.bizDesc || '';
+      
+      if (d.bizHours) {
+        document.getElementById('bizHours').textContent = d.bizHours;
+      } else {
+        document.getElementById('hoursWrap').style.display = 'none';
+      }
+
+      if (d.logoDataUrl) {
+        const img = document.getElementById('logoImg');
+        img.src = d.logoDataUrl;
+        img.style.display = 'block';
+        document.getElementById('logoInitials').style.display = 'none';
+      } else {
+        document.getElementById('logoInitials').textContent = d.bizName.charAt(0).toUpperCase();
+      }
+
+      // Social Links
+      if (d.waNumber) {
+        const btn = document.getElementById('link-wa');
+        btn.style.display = 'flex';
+        btn.href = `https://wa.me/${d.waNumber.replace(/\D/g,'')}`;
+        document.getElementById('val-wa').textContent = '+' + d.waNumber.replace(/\D/g,'');
+      }
+      
+      if (d.fbUrl) {
+        const btn = document.getElementById('link-fb');
+        btn.style.display = 'flex';
+        btn.href = d.fbUrl.startsWith('http') ? d.fbUrl : `https://facebook.com/${d.fbUrl.replace('@','')}`;
+        document.getElementById('val-fb').textContent = d.fbUrl;
+      }
+
+      if (d.igUrl) {
+        const btn = document.getElementById('link-ig');
+        btn.style.display = 'flex';
+        btn.href = d.igUrl.startsWith('http') ? d.igUrl : `https://instagram.com/${d.igUrl.replace('@','')}`;
+        document.getElementById('val-ig').textContent = d.igUrl;
+      }
+
+      if (d.webUrl) {
+        const btn = document.getElementById('link-web');
+        btn.style.display = 'flex';
+        btn.href = d.webUrl;
+        document.getElementById('lbl-web').textContent = d.webLabel || 'Sitio Web';
+        document.getElementById('val-web').textContent = d.webUrl.replace(/^https?:\/\//, '');
+      }
+
+      if (d.bizAddress) {
+        const btn = document.getElementById('link-address');
+        btn.style.display = 'flex';
+        btn.href = `https://www.google.com/maps?q=${encodeURIComponent(d.bizAddress)}`;
+      }
+
+      // Apply theme to buttons
+      document.querySelectorAll('.card-social-btn').forEach(btn => {
+        btn.style.background = `${d.colorText}0d`;
+        btn.style.borderColor = `${d.colorText}18`;
+      });
+
+      document.getElementById('loading').style.display = 'none';
+      container.style.display = 'block';
+    }
+
+    function showError() {
+      document.getElementById('loading').style.display = 'none';
+      document.getElementById('error-msg').style.display = 'block';
+    }
+
+    loadCard();
+  </script>
+</body>
+</html>

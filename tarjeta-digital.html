@@ -14,6 +14,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
@@ -308,6 +309,7 @@
       cursor: pointer;
       width: 100%;
       height: 100%;
+      z-index: 10;
     }
 
     .logo-upload-icon {
@@ -333,7 +335,10 @@
       object-fit: contain;
       border: 2px solid var(--accent-green);
       display: none;
-      margin: 0 auto 8px;
+      margin: 0 auto 12px;
+      position: relative;
+      z-index: 1;
+      background: #fff;
     }
 
     /* Color picker row */
@@ -617,6 +622,9 @@
       color: inherit;
       transition: all 0.25s;
       cursor: pointer;
+      position: relative;
+      z-index: 5;
+      pointer-events: auto;
     }
 
     .card-social-btn:hover {
@@ -1119,7 +1127,36 @@
       <button class="btn-generate" onclick="generateCard()">
         <i class="fas fa-magic"></i> Generar Vista Previa
       </button>
-      <button class="btn-download" onclick="openPayModal()">
+      
+      <div class="card-management-box" style="margin-top:20px; padding:20px; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.1); border-radius:16px;">
+        <div style="font-size:0.85rem; font-weight:700; color:var(--accent-green); margin-bottom:12px; text-transform:uppercase; letter-spacing:1px;">
+          <i class="fas fa-key"></i> Gestión de Tarjeta
+        </div>
+        <div id="keyDisplay" style="display:none; margin-bottom:15px;">
+          <div style="font-size:0.75rem; color:rgba(255,255,255,0.5); margin-bottom:5px;">Tu clave de edición (¡No la pierdas!):</div>
+          <div style="display:flex; gap:10px; align-items:center;">
+            <code id="accessKeyVal" style="background:rgba(0,0,0,0.3); padding:8px 12px; border-radius:8px; flex-grow:1; color:#fff; font-size:1rem; border:1px solid rgba(141,238,18,0.3);"></code>
+            <button onclick="copyAccessKey()" class="btn-arhez-primary" style="padding:8px; border-radius:8px;"><i class="fas fa-copy"></i></button>
+          </div>
+          <div id="shareLinkArea" style="margin-top:15px;">
+             <div style="font-size:0.75rem; color:rgba(255,255,255,0.5); margin-bottom:5px;">Link Público:</div>
+             <div style="display:flex; gap:10px; align-items:center;">
+               <input id="publicLinkInput" readonly style="background:rgba(0,0,0,0.3); padding:8px 12px; border-radius:8px; flex-grow:1; color:#8DEE12; font-size:0.85rem; border:1px solid rgba(255,255,255,0.1); border-radius:8px;">
+               <button onclick="copyPublicLink()" class="btn-arhez-primary" style="padding:8px; border-radius:8px;"><i class="fas fa-share-alt"></i></button>
+             </div>
+          </div>
+        </div>
+        
+        <div id="loginArea">
+          <p style="font-size:0.8rem; color:rgba(255,255,255,0.4); margin-bottom:10px;">¿Ya tienes una tarjeta? Edítala aquí:</p>
+          <div style="display:flex; gap:8px;">
+            <input type="text" id="recoverKey" placeholder="Pega tu clave de 8 caracteres" style="flex-grow:1; background:rgba(0,0,0,0.3); border:1px solid rgba(255,255,255,0.1); color:#fff; padding:10px; border-radius:8px; font-size:0.9rem;">
+            <button onclick="loadFromSupabase()" class="btn-arhez-primary" style="padding:10px 15px; border-radius:8px;"><i class="fas fa-sync"></i></button>
+          </div>
+        </div>
+      </div>
+
+      <button class="btn-download" onclick="openPayModal()" style="margin-top:20px;">
         <i class="fas fa-file-pdf"></i> Descargar Tarjeta (PDF) · $49 MXN
       </button>
 
@@ -1128,7 +1165,21 @@
     <!-- PREVIEW -->
     <div class="preview-col">
 
-      <div class="preview-label"><i class="fas fa-eye" style="margin-right:6px;"></i> Vista Previa en Tiempo Real</div>
+      <div class="preview-label" style="display:flex; justify-content:space-between; width:100%;">
+        <span><i class="fas fa-eye" style="margin-right:6px;"></i> Vista Previa</span>
+        <span style="color:var(--accent-green); font-size:0.6rem; display:flex; align-items:center; gap:5px;">
+          <span style="width:6px; height:6px; background:var(--accent-green); border-radius:50%; animation: pulse 1.5s infinite;"></span>
+          EN TIEMPO REAL
+        </span>
+      </div>
+
+      <style>
+        @keyframes pulse {
+          0% { transform: scale(1); opacity: 1; }
+          50% { transform: scale(1.5); opacity: 0.5; }
+          100% { transform: scale(1); opacity: 1; }
+        }
+      </style>
 
       <!-- Stats -->
       <div class="stats-bar">
@@ -1253,7 +1304,7 @@
       <!-- Hint -->
       <p style="font-size:0.75rem; color:rgba(255,255,255,0.3); text-align:center; max-width:380px;">
         <i class="fas fa-info-circle"></i> La tarjeta se actualiza automáticamente mientras completas el formulario.
-        Usa "Descargar" para obtener una imagen PNG lista para compartir.
+        Usa "Descargar" para obtener un archivo PDF listo para compartir.
       </p>
 
     </div>
@@ -1297,6 +1348,205 @@
   <script>
     const STRIPE_URL = 'https://buy.stripe.com/00w5kv6ea5Aqgtx2Z34ow01';
 
+    // ── SUPABASE CONFIG ───────────────────────────────────────────
+    const SUPABASE_URL = 'https://wrjqbyntrjepvkrtautz.supabase.co';
+    const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndyanFieW50cmplcHZrcnRhdXR6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQyMDQwMzUsImV4cCI6MjA4OTc4MDAzNX0.fd85s25NKWphVG0B6U_p3mog4q7R6ni0nWT1JUviLL0';
+    const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
+    let currentCardSlug = null;
+    let currentAccessKey = null;
+    let logoDataUrl = null; 
+    let isPaid = false; // Nueva variable para rastrear estado de pago
+
+    // Generar clave de 8 caracteres
+    function generateKey() {
+      return Math.random().toString(36).substring(2, 10).toUpperCase();
+    }
+
+    // Guardar en Supabase
+    async function saveToSupabase(forcePaid = false) {
+      const name = document.getElementById('bizName').value.trim();
+      if (!name) return;
+
+      const formData = {
+        bizName:    document.getElementById('bizName').value,
+        bizTagline: document.getElementById('bizTagline').value,
+        waNumber:   document.getElementById('waNumber').value,
+        fbUrl:      document.getElementById('fbUrl').value,
+        igUrl:      document.getElementById('igUrl').value,
+        webUrl:     document.getElementById('webUrl').value,
+        webLabel:   document.getElementById('webLabel').value,
+        bizDesc:    document.getElementById('bizDesc').value,
+        bizHours:   document.getElementById('bizHours').value,
+        bizAddress: document.getElementById('bizAddress').value,
+        colorBg:    document.getElementById('colorBg').value,
+        colorAccent:document.getElementById('colorAccent').value,
+        colorText:  document.getElementById('colorText').value,
+        logoDataUrl: logoDataUrl || null
+      };
+
+      if (!currentCardSlug) currentCardSlug = name.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '') + '-' + Math.floor(Math.random()*1000);
+      
+      // SOLO generar clave si se fuerza el pago (tras Stripe) o si ya existía
+      if (forcePaid && !currentAccessKey) {
+          currentAccessKey = generateKey();
+      }
+
+      // Persistir IDs localmente
+      localStorage.setItem('arhez_current_slug', currentCardSlug);
+      if (currentAccessKey) localStorage.setItem('arhez_current_key', currentAccessKey);
+
+      const updatePayload = { 
+        slug: currentCardSlug,
+        biz_name: name,
+        card_data: formData,
+        updated_at: new Date().toISOString()
+      };
+
+      if (currentAccessKey && currentAccessKey !== 'null') {
+        updatePayload.access_key = currentAccessKey;
+      }
+
+      if (forcePaid || isPaid) {
+        updatePayload.is_paid = true;
+        isPaid = true; // Asegurar estado local
+      }
+
+      const { data, error } = await supabaseClient
+        .from('digital_cards')
+        .upsert(updatePayload, { onConflict: 'slug' })
+        .select();
+
+      if (!error) {
+        // Solo mostrar gestión si hay clave (ya pagó o cargó una existente)
+        if (currentAccessKey && currentAccessKey !== 'null') {
+          document.getElementById('keyDisplay').style.display = 'block';
+          document.getElementById('accessKeyVal').textContent = currentAccessKey;
+          const baseUrl = window.location.href.split('?')[0].split('#')[0].replace('tarjeta-digital.html', 'ver.html');
+          const publicUrl = `${baseUrl}?id=${currentCardSlug}`;
+          document.getElementById('publicLinkInput').value = publicUrl;
+        } else {
+          document.getElementById('keyDisplay').style.display = 'none';
+        }
+        
+        updateDownloadButton();
+        console.log('✅ Guardado en Supabase:', currentCardSlug);
+      } else {
+        console.error('❌ Error de Supabase:', error);
+      }
+    }
+
+    // Cargar desde Supabase
+    async function loadFromSupabase() {
+      const key = document.getElementById('recoverKey').value.trim();
+      if (!key) {
+          showToast('⚠️ Ingresa una clave');
+          return;
+      }
+
+      const { data, error } = await supabaseClient
+        .from('digital_cards')
+        .select('*')
+        .eq('access_key', key)
+        .single();
+
+      if (error || !data) {
+        showToast('❌ Clave incorrecta o tarjeta no encontrada');
+        return;
+      }
+
+      const d = data.card_data;
+      currentAccessKey = data.access_key;
+      currentCardSlug = data.slug;
+      isPaid = data.is_paid || false;
+      
+      localStorage.setItem('arhez_is_paid', isPaid);
+
+      // Llenar formulario
+      document.getElementById('bizName').value    = d.bizName    || '';
+      document.getElementById('bizTagline').value = d.bizTagline || '';
+      document.getElementById('waNumber').value   = d.waNumber   || '';
+      document.getElementById('fbUrl').value      = d.fbUrl      || '';
+      document.getElementById('igUrl').value      = d.igUrl      || '';
+      document.getElementById('webUrl').value     = d.webUrl     || '';
+      document.getElementById('webLabel').value   = d.webLabel   || '';
+      document.getElementById('bizDesc').value    = d.bizDesc    || '';
+      document.getElementById('bizHours').value   = d.bizHours   || '';
+      document.getElementById('bizAddress').value = d.bizAddress || '';
+      document.getElementById('colorBg').value    = d.colorBg    || '#0f172a';
+      document.getElementById('colorAccent').value= d.colorAccent|| '#8DEE12';
+      document.getElementById('colorText').value  = d.colorText  || '#ffffff';
+      
+      if (d.logoDataUrl) {
+        logoDataUrl = d.logoDataUrl; // Restaurar variable global
+        const thumb = document.getElementById('logoPreviewThumb');
+        const def = document.getElementById('logoUploadDefault');
+        const cLogo = document.getElementById('card-logo-img');
+        const cInit = document.getElementById('card-logo-initials');
+        
+        if(thumb) thumb.src = logoDataUrl;
+        if(thumb) thumb.style.display = 'block';
+        if(def) def.style.display = 'none';
+        if(cLogo) cLogo.src = logoDataUrl;
+        if(cLogo) cLogo.style.display = 'block';
+        if(cInit) cInit.style.display = 'none';
+      }
+
+      // Guardar IDs actuales para evitar duplicados al recargar
+      localStorage.setItem('arhez_current_slug', currentCardSlug);
+      localStorage.setItem('arhez_current_key', currentAccessKey);
+
+      document.getElementById('keyDisplay').style.display = 'block';
+      document.getElementById('accessKeyVal').textContent = currentAccessKey;
+      const baseUrl = window.location.href.split('?')[0].split('#')[0].replace('tarjeta-digital.html', 'ver.html');
+      document.getElementById('publicLinkInput').value = `${baseUrl}?id=${currentCardSlug}`;
+      
+      updateDownloadButton();
+      generateCard();
+      showToast('✅ Tarjeta cargada correctamente');
+    }
+
+    // Actualizar el botón de descarga según el estado de pago
+    function updateDownloadButton() {
+      const btn = document.querySelector('.btn-download');
+      if (!btn) return;
+
+      if (isPaid) {
+        btn.innerHTML = '<i class="fas fa-sync-alt"></i> Actualizar y Descargar PDF';
+        btn.onclick = async () => {
+          showToast('💾 Guardando cambios...');
+          await saveToSupabase(false);
+          downloadCard();
+        };
+      } else {
+        btn.innerHTML = '<i class="fas fa-file-pdf"></i> Descargar Tarjeta (PDF) · $49 MXN';
+        btn.onclick = openPayModal;
+      }
+    }
+
+    // Debounce function to limit database calls
+    function debounce(func, timeout = 1000) {
+      let timer;
+      return (...args) => {
+        clearTimeout(timer);
+        timer = setTimeout(() => { func.apply(this, args); }, timeout);
+      };
+    }
+
+    const debouncedSave = debounce(() => saveToSupabase(), 2000);
+
+    function copyAccessKey() {
+      const val = document.getElementById('accessKeyVal').textContent;
+      navigator.clipboard.writeText(val);
+      showToast('📋 Clave copiada');
+    }
+    
+    function copyPublicLink() {
+      const val = document.getElementById('publicLinkInput').value;
+      navigator.clipboard.writeText(val);
+      showToast('🔗 Link copiado');
+    }
+
     // ── Guardar datos del formulario antes de ir a Stripe ─────────
     function saveFormDataAndPay() {
       const formData = {
@@ -1317,6 +1567,9 @@
       };
       try {
         localStorage.setItem('arhez_card_data', JSON.stringify(formData));
+        if (currentCardSlug) localStorage.setItem('arhez_current_slug', currentCardSlug);
+        if (currentAccessKey && currentAccessKey !== 'null') localStorage.setItem('arhez_current_key', currentAccessKey);
+        localStorage.setItem('arhez_is_paid', isPaid);
       } catch (e) {
         console.error('Error saving storage:', e);
       }
@@ -1358,6 +1611,17 @@
           cardLogoImg.style.display = 'block';
           cardLogoInitials.style.display = 'none';
         }
+
+        // Restaurar IDs de seguimiento
+        const savedSlug = localStorage.getItem('arhez_current_slug');
+        const savedKey = localStorage.getItem('arhez_current_key');
+        
+        if (savedSlug && savedSlug !== 'null') currentCardSlug = savedSlug;
+        if (savedKey && savedKey !== 'null') currentAccessKey = savedKey;
+        
+        isPaid = localStorage.getItem('arhez_is_paid') === 'true';
+        
+        updateDownloadButton();
         return true;
       } catch (e) {
         console.error('Error restaurando datos:', e);
@@ -1366,7 +1630,7 @@
     }
 
     // ── Detectar ?paid=true y auto-carga ──────────────────────────
-    window.addEventListener('DOMContentLoaded', () => {
+    window.addEventListener('DOMContentLoaded', async () => {
       // 1. Siempre restaurar datos si hay guardados previamente
       restoreFormData();
       // 2. Generar tarjeta con lo que haya
@@ -1376,7 +1640,11 @@
       const params = new URLSearchParams(window.location.search);
       if (params.get('paid') === 'true') {
         history.replaceState({}, '', window.location.pathname);
-        showToast('✅ ¡Pago confirmado! Generando tu PDF con links...');
+        showToast('✅ ¡Pago confirmado! Generando tu tarjeta en la nube...');
+        
+        // Primero guardamos en Supabase de forma definitiva
+        await saveToSupabase(true); // true indica que ya está pagada
+        
         setTimeout(() => downloadCard(), 1500);
       }
     });
@@ -1397,13 +1665,13 @@
     const inputs = ['bizName', 'bizTagline', 'waNumber', 'fbUrl', 'igUrl', 'webUrl', 'webLabel', 'bizDesc', 'bizHours', 'bizAddress'];
     inputs.forEach(id => {
       const el = document.getElementById(id);
-      if (el) el.addEventListener('input', generateCard);
+      if (el) el.addEventListener('input', () => generateCard(true));
     });
 
     ['colorBg', 'colorAccent', 'colorText'].forEach(id => {
       document.getElementById(id).addEventListener('input', function () {
         document.getElementById(id + 'Label').textContent = this.value;
-        generateCard();
+        generateCard(true);
       });
     });
 
@@ -1413,21 +1681,27 @@
     const logoDefault = document.getElementById('logoUploadDefault');
     const cardLogoImg = document.getElementById('card-logo-img');
     const cardLogoInitials = document.getElementById('card-logo-initials');
-    let logoDataUrl = null;
 
     logoInput.addEventListener('change', function () {
       const file = this.files[0];
       if (!file) return;
+      
       const reader = new FileReader();
       reader.onload = e => {
-        logoDataUrl = e.target.result;
-        logoThumb.src = logoDataUrl;
+        const result = e.target.result;
+        logoDataUrl = result; // Guardar globalmente
+        
+        // Actualizar UI del constructor
+        logoThumb.src = result;
         logoThumb.style.display = 'block';
         logoDefault.style.display = 'none';
-        cardLogoImg.src = logoDataUrl;
+        
+        // Actualizar UI de la tarjeta preview
+        cardLogoImg.src = result;
         cardLogoImg.style.display = 'block';
         cardLogoInitials.style.display = 'none';
-        generateCard();
+        
+        generateCard(false); // No guardar forzosamente al cambiar logo, el debounce lo hará
       };
       reader.readAsDataURL(file);
     });
@@ -1456,7 +1730,7 @@
       return '+' + num.replace(/\D/g, '');
     }
 
-    function generateCard() {
+    async function generateCard(shouldSave = true) {
       const name = document.getElementById('bizName').value.trim();
       const tagline = document.getElementById('bizTagline').value.trim();
       const desc = document.getElementById('bizDesc').value.trim();
@@ -1520,6 +1794,10 @@
         cardLogoInitials.textContent = getInitials(name);
         cardLogoInitials.style.display = 'block';
         cardLogoImg.style.display = 'none';
+      } else {
+        cardLogoImg.src = logoDataUrl;
+        cardLogoImg.style.display = 'block';
+        cardLogoInitials.style.display = 'none';
       }
 
       // URL bar
@@ -1602,16 +1880,20 @@
       document.querySelectorAll('.card-social-btn .arrow').forEach(el => {
         el.style.color = accentColor;
       });
-      document.getElementById('cardHoursWrap').style.color = accentColor;
-      // Provide a faded background for hours badge using accentColor
-      const hexToRgb = (hex) => {
-        const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
-        return result ? `${parseInt(result[1], 16)}, ${parseInt(result[2], 16)}, ${parseInt(result[3], 16)}` : '141, 238, 18';
-      };
-      document.getElementById('cardHoursWrap').style.background = `rgba(${hexToRgb(accentColor)}, 0.1)`;
+      if (document.getElementById('cardHoursWrap')) {
+        document.getElementById('cardHoursWrap').style.color = accentColor;
+        // Provide a faded background for hours badge using accentColor
+        const hexToRgb = (hex) => {
+          const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+          return result ? `${parseInt(result[1], 16)}, ${parseInt(result[2], 16)}, ${parseInt(result[3], 16)}` : '141, 238, 18';
+        };
+        document.getElementById('cardHoursWrap').style.background = `rgba(${hexToRgb(accentColor)}, 0.1)`;
+      }
 
-      // Autoguardar los datos simulando el clic
-      saveFormDataAndPay();
+      // Sincronizar en la nube con debounce
+      if (shouldSave) {
+        debouncedSave();
+      }
     }
 
     // Run once on load
