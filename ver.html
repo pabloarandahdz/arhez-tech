@@ -222,7 +222,8 @@
         .single();
 
       if (error || !data) {
-        showError();
+        console.error('Error fetching card:', error);
+        showError(error ? error.message : 'Tarjeta no encontrada en la base de datos');
         return;
       }
 
@@ -308,9 +309,14 @@
       container.style.display = 'block';
     }
 
-    function showError() {
+    function showError(msg) {
       document.getElementById('loading').style.display = 'none';
       document.getElementById('error-msg').style.display = 'block';
+      if (msg) {
+          console.log('Detalle del error:', msg);
+          const p = document.querySelector('#error-msg p');
+          if (p) p.textContent = msg;
+      }
     }
 
     loadCard();

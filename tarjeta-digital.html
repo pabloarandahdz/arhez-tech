@@ -1800,9 +1800,9 @@
         cardLogoInitials.style.display = 'none';
       }
 
-      // URL bar
-      const slug = name ? name.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '') : 'tu-negocio';
-      document.getElementById('urlBar').textContent = `arhez.tech/card/${slug}`;
+      // URL bar - Sincronizado con el slug real de Supabase
+      const displaySlug = currentCardSlug || (name ? name.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '') : 'tu-negocio');
+      document.getElementById('urlBar').textContent = `arhez.tech/card/${displaySlug}`;
 
       // Social buttons color
       document.querySelectorAll('.card-social-btn').forEach(btn => {
