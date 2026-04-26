@@ -439,6 +439,17 @@
       background: rgba(141, 238, 18, 0.06);
     }
 
+    .btn-download.paid-mode {
+      background: linear-gradient(135deg, rgba(56, 189, 248, 0.1), rgba(141, 238, 18, 0.1));
+      border-color: var(--accent-green);
+      color: var(--accent-green);
+    }
+
+    .btn-download.paid-mode:hover {
+      background: linear-gradient(135deg, rgba(56, 189, 248, 0.2), rgba(141, 238, 18, 0.2));
+      transform: translateY(-2px);
+    }
+
     /* ── PREVIEW COLUMN ── */
     .preview-col {
       display: flex;
@@ -1474,7 +1485,8 @@
       const d = data.card_data;
       currentAccessKey = data.access_key;
       currentCardSlug = data.slug;
-      isPaid = data.is_paid || false;
+      // Si existe una clave de acceso, consideramos que la tarjeta ya fue pagada/activada
+      isPaid = data.is_paid || (currentAccessKey ? true : false);
       
       localStorage.setItem('arhez_is_paid', isPaid);
 
@@ -1535,6 +1547,7 @@
 
       if (isPaid) {
         btn.innerHTML = '<i class="fas fa-sync-alt"></i> Actualizar y Descargar PDF';
+        btn.classList.add('paid-mode');
         btn.onclick = async () => {
           showToast('💾 Guardando cambios...');
           await saveToSupabase(false);
@@ -1542,6 +1555,7 @@
         };
       } else {
         btn.innerHTML = '<i class="fas fa-file-pdf"></i> Descargar Tarjeta (PDF) · $49 MXN';
+        btn.classList.remove('paid-mode');
         btn.onclick = openPayModal;
       }
     }
