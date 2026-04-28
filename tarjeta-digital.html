@@ -11,8 +11,9 @@
   <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
-    rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="css/style.css">
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
@@ -20,11 +21,11 @@
 
   <style>
     :root {
-      --primary-dark: #06071B;
+      --primary-dark: #0A0A0A;
       --accent-green: #8DEE12;
       --accent-blue: #38BDF8;
-      --glass-bg: rgba(255, 255, 255, 0.06);
-      --glass-border: rgba(255, 255, 255, 0.12);
+      --glass-bg: rgba(255, 255, 255, 0.04);
+      --glass-border: rgba(255, 255, 255, 0.08);
     }
 
     * {
@@ -34,11 +35,12 @@
     }
 
     body {
-      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-family: 'Inter', system-ui, sans-serif;
       background: var(--primary-dark);
       color: #fff;
       min-height: 100vh;
       overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
     }
 
     /* ── BACKGROUND BLOBS ── */
@@ -79,105 +81,53 @@
       left: 40%;
     }
 
-    /* ── NAV ── */
-    .top-nav {
-      position: relative;
-      z-index: 10;
-      padding: 20px 40px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      border-bottom: 1px solid var(--glass-border);
-      background: rgba(6, 7, 27, 0.6);
-      backdrop-filter: blur(20px);
-    }
+    /* Eliminamos top-nav antiguo */
 
-    .nav-logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      text-decoration: none;
-    }
-
-    .nav-logo img {
-      height: 32px;
-    }
-
-    .nav-logo-text {
-      font-size: 0.85rem;
-      color: rgba(255, 255, 255, 0.5);
-      font-weight: 500;
-    }
-
-    .nav-logo-text span {
-      color: var(--accent-green);
-      font-weight: 700;
-    }
-
-    .btn-back {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      color: rgba(255, 255, 255, 0.6);
-      text-decoration: none;
-      font-size: 0.875rem;
-      font-weight: 600;
-      padding: 8px 16px;
-      border: 1px solid var(--glass-border);
-      border-radius: 50px;
-      background: var(--glass-bg);
-      transition: all 0.2s;
-    }
-
-    .btn-back:hover {
-      color: #fff;
-      border-color: var(--accent-green);
-      background: rgba(141, 238, 18, 0.08);
-    }
-
-    /* ── HERO ── */
-    .hero {
+    .builder-header {
       position: relative;
       z-index: 1;
       text-align: center;
-      padding: 110px 20px 40px;
+      padding: 140px 24px 60px;
+      max-width: 800px;
+      margin: 0 auto;
     }
 
-    .hero-badge {
+    .builder-header-badge {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      background: rgba(141, 238, 18, 0.1);
-      border: 1px solid rgba(141, 238, 18, 0.3);
+      background: transparent;
+      border: none;
       color: var(--accent-green);
       font-size: 0.78rem;
-      font-weight: 700;
-      padding: 6px 16px;
-      border-radius: 50px;
+      font-weight: 600;
+      padding: 0;
       margin-bottom: 20px;
-      letter-spacing: 0.05em;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
     }
 
-    .hero h1 {
-      font-size: clamp(2rem, 5vw, 3.2rem);
+    .builder-header h1 {
+      font-size: clamp(2.2rem, 5vw, 3.2rem);
       font-weight: 800;
       line-height: 1.15;
+      letter-spacing: -0.02em;
       margin-bottom: 16px;
     }
 
-    .hero h1 .accent {
+    .builder-header h1 .accent {
       background: linear-gradient(135deg, var(--accent-green), var(--accent-blue));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
     }
 
-    .hero p {
-      color: rgba(255, 255, 255, 0.55);
-      font-size: 1.05rem;
+    .builder-header p {
+      color: rgba(255, 255, 255, 0.65);
+      font-size: 1.15rem;
       max-width: 560px;
       margin: 0 auto;
+      line-height: 1.7;
     }
 
     /* ── MAIN LAYOUT ── */
@@ -204,11 +154,10 @@
 
     /* ── FORM PANEL ── */
     .form-panel {
-      background: var(--glass-bg);
+      background: #111111;
       border: 1px solid var(--glass-border);
-      border-radius: 24px;
+      border-radius: 14px;
       padding: 36px;
-      backdrop-filter: blur(20px);
     }
 
     .section-label {
@@ -278,6 +227,11 @@
       color: rgba(255, 255, 255, 0.3);
       font-size: 0.95rem;
       pointer-events: none;
+      transition: color 0.3s;
+    }
+
+    .input-icon-wrap:focus-within .icon {
+      color: var(--accent-green);
     }
 
     .input-icon-wrap .form-control {
@@ -389,16 +343,16 @@
     /* Action buttons */
     .btn-generate {
       width: 100%;
-      background: linear-gradient(135deg, var(--accent-green), #5bc800);
-      color: #06071B;
-      font-weight: 800;
+      background: var(--accent-green);
+      color: #0A0A0A;
+      font-weight: 700;
       font-size: 1rem;
       font-family: inherit;
       border: none;
-      border-radius: 14px;
-      padding: 16px;
+      border-radius: 8px;
+      padding: 14px 16px;
       cursor: pointer;
-      transition: all 0.3s;
+      transition: all 0.25s;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -469,7 +423,7 @@
 
     /* ── DIGITAL CARD ── */
     #card-preview {
-      width: 380px;
+      width: 100%;
       min-height: 560px;
       border-radius: 28px;
       padding: 54px 32px 54px;
@@ -721,6 +675,7 @@
     .phone-frame {
       position: relative;
       width: 400px;
+      max-width: 100%;
     }
 
     .phone-frame::before {
@@ -735,10 +690,9 @@
     .phone-inner {
       position: relative;
       z-index: 1;
-      background: rgba(6, 7, 27, 0.8);
+      background: #0A0A0A;
       border-radius: 28px;
       padding: 16px;
-      backdrop-filter: blur(20px);
     }
 
     /* Browser bar */
@@ -967,23 +921,23 @@
     <div class="blob blob-3"></div>
   </div>
 
-  <!-- Navigation (mismo estilo que index.html) -->
-  <nav class="navbar navbar-expand-lg fixed-top navbar-arhez">
-    <div class="container">
-      <a class="navbar-brand" href="index.html">
-        <img class="logotipo" src="assets/img/logotipo.png" alt="Arhez Tech">
+  <!-- Navigation (estilo Arhez Tech) -->
+  <nav class="nav" id="nav">
+    <div class="nav__container">
+      <a href="index.html" class="nav__brand">
+        <img src="assets/img/logotipo.png" alt="Arhez Tech" class="nav__logo">
       </a>
-      <a href="index.html" class="btn-arhez-primary ms-auto" style="padding: 8px 20px; font-size: 0.875rem;">
-        <i class="fas fa-arrow-left me-2"></i> Regresar
+      <a href="index.html" class="btn btn--ghost" style="padding: 8px 16px; font-size: 0.85rem;">
+        <i class="fas fa-arrow-left"></i> Volver
       </a>
     </div>
   </nav>
 
-  <!-- Hero -->
-  <div class="hero">
-    <div class="hero-badge">
+  <!-- Builder Header -->
+  <div class="builder-header">
+    <div class="builder-header-badge">
       <i class="fas fa-id-card"></i>
-      Nuevo Servicio · Tarjetas Digitales
+      Plataforma Arhez Card
     </div>
     <h1>Tu negocio, en un solo <span class="accent">enlace inteligente.</span></h1>
     <p>Diseña tu tarjeta digital profesional en segundos. Comparte tu WhatsApp, redes sociales y sitio web con un solo
@@ -1153,7 +1107,7 @@
           </div>
           <div style="display:flex; gap:10px; align-items:center;">
             <code id="accessKeyVal" style="background:rgba(0,0,0,0.3); padding:8px 12px; border-radius:8px; flex-grow:1; color:#fff; font-size:1rem; border:1px solid rgba(141,238,18,0.3);"></code>
-            <button onclick="copyAccessKey()" class="btn-arhez-primary" style="padding:8px; border-radius:8px;" title="Copiar Clave"><i class="fas fa-copy"></i></button>
+            <button onclick="copyAccessKey()" class="btn btn--primary" style="padding:8px; border-radius:8px; display:flex; align-items:center; justify-content:center;" title="Copiar Clave"><i class="fas fa-copy"></i></button>
           </div>
           <p style="font-size:0.65rem; color:rgba(141,238,18,0.6); margin-top:5px;">Con esta clave puedes editar tu tarjeta gratis en el futuro.</p>
 
@@ -1162,8 +1116,8 @@
                <i class="fas fa-share-alt"></i> Enlace Público para Clientes:
              </div>
              <div style="display:flex; gap:10px; align-items:center;">
-               <input id="publicLinkInput" readonly style="background:rgba(0,0,0,0.3); padding:8px 12px; border-radius:8px; flex-grow:1; color:#8DEE12; font-size:0.85rem; border:1px solid rgba(255,255,255,0.1); border-radius:8px;">
-               <button onclick="copyPublicLink()" class="btn-arhez-primary" style="padding:8px; border-radius:8px;" title="Copiar Enlace"><i class="fas fa-share-alt"></i></button>
+               <input id="publicLinkInput" readonly style="background:rgba(0,0,0,0.3); padding:8px 12px; border-radius:8px; flex-grow:1; color:#8DEE12; font-size:0.85rem; border:1px solid rgba(255,255,255,0.1);">
+               <button onclick="copyPublicLink()" class="btn btn--primary" style="padding:8px; border-radius:8px; display:flex; align-items:center; justify-content:center;" title="Copiar Enlace"><i class="fas fa-share-alt"></i></button>
              </div>
              <p style="font-size:0.65rem; color:rgba(255,255,255,0.3); margin-top:5px;">Copia este link y pégalo en tu bio de Instagram o envíalo por WhatsApp.</p>
           </div>
@@ -1172,13 +1126,13 @@
         <div id="loginArea" style="border-top: 1px solid rgba(255,255,255,0.05); margin-top:15px; padding-top:15px;">
           <p style="font-size:0.8rem; color:rgba(255,255,255,0.4); margin-bottom:10px;">¿Ya tienes una tarjeta? Ingresa tu clave para editar:</p>
           <div style="display:flex; gap:8px;">
-            <input type="text" id="recoverKey" placeholder="Ej: X7A9B2C1" style="flex-grow:1; background:rgba(0,0,0,0.3); border:1px solid rgba(255,255,255,0.1); color:#fff; padding:10px; border-radius:8px; font-size:0.9rem;">
-            <button onclick="loadFromSupabase()" class="btn-arhez-primary" style="padding:10px 15px; border-radius:8px;"><i class="fas fa-sync"></i></button>
+            <input type="text" id="recoverKey" placeholder="Ej: X7A9B2C1" style="flex-grow:1; background:rgba(0,0,0,0.3); border:1px solid rgba(255,255,255,0.1); color:#fff; padding:10px; border-radius:8px; font-size:0.9rem; outline:none;">
+            <button onclick="loadFromSupabase()" class="btn btn--primary" style="padding:10px 15px; border-radius:8px; display:flex; align-items:center; justify-content:center;"><i class="fas fa-sync"></i></button>
           </div>
         </div>
       </div>
 
-      <button class="btn-download" onclick="openPayModal()" style="margin-top:20px;">
+      <button class="btn-download paid-mode" onclick="openPayModal()" style="margin-top:20px;">
         <i class="fas fa-file-pdf"></i> Descargar Tarjeta (PDF) · $49 MXN
       </button>
 
