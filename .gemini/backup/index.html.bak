@@ -1,0 +1,1018 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>ARHEZ TECHNOLOGIES - Impulsamos la transformación digital de nuestros clientes con soluciones tecnológicas
+		integrales</title>
+
+	<meta name="description"
+		content="Arhez Tech: Impulsamos el crecimiento de tu empresa con desarrollo web orientado a la conversión, automatización de procesos y software a medida.">
+	<!-- 200320262115 Etiquetas y Scripts -->
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-CR57KMZY6H"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() { dataLayer.push(arguments); }
+		gtag('js', new Date());
+		gtag('config', 'G-CR57KMZY6H');
+	</script>
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2097225346193438"
+		crossorigin="anonymous"></script>
+	<meta name="google-adsense-account" content="ca-pub-2097225346193438">
+
+	<!-- 200320262115 Estilos y Fuentes -->
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+	<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+		rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
+
+
+</head>
+
+<body>
+
+	<!-- 200320262115 Barra de Navegacion -->
+	<nav class="navbar navbar-expand-lg fixed-top navbar-arhez">
+		<div class="container">
+			<a class="navbar-brand" href="#">
+				<img class="logotipo" src="assets/img/logotipo.png" alt="Arhez Tech">
+			</a>
+			<button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+				<i class="fas fa-bars text-primary-dark fs-2"></i>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarNav">
+				<ul class="navbar-nav ms-auto align-items-center gap-2 gap-lg-4">
+					<li class="nav-item"><a class="nav-link text-primary-dark fw-semibold"
+							href="#soluciones">Soluciones</a>
+					</li>
+					<li class="nav-item"><a class="nav-link text-primary-dark fw-semibold" href="#demos">Demos</a>
+					</li>
+					<li class="nav-item"><a class="nav-link text-primary-dark fw-semibold"
+							href="#proyectos">Proyectos</a>
+					</li>
+					<li class="nav-item"><a class="nav-link text-primary-dark fw-semibold" href="#planes">Precios</a>
+					</li>
+					<li class="nav-item">
+						<a href="tarjeta-digital.html" class="nav-link text-primary-dark fw-semibold">
+							Tarjeta Digital <span style="background:var(--accent-green);color:var(--primary-dark);font-size:0.58rem;font-weight:800;padding:1px 6px;border-radius:50px;text-transform:uppercase;letter-spacing:0.05em;vertical-align:middle;">Nuevo</span>
+						</a>
+					</li>
+					<li class="nav-item">
+						<a href="#contacto" class="btn-arhez-primary" style="padding: 10px 24px;">
+							Contacto
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<!-- 200320262115 Seccion Principal Hero -->
+	<header class="hero-arhez position-relative overflow-hidden">
+		<!-- Glowing blurred blobs for Hero Apple style -->
+		<div class="position-absolute rounded-circle"
+			style="width: 600px; height: 600px; background: rgba(56, 189, 248, 0.35); filter: blur(120px); top: -150px; right: -100px; z-index: 0; pointer-events: none;">
+		</div>
+		<div class="position-absolute rounded-circle"
+			style="width: 500px; height: 500px; background: rgba(141, 238, 18, 0.25); filter: blur(120px); bottom: -100px; left: 5%; z-index: 0; pointer-events: none;">
+		</div>
+
+		<div class="container position-relative z-1">
+			<!-- Se eliminó mt-5 para reducir margen superior -->
+			<div class="row align-items-center pt-4">
+				<div class="col-lg-6 mb-5 mb-lg-0">
+					<div class="d-inline-flex align-items-center border border-light border-opacity-25 px-3 py-2 rounded-pill mb-4"
+						style="background: rgba(255,255,255,0.05); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);">
+						<span class="text-accent me-2"><i class="fas fa-bolt"></i></span>
+						<small class="text-white fw-bold">Transformación digital integral para tu negocio</small>
+					</div>
+					<h1 class="hero-title">
+						Haz crecer tu negocio con <span class="brand-accent-text">tecnología a medida.</span>
+					</h1>
+					<p class="hero-subtitle">
+						Tu empresa tiene metas únicas. En Arhez Tech desarrollamos la solución tecnológica para
+						alcanzarlas.
+					</p>
+					<div class="d-flex flex-wrap gap-3">
+						<a href="#contacto" class="btn-arhez-primary">
+							Empezar ahora
+						</a>
+						<a href="#soluciones" class="btn-arhez-outline">
+							Explorar servicios
+						</a>
+					</div>
+					<div class="mt-4 pt-4 border-top border-secondary border-opacity-25 d-flex gap-2 gap-md-4">
+						<div class="p-3 rounded border border-light border-opacity-25 flex-fill"
+							style="background: rgba(255,255,255,0.05); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);">
+							<h4 class="text-accent mb-0 fw-bold">100%</h4>
+							<small class="text-white fw-semibold">Enfoque a resultados</small>
+						</div>
+						<div class="p-3 rounded border border-light border-opacity-25 flex-fill"
+							style="background: rgba(255,255,255,0.05); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);">
+							<h4 class="text-accent mb-0 fw-bold">+48%</h4>
+							<small class="text-white fw-semibold">Crecimiento promedio</small>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-5 offset-lg-1">
+					<div class="dashboard-mockup">
+						<div class="d-flex gap-2 mb-3 px-2 border-bottom border-secondary border-opacity-25 pb-3">
+							<div class="rounded-circle" style="width: 12px; height: 12px; background: #ef4444;"></div>
+							<div class="rounded-circle" style="width: 12px; height: 12px; background: #eab308;"></div>
+							<div class="rounded-circle" style="width: 12px; height: 12px; background: #22c55e;"></div>
+						</div>
+						<div class="row g-3">
+							<div class="col-6">
+								<div class="p-3 rounded bg-white bg-opacity-10"
+									style="backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.1);">
+									<div class="text-accent small mb-1">Escalabilidad</div>
+									<div class="text-white fw-bold fs-5">Sin Límites</div>
+								</div>
+							</div>
+							<div class="col-6">
+								<div class="p-3 rounded bg-white bg-opacity-10"
+									style="backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.1);">
+									<div class="text-info small mb-1">Diseño</div>
+									<div class="text-white fw-bold fs-5">Responsivo</div>
+								</div>
+							</div>
+							<div class="col-12 mt-3">
+								<div class="p-4 rounded border border-light border-opacity-10"
+									style="background: rgba(255,255,255,0.05); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);">
+									<div class="d-flex justify-content-between mb-2">
+										<span class="text-white small">SEO</span>
+										<span class="text-accent fw-bold">Óptimo</span>
+									</div>
+									<div class="progress" style="height: 8px; background: rgba(255,255,255,0.1);">
+										<div class="progress-bar bg-accent" style="width: 95%"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+
+
+	<!-- 200320262115 Seccion de Soluciones Segmentadas -->
+	<section id="soluciones" class="arhez-section position-relative overflow-hidden" style="background: #fbfbfb;">
+		<!-- Blobs de fondo para cristal -->
+		<div class="position-absolute rounded-circle"
+			style="width: 500px; height: 500px; background: rgba(56, 189, 248, 0.15); filter: blur(80px); top: 5%; left: -150px; z-index: 0; pointer-events: none;">
+		</div>
+		<div class="position-absolute rounded-circle"
+			style="width: 500px; height: 500px; background: rgba(141, 238, 18, 0.12); filter: blur(80px); bottom: 5%; right: -150px; z-index: 0; pointer-events: none;">
+		</div>
+
+		<div class="container position-relative z-1">
+
+			<div class="split-feature p-4 p-lg-5 rounded-5 border border-white shadow-sm"
+				style="background: rgba(255, 255, 255, 0.6); backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px);">
+				<div class="flex-grow-1">
+					<span class="badge bg-primary-dark text-white mb-3 px-3 py-2 rounded-pill">Presencia Digital</span>
+					<h2 class="section-title">Desarrollo Web Orientado a Conversión</h2>
+					<p class="lead text-muted mb-4">
+						Desarrollamos landing pages estratégicas, sitios corporativos y plataformas web
+						autoadministrables diseñadas para destacar tu marca.
+					</p>
+					<ul class="list-unstyled mb-4">
+						<li class="mb-3 d-flex align-items-center"><i class="fas fa-check text-accent fs-5 me-3"></i>
+							Landing Pages para captura de prospectos.</li>
+						<li class="mb-3 d-flex align-items-center"><i class="fas fa-check text-accent fs-5 me-3"></i>
+							Sitios Corporativos de alto impacto (5 a 7 secciones).</li>
+						<li class="mb-3 d-flex align-items-center"><i class="fas fa-check text-accent fs-5 me-3"></i>
+							Sitios autoadministrables con gestor de contenidos (CMS).</li>
+					</ul>
+					<a href="#contacto" class="fw-bold text-primary-dark text-decoration-none pb-1">Quiero un
+						proyecto web<i class="fas fa-arrow-right ms-2"></i></a>
+				</div>
+				<div class="flex-shrink-0" style="width: 100%; max-width: 500px;">
+					<img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=800"
+						alt="Desarrollo Web Estratégico" class="img-fluid rounded-4 shadow-lg">
+				</div>
+			</div>
+
+			<div class="split-feature p-4 p-lg-5 rounded-5 border border-white shadow-sm"
+				style="background: rgba(255, 255, 255, 0.6); backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px);">
+				<div class="flex-grow-1">
+					<span class="badge bg-primary-dark text-white mb-3 px-3 py-2 rounded-pill">Automatización de
+						procesos</span>
+					<h2 class="section-title">Soluciones de Software a Medida</h2>
+					<p class="lead text-muted mb-4">
+						Ofrecemos el licenciamiento de nuestras plataformas tecnológicas propietarias diseñadas para
+						automatizar y optimizar la operación de tu industria.
+					</p>
+					<ul class="list-unstyled mb-4">
+						<li class="mb-3 d-flex align-items-center"><i class="fas fa-check text-accent fs-5 me-3"></i>
+							Licenciamiento e integración de plataformas Arhez.</li>
+						<li class="mb-3 d-flex align-items-center"><i class="fas fa-check text-accent fs-5 me-3"></i>
+							Operaciones automatizadas y escalables.</li>
+						<li class="mb-3 d-flex align-items-center"><i class="fas fa-check text-accent fs-5 me-3"></i>
+							Despliegue, configuración técnica y soporte corporativo.</li>
+					</ul>
+					<a href="#contacto" class="fw-bold text-primary-dark text-decoration-none pb-1">Cotizar
+						software a medida <i class="fas fa-arrow-right ms-2"></i></a>
+				</div>
+				<div class="flex-shrink-0" style="width: 100%; max-width: 500px;">
+					<img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&q=80&w=800"
+						alt="Soluciones de Software Corporativo" class="img-fluid rounded-4 shadow-lg">
+				</div>
+			</div>
+
+		</div>
+	</section>
+
+
+
+	<!-- 200320262115 Seccion de Proyectos -->
+	<section id="proyectos" class="projects-section">
+		<div class="container text-center mb-5">
+			<span class="badge bg-primary-dark text-white mb-3 px-3 py-2 rounded-pill">Impacto Real</span>
+			<h2 class="section-title">Nuestros Proyectos</h2>
+			<p class="lead text-muted mx-auto" style="max-width: 700px;">
+				Soluciones tecnológicas que han transformado la operación y escalabilidad de nuestros clientes.
+			</p>
+		</div>
+
+		<div class="container">
+			<div class="position-relative py-5">
+				<!-- Línea Vertical Central -->
+				<div class="d-none d-md-block position-absolute start-50 top-0 bottom-0 translate-middle-x"
+					style="width: 2px; background: linear-gradient(to bottom, transparent, rgba(141, 238, 18, 0.6), transparent); z-index: 0;">
+				</div>
+
+				<!-- Timeline Item 1: Arhez Shop -->
+				<div class="row align-items-center mb-5 position-relative z-1">
+					<div class="col-md-5 text-center text-md-end mb-4 mb-md-0">
+						<div class="pe-md-4">
+							<span class="badge bg-primary-dark text-white px-3 py-2 rounded-pill mb-2">2026</span>
+							<h3 class="fw-bold mb-1" style="color: var(--primary-dark);">Arhez Shop</h3>
+							<p class="text-accent fw-semibold small mb-0"
+								style="text-shadow: 0 0 10px rgba(141, 238, 18, 0.3);"><i class="fas fa-store me-1"></i>
+								Sales & Retail</p>
+						</div>
+					</div>
+					<div class="col-md-2 d-none d-md-flex justify-content-center align-items-center position-relative">
+						<div class="rounded-circle bg-white"
+							style="width: 20px; height: 20px; border: 4px solid var(--accent-green); box-shadow: 0 0 20px rgba(141, 238, 18, 0.8); z-index: 2;">
+						</div>
+					</div>
+					<div class="col-md-5">
+						<div class="p-4 rounded-4 shadow-sm border border-light"
+							style="background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);">
+							<p class="text-muted mb-3 m-0">Plataforma integral de gestión de negocios comerciales,
+								inventario y punto de venta enfocado en escalabilidad.</p>
+							<a href="https://arhez-shop.netlify.app" target="_blank"
+								class="fw-bold text-decoration-none px-4 py-2 border border-2 rounded-pill d-inline-block mt-2"
+								style="color: var(--primary-dark); border-color: rgba(141, 238, 18, 0.5) !important;"><i
+									class="fas fa-external-link-alt me-2 text-accent"></i>Ver Demo</a>
+						</div>
+					</div>
+				</div>
+
+				<!-- Timeline Item 2: Arhez Sports -->
+				<div class="row align-items-center mb-5 position-relative z-1">
+					<div class="col-md-5 order-2 order-md-1">
+						<div class="p-4 rounded-4 shadow-sm border border-light text-md-end mt-4 mt-md-0"
+							style="background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);">
+							<p class="text-muted mb-0 m-0">Ecosistema digital para la organización y gestión de ligas,
+								roles de juego, estadísticas y torneos deportivos de alto rendimiento.</p>
+						</div>
+					</div>
+					<div
+						class="col-md-2 order-1 order-md-2 d-none d-md-flex justify-content-center align-items-center position-relative">
+						<div class="rounded-circle bg-white"
+							style="width: 20px; height: 20px; border: 4px solid var(--accent-green); box-shadow: 0 0 20px rgba(141, 238, 18, 0.8); z-index: 2;">
+						</div>
+					</div>
+					<div class="col-md-5 text-center text-md-start order-1 order-md-3">
+						<div class="ps-md-4">
+							<span class="badge bg-primary-dark text-white px-3 py-2 rounded-pill mb-2">2026</span>
+							<h3 class="fw-bold mb-1" style="color: var(--primary-dark);">Arhez Sports</h3>
+							<p class="text-accent fw-semibold small mb-0"
+								style="text-shadow: 0 0 10px rgba(141, 238, 18, 0.3);"><i
+									class="fas fa-futbol me-1"></i> Sports & Tournaments</p>
+						</div>
+					</div>
+				</div>
+
+				<!-- Timeline Item 3: Arhez Analytics -->
+				<div class="row align-items-center mb-5 position-relative z-1">
+					<div class="col-md-5 text-center text-md-end mb-4 mb-md-0">
+						<div class="pe-md-4">
+							<span class="badge bg-primary-dark text-white px-3 py-2 rounded-pill mb-2">2026</span>
+							<h3 class="fw-bold mb-1" style="color: var(--primary-dark);">Arhez Analytics</h3>
+							<p class="text-accent fw-semibold small mb-0"
+								style="text-shadow: 0 0 10px rgba(141, 238, 18, 0.3);"><i
+									class="fas fa-chart-line me-1"></i> Data & Research</p>
+						</div>
+					</div>
+					<div class="col-md-2 d-none d-md-flex justify-content-center align-items-center position-relative">
+						<div class="rounded-circle bg-white"
+							style="width: 20px; height: 20px; border: 4px solid var(--accent-green); box-shadow: 0 0 20px rgba(141, 238, 18, 0.8); z-index: 2;">
+						</div>
+					</div>
+					<div class="col-md-5">
+						<div class="p-4 rounded-4 shadow-sm border border-light"
+							style="background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);">
+							<p class="text-muted mb-0 m-0">Plataforma integral de investigación, dashboards corporativos
+								y reportería inteligente con análisis de datos en tiempo real.</p>
+						</div>
+					</div>
+				</div>
+
+				<!-- Timeline Item 4: Arhez Hub -->
+				<div class="row align-items-center mb-5 position-relative z-1">
+					<div class="col-md-5 order-2 order-md-1">
+						<div class="p-4 rounded-4 shadow-sm border border-light text-md-end mt-4 mt-md-0"
+							style="background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);">
+							<p class="text-muted mb-3 m-0">Plataforma integral de capacitación y e-learning diseñada
+								para el desarrollo de talento en empresas y formación para particulares.</p>
+							<span
+								class="fw-bold text-decoration-none px-4 py-2 border border-2 rounded-pill d-inline-block mt-2"
+								style="color: var(--primary-dark); border-color: rgba(141, 238, 18, 0.5) !important;"><i
+									class="fas fa-calendar-alt me-2 text-accent"></i>01/mayo/2026</span>
+						</div>
+					</div>
+					<div
+						class="col-md-2 order-1 order-md-2 d-none d-md-flex justify-content-center align-items-center position-relative">
+						<div class="rounded-circle bg-white"
+							style="width: 20px; height: 20px; border: 4px solid var(--accent-green); box-shadow: 0 0 20px rgba(141, 238, 18, 0.8); z-index: 2;">
+						</div>
+					</div>
+					<div class="col-md-5 text-center text-md-start order-1 order-md-3">
+						<div class="ps-md-4">
+							<span class="badge bg-primary-dark text-white px-3 py-2 rounded-pill mb-2">2026</span>
+							<h3 class="fw-bold mb-1" style="color: var(--primary-dark);">Arhez Hub</h3>
+							<p class="text-accent fw-semibold small mb-0"
+								style="text-shadow: 0 0 10px rgba(141, 238, 18, 0.3);"><i
+									class="fas fa-graduation-cap me-1"></i> Education & Learning</p>
+						</div>
+					</div>
+				</div>
+
+				<!-- Timeline Item 5: Arhez CRM -->
+				<div class="row align-items-center mb-5 position-relative z-1">
+					<div class="col-md-5 text-center text-md-end mb-4 mb-md-0">
+						<div class="pe-md-4">
+							<span class="badge bg-primary-dark text-white px-3 py-2 rounded-pill mb-2">2027</span>
+							<h3 class="fw-bold mb-1" style="color: var(--primary-dark);">Arhez CRM</h3>
+							<p class="text-accent fw-semibold small mb-0"
+								style="text-shadow: 0 0 10px rgba(141, 238, 18, 0.3);"><i
+									class="fas fa-users-gear me-1"></i> Customers & Sales</p>
+						</div>
+					</div>
+					<div class="col-md-2 d-none d-md-flex justify-content-center align-items-center position-relative">
+						<div class="rounded-circle bg-white"
+							style="width: 20px; height: 20px; border: 4px solid var(--accent-green); box-shadow: 0 0 20px rgba(141, 238, 18, 0.8); z-index: 2;">
+						</div>
+					</div>
+					<div class="col-md-5">
+						<div class="p-4 rounded-4 shadow-sm border border-light"
+							style="background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);">
+							<p class="text-muted mb-0 m-0">Gestión inteligente de relaciones con clientes y
+								automatización de embudos de ventas para maximizar la conversión.</p>
+						</div>
+					</div>
+				</div>
+
+				<!-- Timeline Item 6: Arhez Supply Chain -->
+				<div class="row align-items-center mb-5 position-relative z-1">
+					<div class="col-md-5 order-2 order-md-1">
+						<div class="p-4 rounded-4 shadow-sm border border-light text-md-end mt-4 mt-md-0"
+							style="background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);">
+							<p class="text-muted mb-0 m-0">Optimización, seguimiento y control total de la cadena de
+								suministro y logística con visibilidad en tiempo real.</p>
+						</div>
+					</div>
+					<div
+						class="col-md-2 order-1 order-md-2 d-none d-md-flex justify-content-center align-items-center position-relative">
+						<div class="rounded-circle bg-white"
+							style="width: 20px; height: 20px; border: 4px solid var(--accent-green); box-shadow: 0 0 20px rgba(141, 238, 18, 0.8); z-index: 2;">
+						</div>
+					</div>
+					<div class="col-md-5 text-center text-md-start order-1 order-md-3">
+						<div class="ps-md-4">
+							<span class="badge bg-primary-dark text-white px-3 py-2 rounded-pill mb-2">2027</span>
+							<h3 class="fw-bold mb-1" style="color: var(--primary-dark);">Arhez Supply Chain</h3>
+							<p class="text-accent fw-semibold small mb-0"
+								style="text-shadow: 0 0 10px rgba(141, 238, 18, 0.3);"><i
+									class="fas fa-truck-fast me-1"></i> Logistics & Supply</p>
+						</div>
+					</div>
+				</div>
+
+				<!-- Timeline Item 7: Arhez ERP -->
+				<div class="row align-items-center mb-5 position-relative z-1">
+					<div class="col-md-5 text-center text-md-end mb-4 mb-md-0">
+						<div class="pe-md-4">
+							<span class="badge bg-primary-dark text-white px-3 py-2 rounded-pill mb-2">2028</span>
+							<h3 class="fw-bold mb-1" style="color: var(--primary-dark);">Arhez ERP</h3>
+							<p class="text-accent fw-semibold small mb-0"
+								style="text-shadow: 0 0 10px rgba(141, 238, 18, 0.3);"><i
+									class="fas fa-building-columns me-1"></i> Enterprise Planning</p>
+						</div>
+					</div>
+					<div class="col-md-2 d-none d-md-flex justify-content-center align-items-center position-relative">
+						<div class="rounded-circle bg-white"
+							style="width: 20px; height: 20px; border: 4px solid var(--accent-green); box-shadow: 0 0 20px rgba(141, 238, 18, 0.8); z-index: 2;">
+						</div>
+					</div>
+					<div class="col-md-5">
+						<div class="p-4 rounded-4 shadow-sm border border-light"
+							style="background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);">
+							<p class="text-muted mb-0 m-0">Sistema de planificación de recursos empresariales para el
+								control administrativo, financiero y operativo 360°.</p>
+						</div>
+					</div>
+				</div>
+
+				<!-- Timeline Item 8: Arhez Suite -->
+				<div class="row align-items-center mb-5 position-relative z-1">
+					<div class="col-md-5 order-2 order-md-1">
+						<div class="p-4 rounded-4 shadow-sm border border-light text-md-end mt-4 mt-md-0"
+							style="background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);">
+							<p class="text-muted mb-0 m-0">Ecosistema unificado de herramientas premium de
+								productividad, colaboración y comunicación para equipos globales.</p>
+						</div>
+					</div>
+					<div
+						class="col-md-2 order-1 order-md-2 d-none d-md-flex justify-content-center align-items-center position-relative">
+						<div class="rounded-circle bg-white"
+							style="width: 20px; height: 20px; border: 4px solid var(--accent-green); box-shadow: 0 0 20px rgba(141, 238, 18, 0.8); z-index: 2;">
+						</div>
+					</div>
+					<div class="col-md-5 text-center text-md-start order-1 order-md-3">
+						<div class="ps-md-4">
+							<span class="badge bg-primary-dark text-white px-3 py-2 rounded-pill mb-2">2029</span>
+							<h3 class="fw-bold mb-1" style="color: var(--primary-dark);">Arhez Suite</h3>
+							<p class="text-accent fw-semibold small mb-0"
+								style="text-shadow: 0 0 10px rgba(141, 238, 18, 0.3);"><i
+									class="fas fa-layer-group me-1"></i> Productivity Suite</p>
+						</div>
+					</div>
+				</div>
+
+				<!-- Timeline Item 9: Arhez Labs -->
+				<div class="row align-items-center mb-2 position-relative z-1">
+					<div class="col-md-5 text-center text-md-end mb-4 mb-md-0">
+						<div class="pe-md-4">
+							<span class="badge bg-primary-dark text-white px-3 py-2 rounded-pill mb-2">2030</span>
+							<h3 class="fw-bold mb-1" style="color: var(--primary-dark);">Arhez Labs</h3>
+							<p class="text-accent fw-semibold small mb-0"
+								style="text-shadow: 0 0 10px rgba(141, 238, 18, 0.3);"><i
+									class="fas fa-flask-vial me-1"></i> Innovation & AI</p>
+						</div>
+					</div>
+					<div class="col-md-2 d-none d-md-flex justify-content-center align-items-center position-relative">
+						<div class="rounded-circle bg-white"
+							style="width: 20px; height: 20px; border: 4px solid var(--accent-green); box-shadow: 0 0 20px rgba(141, 238, 18, 0.8); z-index: 2;">
+						</div>
+					</div>
+					<div class="col-md-5">
+						<div class="p-4 rounded-4 shadow-sm border border-light"
+							style="background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);">
+							<p class="text-muted mb-0 m-0">Laboratorio de innovación disruptiva enfocado en el
+								desarrollo de Inteligencia Artificial aplicada y tecnologías del futuro.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Logotipos de Clientes (Estilo Shopify/Apple) -->
+			<div class="client-logo-grid mt-5 pt-5 border-top border-light opacity-50">
+				<div class="px-4 py-2 opacity-50">
+					<h4 class="fw-bold mb-0">RESEARCH</h4>
+				</div>
+				<div class="px-4 py-2 opacity-50">
+					<h4 class="fw-bold mb-0">ARTIFICIAL INTELLIGENCE</h4>
+				</div>
+				<div class="px-4 py-2 opacity-50">
+					<h4 class="fw-bold mb-0">ENGINEERING</h4>
+				</div>
+				<div class="px-4 py-2 opacity-50">
+					<h4 class="fw-bold mb-0">SUPPLY CHAIN</h4>
+				</div>
+				<div class="px-4 py-2 opacity-50">
+					<h4 class="fw-bold mb-0">HUMAN RESOURCES</h4>
+				</div>
+				<div class="px-4 py-2 opacity-50">
+					<h4 class="fw-bold mb-0">SALES</h4>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- 0604262125 Seccion de Quienes Somos -->
+	<section id="nosotros" class="arhez-section position-relative overflow-hidden" style="background: white;">
+		<div class="container position-relative z-1">
+			<div class="row align-items-center">
+				<div class="col-lg-6 mb-5 mb-lg-0 text-center text-lg-start pe-lg-5">
+					<span class="badge bg-primary-dark text-white mb-3 px-3 py-2 rounded-pill">¿Quiénes Somos?</span>
+					<h2 class="section-title text-primary-dark fw-bold mb-4">El equipo detrás de tu<br><span
+							class="brand-accent-text">transformación digital</span></h2>
+					<p class="lead text-muted mb-4">
+						En Arhez Tech somos apasionados por la tecnología y la innovación. No somos una agencia
+						tradicional; somos un equipo de ingenieros y estrategas digitales dedicados a entender a fondo
+						los retos de tu negocio.
+					</p>
+					<p class="text-muted mb-4">
+						Nuestro compromiso es ser tu socio tecnológico a largo plazo. Nos enfocamos en construir la
+						tecnología exacta que necesitas para escalar de forma rentable y predecible.
+					</p>
+				</div>
+				<div class="col-lg-6">
+					<div class="position-relative">
+						<!-- Acento visual -->
+						<div class="position-absolute rounded-circle"
+							style="width: 250px; height: 250px; background: rgba(141, 238, 18, 0.2); filter: blur(40px); bottom: -20px; right: -20px; z-index: 0;">
+						</div>
+						<img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=800"
+							alt="Equipo Arhez Tech"
+							class="img-fluid rounded-4 shadow-lg position-relative z-1 border border-light"
+							style="border-width: 4px !important;">
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- 200320262115 Seccion de Proceso y Metodologia -->
+	<section class="arhez-section position-relative overflow-hidden" style="background: #fbfbfb;">
+		<!-- Decoración sutil Blur -->
+		<div class="position-absolute rounded-circle"
+			style="width: 400px; height: 400px; background: rgba(141, 238, 18, 0.08); filter: blur(60px); top: 5%; left: -100px; z-index: 0; pointer-events: none;">
+		</div>
+		<div class="position-absolute rounded-circle"
+			style="width: 400px; height: 400px; background: rgba(56, 189, 248, 0.08); filter: blur(60px); bottom: -50px; right: -100px; z-index: 0; pointer-events: none;">
+		</div>
+		<div class="container text-center position-relative z-1">
+			<h2 class="section-title mb-5">Nuestra Metodología</h2>
+			<div class="row g-4">
+				<div class="col-md-3">
+					<div class="p-4 methodology-card cursor-pointer">
+						<div class="display-3 fw-bold mb-3 step-number" style="color: rgba(6, 7, 27, 0.15);">01</div>
+						<h5 class="fw-bold step-title" style="color: var(--primary-dark);">Diagnóstico</h5>
+						<p class="text-muted small">Auditamos procesos y barreras de crecimiento.</p>
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="p-4 methodology-card cursor-pointer">
+						<div class="display-3 fw-bold mb-3 step-number" style="color: rgba(6, 7, 27, 0.15);">02</div>
+						<h5 class="fw-bold step-title" style="color: var(--primary-dark);">Arquitectura</h5>
+						<p class="text-muted small">Diseñamos la lógica del sistema y experiencia (UX).</p>
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="p-4 methodology-card cursor-pointer">
+						<div class="display-3 fw-bold mb-3 step-number" style="color: rgba(6, 7, 27, 0.15);">03</div>
+						<h5 class="fw-bold step-title" style="color: var(--primary-dark);">Construcción</h5>
+						<p class="text-muted small">Desarrollo ágil con el más alto estándar de calidad.</p>
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="p-4 methodology-card cursor-pointer">
+						<div class="display-3 fw-bold mb-3 step-number" style="color: rgba(6, 7, 27, 0.15);">04</div>
+						<h5 class="fw-bold step-title" style="color: var(--primary-dark);">Despliegue</h5>
+						<p class="text-muted small">Lanzamiento, soporte y monitoreo en vivo.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- 🆕 Microservicio: Tarjeta Digital -->
+	<section class="position-relative overflow-hidden" style="background: var(--primary-dark); padding: 80px 0;">
+		<!-- Blobs -->
+		<div class="position-absolute rounded-circle"
+			style="width:500px;height:500px;background:rgba(141,238,18,0.12);filter:blur(100px);top:-150px;right:-100px;z-index:0;pointer-events:none;"></div>
+		<div class="position-absolute rounded-circle"
+			style="width:400px;height:400px;background:rgba(56,189,248,0.08);filter:blur(80px);bottom:-100px;left:-80px;z-index:0;pointer-events:none;"></div>
+
+		<div class="container position-relative" style="z-index:1;">
+			<div class="row align-items-center g-5">
+
+				<!-- Texto -->
+				<div class="col-lg-7">
+					<div class="d-flex align-items-center gap-3 mb-4 flex-wrap">
+						<span class="badge px-3 py-2 rounded-pill fw-bold"
+							style="background:rgba(141,238,18,0.15);border:1px solid rgba(141,238,18,0.4);color:var(--accent-green);font-size:0.75rem;letter-spacing:0.06em;">
+							<i class="fas fa-bolt me-1"></i> NUEVO LANZAMIENTO
+						</span>
+						<span class="badge px-3 py-2 rounded-pill fw-bold"
+							style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);color:rgba(255,255,255,0.6);font-size:0.75rem;">
+							Microservicio · Solo $49 MXN
+						</span>
+					</div>
+
+					<h2 class="fw-bold mb-3" style="font-size:clamp(1.8rem,4vw,2.8rem);color:#fff;line-height:1.15;">
+						Tarjeta Digital para tu<br>
+						<span style="background:linear-gradient(135deg,#8DEE12,#38BDF8);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">
+							Negocio en Segundos.
+						</span>
+					</h2>
+					<p class="mb-4" style="color:rgba(255,255,255,0.55);font-size:1.05rem;max-width:560px;line-height:1.7;">
+						Comparte tu WhatsApp, Facebook, Instagram y ubicación con un solo enlace elegante y profesional.
+						Sin apps, sin complicaciones. Diseñada, generada y lista para compartir en menos de 2 minutos.
+					</p>
+
+					<!-- Features mini -->
+					<div class="d-flex flex-wrap gap-3 mb-5">
+						<div class="d-flex align-items-center gap-2 px-3 py-2 rounded-3"
+							style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);">
+							<i class="fas fa-id-card text-accent" style="color:var(--accent-green);"></i>
+							<span style="color:rgba(255,255,255,0.7);font-size:0.85rem;font-weight:600;">Diseño personalizable</span>
+						</div>
+						<div class="d-flex align-items-center gap-2 px-3 py-2 rounded-3"
+							style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);">
+							<i class="fas fa-map-marker-alt" style="color:#ef4444;"></i>
+							<span style="color:rgba(255,255,255,0.7);font-size:0.85rem;font-weight:600;">Mapa Google Maps</span>
+						</div>
+						<div class="d-flex align-items-center gap-2 px-3 py-2 rounded-3"
+							style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);">
+							<i class="fas fa-file-pdf" style="color:#ef4444;"></i>
+							<span style="color:rgba(255,255,255,0.7);font-size:0.85rem;font-weight:600;">Descarga en PDF</span>
+						</div>
+						<div class="d-flex align-items-center gap-2 px-3 py-2 rounded-3"
+							style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);">
+							<i class="fab fa-whatsapp" style="color:#25D366;"></i>
+							<span style="color:rgba(255,255,255,0.7);font-size:0.85rem;font-weight:600;">Links activos</span>
+						</div>
+					</div>
+
+					<!-- Price + CTA -->
+					<div class="d-flex align-items-center gap-4 flex-wrap">
+						<div>
+							<div class="d-flex align-items-baseline gap-2">
+								<span class="fw-bold" style="font-size:2.8rem;color:#fff;line-height:1;">$49</span>
+								<span style="color:var(--accent-green);font-weight:700;font-size:1.1rem;">MXN</span>
+							</div>
+							<div style="color:rgba(255,255,255,0.35);font-size:0.75rem;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;">Pago único · Sin mensualidades</div>
+						</div>
+						<a href="tarjeta-digital.html" class="btn-arhez-primary d-flex align-items-center gap-2" style="padding:14px 32px;font-size:1rem;">
+							<i class="fas fa-magic"></i> Crear mi Tarjeta
+						</a>
+						<a href="tarjeta-digital.html" style="color:rgba(255,255,255,0.45);font-size:0.85rem;font-weight:600;text-decoration:none;">
+							Ver demo gratuito <i class="fas fa-arrow-right ms-1"></i>
+						</a>
+					</div>
+				</div>
+
+				<!-- Card mockup -->
+				<div class="col-lg-5 d-flex justify-content-center">
+					<div style="position:relative;width:260px;">
+						<!-- Glow -->
+						<div class="position-absolute rounded-circle"
+							style="width:200px;height:200px;background:rgba(141,238,18,0.2);filter:blur(50px);top:50%;left:50%;transform:translate(-50%,-50%);z-index:0;pointer-events:none;"></div>
+						<!-- Fake card mockup -->
+						<div class="position-relative" style="z-index:1;background:rgba(15,23,42,0.95);border-radius:24px;padding:28px 24px;border:1px solid rgba(255,255,255,0.08);box-shadow:0 30px 60px rgba(0,0,0,0.5);">
+							<!-- Logo ring -->
+							<div class="text-center mb-3">
+								<div style="width:72px;height:72px;border-radius:50%;padding:3px;background:conic-gradient(#8DEE12,transparent,#8DEE12);margin:0 auto 12px;">
+									<div style="width:66px;height:66px;border-radius:50%;background:#0f172a;display:flex;align-items:center;justify-content:center;font-size:1.6rem;font-weight:800;color:#8DEE12;">AB</div>
+								</div>
+								<div style="color:#fff;font-weight:800;font-size:1.1rem;">Mi Negocio</div>
+								<div style="color:rgba(255,255,255,0.4);font-size:0.72rem;">Distribución &amp; Ventas</div>
+							</div>
+							<div style="height:1px;background:rgba(255,255,255,0.08);margin-bottom:14px;"></div>
+							<!-- Fake buttons -->
+							<div style="display:flex;flex-direction:column;gap:8px;">
+								<div style="display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:10px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);">
+									<div style="width:30px;height:30px;border-radius:8px;background:#25D366;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><i class="fab fa-whatsapp" style="color:#fff;font-size:0.85rem;"></i></div>
+									<div><div style="font-size:0.55rem;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:0.06em;">WhatsApp</div><div style="font-size:0.78rem;color:#fff;font-weight:600;">+52 1 555 123 4567</div></div>
+								</div>
+								<div style="display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:10px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);">
+									<div style="width:30px;height:30px;border-radius:8px;background:#1877F2;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><i class="fab fa-facebook-f" style="color:#fff;font-size:0.85rem;"></i></div>
+									<div><div style="font-size:0.55rem;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:0.06em;">Facebook</div><div style="font-size:0.78rem;color:#fff;font-weight:600;">@MiNegocio</div></div>
+								</div>
+								<div style="display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:10px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);">
+									<div style="width:30px;height:30px;border-radius:8px;background:linear-gradient(135deg,#f09433,#dc2743,#bc1888);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><i class="fab fa-instagram" style="color:#fff;font-size:0.85rem;"></i></div>
+									<div><div style="font-size:0.55rem;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:0.06em;">Instagram</div><div style="font-size:0.78rem;color:#fff;font-weight:600;">@minegocio</div></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</section>
+
+	<!-- 200320262115 Seccion de Demos -->
+
+	<section id="demos" class="arhez-section position-relative overflow-hidden"
+		style="background: #fbfbfb; padding: 100px 0;">
+		<div class="container text-center mb-5">
+			<span class="badge bg-primary-dark text-white mb-3 px-3 py-2 rounded-pill">Experimenta la Calidad</span>
+			<h2 class="section-title text-primary-dark fw-bold mb-3">Explora Nuestros Demos</h2>
+			<p class="lead text-muted mx-auto" style="max-width: 700px;">
+				Selecciona tu industria y descubre todas las opciones disponibles para potenciar tu presencia digital.
+			</p>
+		</div>
+
+		<div class="container">
+			<!-- Sector Selector -->
+			<div class="row justify-content-center mb-5">
+				<div class="col-12 d-flex flex-wrap justify-content-center gap-3" id="demo-sectors">
+					<button class="btn-demo-sector active" data-sector="comercial">
+						<i class="fas fa-store fs-3 mb-2 text-accent"
+							style="text-shadow: 0 0 10px rgba(141,238,18,0.5);"></i><br><span
+							class="fw-bold">Comercial</span>
+					</button>
+					<button class="btn-demo-sector" data-sector="salud">
+						<i class="fas fa-heartbeat fs-3 mb-2 text-accent"
+							style="text-shadow: 0 0 10px rgba(141,238,18,0.5);"></i><br><span
+							class="fw-bold">Salud</span>
+					</button>
+					<button class="btn-demo-sector" data-sector="bienesRaices">
+						<i class="fas fa-hard-hat fs-3 mb-2 text-accent"
+							style="text-shadow: 0 0 10px rgba(141,238,18,0.5);"></i><br><span class="fw-bold">Bienes
+							Raíces o<br>Construcción</span>
+					</button>
+					<button class="btn-demo-sector" data-sector="otro">
+						<i class="fas fa-industry fs-3 mb-2 text-accent"
+							style="text-shadow: 0 0 10px rgba(141,238,18,0.5);"></i><br><span
+							class="fw-bold">Manufactura</span>
+					</button>
+					<button class="btn-demo-sector" data-sector="deportes">
+						<i class="fas fa-dumbbell fs-3 mb-2 text-accent"
+							style="text-shadow: 0 0 10px rgba(141,238,18,0.5);"></i><br><span
+							class="fw-bold">Deportes</span>
+					</button>
+					<button class="btn-demo-sector" data-sector="alimentosBebidas">
+						<i class="fas fa-utensils fs-3 mb-2 text-accent"
+							style="text-shadow: 0 0 10px rgba(141,238,18,0.5);"></i><br><span class="fw-bold">Alimentos
+							y<br>Bebidas</span>
+					</button>
+				</div>
+			</div>
+
+			<!-- Result Presentation (Grid) -->
+			<div class="row g-4 justify-content-center" id="demo-results-container">
+				<!-- Tarjetas dinámicas generadas por JS -->
+			</div>
+		</div>
+	</section>
+
+	<!-- 200320262115 Seccion de Precios y Planes -->
+	<section id="planes" class="pricing-section-pro position-relative" style="padding: 100px 0; overflow: hidden;">
+		<!-- Capa base con acentos de color para asomarse tras el cristal -->
+		<div class="position-absolute top-0 start-0 w-100 h-100"
+			style="background: radial-gradient(circle at 20% 0%, rgba(141, 238, 18, 0.15), transparent 40%), radial-gradient(circle at 80% 100%, rgba(6,7,27,0.1), transparent 40%); z-index: 0;">
+		</div>
+
+		<!-- Panel principal de Glassmorphism Blanco -->
+		<div class="position-absolute top-0 start-0 w-100 h-100"
+			style="background: rgba(255, 255, 255, 0.4); backdrop-filter: blur(30px); -webkit-backdrop-filter: blur(30px); z-index: 1;">
+		</div>
+
+		<div class="container position-relative z-2">
+			<div class="text-center mb-5 pb-4">
+				<h2 class="section-title text-primary-dark">Planes diseñados para escalar</h2>
+				<p class="text-muted lead">Escoge la arquitectura perfecta para tu etapa actual.</p>
+			</div>
+			<div class="row g-4 justify-content-center">
+				<div class="col-lg-4">
+					<div class="feature-card h-100 d-flex flex-column"
+						style="background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.8);">
+						<h4 class="fw-bold text-primary-dark mb-1">Landing Page</h4>
+						<p class="text-muted small mb-4">Para validar ideas y captar prospectos</p>
+						<h2 class="fw-bold mb-4 text-primary-dark">Esencial</h2>
+						<ul class="list-unstyled mb-5 flex-grow-1 text-muted">
+							<li class="mb-2"><i class="fas fa-check text-accent me-2"></i> Landing Page (1 Sección)</li>
+							<li class="mb-2"><i class="fas fa-check text-accent me-2"></i> Diseño Web Responsivo</li>
+							<li class="mb-2"><i class="fas fa-check text-accent me-2"></i> Botón directo a WhatsApp</li>
+							<li class="mb-2"><i class="fas fa-check text-accent me-2"></i> Hosting y Dominio Web (1 año)
+							</li>
+						</ul>
+						<button onclick="selectPlan('Plan Esencial')"
+							class="btn-arhez-plan-light w-100 py-3 rounded-pill text-center justify-content-center">Seleccionar</button>
+					</div>
+				</div>
+				<div class="col-lg-4">
+					<div class="feature-card h-100 d-flex flex-column position-relative"
+						style="background: rgba(17, 24, 39, 0.85); backdrop-filter: blur(15px); border: 2px solid var(--accent-green); box-shadow: 0 20px 40px rgba(141, 238, 18, 0.15);">
+						<span
+							class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-accent text-dark px-3 py-2 fw-bold">RECOMENDADO</span>
+						<h4 class="fw-bold text-white mb-1 mt-2">SaaS a medida</h4>
+						<p class="text-white-50 small mb-4">Evolución digital de operaciones</p>
+						<h2 class="fw-bold text-white mb-4">Ultra</h2>
+						<ul class="list-unstyled mb-5 flex-grow-1 text-white-50">
+							<li class="mb-2"><i class="fas fa-check text-accent me-2"></i> Web Corporativa + Correos
+							</li>
+							<li class="mb-2"><i class="fas fa-check text-accent me-2"></i> Plataforma SaaS Arhez</li>
+							<li class="mb-2"><i class="fas fa-check text-accent me-2"></i> Panel de Administración</li>
+							<li class="mb-2"><i class="fas fa-check text-accent me-2"></i> Soporte Técnico Prioritario
+							</li>
+						</ul>
+						<button onclick="selectPlan('Plan Ultra')"
+							class="btn-arhez-primary w-100 border-0 py-3 text-center justify-content-center">Seleccionar</button>
+					</div>
+				</div>
+				<div class="col-lg-4">
+					<div class="feature-card h-100 d-flex flex-column"
+						style="background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.8);">
+						<h4 class="fw-bold text-primary-dark mb-1">Sitio web corporativo</h4>
+						<p class="text-muted small mb-4">Presencia formal para tu empresa</p>
+						<h2 class="fw-bold mb-4 text-primary-dark">Enterprise</h2>
+						<ul class="list-unstyled mb-5 flex-grow-1 text-muted">
+							<li class="mb-2"><i class="fas fa-check text-accent me-2"></i> Diseño web de 5 a 7 Secciones
+							</li>
+							<li class="mb-2"><i class="fas fa-check text-accent me-2"></i> Correos Empresariales</li>
+							<li class="mb-2"><i class="fas fa-check text-accent me-2"></i> Optimización SEO para Google
+							</li>
+							<li class="mb-2"><i class="fas fa-check text-accent me-2"></i> Hosting y Dominio Web (1 año)
+							</li>
+						</ul>
+						<button onclick="selectPlan('Plan Enterprise')"
+							class="btn-arhez-plan-light w-100 py-3 rounded-pill text-center justify-content-center">Seleccionar</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- 200320262115 Seccion de Contacto -->
+	<section id="contacto" class="arhez-section position-relative overflow-hidden"
+		style="background-color: var(--primary-dark); color: white;">
+		<!-- Luces Blur -->
+		<div class="position-absolute rounded-circle"
+			style="width: 500px; height: 500px; background: rgba(141, 238, 18, 0.15); filter: blur(80px); top: -150px; left: -150px; z-index: 0; pointer-events: none;">
+		</div>
+		<div class="position-absolute rounded-circle"
+			style="width: 400px; height: 400px; background: rgba(56, 189, 248, 0.15); filter: blur(80px); bottom: -100px; right: 10%; z-index: 0; pointer-events: none;">
+		</div>
+		<div class="container position-relative z-1">
+			<div class="row align-items-center rounded-5 p-5 shadow-lg mx-md-2"
+				style="background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px); color: var(--primary-dark); border: 1px solid rgba(255, 255, 255, 0.4);">
+				<div class="col-lg-5 mb-5 mb-lg-0 pe-lg-5">
+					<h2 class="fw-bold display-5 mb-4">Llevemos tu empresa al futuro digital.</h2>
+					<p class="text-muted mb-5">Cuéntanos sobre tus retos y te asesoraremos sin compromiso sobre la mejor
+						ruta tecnológica para solucionarlos.</p>
+
+					<div class="d-flex align-items-center">
+						<div class="bg-primary-dark text-white rounded-circle d-flex align-items-center justify-content-center me-3"
+							style="width: 48px; height: 48px;">
+							<i class="fas fa-envelope fs-5"></i>
+						</div>
+						<div>
+							<h6 class="fw-bold mb-0">Escríbenos</h6>
+							<a href="mailto:arhez.tech@gmail.com"
+								class="text-muted text-decoration-none">arhez.tech@gmail.com</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-7">
+					<form id="contactForm" class="row g-3" onsubmit="submitForm(event)">
+						<div class="col-md-6">
+							<label class="form-label fw-bold">Nombre</label>
+							<input id="contactName" type="text" class="form-control form-control-lg bg-light border-0"
+								required>
+						</div>
+						<div class="col-md-6">
+							<label class="form-label fw-bold">Correo</label>
+							<input type="email" class="form-control form-control-lg bg-light border-0" required>
+						</div>
+						<div class="col-12">
+							<label class="form-label fw-bold">Tipo de Solución</label>
+							<select id="contactSolution" class="form-select form-select-lg bg-light border-0" required>
+								<option value="">Selecciona...</option>
+								<option value="Plan Esencial">Plan Esencial</option>
+								<option value="Plan Ultra">Plan Ultra</option>
+								<option value="Plan Enterprise">Plan Enterprise</option>
+								<option value="Software a Medida">Software a Medida</option>
+								<option value="Consultoría">Consultoría</option>
+								<option value="Otro">Otro</option>
+							</select>
+						</div>
+						<div class="col-12">
+							<label class="form-label fw-bold">Mensaje</label>
+							<textarea id="contactMessage" class="form-control form-control-lg bg-light border-0"
+								rows="4" required></textarea>
+						</div>
+						<div class="col-12 mt-4">
+							<button type="submit" class="btn w-100 fw-bold py-3 fs-5 rounded-pill btn-arhez-dark-solid">
+								Enviar Propuesta
+							</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- 200320262115 Seccion de Footer -->
+	<footer class="py-5 bg-white border-top border-light shadow-sm">
+		<div class="container">
+			<div class="row g-4 mb-5 text-center text-md-start">
+				<!-- Columna 1: Brand & Bio -->
+				<div class="col-lg-4">
+					<img class="logotipo mb-4" src="assets/img/logotipo.png" alt="Arhez Tech" style="max-height: 40px;">
+					<p class="text-primary-dark opacity-75 mb-4 pe-lg-5" style="font-size: 0.95rem; line-height: 1.6;">
+						Impulsamos la transformación digital de nuestros clientes con soluciones tecnológicas
+						integrales, diseñadas para escalar negocios y eliminar barreras técnicas.
+					</p>
+					<div class="d-flex justify-content-center justify-content-md-start gap-4 mb-4">
+						<a href="https://www.facebook.com/arhez.tech" target="_blank"
+							class="text-primary-dark opacity-75 hover-accent transition-all"><i
+								class="fab fa-facebook-f fs-5"></i></a>
+						<a href="https://www.instagram.com/arhez.tech" target="_blank"
+							class="text-primary-dark opacity-75 hover-accent transition-all"><i
+								class="fab fa-instagram fs-5"></i></a>
+						<a href="mailto:arhez.tech@gmail.com"
+							class="text-primary-dark opacity-75 hover-accent transition-all"><i
+								class="fas fa-envelope fs-5"></i></a>
+					</div>
+				</div>
+
+				<!-- Columna 2: Navegación -->
+				<div class="col-md-4 col-lg-2">
+					<h6 class="fw-bold text-primary-dark mb-4 text-uppercase"
+						style="font-size: 0.8rem; letter-spacing: 2px;">Navegación</h6>
+					<ul class="list-unstyled">
+						<li class="mb-3"><a href="#soluciones"
+								class="text-decoration-none text-muted small hover-accent transition-all">Soluciones</a>
+						</li>
+						<li class="mb-3"><a href="#demos"
+								class="text-decoration-none text-muted small hover-accent transition-all">Demos</a></li>
+						<li class="mb-3"><a href="#proyectos"
+								class="text-decoration-none text-muted small hover-accent transition-all">Proyectos</a>
+						</li>
+						<li class="mb-3"><a href="#planes"
+								class="text-decoration-none text-muted small hover-accent transition-all">Precios</a>
+						</li>
+					</ul>
+				</div>
+
+				<!-- Columna 3: Soluciones por Industria -->
+				<div class="col-md-4 col-lg-3">
+					<h6 class="fw-bold text-primary-dark mb-4 text-uppercase"
+						style="font-size: 0.8rem; letter-spacing: 2px;">Categorías Arhez</h6>
+					<ul class="list-unstyled">
+						<li class="mb-3 text-muted small d-flex align-items-center gap-2"><i
+								class="fas fa-shopping-cart text-accent"></i> Retail & Sales</li>
+						<li class="mb-3 text-muted small d-flex align-items-center gap-2"><i
+								class="fas fa-dumbbell text-accent"></i> Sports Management</li>
+						<li class="mb-3 text-muted small d-flex align-items-center gap-2"><i
+								class="fas fa-microchip text-accent"></i> Data & Analytics</li>
+						<li class="mb-3 text-muted small d-flex align-items-center gap-2"><i
+								class="fas fa-book-reader text-accent"></i> Education (EdTech)</li>
+						<li class="mb-3 text-muted small d-flex align-items-center gap-2"><i
+								class="fas fa-boxes-stacked text-accent"></i> Logistics & ERP</li>
+					</ul>
+				</div>
+
+				<!-- Columna 4: Recursos & Contacto -->
+				<div class="col-md-4 col-lg-3">
+					<h6 class="fw-bold text-primary-dark mb-4 text-uppercase"
+						style="font-size: 0.8rem; letter-spacing: 2px;">Recursos</h6>
+					<ul class="list-unstyled">
+						<li class="mb-3">
+							<a href="presentacion.html"
+								class="d-inline-flex align-items-center gap-2 text-decoration-none bg-primary-dark text-white px-3 py-2 rounded-3 shadow-sm hover-up transition-all w-100"
+								style="font-size: 0.85rem;">
+								<i class="fas fa-file-invoice-dollar text-accent"></i>
+								Presentación Ejecutiva
+							</a>
+						</li>
+						<li class="mb-4">
+							<a href="canvas.html"
+								class="d-inline-flex align-items-center gap-2 text-decoration-none border border-primary-dark text-primary-dark px-3 py-2 rounded-3 shadow-sm hover-up transition-all w-100"
+								style="font-size: 0.85rem;">
+								<i class="fas fa-project-diagram"></i>
+								Business Model Canvas
+							</a>
+						</li>
+						<li class="mb-3"><a href="#contacto"
+								class="text-decoration-none text-muted small hover-accent transition-all">Cotizar
+								Proyecto</a></li>
+						<li class="mb-3"><a href="mailto:arhez.tech@gmail.com"
+								class="text-decoration-none text-muted small hover-accent transition-all">Atención al
+								cliente</a></li>
+					</ul>
+				</div>
+			</div>
+
+			<div
+				class="pt-4 border-top border-secondary border-opacity-10 text-center text-md-start d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+				<small class="text-primary-dark opacity-50">&copy; 2026 Arhez Tech. Todos los derechos
+					reservados.</small>
+				<div class="d-flex gap-4">
+					<small class="text-primary-dark opacity-50">Términos y Condiciones</small>
+					<small class="text-primary-dark opacity-50">Privacidad</small>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="js/main.js"></script>
+</body>
+
+</html>

@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-	<title>ARHEZ TECH - Cotizador Interactivo</title>
+	<title>ARHEZ TECH - Presentación Ejecutiva</title>
 
 	<!-- Reveal.js CSS -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reset.min.css">
@@ -49,30 +49,6 @@
 			background: radial-gradient(circle at top right, rgba(141, 238, 18, 0.08) 0%, var(--primary-dark) 80%);
 		}
 
-		/* Inputs y Botones */
-		input[type="text"],
-		input[type="email"],
-		input[type="tel"] {
-			width: 100%;
-			max-width: 500px;
-			padding: 15px 25px;
-			font-size: 1.2rem;
-			border-radius: 50px;
-			border: 2px solid rgba(255, 255, 255, 0.2);
-			background: rgba(0, 0, 0, 0.5);
-			color: white;
-			font-family: 'Plus Jakarta Sans', sans-serif;
-			margin-bottom: 20px;
-			transition: all 0.3s ease;
-			text-align: center;
-		}
-
-		input:focus {
-			outline: none;
-			border-color: var(--accent-green);
-			box-shadow: 0 0 15px rgba(141, 238, 18, 0.3);
-		}
-
 		.btn-primary {
 			background: var(--accent-green);
 			color: var(--primary-dark);
@@ -85,104 +61,12 @@
 			margin-top: 20px;
 			transition: all 0.3s ease;
 			display: inline-block;
+			text-decoration: none;
 		}
 
 		.btn-primary:hover {
 			transform: scale(1.05);
 			box-shadow: 0 10px 20px rgba(141, 238, 18, 0.2);
-		}
-
-		/* Grid de Opciones Seleccionables - General */
-		.options-grid {
-			display: flex;
-			flex-wrap: wrap;
-			justify-content: center;
-			gap: 15px;
-			max-width: 1000px;
-			margin: 0 auto;
-		}
-
-		.option-card {
-			background: rgba(255, 255, 255, 0.05);
-			border: 2px solid rgba(255, 255, 255, 0.1);
-			border-radius: 12px;
-			padding: 20px 15px;
-			cursor: pointer;
-			transition: all 0.3s ease;
-			flex: 1;
-			min-width: 250px;
-			position: relative;
-		}
-
-		.option-card:hover {
-			border-color: var(--accent-green);
-			background: rgba(141, 238, 18, 0.1);
-			transform: translateY(-3px);
-		}
-
-		/* Grid minificado para la sección de industria */
-		.options-grid.sm-grid .option-card {
-			min-width: 150px;
-			/* Tarjetas más pequeñas */
-			padding: 15px 10px;
-			flex-basis: 30%;
-		}
-
-		.options-grid.sm-grid .option-card i {
-			font-size: 1.5rem !important;
-			/* Íconos más chicos */
-			margin-bottom: 8px !important;
-		}
-
-		.options-grid.sm-grid .option-card span {
-			font-size: 1rem !important;
-		}
-
-		/* Contenedor escrolleable para lista larga de opciones */
-		.scrollable-options {
-			max-height: 50vh;
-			overflow-y: auto;
-			padding: 15px;
-			border-radius: 15px;
-			border: 1px solid rgba(255, 255, 255, 0.05);
-			background: rgba(0, 0, 0, 0.15);
-		}
-
-		/* Para que el scrollbar se vea estético */
-		.scrollable-options::-webkit-scrollbar {
-			width: 8px;
-		}
-
-		.scrollable-options::-webkit-scrollbar-track {
-			background: rgba(255, 255, 255, 0.05);
-			border-radius: 10px;
-		}
-
-		.scrollable-options::-webkit-scrollbar-thumb {
-			background: rgba(141, 238, 18, 0.3);
-			border-radius: 10px;
-		}
-
-		.scrollable-options::-webkit-scrollbar-thumb:hover {
-			background: var(--accent-green);
-		}
-
-		/* Etiquetas de precio y servicio especial */
-		.price-tag {
-			display: inline-block;
-			background: rgba(141, 238, 18, 0.2);
-			color: var(--accent-green);
-			padding: 5px 15px;
-			border-radius: 20px;
-			font-weight: bold;
-			font-size: 1.1rem;
-			margin-top: 10px;
-			margin-bottom: 15px;
-		}
-
-		.accent-card {
-			border-color: var(--accent-green);
-			background: rgba(141, 238, 18, 0.05);
 		}
 
 		.slide-card-dark {
@@ -193,114 +77,6 @@
 			padding: 40px;
 		}
 
-		/* Panel de Resumen Horizontal abajo - Diseño No Invasivo */
-		.summary-panel {
-			position: fixed;
-			bottom: 0;
-			left: 0;
-			width: 100%;
-			background: rgba(6, 7, 27, 0.95);
-			backdrop-filter: blur(15px);
-			-webkit-backdrop-filter: blur(15px);
-			border-top: 1px solid rgba(141, 238, 18, 0.3);
-			padding: 15px 30px;
-			z-index: 100 !important;
-			color: white;
-			display: none;
-			font-family: 'Plus Jakarta Sans', sans-serif;
-			box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.5);
-			transition: all 0.3s ease;
-		}
-
-		.summary-container {
-			display: flex;
-			justify-content: space-between;
-			align-items: center;
-			max-width: 1100px;
-			margin: 0 auto;
-			gap: 20px;
-		}
-
-		.summary-item {
-			font-size: 0.9rem;
-			flex: 1;
-			text-align: center;
-			border-right: 1px solid rgba(255, 255, 255, 0.1);
-		}
-
-		.summary-item:last-of-type {
-			border-right: none;
-		}
-
-		.summary-label {
-			color: rgba(255, 255, 255, 0.5);
-			display: block;
-			font-size: 0.75rem;
-			text-transform: uppercase;
-			letter-spacing: 1px;
-		}
-
-		.summary-val {
-			font-weight: 600;
-			font-size: 1rem;
-			color: white;
-		}
-
-		.summary-price-container {
-			flex: 1.2;
-			text-align: right;
-		}
-
-		.summary-price-container span {
-			color: rgba(255, 255, 255, 0.5);
-			font-size: 0.8rem;
-			text-transform: uppercase;
-			margin-right: 10px;
-		}
-
-		.summary-price {
-			font-size: 1.6rem;
-			font-weight: 800;
-			color: var(--accent-green);
-			vertical-align: middle;
-		}
-
-		@media (max-width: 768px) {
-			.summary-panel {
-				padding: 10px;
-			}
-
-			.summary-container {
-				flex-wrap: wrap;
-				gap: 5px;
-			}
-
-			.summary-item {
-				border-right: none;
-				flex: 45%;
-				text-align: left;
-				margin-bottom: 5px;
-			}
-
-			.summary-price-container {
-				flex: 100%;
-				text-align: center;
-				border-top: 1px dotted rgba(255, 255, 255, 0.2);
-				padding-top: 8px;
-				margin-top: 5px;
-			}
-
-			.summary-price {
-				font-size: 1.3rem;
-			}
-
-			.options-grid.sm-grid .option-card {
-				flex-basis: 40%;
-				min-width: 130px;
-			}
-		}
-
-		/* Botones de Navegación Global */
 		.nav-btn {
 			background: rgba(255, 255, 255, 0.05);
 			border: 1px solid rgba(255, 255, 255, 0.1);
@@ -358,6 +134,27 @@
 			font-size: 1.15rem !important;
 			word-wrap: break-word;
 		}
+
+		.scrollable-options {
+			max-height: 55vh;
+			overflow-y: auto;
+			padding: 20px;
+			border-radius: 15px;
+			border: 1px solid rgba(255, 255, 255, 0.05);
+			background: rgba(0, 0, 0, 0.15);
+		}
+
+		.price-tag {
+			display: inline-block;
+			background: rgba(141, 238, 18, 0.2);
+			color: var(--accent-green);
+			padding: 5px 15px;
+			border-radius: 20px;
+			font-weight: bold;
+			font-size: 1.1rem;
+			margin-top: 10px;
+			margin-bottom: 15px;
+		}
 	</style>
 
 	<!-- Google tag (gtag.js) -->
@@ -374,10 +171,10 @@
 
 	<!-- Controles Nativos Superiores -->
 	<div id="nav-controls" style="position: fixed; top: 25px; left: 25px; z-index: 1000; display: none; gap: 10px;">
-		<button class="nav-btn" onclick="Reveal.prev()" title="Ir al paso anterior">
+		<button class="nav-btn" onclick="Reveal.prev()" title="Anterior">
 			<i class="fas fa-arrow-left"></i> Atrás
 		</button>
-		<button class="nav-btn" onclick="resetWizard()" title="Reiniciar desde la portada">
+		<button class="nav-btn" onclick="Reveal.slide(0)" title="Inicio">
 			<i class="fas fa-home"></i> Inicio
 		</button>
 	</div>
@@ -385,63 +182,37 @@
 	<!-- Botón Volver al Sitio -->
 	<div id="exit-control" style="position: fixed; top: 25px; right: 25px; z-index: 1000;">
 		<a href="index.html" class="nav-btn"
-			style="text-decoration: none; display: flex; align-items: center; gap: 8px; color: var(--primary-dark); border-color: rgba(6, 7, 27, 0.1); background: rgba(6, 7, 27, 0.05);">
+			style="text-decoration: none; display: flex; align-items: center; gap: 8px;">
 			<i class="fas fa-arrow-left"></i> Regresar al Sitio
 		</a>
-	</div>
-
-	<!-- Widget de Resumen Footer -->
-	<div class="summary-panel" id="summary-panel">
-		<div class="summary-container">
-			<div class="summary-item" style="flex: 0.5; text-align: left;">
-				<i class="fas fa-file-invoice-dollar text-accent fa-2x"></i>
-			</div>
-			<div class="summary-item">
-				<span class="summary-label">Empresa</span>
-				<span class="summary-val" id="sum-empresa">-</span>
-			</div>
-			<div class="summary-item">
-				<span class="summary-label">Industria</span>
-				<span class="summary-val" id="sum-industria">-</span>
-			</div>
-			<div class="summary-item" style="flex:1.5;">
-				<span class="summary-label">Plan Solicitado</span>
-				<span class="summary-val" id="sum-servicio">-</span>
-			</div>
-			<div class="summary-price-container">
-				<span>Presupuesto</span>
-				<strong class="summary-price" id="sum-total">$0.00</strong>
-			</div>
-		</div>
 	</div>
 
 	<div class="reveal">
 		<div class="slides">
 
-			<!-- Slide 1: Portada (Fondo Blanco con Efectos Blur Glassmorphism) -->
+			<!-- Slide 1: Portada -->
 			<section data-background-color="#ffffff">
-				<!-- Shapes Blur detrás -->
+				<!-- Shapes Blur -->
 				<div
-					style="position: absolute; top: -20vh; left: -10vw; width: 50vw; height: 50vw; background: rgba(56, 189, 248, 0.25); filter: blur(100px); border-radius: 50%; pointer-events: none; z-index: 0;">
+					style="position: absolute; top: -20vh; left: -10vw; width: 50vw; height: 50vw; background: rgba(56, 189, 248, 0.15); filter: blur(100px); border-radius: 50%; pointer-events: none; z-index: 0;">
 				</div>
 				<div
-					style="position: absolute; bottom: -20vh; right: -10vw; width: 50vw; height: 50vw; background: rgba(141, 238, 18, 0.25); filter: blur(100px); border-radius: 50%; pointer-events: none; z-index: 0;">
+					style="position: absolute; bottom: -20vh; right: -10vw; width: 50vw; height: 50vw; background: rgba(141, 238, 18, 0.15); filter: blur(100px); border-radius: 50%; pointer-events: none; z-index: 0;">
 				</div>
 
-				<!-- Contenido frontal -->
 				<div style="position: relative; z-index: 1;">
 					<img src="assets/img/logotipo.png" alt="Arhez Tech"
 						style="max-height: 80px; background: transparent; border: none; box-shadow: none; margin-bottom: 40px;">
-					<h2 style="font-size: 3.5rem; color: var(--primary-dark);">Crea el futuro de<br>tu empresa <span
-							class="text-accent" style="color: #65a30d !important;">hoy.</span></h2>
+					<h2 style="font-size: 3.5rem; color: var(--primary-dark);">Transformación digital<br>con <span
+							class="text-accent" style="color: #65a30d !important;">ingeniería real.</span></h2>
 					<p style="color: rgba(6, 7, 27, 0.6); font-size: 1.3rem; margin-bottom: 40px; font-weight: 500;">
-						Presentación Ejecutiva y Cotizador Inteligente.</p>
-					<button class="btn-primary" onclick="Reveal.next()">Comenzar Recorrido <i
+						Presentación Corporativa 2026</p>
+					<button class="btn-primary" onclick="Reveal.next()">Ver Presentación <i
 							class="fas fa-arrow-right ms-2"></i></button>
 				</div>
 			</section>
 
-			<!-- Slide 2: Misión (Volvemos a lo oscuro/formal) -->
+			<!-- Slide 2: Misión -->
 			<section>
 				<h3>Nuestra <span class="text-accent">Misión</span></h3>
 				<div class="slide-card-dark">
@@ -491,7 +262,7 @@
 							técnico continuo.</p>
 					</div>
 				</div>
-				<button class="btn-primary" onclick="Reveal.next()" style="margin-top: 40px;">Ver Roadmap 2026-2030 <i
+				<button class="btn-primary" onclick="Reveal.next()" style="margin-top: 40px;">Ver Roadmap <i
 						class="fas fa-calendar-alt ms-2"></i></button>
 			</section>
 
@@ -501,7 +272,7 @@
 				<p style="color: rgba(255,255,255,0.6); font-size: 1.1rem; margin-bottom: 20px;">Sistemas proyectados
 					para liderar cada industria.</p>
 
-				<div class="scrollable-options" style="max-height: 55vh; padding: 20px;">
+				<div class="scrollable-options">
 					<div
 						style="display: flex; flex-direction: column; gap: 15px; max-width: 800px; margin: 0 auto; text-align: left;">
 						<!-- 2026 -->
@@ -568,183 +339,29 @@
 						</div>
 					</div>
 				</div>
-				<button class="btn-primary" onclick="startWizard()" style="margin-top: 30px;">Iniciar Cotización <i
-						class="fas fa-play ms-2"></i></button>
+				<button class="btn-primary" onclick="Reveal.next()" style="margin-top: 30px;">Contacto <i
+						class="fas fa-envelope ms-2"></i></button>
 			</section>
 
-			<!-- Slide 4: Datos del Cliente (Inicio Cotizador) -->
+			<!-- Slide 5: Contacto Final -->
 			<section>
-				<h3 style="margin-bottom: 10px;">Un gusto, <span class="text-accent">¿Con quién tenemos el
-						placer?</span></h3>
-				<p style="color: rgba(255,255,255,0.6); margin-bottom: 40px;">Empezaremos por conocerte a ti y a tu
-					negocio.</p>
-
-				<input type="text" id="inputNombre" placeholder="Tu Nombre Completo"
-					oninput="updateData('nombre', this.value)"><br>
-				<input type="text" id="inputEmpresa" placeholder="Nombre de tu Empresa"
-					oninput="updateData('empresa', this.value)"><br>
-
-				<button class="btn-primary" onclick="Reveal.next()">Siguiente <i class="fas fa-check ms-2"></i></button>
-			</section>
-
-			<!-- Slide 5: Industria -->
-			<section>
-				<h3 style="margin-bottom: 10px;">¿En qué <span class="text-accent">industria</span> operas?</h3>
-				<p style="color: rgba(255,255,255,0.6); margin-bottom: 20px; font-size: 1.1rem;">Selecciona el giro de
-					tu empresa.</p>
-
-				<div class="scrollable-options">
-					<div class="options-grid sm-grid">
-						<div class="option-card" onclick="selectAndNext('industria', 'Comercial')">
-							<i class="fas fa-store text-accent fa-2x mb-2" style="display:block;"></i>
-							<span style="font-size: 1.2rem; font-weight: 600;">Comercial</span>
-						</div>
-						<div class="option-card" onclick="selectAndNext('industria', 'Salud')">
-							<i class="fas fa-heartbeat text-accent fa-2x mb-2" style="display:block;"></i>
-							<span style="font-size: 1.2rem; font-weight: 600;">Salud</span>
-						</div>
-						<div class="option-card" onclick="selectAndNext('industria', 'Bienes Raíces o Construcción')">
-							<i class="fas fa-hard-hat text-accent fa-2x mb-2" style="display:block;"></i>
-							<span style="font-size: 1.2rem; font-weight: 600;">Bienes Raíces o<br>Construcción</span>
-						</div>
-						<div class="option-card" onclick="selectAndNext('industria', 'Manufactura')">
-							<i class="fas fa-industry text-accent fa-2x mb-2" style="display:block;"></i>
-							<span style="font-size: 1.2rem; font-weight: 600;">Manufactura</span>
-						</div>
-						<div class="option-card" onclick="selectAndNext('industria', 'Otro')">
-							<i class="fas fa-cubes text-accent fa-2x mb-2" style="display:block;"></i>
-							<span style="font-size: 1.2rem; font-weight: 600;">Otro</span>
-						</div>
-						<div class="option-card" onclick="selectAndNext('industria', 'Deportes')">
-							<i class="fas fa-dumbbell text-accent fa-2x mb-2" style="display:block;"></i>
-							<span style="font-size: 1.2rem; font-weight: 600;">Deportes</span>
-						</div>
-						<div class="option-card" onclick="selectAndNext('industria', 'Alimentos y Bebidas')">
-							<i class="fas fa-utensils text-accent fa-2x mb-2" style="display:block;"></i>
-							<span style="font-size: 1.2rem; font-weight: 600;">Alimentos y<br>Bebidas</span>
-						</div>
+				<h3>Llevemos tu negocio al <span class="text-accent">siguiente nivel.</span></h3>
+				<div class="slide-card-dark" style="max-width: 700px; margin: 0 auto;">
+					<p style="color: rgba(255,255,255,0.7); margin-bottom: 30px;">Estamos listos para transformar tu visión en tecnología escalable.</p>
+					
+					<div style="display: flex; flex-direction: column; gap: 20px; align-items: center;">
+						<a href="https://wa.me/524272777153" target="_blank" class="btn-primary" style="background: #25D366; color: white; width: 100%; max-width: 400px;">
+							<i class="fab fa-whatsapp me-2"></i> Hablar por WhatsApp
+						</a>
+						<a href="mailto:arhez.tech@gmail.com" class="btn-primary" style="background: white; color: var(--primary-dark); width: 100%; max-width: 400px;">
+							<i class="fas fa-envelope me-2"></i> Enviar Correo
+						</a>
 					</div>
 				</div>
-			</section>
-
-			<!-- Slide 6: Servicio Requerido -->
-			<section>
-				<h3 style="margin-bottom: 10px;">¿Qué <span class="text-accent">solución</span> buscas?</h3>
-				<p style="color: rgba(255,255,255,0.5); font-size: 0.9rem; margin-bottom: 30px; font-style: italic;">*
-					Todos los precios mostrados son antes de impuestos.</p>
-
-				<div class="options-grid">
-					<!-- Plan Esencial -->
-					<div class="option-card" style="text-align: left; position: relative;"
-						onclick="selectService('Plan Esencial (Promo 30%)', 2800)">
-						<!-- Etiqueta de Promo -->
-						<div
-							style="position: absolute; top: -12px; right: -12px; background: #ef4444; color: white; padding: 4px 12px; font-size: 0.75rem; font-weight: bold; border-radius: 20px; box-shadow: 0 4px 10px rgba(239, 68, 68, 0.4); z-index: 10;">
-							<i class="fas fa-fire me-1"></i> -30% (18 al 30 Abr)
-						</div>
-						<h4 style="font-size: 1.4rem; margin-bottom: 0;">Esencial</h4>
-						<p id="desc-esencial"
-							style="font-size: 0.8rem; color: rgba(255,255,255,0.6); margin: 5px 0 10px 0; min-height: 40px;">
-							Ideal para validación rápida y generación de clientes potenciales.</p>
-						<div class="price-tag" style="margin-bottom: 15px;">
-							<s style="color: rgba(255,255,255,0.5); font-size: 0.8em; margin-right: 5px;">$4,000</s>
-							$2,800 <span style="font-size: 0.7em;">MXN</span>
-						</div>
-						<ul id="ul-esencial"
-							style="font-size: 0.8rem; color: rgba(255,255,255,0.8); padding-left: 20px;">
-							<li style="margin-bottom: 5px;">Landing Page (1 sección)</li>
-							<li style="margin-bottom: 5px;">Diseño Responsivo</li>
-							<li style="margin-bottom: 5px;">Formulario / WhatsApp</li>
-							<li style="margin-bottom: 5px;">Hosting y Dominio Web (1 año)</li>
-						</ul>
-					</div>
-
-					<!-- Plan Enterprise -->
-					<div class="option-card accent-card" style="text-align: left;"
-						onclick="selectService('Plan Enterprise', 12000)">
-						<h4 style="font-size: 1.4rem; margin-bottom: 0;">Enterprise</h4>
-						<p id="desc-enterprise"
-							style="font-size: 0.8rem; color: rgba(255,255,255,0.6); margin: 5px 0 10px 0; min-height: 40px;">
-							Perfecto para empresas establecidas que buscan autoridad y posicionamiento.</p>
-						<div class="price-tag" style="margin-bottom: 15px;">$12,000 <span
-								style="font-size: 0.7em;">MXN</span></div>
-						<ul id="ul-enterprise"
-							style="font-size: 0.8rem; color: rgba(255,255,255,0.8); padding-left: 20px;">
-							<li style="margin-bottom: 5px;">Sitio Web Corporativo (5-7 secciones)</li>
-							<li style="margin-bottom: 5px;">Correos Corporativos</li>
-							<li style="margin-bottom: 5px;">Optimización SEO Integrada</li>
-							<li style="margin-bottom: 5px;">Hosting y Dominio Web (1 año)</li>
-						</ul>
-					</div>
-
-					<!-- Plan Ultra -->
-					<div class="option-card" style="text-align: left;" onclick="selectService('Plan Ultra', 'Cotizar')">
-						<h4 style="font-size: 1.4rem; margin-bottom: 0;">Ultra</h4>
-						<p id="desc-ultra"
-							style="font-size: 0.8rem; color: rgba(255,255,255,0.6); margin: 5px 0 10px 0; min-height: 40px;">
-							Sistemas completamente a medida para optimizar flujos de trabajo.</p>
-						<div class="price-tag" style="margin-bottom: 15px;">Cotizar</div>
-						<ul id="ul-ultra" style="font-size: 0.8rem; color: rgba(255,255,255,0.8); padding-left: 20px;">
-							<li style="margin-bottom: 5px;">Plataforma SaaS a Medida</li>
-							<li style="margin-bottom: 5px;">Panel de Administración Avanzado</li>
-							<li style="margin-bottom: 5px;">Flujos y Automatizaciones Propios</li>
-							<li style="margin-bottom: 5px;">Soporte y Mantenimiento Prioritario</li>
-						</ul>
-					</div>
-				</div>
-			</section>
-
-			<!-- Slide 7: Formato de Pago -->
-			<section>
-				<h3 style="margin-bottom: 40px;">Metodología de <span class="text-accent">Inversión</span></h3>
-				<p style="color: rgba(255,255,255,0.6); margin-bottom: 30px;">Selecciona el formato que más le convenga
-					a tu administración.</p>
-
-				<div class="options-grid sm-grid" style="max-width: 600px;">
-					<div class="option-card" onclick="selectAndNext('metodoPago', 'Transferencia Bancaria')">
-						<i class="fas fa-university text-accent fa-2x mb-2"
-							style="display:block; margin-bottom: 10px;"></i>
-						<span style="font-size: 1rem; font-weight: 600;">Transferencia</span>
-					</div>
-					<div class="option-card" onclick="selectAndNext('metodoPago', 'Pago con Tarjeta')">
-						<i class="fas fa-credit-card text-accent fa-2x mb-2"
-							style="display:block; margin-bottom: 10px;"></i>
-						<span style="font-size: 1rem; font-weight: 600;">Tarjeta</span>
-					</div>
-					<div class="option-card" onclick="selectAndNext('metodoPago', 'Efectivo')">
-						<i class="fas fa-money-bill-wave text-accent fa-2x mb-2"
-							style="display:block; margin-bottom: 10px;"></i>
-						<span style="font-size: 1rem; font-weight: 600;">Efectivo (zonas específicas)</span>
-					</div>
-				</div>
-			</section>
-
-			<!-- Slide 8: Cierre WhatsApp -->
-			<section>
-				<h3 style="margin-bottom: 10px;">Propuesta <span class="text-accent">Lista</span></h3>
-				<p style="color: rgba(255,255,255,0.8); margin-bottom: 30px;">Déjanos tu número de celular. Te
-					escribiremos enseguida.</p>
-
-				<input type="text" id="inputContacto" placeholder="Ej. 55 1234 5678"
-					oninput="updateData('contacto', this.value)"><br>
-
-				<button class="btn-primary" onclick="submitQuoteToWhatsApp()"
-					style="font-size: 1.5rem; padding: 15px 50px;">
-					Enviar a WhatsApp <i class="fab fa-whatsapp ms-2"></i>
-				</button>
-
-				<div style="margin-top: 40px; display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
-					<a href="#" onclick="resetWizard(); return false;"
-						style="color: rgba(255,255,255,0.5); font-size: 1rem; text-decoration: none; border-bottom: 1px dotted rgba(255,255,255,0.5);">
-						<i class="fas fa-undo" style="margin-right: 5px;"></i> Re-cotizar
-					</a>
-					<a href="canvas.html"
-						style="color: var(--accent-green); font-size: 1rem; text-decoration: none; border-bottom: 1px dotted var(--accent-green);">
-						<i class="fas fa-project-diagram" style="margin-right: 5px;"></i> Modelo de Negocio
-					</a>
-					<a href="index.html"
-						style="color: rgba(255,255,255,0.5); font-size: 1rem; text-decoration: none; border-bottom: 1px dotted rgba(255,255,255,0.5);">
-						<i class="fas fa-globe" style="margin-right: 5px;"></i> Ir a Inicio
+				
+				<div style="margin-top: 40px;">
+					<a href="index.html" style="color: rgba(255,255,255,0.4); text-decoration: none; font-size: 0.9rem;">
+						<i class="fas fa-globe me-1"></i> volver a arhez.com
 					</a>
 				</div>
 			</section>
@@ -762,183 +379,25 @@
 			hash: true,
 			transition: 'slide',
 			autoAnimateEasing: 'ease-out',
-			keyboard: false,
-			touch: false
 		});
 
-		let formData = {
-			nombre: '',
-			empresa: '',
-			industria: '',
-			servicio: '',
-			precio: 0,
-			metodoPago: '',
-			contacto: ''
-		};
-
-		// Listener: Muestra menú superior solo si NO es la portada (Slide 0)
+		// Muestra controles solo si no es la portada
 		Reveal.on('slidechanged', event => {
 			const navControls = document.getElementById('nav-controls');
 			const exitBtn = document.getElementById('exit-control').querySelector('.nav-btn');
 
 			if (event.indexh > 0) {
 				navControls.style.display = 'flex';
-				// Estilo para fondos oscuros
 				exitBtn.style.color = 'rgba(255,255,255,0.7)';
 				exitBtn.style.borderColor = 'rgba(255,255,255,0.1)';
 				exitBtn.style.background = 'rgba(255,255,255,0.05)';
 			} else {
 				navControls.style.display = 'none';
-				// Estilo para la portada (fondo blanco)
 				exitBtn.style.color = 'var(--primary-dark)';
 				exitBtn.style.borderColor = 'rgba(6, 7, 27, 0.1)';
 				exitBtn.style.background = 'rgba(6, 7, 27, 0.05)';
 			}
 		});
-
-		// JSON de textos dinámicos por industria para el cotizador
-		const industryInfo = {
-			"Comercial": {
-				esencial: { desc: "Vende promociones a través de WhatsApp.", bullets: ["Landing Page Promocional (1 sec.)", "Diseño Responsivo Minimalista", "Botón directo a tu WhatsApp", "Hosting y Dominio Web (1 año)"] },
-				enterprise: { desc: "Catálogo robusto para empresas con muchos productos.", bullets: ["Sitio Web Tipo Catálogo (5-7 sec.)", "Correos de Ventas / Corporativos", "Optimización SEO (Google)", "Hosting y Dominio Web (1 año)"] },
-				ultra: { desc: "Automatiza tu inventario local y online entero.", bullets: ["SaaS de Administración y Stock", "Panel Administrativo / POS", "Gestión de Múltiples Sucursales", "Soporte y Mantenimiento Especializado"] }
-			},
-			"Salud": {
-				esencial: { desc: "Ideal para promocionar tratamientos o especialidades.", bullets: ["Landing Page Paramédica (1 sec.)", "Optimización Responsiva", "Agendamiento simple vía WhatsApp", "Hosting y Dominio Web (1 año)"] },
-				enterprise: { desc: "Posicionamiento estructurado de doctores y clínica.", bullets: ["Sitio Web de Especialidad (5-7 sec.)", "Correos Médicos Dedicados", "Optimización SEO (Pacientes)", "Hosting y Dominio Web (1 año)"] },
-				ultra: { desc: "Expedientes y seguimientos sin error humano.", bullets: ["Software de Expediente Clínico", "Panel Privado Consultorio", "Recordatorios a Pacientes", "Soporte de Privacidad de Datos"] }
-			},
-			"Bienes Raíces o Construcción": {
-				esencial: { desc: "Captación salvaje para desarrollos y preventas exclusivas.", bullets: ["Landing Page de Desarrollo (1 sec.)", "Galería Cautivadora Responsiva", "Captación Inmediata al CRM/WA", "Hosting y Dominio Web (1 año)"] },
-				enterprise: { desc: "Sitios con filtros amplios, catálogo masivo o avance de obra.", bullets: ["Sitio Web Propiedades Corporativo", "Correos para Asesores Inmobiliarios", "SEO Orientado a Prospección", "Hosting y Dominio Web (1 año)"] },
-				ultra: { desc: "Bases de datos masivas y control administrativo a medida.", bullets: ["Plataforma SaaS de Control", "Administrador de Cuentas y Control", "CRM Inmobiliario de Agentes", "Soporte y Monitoreo Especial"] }
-			},
-			"Manufactura": {
-				esencial: { desc: "Captación de proyectos industriales y validación técnica inmediata.", bullets: ["Landing Page Industrial (1 sec.)", "Optimización de Embudo de Ventas", "Botón directo a Ingeniería/Ventas", "Hosting y Dominio Web (1 año)"] },
-				enterprise: { desc: "Presencia institucional sólida para grupos industriales y holdings.", bullets: ["Sitio Web Corporativo Industrial", "Correos de Alianzas y Compras", "SEO Estratégico para Sector B2B", "Hosting y Dominio Web (1 año)"] },
-				ultra: { desc: "Optimización 4.0 y control total de la cadena de suministro.", bullets: ["SaaS ERP Industrial Personalizado", "Monitoreo de Líneas en Tiempo Real", "Módulos de Mantenimiento y Calidad", "Soporte Técnico de Alta Disponibilidad"] }
-			},
-			"Otro": {
-				esencial: { desc: "Una solución rápida y efectiva para validar y atraer clientes ideales.", bullets: ["Landing Page Estratégica (1 sec.)", "Diseño Minimalista Inteligente", "Botón directo a tu WhatsApp", "Hosting y Dominio Web (1 año)"] },
-				enterprise: { desc: "Establece autoridad en internet dentro de tu nicho comercial.", bullets: ["Sitio Web Corporativo (5-7 sec.)", "Correos de Ventas / Corporativos", "Optimización Estructural SEO", "Hosting y Dominio Web (1 año)"] },
-				ultra: { desc: "Transformación tecnológica total y desarrollo 100% propietario.", bullets: ["Plataforma Operativa a Medida", "Panel Administrativo Robusto", "Módulos de Negocio Exclusivos", "Soporte Preventivo y Evolutivo"] }
-			},
-			"Deportes": {
-				esencial: { desc: "Consigue cientos de prospectos mensuales por promoción.", bullets: ["Landing Page Promocional Fit (1 sec.)", "Galería Atractiva e Inclusiva", "Enfoque de Membresía Directa WP", "Hosting y Dominio Web (1 año)"] },
-				enterprise: { desc: "Portafolios completos con descripciones de disciplina.", bullets: ["Sitio Web Club Fit (5-7 sec.)", "Correos Info/Ventas Oficiales", "SEO Fitness Crecimiento Cerca", "Hosting y Dominio Web (1 año)"] },
-				ultra: { desc: "Centraliza tus entrenadores e instalaciones privadas.", bullets: ["Plataforma SaaS Deportiva a Medida", "Administración de Socios / QR", "Bloqueos y Cobros a Tarjeta", "Mantenimiento 24/7 de Base de datos"] }
-			},
-			"Alimentos y Bebidas": {
-				esencial: { desc: "Promociones limitadas o menús QR.", bullets: ["Landing Menú Express (1 sec.)", "Alta usabilidad de reserva en móvil", "Botón 'Pide aquí' WhatsApp", "Hosting y Dominio Web (1 año)"] },
-				enterprise: { desc: "Plataformas hermosas para cadena/franquicias de autor.", bullets: ["Sitio Web Gastronomía (5-7 sec.)", "Correos Sucursales", "Optimización Posicionamiento Local", "Hosting y Dominio Web (1 año)"] },
-				ultra: { desc: "Software de alto rendimiento sin comisiones por tercero.", bullets: ["SaaS Delivery propio / APP Comedor", "Monitoreo de Comandas y Cocina", "Control de Insumos Integrado", "Hosting Escalonable Activo"] }
-			},
-			"default": {
-				esencial: { desc: "Ideal para validación rápida y generación de clientes potenciales.", bullets: ["Landing Page (1 sección)", "Diseño Responsivo", "Formulario / WhatsApp", "Hosting y Dominio Web (1 año)"] },
-				enterprise: { desc: "Perfecto para empresas establecidas que buscan autoridad y posicionamiento.", bullets: ["Sitio Web Corporativo (5-7 secciones)", "Correos Corporativos", "Optimización SEO Integrada", "Hosting y Dominio Web (1 año)"] },
-				ultra: { desc: "Sistemas a medida para flujos de trabajo hiper especializados.", bullets: ["Plataforma SaaS a Medida", "Panel de Administración", "Flujos y Automatizaciones Propios", "Soporte y Mantenimiento Prioritario"] }
-			}
-		};
-
-		function populateIndustryDetails(industryName) {
-			let info = industryInfo[industryName] || industryInfo["default"];
-
-			document.getElementById('desc-esencial').innerText = info.esencial.desc;
-			document.getElementById('ul-esencial').innerHTML = info.esencial.bullets.map(b => `<li style="margin-bottom: 5px;">${b}</li>`).join('');
-
-			document.getElementById('desc-enterprise').innerText = info.enterprise.desc;
-			document.getElementById('ul-enterprise').innerHTML = info.enterprise.bullets.map(b => `<li style="margin-bottom: 5px;">${b}</li>`).join('');
-
-			document.getElementById('desc-ultra').innerText = info.ultra.desc;
-			document.getElementById('ul-ultra').innerHTML = info.ultra.bullets.map(b => `<li style="margin-bottom: 5px;">${b}</li>`).join('');
-		}
-
-		// Reinicia la matriz de datos, los inputs visuales y el UI 
-		function resetWizard() {
-			formData = {
-				nombre: '', empresa: '', industria: '', servicio: '',
-				precio: 0, metodoPago: '', contacto: ''
-			};
-
-			document.getElementById('inputNombre').value = '';
-			document.getElementById('inputEmpresa').value = '';
-			document.getElementById('inputContacto').value = '';
-
-			document.getElementById('summary-panel').style.display = 'none';
-			updateSummaryUI();
-
-			// Devolvemos el cotizador a valores generalistas
-			populateIndustryDetails("default");
-
-			Reveal.slide(0);
-		}
-
-		function startWizard() {
-			document.getElementById('summary-panel').style.display = 'block';
-			Reveal.next();
-		}
-
-		function updateData(key, value) {
-			formData[key] = value;
-			updateSummaryUI();
-		}
-
-		function selectAndNext(key, value) {
-			formData[key] = value;
-			updateSummaryUI();
-
-			if (key === 'industria') {
-				populateIndustryDetails(value);
-			}
-
-			Reveal.next();
-		}
-
-		function selectService(nombreServicio, precioMXN) {
-			formData['servicio'] = nombreServicio;
-			formData['precio'] = precioMXN;
-			updateSummaryUI();
-			Reveal.next();
-		}
-
-		function updateSummaryUI() {
-			document.getElementById('sum-empresa').innerText = formData.empresa !== '' ? formData.empresa : '...';
-			document.getElementById('sum-industria').innerText = formData.industria !== '' ? formData.industria : '...';
-			document.getElementById('sum-servicio').innerText = formData.servicio !== '' ? formData.servicio : '...';
-
-			if (typeof formData.precio === 'string') {
-				document.getElementById('sum-total').innerText = formData.precio;
-			} else if (formData.precio > 0) {
-				document.getElementById('sum-total').innerText = '$' + formData.precio.toLocaleString();
-			} else {
-				document.getElementById('sum-total').innerText = '$0.00';
-			}
-		}
-
-		function submitQuoteToWhatsApp() {
-			let c = document.getElementById('inputContacto').value.trim();
-			if (c === '') {
-				alert("Por favor, ingresa tu número para contactarte por WhatsApp.");
-				return;
-			}
-
-			let whatsappArhez = "524272777153";
-
-			let wpMsg = `Hola Arhez Tech, he finalizado mi cotización interactiva y me interesa arrancar un proyecto:%0A%0A`;
-			wpMsg += `😎 *Cliente:* ${formData.nombre || 'No especificado'}%0A`;
-			wpMsg += `🏢 *Empresa:* ${formData.empresa || 'No definida'}%0A`;
-			wpMsg += `🏭 *Industria:* ${formData.industria}%0A`;
-			wpMsg += `🚀 *Plan seleccionado:* ${formData.servicio}%0A`;
-
-			let precioText = typeof formData.precio === 'string' ? formData.precio : `$${formData.precio.toLocaleString()} MXN`;
-			wpMsg += `💰 *Presupuesto Estimado:* ${precioText}%0A`;
-
-			wpMsg += `💳 *Método de Pago Preferido:* ${formData.metodoPago}%0A`;
-			wpMsg += `📞 *Mi número de contacto es:* ${c}%0A%0A`;
-			wpMsg += `¿Cuáles son los siguientes pasos?`;
-
-			window.open(`https://wa.me/${whatsappArhez}?text=${wpMsg}`, '_blank');
-		}
 	</script>
 </body>
 
