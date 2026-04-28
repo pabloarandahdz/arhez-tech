@@ -1,667 +1,540 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>ARHEZ TECHNOLOGIES - Impulsamos la transformación digital de nuestros clientes con soluciones tecnológicas
-		integrales</title>
+  <!-- 2804261500: Metadatos y dependencias -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- 2804261635: Metadatos actualizados - modelo producto/licencias -->
+  <title>Arhez Tech — Plataformas de Software por Licencia para Empresas</title>
+  <meta name="description" content="Arhez Tech desarrolla plataformas propias de software empresarial. Adquiere licencias listas para usar: tarjeta digital, punto de venta, CRM y más. Tecnología mexicana de clase mundial.">
+  <meta name="robots" content="index, follow">
+  <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
 
-	<meta name="description"
-		content="Arhez Tech: Impulsamos el crecimiento de tu empresa con desarrollo web orientado a la conversión, automatización de procesos y software a medida.">
-	<!-- 200320262115 Etiquetas y Scripts -->
-	<!-- Google tag (gtag.js) -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-CR57KMZY6H"></script>
-	<script>
-		window.dataLayer = window.dataLayer || [];
-		function gtag() { dataLayer.push(arguments); }
-		gtag('js', new Date());
-		gtag('config', 'G-CR57KMZY6H');
-	</script>
-	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2097225346193438"
-		crossorigin="anonymous"></script>
-	<meta name="google-adsense-account" content="ca-pub-2097225346193438">
+  <!-- 2804261500: Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CR57KMZY6H"></script>
+  <script src="js/gtag.js"></script>
 
-	<!-- 200320262115 Estilos y Fuentes -->
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-	<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
-		rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<link rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
+  <!-- 2804261500: Fuentes tipográficas -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-
+  <!-- 2804261500: Hoja de estilos principal -->
+  <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
 
-	<!-- 200320262115 Barra de Navegacion -->
-	<nav class="navbar navbar-expand-lg fixed-top navbar-arhez">
-		<div class="container">
-			<a class="navbar-brand" href="#">
-				<img class="logotipo" src="assets/img/logotipo.png" alt="Arhez Tech">
-			</a>
-			<button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-				<i class="fas fa-bars text-primary-dark fs-2"></i>
-			</button>
-			<div class="collapse navbar-collapse" id="navbarNav">
-				<ul class="navbar-nav ms-auto align-items-center gap-2 gap-lg-4">
-					<li class="nav-item"><a class="nav-link text-primary-dark fw-semibold" href="#">Inicio</a></li>
-					<li class="nav-item"><a class="nav-link text-primary-dark fw-semibold" href="#metodologia">Metodología</a></li>
-					<li class="nav-item"><a class="nav-link text-primary-dark fw-semibold" href="#ecosistema">Ecosistema</a></li>
-					<li class="nav-item"><a class="nav-link text-primary-dark fw-semibold" href="#nosotros">Nosotros</a></li>
-					<li class="nav-item">
-						<a href="tarjeta-digital.html" class="nav-link text-primary-dark fw-semibold">
-							Tarjeta Digital <span style="background:var(--accent-green);color:var(--primary-dark);font-size:0.58rem;font-weight:800;padding:1px 6px;border-radius:50px;text-transform:uppercase;letter-spacing:0.05em;vertical-align:middle;">Nuevo</span>
-						</a>
-					</li>
-					<li class="nav-item ms-lg-2">
-						<a href="#contacto" class="btn-arhez-primary" style="padding: 10px 24px;">
-							Contacto
-						</a>
-					</li>
-				</ul>
-			</div>
-		</div>
-	</nav>
+  <!-- ============================================================
+       2804261500: NAVEGACIÓN PRINCIPAL
+  ============================================================ -->
+  <nav class="nav" id="nav">
+    <div class="nav__container">
+      <a href="#" class="nav__brand">
+        <img src="assets/img/logotipo.png" alt="Arhez Tech" class="nav__logo">
+      </a>
+      <button class="nav__toggle" id="navToggle" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav__menu" id="navMenu">
+        <li><a href="#plataformas" class="nav__link">Plataformas</a></li>
+        <li><a href="#como-funciona" class="nav__link">Cómo funciona</a></li>
+        <li><a href="#nosotros" class="nav__link">Nosotros</a></li>
+        <li><a href="#contacto" class="nav__link">Contacto</a></li>
+        <li>
+          <a href="#plataformas" class="nav__cta">Ver licencias</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
 
-	<!-- 1. Inicio: Seccion Principal Hero -->
-	<header class="hero-arhez position-relative overflow-hidden">
-		<!-- Glowing blurred blobs for Hero Apple style -->
-		<div class="position-absolute rounded-circle"
-			style="width: 600px; height: 600px; background: rgba(56, 189, 248, 0.35); filter: blur(120px); top: -150px; right: -100px; z-index: 0; pointer-events: none;">
-		</div>
-		<div class="position-absolute rounded-circle"
-			style="width: 500px; height: 500px; background: rgba(141, 238, 18, 0.25); filter: blur(120px); bottom: -100px; left: 5%; z-index: 0; pointer-events: none;">
-		</div>
+  <!-- ============================================================
+       2804261500: HERO
+  ============================================================ -->
+  <header class="hero" id="inicio">
+    <div class="hero__container">
+      <div class="hero__content">
+        <p class="hero__eyebrow">Software por licencia · México</p>
+        <h1 class="hero__title">
+          Plataformas propias que <span class="hero__accent">impulsan tu operación.</span>
+        </h1>
+        <p class="hero__subtitle">
+          Desarrollamos nuestras propias plataformas de software empresarial.
+          Adquiere tu licencia y empieza a operar hoy — sin desarrollo, sin esperas.
+        </p>
+        <div class="hero__actions">
+          <a href="#plataformas" class="btn btn--primary">Explorar plataformas</a>
+          <a href="#como-funciona" class="btn btn--ghost">Cómo funciona</a>
+        </div>
+      </div>
 
-		<div class="container position-relative z-1">
-			<div class="row align-items-center pt-4">
-				<div class="col-lg-6 mb-5 mb-lg-0">
-					<div class="d-inline-flex align-items-center border border-light border-opacity-25 px-3 py-2 rounded-pill mb-4"
-						style="background: rgba(255,255,255,0.05); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);">
-						<span class="text-accent me-2"><i class="fas fa-bolt"></i></span>
-						<small class="text-white fw-bold">Transformación digital integral para tu negocio</small>
-					</div>
-					<h1 class="hero-title">
-						Haz crecer tu negocio con <span class="brand-accent-text">tecnología a medida.</span>
-					</h1>
-					<p class="hero-subtitle">
-						Desarrollamos soluciones digitales de alto impacto que automatizan procesos y multiplican tus resultados.
-					</p>
-					<div class="d-flex flex-wrap gap-3">
-						<a href="#ecosistema" class="btn-arhez-primary">
-							Explorar Ecosistema
-						</a>
-						<a href="tarjeta-digital.html" class="btn-arhez-outline">
-							Tarjeta Digital <span class="ms-2 badge bg-white bg-opacity-10">$49 MXN</span>
-						</a>
-					</div>
-					<div class="mt-4 pt-4 border-top border-secondary border-opacity-25 d-flex gap-2 gap-md-4">
-						<div class="p-3 rounded border border-light border-opacity-25 flex-fill"
-							style="background: rgba(255,255,255,0.05); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);">
-							<h4 class="text-accent mb-0 fw-bold">100%</h4>
-							<small class="text-white fw-semibold">Enfoque a resultados</small>
-						</div>
-						<div class="p-3 rounded border border-light border-opacity-25 flex-fill"
-							style="background: rgba(255,255,255,0.05); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);">
-							<h4 class="text-accent mb-0 fw-bold">+48%</h4>
-							<small class="text-white fw-semibold">Crecimiento promedio</small>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-5 offset-lg-1 d-none d-lg-block">
-					<div class="dashboard-mockup">
-						<div class="d-flex gap-2 mb-4 px-2 border-bottom border-white border-opacity-10 pb-3">
-							<div class="rounded-circle" style="width: 10px; height: 10px; background: #ff5f56;"></div>
-							<div class="rounded-circle" style="width: 10px; height: 10px; background: #ffbd2e;"></div>
-							<div class="rounded-circle" style="width: 10px; height: 10px; background: #27c93f;"></div>
-						</div>
-						<div class="row g-4">
-							<div class="col-12">
-								<div class="p-4 rounded-4" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08);">
-									<div class="d-flex justify-content-between align-items-center mb-3">
-										<div class="text-white-50 small fw-bold text-uppercase letter-spacing-1">SEO</div>
-										<div class="text-accent fw-bold">Óptimo</div>
-									</div>
-									<div class="progress" style="height: 6px; background: rgba(255,255,255,0.05); border-radius: 10px;">
-										<div class="progress-bar bg-accent" style="width: 100%; box-shadow: 0 0 15px var(--accent-green);"></div>
-									</div>
-								</div>
-							</div>
-							<div class="col-6">
-								<div class="p-3 rounded-4 h-100" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08);">
-									<div class="text-white-50 small mb-1">Escalabilidad</div>
-									<div class="text-white fw-bold h4 mb-0">Sin Límites</div>
-								</div>
-							</div>
-							<div class="col-6">
-								<div class="p-3 rounded-4 h-100" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08);">
-									<div class="text-info small mb-1">Diseño</div>
-									<div class="text-white fw-bold h4 mb-0">Responsivo</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</header>
+      <div class="hero__stats">
+        <div class="stat">
+          <span class="stat__number">10</span>
+          <span class="stat__label">Plataformas propias</span>
+        </div>
+        <div class="stat">
+          <span class="stat__number">SaaS</span>
+          <span class="stat__label">Modelo de licencias</span>
+        </div>
+        <div class="stat">
+          <span class="stat__number">24/7</span>
+          <span class="stat__label">Acceso inmediato</span>
+        </div>
+      </div>
+    </div>
+  </header>
 
-	<!-- 2. Metodologia: Seccion de Proceso y Metodologia -->
-	<section id="metodologia" class="arhez-section position-relative overflow-hidden" style="background: #fbfbfb;">
-		<!-- Decoración sutil Blur -->
-		<div class="position-absolute rounded-circle"
-			style="width: 400px; height: 400px; background: rgba(141, 238, 18, 0.08); filter: blur(60px); top: 5%; left: -100px; z-index: 0; pointer-events: none;">
-		</div>
-		<div class="position-absolute rounded-circle"
-			style="width: 400px; height: 400px; background: rgba(56, 189, 248, 0.08); filter: blur(60px); bottom: -50px; right: -100px; z-index: 0; pointer-events: none;">
-		</div>
-		<div class="container text-center position-relative z-1">
-			<span class="badge bg-primary-dark text-white mb-3 px-3 py-2 rounded-pill">Nuestro Método</span>
-			<h2 class="section-title mb-5">Nuestra Metodología</h2>
-			<div class="row g-4">
-				<div class="col-md-3">
-					<div class="methodology-card">
-						<div class="step-number">01</div>
-						<h5 class="step-title text-primary-dark">Diagnóstico</h5>
-						<p class="text-muted small">Auditamos procesos y barreras de crecimiento.</p>
-					</div>
-				</div>
-				<div class="col-md-3">
-					<div class="methodology-card">
-						<div class="step-number">02</div>
-						<h5 class="step-title text-primary-dark">Arquitectura</h5>
-						<p class="text-muted small">Diseñamos la lógica del sistema y experiencia (UX).</p>
-					</div>
-				</div>
-				<div class="col-md-3">
-					<div class="methodology-card">
-						<div class="step-number">03</div>
-						<h5 class="step-title text-primary-dark">Construcción</h5>
-						<p class="text-muted small">Desarrollo ágil con el más alto estándar de calidad.</p>
-					</div>
-				</div>
-				<div class="col-md-3">
-					<div class="methodology-card">
-						<div class="step-number">04</div>
-						<h5 class="step-title text-primary-dark">Despliegue</h5>
-						<p class="text-muted small">Lanzamiento, soporte y monitoreo en vivo.</p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+  <!-- ============================================================
+       2804261635: PLATAFORMAS (licencias)
+  ============================================================ -->
+  <section class="section services" id="plataformas">
+    <div class="section__container">
+      <div class="section__header">
+        <p class="section__eyebrow">Nuestras Plataformas</p>
+        <h2 class="section__title">Software listo para usar.<br>Adquiere tu licencia y opera hoy.</h2>
+      </div>
 
-	<!-- 3. Suite o Ecosistema: Seccion de Ecosistema Arhez -->
-	<section id="ecosistema" class="arhez-section position-relative overflow-hidden" style="background: white;">
-		<div class="container text-center mb-5">
-			<span class="badge bg-primary-dark text-white mb-3 px-3 py-2 rounded-pill">Ecosistema Arhez</span>
-			<h2 class="section-title">Nuestra Suite de Productos</h2>
-			<p class="lead text-muted mx-auto" style="max-width: 700px;">
-				Soluciones integrales diseñadas para dominar cada aspecto de la operación digital.
-			</p>
-		</div>
+      <div class="services__list">
+        <!-- Plataforma 01 -->
+        <article class="service-item service-item--featured">
+          <div class="service-item__header">
+            <span class="service-item__num">01</span>
+            <h3 class="service-item__title">Arhez Card — Tarjeta Digital</h3>
+          </div>
+          <p class="service-item__desc">
+            Tu tarjeta de presentación digital lista en minutos. Compártela con un link o QR, actualizable en cualquier momento. Sin apps, sin impresiones.
+          </p>
+          <a href="tarjeta-digital.html" class="btn btn--primary">Obtener licencia</a>
+          <div class="service-item__badge">Activa · 2026</div>
+        </article>
 
-		<div class="container">
-			<div class="row g-4">
-				<!-- Tarjeta Digital -->
-				<div class="col-lg-4 col-md-6">
-					<div class="product-card d-flex flex-column" style="background: var(--primary-dark); color: white; border: 2px solid var(--accent-green);">
-						<div class="d-flex justify-content-between mb-2">
-							<div class="icon-box bg-accent text-dark">
-								<i class="fas fa-id-card"></i>
-							</div>
-							<div><span class="badge bg-accent text-dark rounded-pill px-3 py-1">Popular</span></div>
-						</div>
-						<h3 class="fw-bold h5">Tarjeta Digital</h3>
-						<p class="text-white-50 small flex-grow-1">Tu presencia profesional en un solo enlace. Comparte contactos, redes y ubicación.</p>
-						<a href="tarjeta-digital.html" class="btn-arhez-primary w-100 py-2 mt-3">Crear Ahora</a>
-					</div>
-				</div>
+        <!-- Plataforma 02 -->
+        <article class="service-item service-item--featured">
+          <div class="service-item__header">
+            <span class="service-item__num">02</span>
+            <h3 class="service-item__title">Arhez Shop — Punto de Venta</h3>
+          </div>
+          <p class="service-item__desc">
+            Sistema de punto de venta completo: inventarios, tickets, cortes de caja y reportes en tiempo real. Control total sin complejidad.
+          </p>
+          <a href="https://arhez-shop.netlify.app/" target="_blank" class="btn btn--primary">Obtener licencia</a>
+          <div class="service-item__badge">Activa · 2026</div>
+        </article>
 
-				<!-- Arhez Shop -->
-				<div class="col-lg-4 col-md-6">
-					<div class="product-card d-flex flex-column">
-						<div class="d-flex justify-content-between mb-2">
-							<div class="icon-box bg-primary-dark text-accent">
-								<i class="fas fa-store"></i>
-							</div>
-							<div><span class="badge bg-success-subtle text-success border border-success-subtle rounded-pill px-3 py-1">Listo</span></div>
-						</div>
-						<h3 class="fw-bold h5">Arhez Shop</h3>
-						<p class="text-muted small flex-grow-1">Gestión integral de ventas, inventario y punto de venta para retail moderno.</p>
-						<a href="#contacto" class="btn-arhez-dark w-100 py-2 mt-3">Saber más</a>
-					</div>
-				</div>
+        <!-- Plataforma 03 -->
+        <article class="service-item">
+          <div class="service-item__header">
+            <span class="service-item__num">03</span>
+            <h3 class="service-item__title">Arhez Hub — E-Learning</h3>
+          </div>
+          <p class="service-item__desc">
+            Plataforma de capacitación para empresas y profesionistas. Crea, distribuye y monetiza cursos con tu propia marca.
+          </p>
+          <a href="#contacto" class="btn btn--ghost">Más información</a>
+          <div class="service-item__badge">Roadmap · 2026</div>
+        </article>
 
-				<!-- Arhez Hub -->
-				<div class="col-lg-4 col-md-6">
-					<div class="product-card d-flex flex-column opacity-75">
-						<div class="d-flex justify-content-between mb-2">
-							<div class="icon-box bg-light text-secondary">
-								<i class="fas fa-graduation-cap"></i>
-							</div>
-							<div><span class="badge bg-light text-secondary border rounded-pill px-3 py-1">En proceso</span></div>
-						</div>
-						<h3 class="fw-bold h5">Arhez Hub</h3>
-						<p class="text-muted small flex-grow-1">Plataforma de e-learning y capacitación corporativa para el talento del futuro.</p>
-						<button class="btn btn-outline-secondary w-100 py-2 mt-3 disabled">En proceso</button>
-					</div>
-				</div>
+        <!-- Plataforma 04 -->
+        <article class="service-item">
+          <div class="service-item__header">
+            <span class="service-item__num">04</span>
+            <h3 class="service-item__title">Arhez Sports — Gestión Deportiva</h3>
+          </div>
+          <p class="service-item__desc">
+            Administración completa de ligas, torneos, equipos y estadísticas en tiempo real para centros deportivos y organizadores.
+          </p>
+          <a href="#contacto" class="btn btn--ghost">Más información</a>
+          <div class="service-item__badge">Roadmap · 2026</div>
+        </article>
 
-				<!-- Arhez Sports -->
-				<div class="col-lg-4 col-md-6">
-					<div class="product-card d-flex flex-column opacity-75">
-						<div class="d-flex justify-content-between mb-2">
-							<div class="icon-box bg-light text-secondary">
-								<i class="fas fa-futbol"></i>
-							</div>
-							<div><span class="badge bg-light text-secondary border rounded-pill px-3 py-1">En proceso</span></div>
-						</div>
-						<h3 class="fw-bold h5">Arhez Sports</h3>
-						<p class="text-muted small flex-grow-1">Ecosistema para la gestión de ligas, torneos y estadísticas deportivas.</p>
-						<button class="btn btn-outline-secondary w-100 py-2 mt-3 disabled">En proceso</button>
-					</div>
-				</div>
+        <!-- Plataforma 05 -->
+        <article class="service-item">
+          <div class="service-item__header">
+            <span class="service-item__num">05</span>
+            <h3 class="service-item__title">Arhez Analytics — Data Science</h3>
+          </div>
+          <p class="service-item__desc">
+            Plataforma de Big Data y Machine Learning para extraer valor de tus datos, predecir tendencias y optimizar decisiones estratégicas.
+          </p>
+          <a href="#contacto" class="btn btn--ghost">Explorar</a>
+          <div class="service-item__badge">Roadmap · 2027</div>
+        </article>
 
-				<!-- Arhez Analytics -->
-				<div class="col-lg-4 col-md-6">
-					<div class="product-card d-flex flex-column opacity-75">
-						<div class="d-flex justify-content-between mb-2">
-							<div class="icon-box bg-light text-secondary">
-								<i class="fas fa-chart-line"></i>
-							</div>
-							<div><span class="badge bg-light text-secondary border rounded-pill px-3 py-1">En proceso</span></div>
-						</div>
-						<h3 class="fw-bold h5">Arhez Analytics</h3>
-						<p class="text-muted small flex-grow-1">Dashboards inteligentes y reportería en tiempo real para la toma de decisiones.</p>
-						<button class="btn btn-outline-secondary w-100 py-2 mt-3 disabled">En proceso</button>
-					</div>
-				</div>
+        <!-- Plataforma 06 -->
+        <article class="service-item">
+          <div class="service-item__header">
+            <span class="service-item__num">06</span>
+            <h3 class="service-item__title">Arhez CRM — Gestión de Clientes</h3>
+          </div>
+          <p class="service-item__desc">
+            Organiza tu cartera de clientes, automatiza seguimientos y cierra más ventas. CRM ligero pensado para equipos que quieren resultados grandes.
+          </p>
+          <a href="#contacto" class="btn btn--ghost">Explorar</a>
+          <div class="service-item__badge">Roadmap · 2027</div>
+        </article>
 
-				<!-- Arhez CRM -->
-				<div class="col-lg-4 col-md-6">
-					<div class="product-card d-flex flex-column opacity-75">
-						<div class="d-flex justify-content-between mb-2">
-							<div class="icon-box bg-light text-secondary">
-								<i class="fas fa-users-gear"></i>
-							</div>
-							<div><span class="badge bg-light text-secondary border rounded-pill px-3 py-1">En proceso</span></div>
-						</div>
-						<h3 class="fw-bold h5">Arhez CRM</h3>
-						<p class="text-muted small flex-grow-1">Gestión de relaciones con clientes y automatización de embudos de venta.</p>
-						<button class="btn btn-outline-secondary w-100 py-2 mt-3 disabled">En proceso</button>
-					</div>
-				</div>
+        <!-- Plataforma 07 -->
+        <article class="service-item">
+          <div class="service-item__header">
+            <span class="service-item__num">07</span>
+            <h3 class="service-item__title">Arhez Supply Chain</h3>
+          </div>
+          <p class="service-item__desc">
+            Gestión inteligente de la cadena de suministro. Trazabilidad, logística y optimización de inventarios.
+          </p>
+          <a href="#contacto" class="btn btn--ghost">Explorar</a>
+          <div class="service-item__badge">Roadmap · 2028</div>
+        </article>
 
-				<!-- Arhez Suite -->
-				<div class="col-lg-4 col-md-6">
-					<div class="product-card d-flex flex-column opacity-75">
-						<div class="d-flex justify-content-between mb-2">
-							<div class="icon-box bg-light text-secondary">
-								<i class="fas fa-layer-group"></i>
-							</div>
-							<div><span class="badge bg-light text-secondary border rounded-pill px-3 py-1">En proceso</span></div>
-						</div>
-						<h3 class="fw-bold h5">Arhez Suite</h3>
-						<p class="text-muted small flex-grow-1">Conjunto de herramientas empresariales integradas para la productividad máxima.</p>
-						<button class="btn btn-outline-secondary w-100 py-2 mt-3 disabled">En proceso</button>
-					</div>
-				</div>
+        <!-- Plataforma 08 -->
+        <article class="service-item">
+          <div class="service-item__header">
+            <span class="service-item__num">08</span>
+            <h3 class="service-item__title">Arhez Suite — Ecosistema</h3>
+          </div>
+          <p class="service-item__desc">
+            Todas nuestras plataformas integradas en un solo núcleo empresarial. Gestión comercial, datos, e-learning y CRM trabajando en sincronía.
+          </p>
+          <a href="#contacto" class="btn btn--ghost">Explorar</a>
+          <div class="service-item__badge">Roadmap · 2028</div>
+        </article>
 
-				<!-- Arhez ERP -->
-				<div class="col-lg-4 col-md-6">
-					<div class="product-card d-flex flex-column opacity-75">
-						<div class="d-flex justify-content-between mb-2">
-							<div class="icon-box bg-light text-secondary">
-								<i class="fas fa-boxes-stacked"></i>
-							</div>
-							<div><span class="badge bg-light text-secondary border rounded-pill px-3 py-1">En proceso</span></div>
-						</div>
-						<h3 class="fw-bold h5">Arhez ERP</h3>
-						<p class="text-muted small flex-grow-1">Planificación de recursos empresariales para el control total de la cadena de suministro.</p>
-						<button class="btn btn-outline-secondary w-100 py-2 mt-3 disabled">En proceso</button>
-					</div>
-				</div>
+        <!-- Plataforma 09 -->
+        <article class="service-item">
+          <div class="service-item__header">
+            <span class="service-item__num">09</span>
+            <h3 class="service-item__title">Arhez Enterprise — ERP</h3>
+          </div>
+          <p class="service-item__desc">
+            Planificación de recursos empresariales corporativos. Finanzas, RH y producción en un solo sistema.
+          </p>
+          <a href="#contacto" class="btn btn--ghost">Roadmap</a>
+          <div class="service-item__badge">Roadmap · 2029</div>
+        </article>
 
-				<!-- Arhez Labs -->
-				<div class="col-lg-4 col-md-6">
-					<div class="product-card d-flex flex-column opacity-75">
-						<div class="d-flex justify-content-between mb-2">
-							<div class="icon-box bg-light text-secondary">
-								<i class="fas fa-flask"></i>
-							</div>
-							<div><span class="badge bg-light text-secondary border rounded-pill px-3 py-1">En proceso</span></div>
-						</div>
-						<h3 class="fw-bold h5">Arhez Labs</h3>
-						<p class="text-muted small flex-grow-1">Laboratorio de innovación y prototipado rápido para tecnologías emergentes e IA.</p>
-						<button class="btn btn-outline-secondary w-100 py-2 mt-3 disabled">En proceso</button>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+        <!-- Plataforma 10 -->
+        <article class="service-item">
+          <div class="service-item__header">
+            <span class="service-item__num">10</span>
+            <h3 class="service-item__title">Arhez Labs — R&D</h3>
+          </div>
+          <p class="service-item__desc">
+            Investigación y desarrollo en Inteligencia Artificial y Ciberseguridad. Creando el futuro del software autónomo.
+          </p>
+          <a href="#contacto" class="btn btn--ghost">Roadmap</a>
+          <div class="service-item__badge">Roadmap · 2030</div>
+        </article>
+      </div>
+    </div>
+  </section>
 
-	<!-- 🆕 Microservicio: Tarjeta Digital Destacada -->
-	<section class="arhez-section position-relative overflow-hidden" style="background: var(--primary-dark); padding: 120px 0;">
-		<!-- Blobs -->
-		<div class="position-absolute rounded-circle"
-			style="width:500px;height:500px;background:rgba(141,238,18,0.12);filter:blur(100px);top:-150px;right:-100px;z-index:0;pointer-events:none;"></div>
-		<div class="position-absolute rounded-circle"
-			style="width:400px;height:400px;background:rgba(56,189,248,0.08);filter:blur(80px);bottom:-100px;left:-80px;z-index:0;pointer-events:none;"></div>
+  <!-- ============================================================
+       2804261635: VENTAJAS DEL MODELO
+  ============================================================ -->
+  <section class="section quality" id="ventajas">
+    <div class="section__container">
+      <div class="quality__header">
+        <p class="section__eyebrow">¿Por qué licencias?</p>
+        <h2 class="section__title">Ventajas del modelo Arhez</h2>
+        <p class="quality__sub">Software probado, listo para producción. Sin tiempos de desarrollo, sin riesgo de proyecto.</p>
+      </div>
 
-		<div class="container position-relative" style="z-index:1;">
-			<div class="row align-items-center g-5">
+      <div class="quality__grid">
+        <div class="quality-card">
+          <div class="quality-card__icon">⚡</div>
+          <h4 class="quality-card__title">Activa hoy, opera mañana</h4>
+          <p class="quality-card__desc">Sin semanas de desarrollo. Adquieres tu licencia y empiezas a usar la plataforma de inmediato.</p>
+        </div>
+        <div class="quality-card">
+          <div class="quality-card__icon">🔄</div>
+          <h4 class="quality-card__title">Actualizaciones incluidas</h4>
+          <p class="quality-card__desc">Nuevas funciones y mejoras automáticas sin costo extra. Tu plataforma siempre evoluciona.</p>
+        </div>
+        <div class="quality-card">
+          <div class="quality-card__icon">📱</div>
+          <h4 class="quality-card__title">Multiplataforma</h4>
+          <p class="quality-card__desc">Accede desde cualquier dispositivo: celular, tablet o computadora. Sin instalaciones.</p>
+        </div>
+        <div class="quality-card">
+          <div class="quality-card__icon">🔒</div>
+          <h4 class="quality-card__title">Seguridad empresarial</h4>
+          <p class="quality-card__desc">Infraestructura segura con SSL, backups y cifrado. Tu información protegida 24/7.</p>
+        </div>
+        <div class="quality-card">
+          <div class="quality-card__icon">💰</div>
+          <h4 class="quality-card__title">Precio predecible</h4>
+          <p class="quality-card__desc">Sin presupuestos sorpresa. Sabes exactamente cuánto pagas desde el primer día.</p>
+        </div>
+        <div class="quality-card">
+          <div class="quality-card__icon">🛠️</div>
+          <h4 class="quality-card__title">Soporte directo</h4>
+          <p class="quality-card__desc">Soporte vía WhatsApp con el equipo que construyó la plataforma. Sin tickets, sin esperas.</p>
+        </div>
+      </div>
 
-				<!-- Texto -->
-				<div class="col-lg-7">
-					<div class="d-flex align-items-center gap-3 mb-4 flex-wrap">
-						<span class="badge px-3 py-2 rounded-pill fw-bold"
-							style="background:rgba(141,238,18,0.15);border:1px solid rgba(141,238,18,0.4);color:var(--accent-green);font-size:0.75rem;letter-spacing:0.06em;">
-							<i class="fas fa-bolt me-1"></i> NUEVO LANZAMIENTO
-						</span>
-						<span class="badge px-3 py-2 rounded-pill fw-bold"
-							style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);color:rgba(255,255,255,0.6);font-size:0.75rem;">
-							Microservicio · Solo $49 MXN
-						</span>
-					</div>
+      <div class="quality__cta">
+        <p>¿No sabes cuál plataforma necesitas?</p>
+        <a href="#contacto" class="btn btn--primary">Te asesoramos sin costo</a>
+      </div>
+    </div>
+  </section>
 
-					<h2 class="fw-bold mb-3" style="font-size:clamp(1.8rem,4vw,2.8rem);color:#fff;line-height:1.15;">
-						Tarjeta Digital para tu<br>
-						<span style="background:linear-gradient(135deg,#8DEE12,#38BDF8);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">
-							Negocio en Segundos.
-						</span>
-					</h2>
-					<p class="mb-4" style="color:rgba(255,255,255,0.55);font-size:1.05rem;max-width:560px;line-height:1.7;">
-						Comparte tu WhatsApp, Facebook, Instagram y ubicación con un solo enlace elegante y profesional.
-						Sin apps, sin complicaciones. Diseñada, generada y lista para compartir en menos de 2 minutos.
-					</p>
+  <!-- ============================================================
+       2804261635: COMO FUNCIONA
+  ============================================================ -->
+  <section class="section process" id="como-funciona">
+    <div class="section__container">
+      <div class="section__header">
+        <p class="section__eyebrow">Cómo funciona</p>
+        <h2 class="section__title">De la compra al uso real<br>en cuatro pasos simples.</h2>
+      </div>
 
-					<!-- Features mini -->
-					<div class="d-flex flex-wrap gap-3 mb-5">
-						<div class="d-flex align-items-center gap-2 px-3 py-2 rounded-3"
-							style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);">
-							<i class="fas fa-id-card text-accent" style="color:var(--accent-green);"></i>
-							<span style="color:rgba(255,255,255,0.7);font-size:0.85rem;font-weight:600;">Diseño personalizable</span>
-						</div>
-						<div class="d-flex align-items-center gap-2 px-3 py-2 rounded-3"
-							style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);">
-							<i class="fas fa-map-marker-alt" style="color:#ef4444;"></i>
-							<span style="color:rgba(255,255,255,0.7);font-size:0.85rem;font-weight:600;">Mapa Google Maps</span>
-						</div>
-						<div class="d-flex align-items-center gap-2 px-3 py-2 rounded-3"
-							style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);">
-							<i class="fas fa-file-pdf" style="color:#ef4444;"></i>
-							<span style="color:rgba(255,255,255,0.7);font-size:0.85rem;font-weight:600;">Descarga en PDF</span>
-						</div>
-						<div class="d-flex align-items-center gap-2 px-3 py-2 rounded-3"
-							style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);">
-							<i class="fab fa-whatsapp" style="color:#25D366;"></i>
-							<span style="color:rgba(255,255,255,0.7);font-size:0.85rem;font-weight:600;">Links activos</span>
-						</div>
-					</div>
+      <div class="process__steps">
+        <div class="process-step">
+          <div class="process-step__line"></div>
+          <h3 class="process-step__title">Elige tu plataforma</h3>
+          <p class="process-step__desc">
+            Explora nuestro catálogo y selecciona la plataforma que resuelve tu necesidad. Cada una tiene precio fijo y funcionalidades claras.
+          </p>
+        </div>
+        <div class="process-step">
+          <div class="process-step__line"></div>
+          <h3 class="process-step__title">Adquiere tu licencia</h3>
+          <p class="process-step__desc">
+            Pago único o suscripción según la plataforma. Recibes acceso inmediato sin trámites ni contratos complicados.
+          </p>
+        </div>
+        <div class="process-step">
+          <div class="process-step__line"></div>
+          <h3 class="process-step__title">Configura y opera</h3>
+          <p class="process-step__desc">
+            Personaliza tu plataforma con tu información y branding. En minutos tienes un sistema profesional funcionando.
+          </p>
+        </div>
+        <div class="process-step">
+          <div class="process-step__line"></div>
+          <h3 class="process-step__title">Crece con nosotros</h3>
+          <p class="process-step__desc">
+            Recibe actualizaciones automáticas y soporte directo. Tu plataforma evoluciona mientras tú te enfocas en tu negocio.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-					<!-- Price + CTA -->
-					<div class="d-flex align-items-center gap-4 flex-wrap">
-						<div>
-							<div class="d-flex align-items-baseline gap-2">
-								<span class="fw-bold" style="font-size:2.5rem;color:#fff;line-height:1;">$49</span>
-								<span style="color:var(--accent-green);font-weight:700;font-size:1rem;">MXN</span>
-							</div>
-							<div style="color:rgba(255,255,255,0.35);font-size:0.7rem;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;">Pago único</div>
-						</div>
-						<a href="tarjeta-digital.html" class="btn-arhez-primary d-flex align-items-center gap-2" style="padding:12px 28px;font-size:0.95rem;">
-							<i class="fas fa-magic"></i> Crear mi Tarjeta
-						</a>
+  <!-- ============================================================
+       2804261635: NOSOTROS
+  ============================================================ -->
+  <section class="section about" id="nosotros">
+    <div class="section__container">
+      <div class="about__grid">
+        <div class="about__text">
+          <h2 class="about__title">Construimos producto.<br>No hacemos proyectos.</h2>
+          <p class="about__desc">
+            Arhez Tech es una empresa de producto. Diseñamos, desarrollamos y mantenemos nuestras propias plataformas de software — como lo hacen Adobe, Microsoft o Google.
+          </p>
+          <p class="about__desc">
+            Cada plataforma nace de problemas reales que observamos en la operación de negocios mexicanos. Las construimos con estándares de ingeniería de clase mundial y las ofrecemos por licencia.
+          </p>
+          <p class="about__desc">
+            No somos una agencia ni una consultoría. Somos la empresa que construyó el software que estás usando. Cuando necesitas soporte, hablas con el mismo equipo que escribió el código.
+          </p>
 
-					</div>
-				</div>
+          <div class="about__pills">
+            <div class="pill">
+              <span class="pill__icon">🏗️</span>
+              <div>
+                <strong>Producto propio</strong>
+                <p>Cada plataforma es nuestra. La diseñamos, la construimos y la evolucionamos continuamente.</p>
+              </div>
+            </div>
+            <div class="pill">
+              <span class="pill__icon">🔑</span>
+              <div>
+                <strong>Modelo de licencias</strong>
+                <p>Adquieres acceso a software ya probado. Sin riesgo de proyecto, sin sorpresas.</p>
+              </div>
+            </div>
+            <div class="pill">
+              <span class="pill__icon">🇲🇽</span>
+              <div>
+                <strong>Hecho en México</strong>
+                <p>Tecnología pensada para la realidad y necesidades del mercado mexicano.</p>
+              </div>
+            </div>
+          </div>
+        </div>
 
-				<!-- Phone Mockup -->
-				<div class="col-lg-5 d-flex justify-content-center">
-					<div class="phone-frame">
-						<div class="phone-screen">
-							<!-- Tarjeta Content Inside Phone -->
-							<div class="phone-card-content">
-								<div style="width:60px;height:60px;border-radius:50%;padding:3px;background:conic-gradient(#8DEE12,transparent,#8DEE12);margin:0 auto 10px;">
-									<div style="width:54px;height:54px;border-radius:50%;background:#0f172a;display:flex;align-items:center;justify-content:center;font-size:1.3rem;font-weight:800;color:#8DEE12;">AB</div>
-								</div>
-								<div style="color:#fff;font-weight:800;font-size:1.1rem;margin-bottom:2px;">Mi Negocio</div>
-								<div style="color:rgba(255,255,255,0.4);font-size:0.7rem;margin-bottom:15px;">Distribución &amp; Ventas</div>
-								
-								<div style="display:flex;flex-direction:column;gap:8px;">
-									<div style="display:flex;align-items:center;gap:12px;padding:10px 15px;border-radius:12px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);">
-										<div style="width:30px;height:30px;border-radius:8px;background:#25D366;display:flex;align-items:center;justify-content:center;"><i class="fab fa-whatsapp" style="color:#fff;font-size:0.8rem;"></i></div>
-										<div class="text-start"><div style="font-size:0.55rem;color:rgba(255,255,255,0.4);text-transform:uppercase;">WhatsApp</div><div style="font-size:0.8rem;color:#fff;font-weight:600;">Contactar ahora</div></div>
-									</div>
-									<div style="display:flex;align-items:center;gap:12px;padding:10px 15px;border-radius:12px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);">
-										<div style="width:30px;height:30px;border-radius:8px;background:linear-gradient(135deg,#f09433,#dc2743,#bc1888);display:flex;align-items:center;justify-content:center;"><i class="fab fa-instagram" style="color:#fff;font-size:0.8rem;"></i></div>
-										<div class="text-start"><div style="font-size:0.55rem;color:rgba(255,255,255,0.4);text-transform:uppercase;">Instagram</div><div style="font-size:0.8rem;color:#fff;font-weight:600;">@mi_negocio</div></div>
-									</div>
-									<div style="display:flex;align-items:center;gap:12px;padding:10px 15px;border-radius:12px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);">
-										<div style="width:30px;height:30px;border-radius:8px;background:#3b82f6;display:flex;align-items:center;justify-content:center;"><i class="fas fa-globe" style="color:#fff;font-size:0.8rem;"></i></div>
-										<div class="text-start"><div style="font-size:0.55rem;color:rgba(255,255,255,0.4);text-transform:uppercase;">Sitio Web</div><div style="font-size:0.8rem;color:#fff;font-weight:600;">arhez.com</div></div>
-									</div>
-								</div>
-							</div>
-							
-							<!-- Extra content to simulate scroll -->
-							<div style="padding:15px;background:rgba(255,255,255,0.02);border-radius:20px;border:1px solid rgba(255,255,255,0.05);">
-								<div style="color:rgba(255,255,255,0.3);font-size:0.6rem;text-transform:uppercase;margin-bottom:8px;">Ubicación</div>
-								<div style="width:100%;height:80px;background:rgba(255,255,255,0.05);border-radius:10px;display:flex;align-items:center;justify-content:center;">
-									<i class="fas fa-map-marked-alt" style="color:rgba(255,255,255,0.2);font-size:1.5rem;"></i>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
+        <div class="about__stats">
+          <div class="about-stat">
+            <span class="about-stat__num">10</span>
+            <span class="about-stat__label">Plataformas propias en roadmap (2026-2030)</span>
+          </div>
+          <div class="about-stat">
+            <span class="about-stat__num">ISV</span>
+            <span class="about-stat__label">Independent Software Vendor — modelo de negocio</span>
+          </div>
+          <div class="about-stat">
+            <span class="about-stat__num">100%</span>
+            <span class="about-stat__label">Código propio, sin dependencias de terceros</span>
+          </div>
+          <p class="about__quote">
+            No vendemos horas de programación. Vendemos acceso a plataformas que ya funcionan.
+          </p>
+          <a href="#contacto" class="btn btn--primary">Contactar →</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-			</div>
-		</div>
-	</section>
+  <!-- ============================================================
+       2804261500: CONTACTO
+  ============================================================ -->
+  <section class="section contact" id="contacto">
+    <div class="section__container">
+      <div class="contact__grid">
+        <div class="contact__info">
+          <h2 class="contact__title">Hablemos sobre lo que necesita tu empresa.</h2>
+          <p class="contact__sub">
+            Cuéntanos qué está pasando. No necesitas tener todo claro — para eso estamos nosotros.
+          </p>
+          <p class="contact__note">
+            La primera conversación no tiene costo ni compromiso. Si podemos ayudarte, te lo decimos. Si no es el momento, también.
+          </p>
 
-	<!-- 4. Nosotros: Seccion de Quienes Somos -->
-	<section id="nosotros" class="arhez-section position-relative overflow-hidden" style="background: white;">
-		<div class="container position-relative z-1">
-			<div class="row align-items-center">
-				<div class="col-lg-6 mb-5 mb-lg-0 text-center text-lg-start pe-lg-5">
-					<span class="badge bg-primary-dark text-white mb-3 px-3 py-2 rounded-pill">¿Quiénes Somos?</span>
-					<h2 class="section-title text-primary-dark fw-bold mb-4">El equipo detrás de tu<br><span
-							class="brand-accent-text">transformación digital</span></h2>
-					<p class="lead text-muted mb-4">
-						Arhez Tech es un equipo de ingenieros con más de 10 años de experiencia técnica y estratégica. No somos una agencia tradicional; nuestra base proviene de la industria real, aportando una visión que va más allá de la programación pura.
-					</p>
-					<p class="text-muted mb-4">
-						Entendemos los retos operativos complejos porque los hemos vivido. Esta experiencia multidisciplinaria nos permite construir el software exacto que tu negocio necesita para escalar de forma rentable, eficiente y sin fricciones técnicas.
-					</p>
-				</div>
-				<div class="col-lg-6">
-					<div class="position-relative">
-						<!-- Acento visual -->
-						<div class="position-absolute rounded-circle"
-							style="width: 250px; height: 250px; background: rgba(141, 238, 18, 0.2); filter: blur(40px); bottom: -20px; right: -20px; z-index: 0;">
-						</div>
-						<img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=800"
-							alt="Equipo Arhez Tech"
-							class="img-fluid rounded-4 shadow-lg position-relative z-1 border border-light"
-							style="border-width: 4px !important;">
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+          <div class="contact__channels">
+            <a href="https://wa.me/524272777153" target="_blank" class="channel">
+              <div class="channel__icon channel__icon--wa">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.118 1.529 5.852L0 24l6.345-1.505A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.797 9.797 0 01-5.003-1.373l-.358-.213-3.767.893.952-3.672-.234-.376A9.797 9.797 0 012.182 12C2.182 6.58 6.58 2.182 12 2.182S21.818 6.58 21.818 12 17.42 21.818 12 21.818z"/></svg>
+              </div>
+              <div class="channel__text">
+                <strong>WhatsApp</strong>
+                <span>427 277 7153 · Solo mensajes</span>
+              </div>
+            </a>
 
-	<!-- 5. Formulario: Seccion de Contacto -->
-	<section id="contacto" class="arhez-section position-relative overflow-hidden"
-		style="background-color: var(--primary-dark); color: white;">
-		<!-- Luces Blur -->
-		<div class="position-absolute rounded-circle"
-			style="width: 500px; height: 500px; background: rgba(141, 238, 18, 0.15); filter: blur(80px); top: -150px; left: -150px; z-index: 0; pointer-events: none;">
-		</div>
-		<div class="position-absolute rounded-circle"
-			style="width: 400px; height: 400px; background: rgba(56, 189, 248, 0.15); filter: blur(80px); bottom: -100px; right: 10%; z-index: 0; pointer-events: none;">
-		</div>
-		<div class="container position-relative z-1">
-			<div class="row align-items-center rounded-5 p-5 shadow-lg mx-md-2"
-				style="background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px); color: var(--primary-dark); border: 1px solid rgba(255, 255, 255, 0.4);">
-				<div class="col-lg-5 mb-5 mb-lg-0 pe-lg-5">
-					<h2 class="fw-bold display-5 mb-4">Llevemos tu empresa al futuro digital.</h2>
-					<p class="text-muted mb-5">Cuéntanos sobre tus retos y te asesoraremos sin compromiso sobre la mejor
-						ruta tecnológica para solucionarlos.</p>
+            <a href="https://www.facebook.com/arhez.tech" target="_blank" class="channel">
+              <div class="channel__icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg>
+              </div>
+              <div class="channel__text">
+                <strong>Facebook</strong>
+                <span>facebook.com/arhez.tech</span>
+              </div>
+            </a>
 
-					<div class="d-flex align-items-center">
-						<div class="bg-primary-dark text-white rounded-circle d-flex align-items-center justify-content-center me-3"
-							style="width: 48px; height: 48px;">
-							<i class="fas fa-envelope fs-5"></i>
-						</div>
-						<div>
-							<h6 class="fw-bold mb-0">Escríbenos</h6>
-							<a href="mailto:arhez.tech@gmail.com"
-								class="text-muted text-decoration-none">arhez.tech@gmail.com</a>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-7">
-					<form id="contactForm" class="row g-3" onsubmit="submitForm(event)">
-						<div class="col-md-6">
-							<label class="form-label fw-bold">Nombre</label>
-							<input id="contactName" type="text" class="form-control form-control-lg bg-light border-0"
-								required>
-						</div>
-						<div class="col-md-6">
-							<label class="form-label fw-bold">Correo</label>
-							<input type="email" class="form-control form-control-lg bg-light border-0" required>
-						</div>
-						<div class="col-12">
-							<label class="form-label fw-bold">Tipo de Solución</label>
-							<select id="contactSolution" class="form-select form-select-lg bg-light border-0" required>
-								<option value="">¿Qué solución necesitas?</option>
-								<option value="Tarjeta de Presentación">Tarjeta de Presentación Digital</option>
-								<option value="Menú Digital">Menú de Alimentos y Bebidas</option>
-								<option value="Catálogo">Catálogo de Productos</option>
-								<option value="Sitio Web">Sitio Web / E-commerce</option>
-								<option value="Punto de Venta">Punto de Venta (POS)</option>
-								<option value="Otro">Otro</option>
-							</select>
-						</div>
-						<div class="col-12">
-							<label class="form-label fw-bold">Mensaje</label>
-							<textarea id="contactMessage" class="form-control form-control-lg bg-light border-0"
-								rows="4" required></textarea>
-						</div>
-						<div class="col-12 mt-4">
-							<button type="submit" class="btn w-100 fw-bold py-3 fs-5 rounded-pill btn-arhez-dark-solid">
-								Enviar Propuesta
-							</button>
-						</div>
-					</form>
-				</div>
-			</div>
-		</div>
-	</section>
+            <a href="https://www.instagram.com/arhez.tech/" target="_blank" class="channel">
+              <div class="channel__icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+              </div>
+              <div class="channel__text">
+                <strong>Instagram</strong>
+                <span>instagram.com/arhez.tech</span>
+              </div>
+            </a>
 
-	<!-- 6. Pie de pagina: Seccion de Footer -->
-	<footer class="bg-white border-top border-light shadow-sm" style="padding: 100px 0 60px;">
-		<div class="container">
-			<div class="row g-4 mb-5 text-center text-md-start">
-				<!-- Columna 1: Brand & Bio -->
-				<div class="col-lg-4">
-					<img class="logotipo mb-4" src="assets/img/logotipo.png" alt="Arhez Tech" style="max-height: 40px;">
-					<p class="text-primary-dark opacity-75 mb-4 pe-lg-5" style="font-size: 0.95rem; line-height: 1.6;">
-						Impulsamos la transformación digital con un ecosistema de productos diseñados para escalar negocios y eliminar barreras técnicas.
-					</p>
-					<div class="d-flex justify-content-center justify-content-md-start gap-4 mb-4">
-						<a href="https://www.facebook.com/arhez.tech" target="_blank"
-							class="text-primary-dark opacity-75 hover-accent transition-all"><i
-								class="fab fa-facebook-f fs-5"></i></a>
-						<a href="https://www.instagram.com/arhez.tech" target="_blank"
-							class="text-primary-dark opacity-75 hover-accent transition-all"><i
-								class="fab fa-instagram fs-5"></i></a>
-						<a href="mailto:arhez.tech@gmail.com"
-							class="text-primary-dark opacity-75 hover-accent transition-all"><i
-								class="fas fa-envelope fs-5"></i></a>
-					</div>
-				</div>
+            <a href="mailto:arhez.tech@gmail.com" class="channel">
+              <div class="channel__icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+              </div>
+              <div class="channel__text">
+                <strong>arhez.tech@gmail.com</strong>
+                <span>Respondemos en menos de 24 horas</span>
+              </div>
+            </a>
+          </div>
 
-				<!-- Columna 2: Navegación -->
-				<div class="col-md-4 col-lg-2">
-					<h6 class="fw-bold text-primary-dark mb-4 text-uppercase"
-						style="font-size: 0.8rem; letter-spacing: 2px;">Navegación</h6>
-					<ul class="list-unstyled">
-						<li class="mb-3"><a href="#" class="text-decoration-none text-muted small hover-accent transition-all">Inicio</a></li>
-						<li class="mb-3"><a href="#metodologia" class="text-decoration-none text-muted small hover-accent transition-all">Metodología</a></li>
-						<li class="mb-3"><a href="#ecosistema" class="text-decoration-none text-muted small hover-accent transition-all">Ecosistema</a></li>
-						<li class="mb-3"><a href="#nosotros" class="text-decoration-none text-muted small hover-accent transition-all">Nosotros</a></li>
-						<li class="mb-3"><a href="tarjeta-digital.html" class="text-decoration-none text-muted small hover-accent transition-all">Tarjeta Digital</a></li>
-						<li class="mb-3"><a href="#contacto" class="text-decoration-none text-muted small hover-accent transition-all">Contacto</a></li>
-					</ul>
-				</div>
+          <p class="contact__disclaimer">Respondemos en días hábiles. Sin spam, sin newsletters.</p>
+        </div>
 
-				<!-- Columna 3: Soluciones por Industria -->
-				<div class="col-md-4 col-lg-3">
-					<h6 class="fw-bold text-primary-dark mb-4 text-uppercase"
-						style="font-size: 0.8rem; letter-spacing: 2px;">Categorías Arhez</h6>
-					<ul class="list-unstyled">
-						<li class="mb-3 text-muted small d-flex align-items-center gap-2"><i
-								class="fas fa-shopping-cart text-accent"></i> Retail & Sales</li>
-						<li class="mb-3 text-muted small d-flex align-items-center gap-2"><i
-								class="fas fa-dumbbell text-accent"></i> Sports Management</li>
-						<li class="mb-3 text-muted small d-flex align-items-center gap-2"><i
-								class="fas fa-microchip text-accent"></i> Data & Analytics</li>
-						<li class="mb-3 text-muted small d-flex align-items-center gap-2"><i
-								class="fas fa-book-reader text-accent"></i> Education (EdTech)</li>
-						<li class="mb-3 text-muted small d-flex align-items-center gap-2"><i
-								class="fas fa-boxes-stacked text-accent"></i> Logistics & ERP</li>
-					</ul>
-				</div>
+        <div class="contact__form-wrap">
+          <p class="contact__form-label">Te respondemos en menos de 24 horas.</p>
+          <form class="contact__form" id="contactForm">
+            <div class="form-group">
+              <label for="contactName">Nombre</label>
+              <input type="text" id="contactName" name="name" placeholder="Tu nombre" required>
+            </div>
+            <div class="form-group">
+              <label for="contactEmail">Correo electrónico</label>
+              <input type="email" id="contactEmail" name="email" placeholder="tu@empresa.com" required>
+            </div>
+            <div class="form-group">
+              <label for="contactService">¿Qué necesitas?</label>
+              <select id="contactService" name="service" required>
+                <option value="" disabled selected>Selecciona una plataforma</option>
+                <option>Arhez Card (2026)</option>
+                <option>Arhez Shop (2026)</option>
+                <option>Arhez Hub (2026)</option>
+                <option>Arhez Sports (2026)</option>
+                <option>Arhez Analytics (2027)</option>
+                <option>Arhez CRM (2027)</option>
+                <option>Arhez Supply Chain (2028)</option>
+                <option>Arhez Suite (2028)</option>
+                <option>Arhez Enterprise (2029)</option>
+                <option>Arhez Labs (2030)</option>
+                <option>No lo tengo claro todavía</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="contactMsg">Cuéntanos</label>
+              <textarea id="contactMsg" name="message" rows="4" placeholder="¿Qué está pasando en tu operación? ¿Qué quisieras lograr?" required></textarea>
+            </div>
+            <button type="submit" class="btn btn--primary btn--full" id="submitBtn">Enviar mensaje</button>
+            <p class="form__success" id="formSuccess">¡Mensaje enviado! Nos pondremos en contacto contigo pronto.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
 
-				<!-- Columna 4: Recursos & Contacto -->
-				<div class="col-md-4 col-lg-3">
-					<h6 class="fw-bold text-primary-dark mb-4 text-uppercase"
-						style="font-size: 0.8rem; letter-spacing: 2px;">Recursos</h6>
-					<ul class="list-unstyled">
-						<li class="mb-3">
-							<a href="presentacion.html"
-								class="d-inline-flex align-items-center gap-2 text-decoration-none bg-primary-dark text-white px-3 py-2 rounded-3 shadow-sm hover-up transition-all w-100"
-								style="font-size: 0.85rem;">
-								<i class="fas fa-file-invoice-dollar text-accent"></i>
-								Presentación Ejecutiva
-							</a>
-						</li>
-						<li class="mb-4">
-							<a href="canvas.html"
-								class="d-inline-flex align-items-center gap-2 text-decoration-none border border-primary-dark text-primary-dark px-3 py-2 rounded-3 shadow-sm hover-up transition-all w-100"
-								style="font-size: 0.85rem;">
-								<i class="fas fa-project-diagram"></i>
-								Business Model Canvas
-							</a>
-						</li>
-						<li class="mb-3"><a href="#contacto"
-								class="text-decoration-none text-muted small hover-accent transition-all">Cotizar
-								Proyecto</a></li>
-						<li class="mb-3"><a href="mailto:arhez.tech@gmail.com"
-								class="text-decoration-none text-muted small hover-accent transition-all">Atención al
-								cliente</a></li>
-					</ul>
-				</div>
-			</div>
+  <!-- ============================================================
+       2804261500: FOOTER
+  ============================================================ -->
+  <footer class="footer">
+    <div class="footer__container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <img src="assets/img/logotipo.png" alt="Arhez Tech" class="footer__logo">
+          <p class="footer__tagline">
+            Plataformas de software propias, por licencia. Tecnología mexicana de clase mundial.
+          </p>
+          <div class="footer__contact">
+            <a href="mailto:arhez.tech@gmail.com">arhez.tech@gmail.com</a>
+            <a href="https://wa.me/524272777153" target="_blank">WhatsApp: 427 277 7153</a>
+            <a href="https://www.facebook.com/arhez.tech" target="_blank">Facebook</a>
+            <a href="https://www.instagram.com/arhez.tech/" target="_blank">Instagram</a>
+          </div>
+        </div>
 
-			<div
-				class="pt-4 border-top border-secondary border-opacity-10 text-center text-md-start d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
-				<small class="text-primary-dark opacity-50">&copy; 2026 Arhez Tech. Todos los derechos
-					reservados.</small>
-				<div class="d-flex gap-4">
-					<small class="text-primary-dark opacity-50">Términos y Condiciones</small>
-					<small class="text-primary-dark opacity-50">Privacidad</small>
-				</div>
-			</div>
-		</div>
-	</footer>
+        <div class="footer__nav">
+          <h5>Navegación</h5>
+          <ul>
+            <li><a href="#plataformas">Plataformas</a></li>
+            <li><a href="#como-funciona">Cómo funciona</a></li>
+            <li><a href="#nosotros">Nosotros</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+          </ul>
+        </div>
 
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-	<script src="js/main.js"></script>
+        <div class="footer__nav">
+          <h5>Ecosistema</h5>
+          <ul>
+            <li><a href="tarjeta-digital.html">Arhez Card</a></li>
+            <li><a href="https://arhez-shop.netlify.app/" target="_blank">Arhez Shop</a></li>
+            <li><a href="#plataformas">Arhez Analytics</a></li>
+            <li><a href="#plataformas">Ver Roadmap 2030</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p>&copy; 2026 Arhez Tech. Todos los derechos reservados.</p>
+        <p>Hecho con precisión en México 🇲🇽</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- 2804261500: Scripts -->
+  <script src="js/main.js"></script>
 </body>
-
 </html>
