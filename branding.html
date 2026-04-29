@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brand Guidelines | Arhez Tech</title>
+  <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* Estilos específicos para la página de Branding */
+    .brand-section {
+      padding: 80px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    
+    .color-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 24px;
+      margin-top: 40px;
+    }
+    
+    .color-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      transition: transform var(--transition), border-color var(--transition);
+    }
+    
+    .color-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(255,255,255,0.2);
+    }
+    
+    .color-swatch {
+      width: 100%;
+      height: 100px;
+      border-radius: var(--radius-sm);
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.1);
+    }
+    
+    .color-info {
+      font-size: 0.9rem;
+    }
+    
+    .color-info strong {
+      display: block;
+      color: var(--text);
+      font-size: 1.15rem;
+      margin-bottom: 8px;
+    }
+    
+    .color-info span {
+      display: block;
+      color: var(--text-2);
+      font-family: monospace;
+      margin-bottom: 4px;
+    }
+
+    .typo-preview {
+      background: var(--bg-2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 48px;
+      margin-top: 40px;
+    }
+
+    .typo-preview h1 { font-size: 3.5rem; font-weight: 900; margin-bottom: 20px; letter-spacing: -0.03em; }
+    .typo-preview h2 { font-size: 2.5rem; font-weight: 800; margin-bottom: 20px; letter-spacing: -0.02em; }
+    .typo-preview p { font-size: 1.15rem; color: var(--text-2); line-height: 1.7; }
+
+    .logo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+      margin-top: 40px;
+    }
+
+    .logo-card {
+      background: var(--bg-2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .logo-card::before {
+      content: 'Fondo Oscuro';
+      position: absolute;
+      top: 16px;
+      left: 20px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: var(--text-3);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    .logo-card.bg-surface::before {
+      content: 'Fondo Superficie (Card)';
+    }
+
+    .logo-card img {
+      max-height: 40px;
+    }
+
+    .ui-components {
+      background: var(--bg-2);
+      padding: 40px;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      margin-top: 24px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      align-items: center;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <div class="nav__container">
+      <a href="index.html" class="nav__brand">
+        <img src="assets/img/logotipo.png" alt="Arhez Tech" class="nav__logo">
+      </a>
+      <ul class="nav__menu" id="navMenu">
+        <li><a href="index.html" class="btn btn--ghost" style="padding: 8px 16px; font-size: 0.85rem;"><i class="fas fa-arrow-left"></i> Volver</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <div class="hero" style="min-height: 45vh; align-items: flex-end; padding-bottom: 60px;">
+    <div class="hero__container" style="padding-bottom: 0;">
+      <div class="hero__eyebrow">Design System</div>
+      <h1 class="hero__title" style="margin-bottom: 16px;">Brand <span class="hero__accent">Guidelines</span>.</h1>
+      <p class="hero__subtitle">
+        La identidad visual oficial de Arhez Tech. Elementos, colores y tipografía unificados para construir nuestro ecosistema de plataformas.
+      </p>
+    </div>
+  </div>
+
+  <main>
+    <div class="section__container">
+      
+      <!-- COLORS -->
+      <section class="brand-section">
+        <h2 class="section__title" style="font-size: 2.2rem;">Paleta de Colores</h2>
+        <p class="service-item__desc" style="margin-top: 16px; max-width: 700px;">
+          Nuestra paleta se basa en la elegancia del modo oscuro (Dark Mode) contrastada con un acento vibrante que transmite tecnología, energía e innovación.
+        </p>
+        
+        <div class="color-grid">
+          <!-- Primary Dark -->
+          <div class="color-card">
+            <div class="color-swatch" style="background: #0A0A0A;"></div>
+            <div class="color-info">
+              <strong>Primary Background</strong>
+              <span>HEX: #0A0A0A</span>
+              <span>RGB: 10, 10, 10</span>
+              <span style="color:var(--accent); margin-top:8px;">var(--bg)</span>
+            </div>
+          </div>
+          <!-- Surface -->
+          <div class="color-card">
+            <div class="color-swatch" style="background: #1A1A1A;"></div>
+            <div class="color-info">
+              <strong>Surface / Cards</strong>
+              <span>HEX: #1A1A1A</span>
+              <span>RGB: 26, 26, 26</span>
+              <span style="color:var(--accent); margin-top:8px;">var(--surface)</span>
+            </div>
+          </div>
+          <!-- Accent Green -->
+          <div class="color-card">
+            <div class="color-swatch" style="background: #8DEE12; box-shadow: 0 0 20px rgba(141, 238, 18, 0.2);"></div>
+            <div class="color-info">
+              <strong>Neon Accent</strong>
+              <span>HEX: #8DEE12</span>
+              <span>RGB: 141, 238, 18</span>
+              <span style="color:var(--accent); margin-top:8px;">var(--accent)</span>
+            </div>
+          </div>
+          <!-- Glass Border -->
+          <div class="color-card">
+            <div class="color-swatch" style="background: rgba(255,255,255,0.08); position: relative; overflow: hidden;">
+              <div style="position:absolute; width:150%; height:150%; top:-25%; left:-25%; background: radial-gradient(circle, rgba(141,238,18,0.2) 0%, transparent 60%); z-index:-1;"></div>
+            </div>
+            <div class="color-info">
+              <strong>Glass Border</strong>
+              <span>RGBA: 255,255,255, 0.08</span>
+              <span>(Usado para divisiones y bordes)</span>
+              <span style="color:var(--accent); margin-top:8px;">var(--border)</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TYPOGRAPHY -->
+      <section class="brand-section">
+        <h2 class="section__title" style="font-size: 2.2rem;">Tipografía Corporativa</h2>
+        <p class="service-item__desc" style="margin-top: 16px; max-width: 700px;">
+          Utilizamos <strong>Inter</strong> como nuestra única fuente tipográfica. Es limpia, geométrica y sumamente legible en pantallas digitales, reforzando nuestro posicionamiento como empresa de software enfocada en UX.
+        </p>
+        
+        <div class="typo-preview">
+          <div style="font-family: 'Inter', sans-serif;">
+            <h1>Inter Black (900)</h1>
+            <h2>Inter ExtraBold (800)</h2>
+            <p style="font-weight: 700; color: #fff; margin-bottom: 16px; font-size: 1.4rem;">Inter Bold (700)</p>
+            <p style="font-weight: 600; color: #fff; margin-bottom: 16px; font-size: 1.2rem;">Inter SemiBold (600)</p>
+            <p style="font-weight: 500; color: #fff; margin-bottom: 16px; font-size: 1.1rem;">Inter Medium (500)</p>
+            <div style="height: 1px; background: var(--border); margin: 24px 0;"></div>
+            <p style="font-weight: 400; color: var(--text-2); font-size: 1.05rem;">
+              Inter Regular (400) - Utilizado principalmente para textos largos, descripciones de plataformas y párrafos de lectura extensa donde la legibilidad es primordial.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- LOGOS -->
+      <section class="brand-section" style="border-bottom: none; padding-bottom: 120px;">
+        <h2 class="section__title" style="font-size: 2.2rem;">Logotipo y UI</h2>
+        <p class="service-item__desc" style="margin-top: 16px; max-width: 700px;">
+          Nuestro logotipo debe presentarse siempre sobre fondos oscuros o utilizando nuestras superficies de contraste (Cards). El acento verde siempre debe destacar en interacciones clave.
+        </p>
+        
+        <div class="logo-grid">
+          <div class="logo-card">
+            <img src="assets/img/logotipo.png" alt="Arhez Tech Logo Oficial">
+          </div>
+          <div class="logo-card bg-surface" style="background: var(--surface);">
+            <img src="assets/img/logotipo.png" alt="Arhez Tech Logo Surface">
+          </div>
+        </div>
+
+        <h3 style="font-size: 1.3rem; margin-top: 60px; margin-bottom: 16px; font-weight: 700;">Componentes Base de Interfaz (UI)</h3>
+        <p class="service-item__desc" style="margin-bottom: 24px;">Ejemplos de botones, etiquetas e iconos interactivos.</p>
+        
+        <div class="ui-components">
+          <button class="btn btn--primary">
+            <i class="fas fa-rocket"></i> Acción Principal
+          </button>
+          
+          <button class="btn btn--ghost">
+            <i class="fas fa-arrow-right"></i> Acción Secundaria
+          </button>
+
+          <span class="service-item__badge" style="background: var(--accent-dim); padding: 8px 16px; border-radius: 50px; border: 1px solid rgba(141, 238, 18, 0.2);">
+            <i class="fas fa-tag" style="margin-right: 4px;"></i> ETIQUETA / BADGE
+          </span>
+          
+          <div style="width: 1px; height: 30px; background: var(--border); margin: 0 10px;"></div>
+          
+          <div style="display: flex; gap: 16px;">
+            <a href="#" style="color: var(--text-2); font-size: 1.2rem; transition: color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-2)'"><i class="fab fa-facebook"></i></a>
+            <a href="#" style="color: var(--text-2); font-size: 1.2rem; transition: color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-2)'"><i class="fab fa-instagram"></i></a>
+            <a href="#" style="color: var(--text-2); font-size: 1.2rem; transition: color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-2)'"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__container">
+      <div class="footer__bottom" style="border-top: 1px solid var(--border); padding-top: 32px; margin-top: 0; display: flex; justify-content: space-between; align-items: center;">
+        <div class="footer__logo">
+          <img src="assets/img/logotipo.png" alt="Arhez Tech" style="height: 24px; opacity: 0.5;">
+        </div>
+        <div class="footer__copy" style="color: var(--text-3); font-size: 0.85rem;">
+          &copy; 2026 Arhez Tech. Brand Guidelines.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
