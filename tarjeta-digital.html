@@ -4,10 +4,42 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tarjeta Digital | Arhez Tech</title>
+  <title>Arhez Card — Crea tu Tarjeta Digital de Negocio | Arhez Tech</title>
   <meta name="description"
-    content="Crea tu tarjeta digital de negocio en segundos. Comparte tu WhatsApp, redes sociales y más con un solo enlace.">
+    content="Crea gratis tu tarjeta digital profesional en minutos: WhatsApp, Facebook, Instagram, web, horario y ubicación en Google Maps. Enlace público + PDF para compartir. Licencia México.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="keywords" content="tarjeta digital, tarjeta de presentación digital, tarjeta de negocio, vCard empresarial, WhatsApp negocio, Arhez Card, México">
+  <meta name="author" content="Arhez Tech">
+  <meta name="theme-color" content="#0A0A0A">
+  <link rel="canonical" href="https://arhez-tech.com/tarjeta-digital.html">
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_MX">
+  <meta property="og:site_name" content="Arhez Tech">
+  <meta property="og:url" content="https://arhez-tech.com/tarjeta-digital.html">
+  <meta property="og:title" content="Arhez Card — Tarjeta Digital de Negocio en un Solo Enlace">
+  <meta property="og:description"
+    content="Diseña tu tarjeta con logo y colores, comparte redes y ubicación, descarga PDF. Sin apps — desde el navegador.">
+  <meta property="og:image" content="https://arhez-tech.com/assets/img/logotipo.png">
+  <meta property="og:image:alt" content="Arhez Card — constructor de tarjeta digital Arhez Tech">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Arhez Card — Tarjeta Digital de Negocio">
+  <meta name="twitter:description"
+    content="WhatsApp, redes, web y mapas en una tarjeta digital actualizable + PDF profesional.">
+  <meta name="twitter:image" content="https://arhez-tech.com/assets/img/logotipo.png">
+
   <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
+
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@graph":[
+    {"@type":"BreadcrumbList","itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Inicio","item":"https://arhez-tech.com/"},
+      {"@type":"ListItem","position":2,"name":"Arhez Card · Tarjeta digital","item":"https://arhez-tech.com/tarjeta-digital.html"}
+    ]},
+    {"@type":"SoftwareApplication","name":"Arhez Card","applicationCategory":"BusinessApplication","operatingSystem":"Web","browserRequirements":"Requiere navegador moderno con JavaScript","offers":{"@type":"Offer","price":"49","priceCurrency":"MXN"},"description":"Tarjeta de presentación digital para negocios: enlaces a WhatsApp, redes sociales, sitio web, horarios y ubicación; vista pública por enlace y descarga PDF.","url":"https://arhez-tech.com/tarjeta-digital.html","provider":{"@type":"Organization","name":"Arhez Tech","url":"https://arhez-tech.com/"}}
+  ]}
+  </script>
   <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -924,8 +956,8 @@
   <!-- Navigation (estilo Arhez Tech) -->
   <nav class="nav" id="nav">
     <div class="nav__container">
-      <a href="index.html" class="nav__brand">
-        <img src="assets/img/logotipo.png" alt="Arhez Tech" class="nav__logo">
+      <a href="index.html" class="nav__brand" aria-label="Arhez Tech — inicio">
+        <img src="assets/img/logotipo.png" alt="Arhez Tech" class="nav__logo" decoding="async">
       </a>
       <a href="index.html" class="btn btn--ghost" style="padding: 8px 16px; font-size: 0.85rem;">
         <i class="fas fa-arrow-left"></i> Volver
@@ -933,8 +965,10 @@
     </div>
   </nav>
 
+  <main id="constructor-tarjeta">
+
   <!-- Builder Header -->
-  <div class="builder-header">
+  <header class="builder-header">
     <div class="builder-header-badge">
       <i class="fas fa-id-card"></i>
       Plataforma Arhez Card
@@ -942,7 +976,7 @@
     <h1>Tu negocio, en un solo <span class="accent">enlace inteligente.</span></h1>
     <p>Diseña tu tarjeta digital profesional en segundos. Comparte tu WhatsApp, redes sociales y sitio web con un solo
       toque.</p>
-  </div>
+  </header>
 
   <!-- Builder -->
   <div class="builder-layout">
@@ -1181,7 +1215,7 @@
             <div class="browser-dot" style="background:#ef4444;"></div>
             <div class="browser-dot" style="background:#eab308;"></div>
             <div class="browser-dot" style="background:#22c55e;"></div>
-            <div class="browser-url" id="urlBar">arhez.tech/card/tu-negocio</div>
+            <div class="browser-url" id="urlBar">arhez-tech.com/card/tu-negocio</div>
           </div>
 
           <!-- Card -->
@@ -1285,6 +1319,8 @@
 
     </div>
   </div>
+
+  </main>
 
   <!-- Payment Modal -->
   <div class="pay-modal-overlay" id="payModal">
@@ -1792,7 +1828,7 @@
 
       // URL bar - Sincronizado con el slug real de Supabase
       const displaySlug = currentCardSlug || (name ? name.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '') : 'tu-negocio');
-      document.getElementById('urlBar').textContent = `arhez.tech/card/${displaySlug}`;
+      document.getElementById('urlBar').textContent = `arhez-tech.com/card/${displaySlug}`;
 
       // Social buttons color
       document.querySelectorAll('.card-social-btn').forEach(btn => {
