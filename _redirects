@@ -1,6 +1,0 @@
-# Netlify Redirects for Clean URLs
-/tarjeta-digital  /tarjeta-digital.html  200
-/index            /                     301
-
-# Asegurar que cualquier ruta .html se redirija a la versión limpia para SEO
-# /*.html           /:1                   301
