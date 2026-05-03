@@ -86,7 +86,7 @@ ul  { list-style: none; }
 /* 6. SERVICIOS (BENTO GRID) */
 .services { background: var(--bg-2); padding: 120px 0; }
 .bento-ecosystem { display: grid; grid-template-columns: repeat(12, 1fr); gap: 24px; }
-.bento-item { background: var(--bg); border-radius: var(--radius-lg); padding: 40px; position: relative; overflow: hidden; display: flex; flex-direction: column; align-items: center; text-align: center; transition: transform var(--transition), box-shadow var(--transition); box-shadow: 0 4px 20px rgba(0,0,0,0.03); border: 1px solid rgba(0,0,0,0.02); grid-column: span 12; min-height: 320px; }
+.bento-item { background: var(--bg); border-radius: var(--radius-lg); padding: 40px; position: relative; overflow: hidden; display: flex; flex-direction: column; transition: transform var(--transition), box-shadow var(--transition); box-shadow: 0 4px 20px rgba(0,0,0,0.03); border: 1px solid rgba(0,0,0,0.02); grid-column: span 12; min-height: 320px; }
 .bento-item:hover { transform: scale(1.01); box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
 
 @media (min-width: 768px) {
@@ -100,7 +100,7 @@ ul  { list-style: none; }
   .bento-item__title { font-size: 1.5rem; }
 }
 .bento-item__title { font-size: 1.8rem; font-weight: 700; color: var(--text); letter-spacing: -0.02em; margin-bottom: 12px; }
-.bento-item__desc { color: var(--text-2); font-size: 1.05rem; line-height: 1.5; margin-bottom: 24px; max-width: 90%; margin-left: auto; margin-right: auto; }
+.bento-item__desc { color: var(--text-2); font-size: 1.05rem; line-height: 1.5; margin-bottom: 24px; max-width: 90%; }
 .bento-item__icon { width: 48px; height: 48px; margin-bottom: 24px; display: flex; align-items: center; justify-content: center; border-radius: 12px; background: var(--bg-2); color: var(--text); font-size: 1.5rem; }
 
 /* 7. CALIDAD */
