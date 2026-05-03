@@ -7,7 +7,7 @@
   <meta name="description"
     content="Consulta tu tarjeta digital de negocio: contacto WhatsApp, redes sociales y ubicación. Creado con Arhez Card de Arhez Tech (México).">
   <meta name="robots" content="index, follow, max-image-preview:large">
-  <meta name="theme-color" content="#06071B">
+  <meta name="theme-color" content="#F5F5F7">
   <meta name="author" content="Arhez Tech">
 
   <meta property="og:type" content="website">
@@ -25,7 +25,7 @@
   <meta name="twitter:image" content="https://arhez-tech.com/assets/img/logotipo.png">
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <!-- Supabase JS -->
@@ -33,142 +33,155 @@
   
   <style>
     :root {
-      --primary-dark: #06071B;
+      --bg-gray: #F5F5F7;
       --accent-green: #8DEE12;
-      --accent-blue: #38BDF8;
+      --text-dark: #1D1D1F;
+      --text-gray: #86868B;
+      --glass-border: rgba(0, 0, 0, 0.08);
+      --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
+    
+    * { box-sizing: border-box; }
+
     body {
       margin: 0;
       padding: 0;
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      background: var(--primary-dark);
-      color: #fff;
+      font-family: 'Inter', sans-serif;
+      background: var(--bg-gray);
+      color: var(--text-dark);
       display: flex;
       justify-content: center;
-      align-items: center;
       min-height: 100vh;
       overflow-x: hidden;
     }
     
     #card-container {
       width: 100%;
-      max-width: 400px;
+      max-width: 440px;
       min-height: 100vh;
-      position: relative;
-      background: #0f172a;
-      overflow: hidden;
+      background: #fff;
       display: none;
-      box-shadow: 0 0 100px rgba(0,0,0,0.5);
+      flex-direction: column;
+      align-items: center;
+      padding: 60px 24px 40px;
+      box-shadow: 0 40px 100px rgba(0,0,0,0.05);
+      position: relative;
     }
 
-    .card-bg-blob {
-      position: absolute;
-      border-radius: 50%;
-      filter: blur(60px);
-      z-index: 0;
-      opacity: 0.6;
+    @media (max-width: 600px) {
+      #card-container {
+        max-width: 100%;
+        box-shadow: none;
+      }
     }
 
     .card-logo-wrap {
+      margin-bottom: 32px;
       text-align: center;
-      padding: 60px 20px 20px;
-      position: relative;
-      z-index: 1;
     }
+
     .logo-ring {
-      width: 100px; height: 100px;
-      border-radius: 50%; padding: 4px;
-      margin: 0 auto;
-      background: conic-gradient(var(--accent-green), transparent, var(--accent-green));
+      width: 110px; height: 110px;
+      border-radius: 50%;
+      border: 2px solid var(--accent-green);
+      padding: 6px;
+      display: flex; align-items: center; justify-content: center;
     }
+
     .logo-inner {
       width: 100%; height: 100%;
       border-radius: 50%;
-      background: #0f172a;
+      background: #f0f0f0;
       display: flex; align-items: center; justify-content: center;
       overflow: hidden;
-      font-size: 2.5rem; font-weight: 800;
+      font-size: 2.5rem; font-weight: 900;
+      color: var(--accent-green);
     }
-    .logo-inner img { width: 100%; height: 100%; object-fit: cover; }
+
+    .logo-inner img { width: 100%; height: 100%; object-fit: contain; }
 
     .card-biz-name {
-      text-align: center; font-size: 1.8rem; font-weight: 800;
-      margin-top: 15px; padding: 0 20px; position: relative; z-index: 1;
+      font-size: 2rem; font-weight: 800;
+      text-align: center; margin-bottom: 6px;
     }
+
     .card-tagline {
-      text-align: center; font-size: 0.95rem; opacity: 0.6;
-      margin-top: 5px; padding: 0 20px; position: relative; z-index: 1;
+      font-size: 1rem; color: var(--text-gray);
+      text-align: center; margin-bottom: 40px;
     }
 
     .card-details {
-      padding: 0 30px; margin-top: 25px; position: relative; z-index: 1;
+      width: 100%; background: var(--bg-gray);
+      border-radius: 20px; padding: 24px;
+      margin-bottom: 32px;
     }
-    .card-desc { font-size: 0.9rem; line-height: 1.6; opacity: 0.85; margin-bottom: 15px; text-align: center; }
-    .card-hours {
-      display: inline-flex; align-items: center; gap: 8px;
-      background: rgba(255,255,255,0.06); padding: 6px 14px;
-      border-radius: 50px; font-size: 0.8rem; font-weight: 600;
+
+    .card-desc {
+      font-size: 0.95rem; line-height: 1.6;
+      text-align: center;
     }
 
     .card-socials {
-      padding: 30px; display: flex; flex-direction: column; gap: 12px;
-      position: relative; z-index: 1;
+      width: 100%; display: flex; flex-direction: column; gap: 14px;
     }
-    .card-social-btn {
-      display: flex; align-items: center; gap: 15px;
-      padding: 14px 18px; border-radius: 16px;
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.08);
-      color: inherit; text-decoration: none;
-      transition: transform 0.2s, background 0.2s;
-    }
-    .card-social-btn:hover { transform: translateY(-2px); background: rgba(255,255,255,0.08); }
-    
-    .icon-wrap {
-      width: 40px; height: 40px; border-radius: 12px;
-      display: flex; align-items: center; justify-content: center; font-size: 1.2rem;
-    }
-    .icon-wa { background: #25D366; }
-    .icon-fb { background: #1877F2; }
-    .icon-ig { background: linear-gradient(45deg, #f09433, #dc2743, #bc1888); }
-    .icon-web { background: var(--accent-blue); }
 
-    .btn-text { flex-grow: 1; display: flex; flex-direction: column; }
-    .btn-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px; opacity: 0.5; font-weight: 700; margin-bottom: 2px; }
-    .btn-value { font-size: 0.95rem; font-weight: 600; }
+    .card-social-btn {
+      display: flex; align-items: center; gap: 16px;
+      padding: 16px; border-radius: 18px;
+      background: #fff;
+      border: 1px solid var(--glass-border);
+      color: inherit; text-decoration: none;
+      transition: all var(--transition);
+    }
+
+    .card-social-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+    }
+    
+    .icon-box {
+      width: 44px; height: 44px; border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.3rem; color: #fff;
+    }
+
+    .btn-info { flex: 1; }
+    .btn-label { display: block; font-size: 0.7rem; font-weight: 700; opacity: 0.5; text-transform: uppercase; letter-spacing: 0.5px; }
+    .btn-value { display: block; font-size: 1rem; font-weight: 600; }
 
     .card-brand {
-      text-align: center; padding: 40px 20px; font-size: 0.75rem; 
-      opacity: 0.3; letter-spacing: 1px; font-weight: 700;
+      margin-top: auto; padding: 60px 0 20px;
+      font-size: 0.7rem; font-weight: 700; opacity: 0.3;
+      text-transform: uppercase; letter-spacing: 1px;
     }
 
-    /* Loading Spinner */
+    /* Loader */
+    .loader-wrap {
+      position: fixed; inset: 0; background: var(--bg-gray);
+      display: flex; align-items: center; justify-content: center; z-index: 100;
+    }
     .loader {
-      border: 4px solid rgba(255,255,255,0.1);
-      border-top: 4px solid var(--accent-green);
-      border-radius: 50%; width: 40px; height: 40px;
+      width: 48px; height: 48px; border: 4px solid var(--glass-border);
+      border-top-color: var(--accent-green); border-radius: 50%;
       animation: spin 1s linear infinite;
     }
-    @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+    @keyframes spin { to { transform: rotate(360deg); } }
 
-    #error-msg { display: none; text-align: center; padding: 20px; }
+    #error-msg { display: none; text-align: center; padding: 40px; }
   </style>
 </head>
 <body>
 
-  <div id="loading" class="loader"></div>
+  <div id="loader" class="loader-wrap"><div class="loader"></div></div>
   
   <div id="error-msg">
-    <i class="fas fa-exclamation-triangle fa-3x" style="color:#ef4444; margin-bottom:15px;"></i>
-    <h2>Tarjeta no encontrada</h2>
-    <p>El enlace podría ser incorrecto o la tarjeta ya no existe.</p>
-    <a href="tarjeta-digital.html" style="color:var(--accent-green); text-decoration:none; font-weight:700;">Crear mi propia tarjeta →</a>
+    <i class="fas fa-exclamation-circle fa-4x" style="color: #ef4444; margin-bottom: 24px;"></i>
+    <h2>Tarjeta No Encontrada</h2>
+    <p style="color: var(--text-gray); margin-bottom: 32px;">El enlace es inválido o la tarjeta ha sido eliminada.</p>
+    <a href="tarjeta-digital" style="color: var(--accent-green); text-decoration: none; font-weight: 700;">Crear mi propia tarjeta →</a>
   </div>
 
   <div id="card-container">
-    <div class="card-bg-blob" id="blob1" style="width:250px; height:250px; top:-80px; right:-80px;"></div>
-    <div class="card-bg-blob" id="blob2" style="width:200px; height:200px; bottom:-60px; left:-60px;"></div>
-
     <div class="card-logo-wrap">
       <div class="logo-ring" id="logoRing">
         <div class="logo-inner" id="logoInner">
@@ -178,47 +191,45 @@
       </div>
     </div>
 
-    <div class="card-biz-name" id="bizName"></div>
-    <div class="card-tagline" id="bizTagline"></div>
+    <h1 class="card-biz-name" id="bizName"></h1>
+    <p class="card-tagline" id="bizTagline"></p>
 
-    <div class="card-details" id="details">
-      <div class="card-desc" id="bizDesc"></div>
-      <div style="text-align:center;">
-        <div class="card-hours" id="hoursWrap">
-          <i class="fas fa-clock"></i> <span id="bizHours"></span>
-        </div>
+    <div class="card-details" id="detailsBox" style="display:none;">
+      <p class="card-desc" id="bizDesc" style="margin-bottom: 12px;"></p>
+      <div id="hoursWrap" style="display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 0.85rem; font-weight: 700; color: var(--accent-green);">
+        <i class="fas fa-clock"></i> <span id="bizHours"></span>
       </div>
     </div>
 
     <div class="card-socials">
       <a class="card-social-btn" id="link-wa" style="display:none;" target="_blank">
-        <div class="icon-wrap icon-wa"><i class="fab fa-whatsapp"></i></div>
-        <div class="btn-text"><span class="btn-label">WhatsApp</span><span class="btn-value" id="val-wa"></span></div>
-        <i class="fas fa-chevron-right" style="opacity:0.3;"></i>
+        <div class="icon-box" style="background: #25D366;"><i class="fab fa-whatsapp"></i></div>
+        <div class="btn-info"><span class="btn-label">WhatsApp</span><span class="btn-value">Contactar</span></div>
+        <i class="fas fa-chevron-right" style="opacity:0.2;"></i>
       </a>
       <a class="card-social-btn" id="link-fb" style="display:none;" target="_blank">
-        <div class="icon-wrap icon-fb"><i class="fab fa-facebook-f"></i></div>
-        <div class="btn-text"><span class="btn-label">Facebook</span><span class="btn-value" id="val-fb"></span></div>
-        <i class="fas fa-chevron-right" style="opacity:0.3;"></i>
+        <div class="icon-box" style="background: #1877F2;"><i class="fab fa-facebook-f"></i></div>
+        <div class="btn-info"><span class="btn-label">Facebook</span><span class="btn-value">Ver Perfil</span></div>
+        <i class="fas fa-chevron-right" style="opacity:0.2;"></i>
       </a>
       <a class="card-social-btn" id="link-ig" style="display:none;" target="_blank">
-        <div class="icon-wrap icon-ig"><i class="fab fa-instagram"></i></div>
-        <div class="btn-text"><span class="btn-label">Instagram</span><span class="btn-value" id="val-ig"></span></div>
-        <i class="fas fa-chevron-right" style="opacity:0.3;"></i>
+        <div class="icon-box" style="background: linear-gradient(45deg, #f09433, #e1306c, #bc1888);"><i class="fab fa-instagram"></i></div>
+        <div class="btn-info"><span class="btn-label">Instagram</span><span class="btn-value">Seguir</span></div>
+        <i class="fas fa-chevron-right" style="opacity:0.2;"></i>
       </a>
       <a class="card-social-btn" id="link-web" style="display:none;" target="_blank">
-        <div class="icon-wrap icon-web"><i class="fas fa-globe"></i></div>
-        <div class="btn-text"><span class="btn-label" id="lbl-web">Sitio Web</span><span class="btn-value" id="val-web"></span></div>
-        <i class="fas fa-chevron-right" style="opacity:0.3;"></i>
+        <div class="icon-box" style="background: var(--text-dark);"><i class="fas fa-globe"></i></div>
+        <div class="btn-info"><span class="btn-label" id="lbl-web">Sitio Web</span><span class="btn-value">Visitar</span></div>
+        <i class="fas fa-chevron-right" style="opacity:0.2;"></i>
       </a>
       <a class="card-social-btn" id="link-address" style="display:none;" target="_blank">
-        <div class="icon-wrap" style="background:#ef4444;"><i class="fas fa-map-marker-alt"></i></div>
-        <div class="btn-text"><span class="btn-label">Ubicación</span><span class="btn-value">Ver en Google Maps</span></div>
-        <i class="fas fa-chevron-right" style="opacity:0.3;"></i>
+        <div class="icon-box" style="background: #ef4444;"><i class="fas fa-map-marker-alt"></i></div>
+        <div class="btn-info"><span class="btn-label">Ubicación</span><span class="btn-value">Google Maps</span></div>
+        <i class="fas fa-chevron-right" style="opacity:0.2;"></i>
       </a>
     </div>
 
-    <div class="card-brand">Arhez Tech · Tarjeta Digital</div>
+    <div class="card-brand">Arhez Tech · Arhez Card</div>
   </div>
 
   <script>
@@ -230,10 +241,7 @@
       const urlParams = new URLSearchParams(window.location.search);
       const slug = urlParams.get('id');
       
-      if (!slug) {
-        showError();
-        return;
-      }
+      if (!slug) { showError(); return; }
 
       const { data, error } = await supabaseClient
         .from('digital_cards')
@@ -241,37 +249,39 @@
         .eq('slug', slug)
         .single();
 
-      if (error || !data) {
-        console.error('Error fetching card:', error);
-        showError(error ? error.message : 'Tarjeta no encontrada en la base de datos');
-        return;
-      }
+      if (error || !data) { showError(); return; }
 
-      const d = data.card_data;
-      renderCard(d);
+      renderCard(data.card_data);
     }
 
     function renderCard(d) {
-      document.title = d.bizName + " | Tarjeta Digital";
+      document.title = d.bizName + " — Arhez Card";
       
       const container = document.getElementById('card-container');
-      container.style.background = d.colorBg;
-      container.style.color = d.colorText;
+      container.style.backgroundColor = d.colorBg || '#fff';
+      container.style.color = d.colorText || '#1D1D1F';
       
-      document.getElementById('blob1').style.background = d.colorAccent + '40';
-      document.getElementById('blob2').style.background = d.colorAccent + '25';
-      document.getElementById('logoRing').style.background = `conic-gradient(${d.colorAccent}, transparent, ${d.colorAccent})`;
-      document.getElementById('logoInner').style.background = d.colorBg;
-      document.getElementById('logoInitials').style.color = d.colorAccent;
+      document.getElementById('logoRing').style.borderColor = d.colorAccent || '#8DEE12';
+      document.getElementById('logoInitials').style.color = d.colorAccent || '#8DEE12';
 
       document.getElementById('bizName').textContent = d.bizName;
       document.getElementById('bizTagline').textContent = d.bizTagline || '';
-      document.getElementById('bizDesc').textContent = d.bizDesc || '';
       
-      if (d.bizHours) {
-        document.getElementById('bizHours').textContent = d.bizHours;
-      } else {
-        document.getElementById('hoursWrap').style.display = 'none';
+      if (d.bizDesc || d.bizHours) {
+        document.getElementById('detailsBox').style.display = 'block';
+        if (d.bizDesc) {
+          document.getElementById('bizDesc').textContent = d.bizDesc;
+          document.getElementById('bizDesc').style.display = 'block';
+        } else {
+          document.getElementById('bizDesc').style.display = 'none';
+        }
+        
+        if (d.bizHours) {
+          document.getElementById('bizHours').textContent = d.bizHours;
+          document.getElementById('hoursWrap').style.display = 'flex';
+        } else {
+          document.getElementById('hoursWrap').style.display = 'none';
+        }
       }
 
       if (d.logoDataUrl) {
@@ -283,60 +293,41 @@
         document.getElementById('logoInitials').textContent = d.bizName.charAt(0).toUpperCase();
       }
 
-      // Social Links
+      // Links
       if (d.waNumber) {
         const btn = document.getElementById('link-wa');
         btn.style.display = 'flex';
         btn.href = `https://wa.me/${d.waNumber.replace(/\D/g,'')}`;
-        document.getElementById('val-wa').textContent = '+' + d.waNumber.replace(/\D/g,'');
       }
-      
       if (d.fbUrl) {
         const btn = document.getElementById('link-fb');
         btn.style.display = 'flex';
         btn.href = d.fbUrl.startsWith('http') ? d.fbUrl : `https://facebook.com/${d.fbUrl.replace('@','')}`;
-        document.getElementById('val-fb').textContent = d.fbUrl;
       }
-
       if (d.igUrl) {
         const btn = document.getElementById('link-ig');
         btn.style.display = 'flex';
         btn.href = d.igUrl.startsWith('http') ? d.igUrl : `https://instagram.com/${d.igUrl.replace('@','')}`;
-        document.getElementById('val-ig').textContent = d.igUrl;
       }
-
       if (d.webUrl) {
         const btn = document.getElementById('link-web');
         btn.style.display = 'flex';
         btn.href = d.webUrl;
         document.getElementById('lbl-web').textContent = d.webLabel || 'Sitio Web';
-        document.getElementById('val-web').textContent = d.webUrl.replace(/^https?:\/\//, '');
       }
-
       if (d.bizAddress) {
         const btn = document.getElementById('link-address');
         btn.style.display = 'flex';
         btn.href = `https://www.google.com/maps?q=${encodeURIComponent(d.bizAddress)}`;
       }
 
-      // Apply theme to buttons
-      document.querySelectorAll('.card-social-btn').forEach(btn => {
-        btn.style.background = `${d.colorText}0d`;
-        btn.style.borderColor = `${d.colorText}18`;
-      });
-
-      document.getElementById('loading').style.display = 'none';
-      container.style.display = 'block';
+      document.getElementById('loader').style.display = 'none';
+      container.style.display = 'flex';
     }
 
-    function showError(msg) {
-      document.getElementById('loading').style.display = 'none';
+    function showError() {
+      document.getElementById('loader').style.display = 'none';
       document.getElementById('error-msg').style.display = 'block';
-      if (msg) {
-          console.log('Detalle del error:', msg);
-          const p = document.querySelector('#error-msg p');
-          if (p) p.textContent = msg;
-      }
     }
 
     loadCard();
