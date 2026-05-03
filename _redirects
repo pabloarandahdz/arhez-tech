@@ -3,4 +3,4 @@
 /index            /                     301
 
 # Asegurar que cualquier ruta .html se redirija a la versión limpia para SEO
-/*.html           /:1                   301
+# /*.html           /:1                   301

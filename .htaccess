@@ -1,8 +1,8 @@
 RewriteEngine On
 
 # Forzar la eliminación de .html en la URL (Redirección 301)
-RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s([^.]+)\.html [NC]
-RewriteRule ^ %1 [R=301,L]
+# RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s([^.]+)\.html [NC]
+# RewriteRule ^ %1 [R=301,L]
 
 # Servir el archivo .html internamente si se solicita sin extensión
 RewriteCond %{REQUEST_FILENAME} !-d
