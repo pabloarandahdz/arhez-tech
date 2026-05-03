@@ -1,5 +1,0 @@
-# https://arhez-tech.com
-User-agent: *
-Allow: /
-
-Sitemap: https://arhez-tech.com/sitemap.xml
