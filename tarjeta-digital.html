@@ -53,14 +53,14 @@
 
   <style>
     :root {
-      --primary-light: #FFFFFF;
-      --bg-gray: #F5F5F7;
+      --primary-light: #111111;
+      --bg-gray: #0A0A0A;
       --accent-green: #8DEE12;
       --accent-dim: rgba(141, 238, 18, 0.1);
-      --text-dark: #1D1D1F;
-      --text-gray: #86868B;
-      --glass-bg: rgba(255, 255, 255, 0.7);
-      --glass-border: rgba(0, 0, 0, 0.08);
+      --text-dark: #FFFFFF;
+      --text-gray: #A1A1A6;
+      --glass-bg: rgba(255, 255, 255, 0.03);
+      --glass-border: rgba(255, 255, 255, 0.1);
       --nav-h: 80px;
       --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
@@ -134,21 +134,25 @@
 
     .form-control {
       width: 100%;
-      background: var(--bg-gray);
-      border: 1px solid var(--glass-border);
+      background: var(--bg-gray) !important;
+      border: 1px solid var(--glass-border) !important;
       border-radius: 12px;
       padding: 12px 16px;
-      color: var(--text-dark);
+      color: var(--text-dark) !important;
       font-family: inherit;
       font-size: 0.95rem;
       transition: all var(--transition);
       outline: none;
     }
+    
+    ::placeholder {
+      color: rgba(255, 255, 255, 0.3);
+    }
 
     .form-control:focus {
-      border-color: var(--accent-green);
-      background: var(--primary-light);
-      box-shadow: 0 0 0 4px var(--accent-dim);
+      border-color: var(--accent-green) !important;
+      background: var(--primary-light) !important;
+      box-shadow: 0 0 0 4px var(--accent-dim) !important;
     }
 
     .input-icon-wrap {
@@ -199,9 +203,9 @@
     }
 
     .color-swatch-wrap:hover {
-      background: #fff;
+      background: rgba(255, 255, 255, 0.05);
       border-color: var(--accent-green);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
     }
 
     .color-swatch-wrap input[type="color"] {
@@ -245,7 +249,7 @@
     }
 
     .phone-inner {
-      background: #fff;
+      background: var(--bg-gray);
       border-radius: 32px;
       overflow: hidden;
       min-height: 600px;
@@ -359,7 +363,7 @@
 
     .btn--primary {
       background: var(--accent-green);
-      color: var(--text-dark);
+      color: #000;
     }
 
     .btn--primary:hover {
@@ -374,7 +378,8 @@
     }
 
     .btn--ghost:hover {
-      background: var(--bg-gray);
+      background: rgba(255, 255, 255, 0.1);
+      border-color: rgba(255, 255, 255, 0.3);
     }
 
     .btn--full {
@@ -389,7 +394,7 @@
   <nav class="nav" id="nav">
     <div class="nav__container">
       <a href="index.html" class="nav__brand" aria-label="Arhez Tech — inicio">
-        <img src="assets/logotipos/arhez-tech.png" alt="Arhez Tech" class="nav__logo" decoding="async">
+        <img src="assets/img/Logotipo.png" alt="Arhez Tech" class="nav__logo" decoding="async">
       </a>
       <div class="nav__menu" style="gap: 24px;">
         <a href="index.html" class="nav__link" style="display: flex; align-items: center; gap: 8px;">
@@ -457,8 +462,8 @@
                 <div class="color-option">
                   <label style="font-size: 0.75rem; font-weight: 700; color: var(--text-gray); margin-bottom: 6px; display: block;">FONDO</label>
                   <div class="color-swatch-wrap" onclick="document.getElementById('colorBg').click()">
-                    <input type="color" id="colorBg" value="#FFFFFF">
-                    <span id="valBg" style="font-size: 0.75rem; font-family: monospace; font-weight: 700;">#FFFFFF</span>
+                    <input type="color" id="colorBg" value="#0A0A0A">
+                    <span id="valBg" style="font-size: 0.75rem; font-family: monospace; font-weight: 700;">#0A0A0A</span>
                   </div>
                 </div>
                 <div class="color-option">
@@ -471,8 +476,8 @@
                 <div class="color-option">
                   <label style="font-size: 0.75rem; font-weight: 700; color: var(--text-gray); margin-bottom: 6px; display: block;">TEXTO</label>
                   <div class="color-swatch-wrap" onclick="document.getElementById('colorText').click()">
-                    <input type="color" id="colorText" value="#1D1D1F">
-                    <span id="valText" style="font-size: 0.75rem; font-family: monospace; font-weight: 700;">#1D1D1F</span>
+                    <input type="color" id="colorText" value="#FFFFFF">
+                    <span id="valText" style="font-size: 0.75rem; font-family: monospace; font-weight: 700;">#FFFFFF</span>
                   </div>
                 </div>
               </div>
@@ -544,7 +549,7 @@
               <i class="fas fa-magic"></i> Generar Vista Previa
             </button>
 
-            <button class="btn btn--primary btn--full" onclick="openPayModal()" style="margin-top: 16px; padding: 16px; background: var(--text-dark); color: #fff;">
+            <button class="btn btn--primary btn--full" onclick="openPayModal()" style="margin-top: 16px; padding: 16px; background: #FFFFFF; color: #000;">
               <i class="fas fa-shopping-cart"></i> Pagar y Descargar · $49 MXN
             </button>
 
@@ -557,7 +562,7 @@
               <div id="loginArea">
                 <p style="font-size: 0.8rem; color: var(--text-gray); margin-bottom: 12px;">¿Ya tienes una tarjeta? Ingresa tu clave para editar:</p>
                 <div style="display: flex; gap: 8px;">
-                  <input type="text" id="recoverKey" placeholder="Ej: X7A9B2C1" style="flex: 1; padding: 10px 14px; border-radius: 10px; border: 1px solid var(--glass-border); font-size: 0.9rem;">
+                  <input type="text" id="recoverKey" placeholder="Ej: X7A9B2C1" style="flex: 1; padding: 10px 14px; border-radius: 10px; border: 1px solid var(--glass-border); font-size: 0.9rem; background: #111111; color: #FFFFFF;">
                   <button onclick="loadFromSupabase()" class="btn btn--primary" style="padding: 10px 20px;"><i class="fas fa-sync"></i></button>
                 </div>
               </div>
@@ -565,13 +570,13 @@
               <div id="keyDisplay" style="display: none; margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--glass-border);">
                 <p style="font-size: 0.75rem; color: var(--text-gray); margin-bottom: 8px;">Tu clave de edición (Guárdala bien):</p>
                 <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 16px;">
-                  <code id="accessKeyVal" style="background: #fff; padding: 8px 12px; border-radius: 8px; border: 1px solid var(--accent-green); flex: 1; font-weight: 700;"></code>
+                  <code id="accessKeyVal" style="background: #111111; color: var(--accent-green); padding: 8px 12px; border-radius: 8px; border: 1px solid var(--accent-green); flex: 1; font-weight: 700;"></code>
                   <button onclick="copyAccessKey()" class="btn btn--ghost" style="padding: 8px;"><i class="fas fa-copy"></i></button>
                 </div>
 
                 <p style="font-size: 0.75rem; color: var(--text-gray); margin-bottom: 8px;">Enlace público para compartir:</p>
                 <div style="display: flex; align-items: center; gap: 10px;">
-                  <input type="text" id="shareLinkVal" readonly style="background: #fff; padding: 8px 12px; border-radius: 8px; border: 1px solid var(--glass-border); flex: 1; font-size: 0.8rem; font-family: monospace;">
+                  <input type="text" id="shareLinkVal" readonly style="background: #111111; color: #FFFFFF; padding: 8px 12px; border-radius: 8px; border: 1px solid var(--glass-border); flex: 1; font-size: 0.8rem; font-family: monospace;">
                   <button onclick="copyShareLink()" class="btn btn--ghost" style="padding: 8px;"><i class="fas fa-share-alt"></i></button>
                 </div>
               </div>
@@ -590,8 +595,8 @@
 
             <div class="phone-frame" id="phoneFrame">
               <div class="phone-inner">
-                <div style="height: 24px; background: #fff; display: flex; align-items: center; justify-content: center; padding: 0 16px;">
-                  <div style="width: 60px; height: 18px; background: #f0f0f0; border-radius: 10px;"></div>
+                <div style="height: 24px; background: #0A0A0A; display: flex; align-items: center; justify-content: center; padding: 0 16px;">
+                  <div style="width: 60px; height: 18px; background: #222; border-radius: 10px;"></div>
                 </div>
                 
                 <div id="card-preview">
@@ -602,10 +607,10 @@
                     </div>
                   </div>
 
-                  <h2 id="cardBizName" style="font-size: 1.8rem; font-weight: 800; text-align: center; margin-bottom: 4px;">Tu Negocio</h2>
-                  <p id="cardTagline" style="font-size: 0.9rem; color: var(--text-gray); text-align: center; margin-bottom: 32px;">Eslogan o categoría</p>
+                  <h2 id="cardBizName" style="font-size: 1.8rem; font-weight: 800; text-align: center; margin-bottom: 4px; color: #FFFFFF;">Tu Negocio</h2>
+                  <p id="cardTagline" style="font-size: 0.9rem; color: #FFFFFF; text-align: center; margin-bottom: 32px;">Eslogan o categoría</p>
 
-                  <div id="cardDetails" style="width: 100%; background: var(--bg-gray); border-radius: 16px; padding: 16px; margin-bottom: 24px; display: none;">
+                  <div id="cardDetails" style="width: 100%; background: #111111; border-radius: 16px; padding: 16px; margin-bottom: 24px; display: none;">
                     <p id="cardDesc" style="font-size: 0.85rem; line-height: 1.5; margin-bottom: 12px;"></p>
                     <div id="cardHoursWrap" style="display: flex; align-items: center; gap: 8px; font-size: 0.8rem; font-weight: 700; color: var(--accent-green);">
                       <i class="fas fa-clock"></i> <span id="cardHoursVal"></span>
@@ -614,7 +619,7 @@
 
                   <div class="card-socials" style="width: 100%; display: flex; flex-direction: column; gap: 12px;">
                     <!-- WhatsApp -->
-                    <a id="card-wa" class="card-social-btn" style="display: flex; align-items: center; gap: 16px; padding: 14px; background: #fff; border: 1px solid var(--glass-border); border-radius: 14px; text-decoration: none; color: inherit;">
+                    <a id="card-wa" class="card-social-btn" style="display: flex; align-items: center; gap: 16px; padding: 14px; background: #111111; border: 1px solid var(--glass-border); border-radius: 14px; text-decoration: none; color: inherit;">
                       <div class="icon-box" style="background: #25D366;">
                         <i class="fab fa-whatsapp"></i>
                       </div>
@@ -625,7 +630,7 @@
                       <i class="fas fa-chevron-right" style="opacity: 0.15; font-size: 0.8rem;"></i>
                     </a>
                     <!-- Facebook -->
-                    <a id="card-fb" class="card-social-btn" style="display: flex; align-items: center; gap: 16px; padding: 14px; background: #fff; border: 1px solid var(--glass-border); border-radius: 14px; text-decoration: none; color: inherit;">
+                    <a id="card-fb" class="card-social-btn" style="display: flex; align-items: center; gap: 16px; padding: 14px; background: #111111; border: 1px solid var(--glass-border); border-radius: 14px; text-decoration: none; color: inherit;">
                       <div class="icon-box" style="background: #1877F2;">
                         <i class="fab fa-facebook-f"></i>
                       </div>
@@ -636,7 +641,7 @@
                       <i class="fas fa-chevron-right" style="opacity: 0.15; font-size: 0.8rem;"></i>
                     </a>
                     <!-- Instagram -->
-                    <a id="card-ig" class="card-social-btn" style="display: flex; align-items: center; gap: 16px; padding: 14px; background: #fff; border: 1px solid var(--glass-border); border-radius: 14px; text-decoration: none; color: inherit;">
+                    <a id="card-ig" class="card-social-btn" style="display: flex; align-items: center; gap: 16px; padding: 14px; background: #111111; border: 1px solid var(--glass-border); border-radius: 14px; text-decoration: none; color: inherit;">
                       <div class="icon-box" style="background: linear-gradient(45deg, #f09433, #bc1888);">
                         <i class="fab fa-instagram"></i>
                       </div>
@@ -647,7 +652,7 @@
                       <i class="fas fa-chevron-right" style="opacity: 0.15; font-size: 0.8rem;"></i>
                     </a>
                     <!-- Web -->
-                    <a id="card-web" class="card-social-btn" style="display: none; align-items: center; gap: 16px; padding: 14px; background: #fff; border: 1px solid var(--glass-border); border-radius: 14px; text-decoration: none; color: inherit;">
+                    <a id="card-web" class="card-social-btn" style="display: none; align-items: center; gap: 16px; padding: 14px; background: #111111; border: 1px solid var(--glass-border); border-radius: 14px; text-decoration: none; color: inherit;">
                       <div class="icon-box" style="background: var(--text-dark);">
                         <i class="fas fa-globe"></i>
                       </div>
@@ -658,7 +663,7 @@
                       <i class="fas fa-chevron-right" style="opacity: 0.15; font-size: 0.8rem;"></i>
                     </a>
                     <!-- Location -->
-                    <a id="card-address" class="card-social-btn" style="display: none; align-items: center; gap: 16px; padding: 14px; background: #fff; border: 1px solid var(--glass-border); border-radius: 14px; text-decoration: none; color: inherit;">
+                    <a id="card-address" class="card-social-btn" style="display: none; align-items: center; gap: 16px; padding: 14px; background: #111111; border: 1px solid var(--glass-border); border-radius: 14px; text-decoration: none; color: inherit;">
                       <div class="icon-box" style="background: #ef4444;">
                         <i class="fas fa-map-marker-alt"></i>
                       </div>
