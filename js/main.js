@@ -1,19 +1,19 @@
 /* ============================================================
-   2804261500: main.js - Arhez Tech
-   Logica minima: nav scroll, menu movil, formulario de contacto
+   main.js - Arhez Tech
+   Logica de navegacion, menu movil y formulario de contacto
    ============================================================ */
 
-// 2804261500: Navbar - scroll behaviour
+// 1. Navegación - comportamiento de scroll (opacidad y bordes)
 (function() {
   const nav = document.getElementById('nav');
   if (!nav) return;
   const onScroll = () => {
-    nav.classList.toggle('nav--scrolled', window.scrollY > 60);
+    nav.classList.toggle('nav--scrolled', window.scrollY > 50);
   };
   window.addEventListener('scroll', onScroll, { passive: true });
 })();
 
-// 2804261500: Menu movil - toggle
+// 2. Menú móvil - Toggle y transformación animada de hamburguesa
 (function() {
   const toggle = document.getElementById('navToggle');
   const menu   = document.getElementById('navMenu');
@@ -21,15 +21,19 @@
 
   toggle.addEventListener('click', () => {
     menu.classList.toggle('open');
+    toggle.classList.toggle('open');
   });
 
-  // Cerrar al hacer click en un enlace
+  // Cerrar menú al dar click en un enlace interno
   menu.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => menu.classList.remove('open'));
+    link.addEventListener('click', () => {
+      menu.classList.remove('open');
+      toggle.classList.remove('open');
+    });
   });
 })();
 
-// 2804261500: Formulario de contacto - envio via WhatsApp
+// 3. Formulario de contacto - Envío estructurado de leads vía WhatsApp
 (function() {
   const form    = document.getElementById('contactForm');
   const success = document.getElementById('formSuccess');
@@ -44,16 +48,19 @@
     const service = document.getElementById('contactService').value;
     const msg     = document.getElementById('contactMsg').value.trim();
 
+    // Formatear mensaje profesional en español
     const text = encodeURIComponent(
-      `Hola, soy ${name} (${email}).\n` +
-      `Servicio de interes: ${service}.\n` +
-      `Mensaje: ${msg}`
+      `*NUEVO LEAD - ARHEZ TECH*\n\n` +
+      `*Nombre:* ${name}\n` +
+      `*Email:* ${email}\n` +
+      `*Interés:* ${service}\n\n` +
+      `*Mensaje:* ${msg}`
     );
 
-    // Abrir WhatsApp con el mensaje pre-llenado
+    // Abrir WhatsApp con el número +524272777153
     window.open(`https://wa.me/524272777153?text=${text}`, '_blank');
 
-    // Mostrar mensaje de exito
+    // Mostrar confirmación visual temporal
     if (submitBtn) submitBtn.disabled = true;
     if (success) success.classList.add('visible');
 
