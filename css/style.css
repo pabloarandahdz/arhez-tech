@@ -150,6 +150,9 @@ ul  { list-style: none; }
 .industry-card:hover .industry-card__icon { background: rgba(255,255,255,0.06); border-color: var(--industry-color); box-shadow: 0 0 20px color-mix(in srgb, var(--industry-color) 15%, transparent); }
 .industry-card__title { font-size: 1.15rem; font-weight: 700; margin-bottom: 14px; color: var(--text-main); }
 .industry-card__desc { color: var(--text-muted); font-size: 0.9rem; line-height: 1.6; }
+.industry-card__list { list-style: none; text-align: left; margin-top: 8px; }
+.industry-card__list li { position: relative; padding: 6px 0 6px 18px; color: var(--text-muted); font-size: 0.88rem; line-height: 1.5; }
+.industry-card__list li::before { content: ''; position: absolute; left: 0; top: 14px; width: 6px; height: 6px; border-radius: 50%; background: var(--industry-color); opacity: 0.7; }
 
 /* 8. NUESTROS PROYECTOS & INFOPRODUCTOS */
 .projects-bev { background: var(--bg); }
