@@ -126,7 +126,7 @@ ul  { list-style: none; }
 .fade-in-up.visible { opacity: 1; transform: translateY(0); }
 
 /* Stat Counter */
-.stat-box__num-suffix { display: inline; font-size: 3.2rem; font-weight: 800; color: var(--accent); line-height: 1; letter-spacing: -0.03em; }
+.stat-box__num-suffix { display: inline; font-size: 2.2rem; font-weight: 800; color: var(--accent); line-height: 1; letter-spacing: -0.03em; }
 
 /* 6. SERVICIOS */
 .services { background: var(--bg-alt); }
@@ -209,7 +209,9 @@ ul  { list-style: none; }
 .about__stats { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
 .stat-box { padding-left: 24px; border-left: 2px solid var(--glass-border); transition: border-color var(--transition); }
 .stat-box:hover { border-color: var(--accent); }
-.stat-box__num { display: block; font-size: 3.2rem; font-weight: 800; color: var(--accent); line-height: 1; margin-bottom: 12px; letter-spacing: -0.03em; }
+.stat-box__num-row { display: flex; align-items: baseline; gap: 2px; margin-bottom: 8px; }
+.stat-box__num { font-size: 2.2rem; font-weight: 800; color: var(--accent); line-height: 1; letter-spacing: -0.03em; }
+.stat-box__num-suffix { font-size: 2.2rem; font-weight: 800; color: var(--accent); line-height: 1; letter-spacing: -0.03em; }
 .stat-box__label { color: var(--text-muted); font-size: 0.95rem; font-weight: 500; line-height: 1.5; }
 
 /* 9. PREGUNTAS FRECUENTES */
