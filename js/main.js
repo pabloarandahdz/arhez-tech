@@ -71,3 +71,50 @@
     }, 5000);
   });
 })();
+
+// 4. IntersectionObserver — Animaciones de entrada fade-in-up
+(function() {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
+
+  document.querySelectorAll('.fade-in-up').forEach(el => observer.observe(el));
+})();
+
+// 5. Contador animado para stats
+(function() {
+  const animateCounter = (el) => {
+    const target = parseInt(el.getAttribute('data-target'), 10);
+    if (isNaN(target)) return;
+    let current = 0;
+    const increment = Math.ceil(target / 60);
+    const update = () => {
+      current += increment;
+      if (current >= target) {
+        el.textContent = target;
+        return;
+      }
+      el.textContent = current;
+      requestAnimationFrame(update);
+    };
+    update();
+  };
+
+  const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const els = entry.target.querySelectorAll('.stat-counter');
+        els.forEach(el => animateCounter(el));
+        counterObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  const statsSection = document.querySelector('.about__stats');
+  if (statsSection) counterObserver.observe(statsSection);
+})();

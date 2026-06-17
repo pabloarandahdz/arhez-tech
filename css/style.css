@@ -32,6 +32,8 @@
   --status-active: #8DEE12;       /* Lime Green */
   --status-near:   #00E5FF;       /* Cyan / Light Blue */
   --status-far:    #9D4EDD;       /* Purple / Violet */
+  --industry-soda: #FF6B35;       /* Amber / Orange for sodas */
+  --industry-juice: #8DEE12;      /* Lime for functional beverages */
   
   --radius-sm:    8px;
   --radius:       16px;
@@ -116,6 +118,15 @@ ul  { list-style: none; }
 .hero__accent { color: var(--accent); }
 .hero__subtitle { font-size: 1.2rem; font-weight: 400; color: var(--text-muted); max-width: 650px; margin-bottom: 48px; line-height: 1.6; }
 .hero__actions { display: flex; flex-wrap: wrap; gap: 16px; }
+.hero__decoration { position: absolute; width: 600px; height: 600px; border-radius: 50%; background: radial-gradient(circle, rgba(141, 238, 18, 0.06), transparent 60%); top: -200px; right: -150px; pointer-events: none; animation: float 8s ease-in-out infinite; }
+@keyframes float { 0%, 100% { transform: translateY(0px) scale(1); } 50% { transform: translateY(-20px) scale(1.03); } }
+
+/* Scroll Animation */
+.fade-in-up { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease-out, transform 0.7s ease-out; }
+.fade-in-up.visible { opacity: 1; transform: translateY(0); }
+
+/* Stat Counter */
+.stat-box__num-suffix { display: inline; font-size: 3.2rem; font-weight: 800; color: var(--accent); line-height: 1; letter-spacing: -0.03em; }
 
 /* 6. SERVICIOS */
 .services { background: var(--bg-alt); }
@@ -128,7 +139,19 @@ ul  { list-style: none; }
 .service-card__link { font-weight: 600; color: var(--text-main); display: inline-flex; align-items: center; gap: 8px; margin-top: auto; font-size: 0.9rem; transition: color var(--transition); }
 .service-card__link:hover { color: var(--accent); }
 
-/* 7. NUESTROS PROYECTOS & INFOPRODUCTOS */
+/* 7. INDUSTRIAS QUE IMPULSAMOS */
+.industries { background: var(--bg); }
+.industries__grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.industry-card { padding: 40px 32px; border: 1px solid var(--glass-border); border-radius: var(--radius); background: var(--glass-bg); transition: all var(--transition); text-align: center; position: relative; overflow: hidden; backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
+.industry-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--industry-color); opacity: 0.6; transition: opacity var(--transition); }
+.industry-card:hover { transform: translateY(-6px); border-color: var(--industry-color); background: var(--glass-bg-alt); }
+.industry-card:hover::before { opacity: 1; }
+.industry-card__icon { width: 56px; height: 56px; margin: 0 auto 24px; background: rgba(255,255,255,0.03); color: var(--industry-color); display: flex; align-items: center; justify-content: center; border-radius: 14px; border: 1px solid var(--glass-border); transition: all var(--transition); }
+.industry-card:hover .industry-card__icon { background: rgba(255,255,255,0.06); border-color: var(--industry-color); box-shadow: 0 0 20px color-mix(in srgb, var(--industry-color) 15%, transparent); }
+.industry-card__title { font-size: 1.15rem; font-weight: 700; margin-bottom: 14px; color: var(--text-main); }
+.industry-card__desc { color: var(--text-muted); font-size: 0.9rem; line-height: 1.6; }
+
+/* 8. NUESTROS PROYECTOS & INFOPRODUCTOS */
 .projects-bev { background: var(--bg); }
 .projects-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
 .project-card { background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: var(--radius); overflow: hidden; display: flex; flex-direction: column; transition: all var(--transition); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); position: relative; }
@@ -165,7 +188,18 @@ ul  { list-style: none; }
 .infoproduct-card__title { font-size: 1.2rem; font-weight: 700; margin-bottom: 12px; }
 .infoproduct-card__desc { color: var(--text-muted); font-size: 0.9rem; line-height: 1.5; margin-bottom: 24px; flex-grow: 1; }
 
-/* 8. NOSOTROS (Filosofía) */
+/* 9. PROCESO DE TRABAJO */
+.process { background: var(--bg-alt); }
+.process-timeline { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; position: relative; margin-top: 16px; }
+.process-timeline::before { content: ''; position: absolute; top: 40px; left: calc(12.5% + 28px); right: calc(12.5% + 28px); height: 2px; background: linear-gradient(90deg, var(--glass-border), var(--accent) 50%, var(--glass-border)); z-index: 0; }
+.process-step { text-align: center; position: relative; z-index: 1; padding: 0 12px; }
+.process-step__icon { width: 64px; height: 64px; margin: 0 auto 20px; background: var(--glass-bg-alt); border: 1px solid var(--glass-border); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--accent); transition: all var(--transition); position: relative; }
+.process-step:hover .process-step__icon { border-color: var(--accent); background: rgba(141, 238, 18, 0.06); transform: scale(1.08); box-shadow: 0 0 30px rgba(141, 238, 18, 0.1); }
+.process-step__title { font-size: 1.1rem; font-weight: 700; margin-bottom: 10px; color: var(--text-main); }
+.process-step__desc { color: var(--text-muted); font-size: 0.88rem; line-height: 1.6; }
+.process-step__num { display: block; margin-top: 16px; font-size: 0.75rem; font-weight: 700; color: var(--text-dim); letter-spacing: 0.1em; }
+
+/* 10. NOSOTROS (Filosofía) */
 .about { background: var(--bg-alt); }
 .about__grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 72px; align-items: center; }
 .about__content { padding-right: 16px; }
@@ -225,9 +259,12 @@ ul  { list-style: none; }
 
 /* 12. RESPONSIVE */
 @media (max-width: 1024px) {
+  .industries__grid { grid-template-columns: repeat(2, 1fr); }
   .services__grid { grid-template-columns: repeat(2, 1fr); }
   .projects-grid { grid-template-columns: repeat(2, 1fr); }
   .infoproducts__grid { grid-template-columns: repeat(2, 1fr); }
+  .process-timeline { grid-template-columns: repeat(2, 1fr); gap: 40px; }
+  .process-timeline::before { display: none; }
   .about__grid { grid-template-columns: 1fr; gap: 56px; }
   .contact__wrapper { grid-template-columns: 1fr; }
   .contact__form-wrap { border-left: none; border-top: 1px solid var(--glass-border); padding: 48px 32px; }
@@ -241,9 +278,13 @@ ul  { list-style: none; }
   .nav__menu.open { display: flex; }
   .nav__toggle { display: flex; }
   .hero__title { font-size: 2.6rem; }
+  .hero__decoration { display: none; }
+  .industries__grid { grid-template-columns: 1fr; }
   .services__grid { grid-template-columns: 1fr; }
   .projects-grid { grid-template-columns: 1fr; }
   .infoproducts__grid { grid-template-columns: 1fr; }
+  .process-timeline { grid-template-columns: 1fr; gap: 32px; }
+  .process-timeline::before { display: none; }
   .about__stats { grid-template-columns: 1fr; }
   .footer__grid { grid-template-columns: 1fr; gap: 32px; }
   .footer__bottom { flex-direction: column; gap: 16px; text-align: center; }
