@@ -114,7 +114,9 @@ ul  { list-style: none; }
 .hero__accent { color: var(--accent); }
 .hero__subtitle { font-size: 1.2rem; font-weight: 400; color: var(--text-muted); max-width: 650px; margin-bottom: 48px; line-height: 1.6; }
 .hero__actions { display: flex; flex-wrap: wrap; gap: 16px; }
-.hero__decoration { position: absolute; width: 600px; height: 600px; border-radius: 50%; background: radial-gradient(circle, rgba(141, 238, 18, 0.04), transparent 60%); top: -200px; right: -150px; pointer-events: none; animation: float 8s ease-in-out infinite; }
+.hero__decoration { position: absolute; width: 600px; height: 600px; border-radius: 50%; background: radial-gradient(circle at 70% 30%, rgba(141, 238, 18, 0.04), rgba(0, 229, 255, 0.03), transparent 60%), radial-gradient(circle at 30% 70%, rgba(157, 78, 221, 0.03), rgba(255, 107, 53, 0.02), transparent 50%); top: -200px; right: -150px; pointer-events: none; animation: float 8s ease-in-out infinite; z-index: 0; }
+.hero__glass { position: absolute; width: 140px; height: auto; bottom: 40px; right: 80px; color: var(--text-main); opacity: 0.5; animation: glassFloat 12s ease-in-out infinite; }
+@keyframes glassFloat { 0%, 100% { transform: translateY(0) rotate(-2deg); } 50% { transform: translateY(-15px) rotate(2deg); } }
 @keyframes float { 0%, 100% { transform: translateY(0px) scale(1); } 50% { transform: translateY(-20px) scale(1.03); } }
 
 /* Scroll Animation */
