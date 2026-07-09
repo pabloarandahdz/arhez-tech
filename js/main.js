@@ -72,18 +72,30 @@
   });
 })();
 
-// 4. IntersectionObserver — Animaciones de entrada fade-in-up
+// 4. Formulario del Hero - Envío rápido vía WhatsApp
 (function() {
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
+  const form = document.getElementById('heroForm');
+  if (!form) return;
 
-  document.querySelectorAll('.fade-in-up').forEach(el => observer.observe(el));
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const name    = document.getElementById('heroName').value.trim();
+    const email   = document.getElementById('heroEmail').value.trim();
+    const service = document.getElementById('heroService').value;
+    const msg     = document.getElementById('heroMsg').value.trim();
+
+    const text = encodeURIComponent(
+      `*COTIZACIÓN RÁPIDA - ARHEZ TECH*\n\n` +
+      `*Nombre:* ${name}\n` +
+      `*Email:* ${email}\n` +
+      `*Interés:* ${service}\n\n` +
+      `*Mensaje:* ${msg}`
+    );
+
+    window.open(`https://wa.me/524272777153?text=${text}`, '_blank');
+    form.reset();
+  });
 })();
 
 // 5. Contador animado para stats

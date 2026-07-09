@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Arhez Tech — Desarrollo Web Profesional para Empresas y Marcas</title>
+  <title>Arhez Tech — Desarrollo Web Profesional</title>
   <meta name="description"
     content="Creamos sitios web corporativos, tiendas en l&iacute;nea y landing pages de alto rendimiento para empresas que buscan crecer con una presencia digital s&oacute;lida y profesional.">
   <meta name="keywords" content="desarrollo web, p&aacute;ginas web profesionales, tiendas en l&iacute;nea, e-commerce, landing pages, diseño web, arhez tech">
@@ -76,17 +76,45 @@
         <circle cx="90" cy="205" r="1.5" fill="currentColor" opacity="0.08"/>
       </svg>
     </div>
-    <div class="hero__container fade-in-up">
-      <div class="hero__content">
-        <h1 class="hero__title">
-          Un sitio web profesional puede ser tu mejor vendedor. <span class="hero__accent">24/7.</span>
-        </h1>
-        <p class="hero__subtitle">
-          Planeamos, creamos y ejecutamos tu sitio web profesional y desde cero. Colaboramos contigo para que tu negocio tenga una presencia digital que impacte.
-        </p>
-        <div class="hero__actions">
-          <a href="#servicios" class="btn btn--primary">Ver servicios</a>
-          <a href="#cotizador" class="btn btn--outline">Solicitar cotizaci&oacute;n</a>
+    <div class="hero__container">
+      <div class="hero__grid">
+        <div class="hero__content">
+          <h1 class="hero__title">
+            Un sitio web profesional puede ser tu mejor vendedor. <span class="hero__accent">24/7.</span>
+          </h1>
+          <p class="hero__subtitle">
+            Planeamos, creamos y ejecutamos tu sitio web profesional y desde cero. Colaboramos contigo para que tu negocio tenga una presencia digital que impacte.
+          </p>
+        </div>
+        <div class="hero__form-wrap">
+          <form class="hero__form" id="heroForm">
+            <h3 class="hero__form-title">Cotiza tu proyecto</h3>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+              <div class="form-group">
+                <label for="heroName">Nombre completo</label>
+                <input type="text" id="heroName" name="name" required placeholder="Ej. Carlos Mart&iacute;nez">
+              </div>
+              <div class="form-group">
+                <label for="heroEmail">Correo electr&oacute;nico</label>
+                <input type="email" id="heroEmail" name="email" required placeholder="correo@ejemplo.com">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="heroService">Tipo de Proyecto</label>
+              <select id="heroService" name="service" required>
+                <option value="" disabled selected>Selecciona tu proyecto</option>
+                <option value="Sitio Web">Sitio Web</option>
+                <option value="Aplicación Web">Aplicaci&oacute;n Web</option>
+                <option value="Plataforma Web">Plataforma Web</option>
+                <option value="No sé / Quiero asesoría">No s&eacute; / Quiero asesor&iacute;a</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="heroMsg">Cu&eacute;ntanos sobre tu proyecto</label>
+              <textarea id="heroMsg" name="message" required placeholder="Describe tu negocio y qu&eacute; necesitas lograr..." rows="3"></textarea>
+            </div>
+            <button type="submit" class="btn btn--primary btn--full">Enviar por WhatsApp</button>
+          </form>
         </div>
       </div>
     </div>
@@ -96,7 +124,7 @@
        MISIÓN
    ============================================================ -->
   <section class="section" id="mision">
-    <div class="section__container fade-in-up">
+    <div class="section__container">
       <div class="section__header">
         <span class="section__eyebrow">Qué hacemos</span>
         <h2 class="section__title">Misi&oacute;n</h2>
@@ -111,7 +139,7 @@
        VISIÓN
    ============================================================ -->
   <section class="section" id="vision">
-    <div class="section__container fade-in-up">
+    <div class="section__container">
       <div class="section__header">
         <span class="section__eyebrow">A dónde vamos</span>
         <h2 class="section__title">Visi&oacute;n</h2>
@@ -126,7 +154,7 @@
        VALORES
    ============================================================ -->
   <section class="section" id="valores">
-    <div class="section__container fade-in-up">
+    <div class="section__container">
       <div class="section__header">
         <span class="section__eyebrow">C&oacute;mo nos conducimos</span>
         <h2 class="section__title">Valores</h2>
@@ -173,7 +201,7 @@
        SERVICIOS
    ============================================================ -->
   <section class="section services" id="servicios">
-    <div class="section__container fade-in-up">
+    <div class="section__container">
       <div class="section__header">
         <span class="section__eyebrow">Qu&eacute; ofrecemos</span>
         <h2 class="section__title">Servicios</h2>
@@ -234,7 +262,7 @@
        COTIZADOR
    ============================================================ -->
   <section class="section contact" id="cotizador">
-    <div class="section__container fade-in-up">
+    <div class="section__container">
       <div class="contact__wrapper">
         <div class="contact__info">
           <span class="section__eyebrow">&iquest;Listo para empezar?</span>
