@@ -191,7 +191,7 @@ ul  { list-style: none; }
   color: var(--white);
   text-transform: uppercase;
   font-size: clamp(40px, 8vw, 96px);
-  line-height: 0.95;
+  line-height: 1.12;
 }
 .cover__title span { display: block; }
 .cover__badges {
