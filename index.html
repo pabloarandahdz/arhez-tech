@@ -1,294 +1,75 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Arhez Tech — Desarrollo Web Profesional</title>
-  <meta name="description"
-    content="Creamos sitios web corporativos, aplicaciones y plataformas web de alto rendimiento para empresas que buscan crecer con una presencia digital sólida y profesional. Cotización sin costo.">
-  <meta name="keywords" content="desarrollo web, páginas web profesionales, tiendas en línea, e-commerce, plataformas web, landing pages, diseño web, arhez tech">
-  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
-  <meta name="theme-color" content="#1A1A1A">
-  <link rel="canonical" href="https://arhez-tech.com/">
-
-  <meta property="og:type" content="website">
-  <meta property="og:locale" content="es_MX">
-  <meta property="og:site_name" content="Arhez Tech">
-  <meta property="og:title" content="Arhez Tech — Desarrollo Web Profesional para Empresas y Marcas">
-  <meta property="og:description"
-    content="Sitios web, aplicaciones y plataformas web que convierten visitantes en clientes. Cotización sin costo y propuesta en 24 h.">
-  <meta property="og:image" content="https://arhez-tech.com/assets/logotipos/arhez-tech.png">
-
+  <meta name="description" content="Arhez Tech — Transformamos tus datos en crecimiento. Plataformas, automatización e inteligencia para decisiones más rápidas y seguras.">
+  <meta name="theme-color" content="#000002">
+  <title>Arhez Tech — Datos que impulsan tu negocio</title>
   <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
-
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CR57KMZY6H"></script>
-  <script src="js/gtag.js"></script>
-
-  <!-- Google Fonts: Anton + Plus Jakarta Sans -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
   <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
+  <header class="header" role="banner">
+    <div class="container header__inner">
+      <a href="#inicio" class="header__logo" aria-label="Arhez Tech - Inicio">
+        <img src="assets/img/logotipo.png" alt="Arhez Tech" width="140" height="36" decoding="async">
+      </a>
+      <nav class="header__nav" aria-label="Navegación principal">
+        <a href="#contacto" class="btn btn--primary">Cotizar</a>
+      </nav>
+    </div>
+  </header>
 
-  <div class="frame">
-
-    <!-- ============================================================
-         BARRA DE NAVEGACIÓN
-    ============================================================ -->
-    <nav class="nav" aria-label="Navegación principal">
-      <div class="nav__container">
-        <a href="#inicio" class="nav__brand" aria-label="Arhez Tech — inicio">
-          <img src="assets/img/logotipo.png" alt="Arhez Tech" class="nav__logo" decoding="async">
-        </a>
-        <ul class="nav__menu">
-          <li><a href="#inicio">Inicio</a></li>
-          <li><a href="#servicios">Servicios</a></li>
-          <li><a href="#filosofia">Filosof&iacute;a</a></li>
-          <li><a href="#contacto" class="nav__cta">Cotizar</a></li>
-        </ul>
-      </div>
-    </nav>
-
-    <!-- ============================================================
-         MASTHEAD — Encabezado editorial
-    ============================================================ -->
-    <header class="masthead" id="inicio">
-      <div class="masthead__meta">
-        <span>Agosto 2026</span>
-        <span class="masthead__meta-mid">Tecnología a Medida</span>
-        <span>A&ntilde;o I · N.&ordm; 001</span>
-      </div>
-      <div class="masthead__brand">
-        <h1 class="masthead__logo">
-          <img src="assets/img/logotipo.png" alt="Arhez Tech" class="masthead__logo-img" decoding="async">
-        </h1>
-        <p class="masthead__tagline">Ing. Juan Pablo Aranda Hernandez · CEO</p>
-      </div>
-    </header>
-
-    <!-- ============================================================
-         COVER — Portada
-    ============================================================ -->
-    <section class="cover" aria-label="Portada">
-      <img src="assets/img/cover.jpg" alt="Código de programación en pantalla — Arhez Tech" class="cover__img" loading="eager" decoding="async">
-      <div class="cover__overlay" aria-hidden="true"></div>
-      <span class="cover__flag">Desde 2026</span>
-      <div class="cover__content">
-        <span class="cover__kicker">Soluciones tecnol&oacute;gicas integrales</span>
-        <h2 class="cover__title">Impulsamos tu<br><span>transformaci&oacute;n digital</span></h2>
-        <div class="cover__badges">
-          <span class="cover__badge">Cotizaci&oacute;n sin costo</span>
-          <span class="cover__note">Sesión vía Zoom o Teams · Propuesta en 24 h</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================================================
-         SERVICIOS — Los temas de este número
-    ============================================================ -->
-    <section class="section" id="servicios">
-      <div class="section__inner">
-        <div class="section__heading">
-          <h2>Nuestros servicios</h2>
+  <main id="contenido-principal">
+    <section class="hero" id="inicio" aria-labelledby="hero-title">
+      <div class="container hero__grid">
+        <div class="hero__content">
+          <h1 id="hero-title" class="hero__title">Convierte tus <span>datos</span> en tu mayor ventaja</h1>
+          <p class="hero__desc">Desarrollamos sitios web comerciales, plataformas empresariales, auditorías de ciberseguridad e infraestructura de videoseguridad. Obtén la información clave para impulsar la transformación y el crecimiento de tu negocio.</p>
+          <div class="hero__actions">
+            <a href="https://wa.me/524272777153" target="_blank" rel="noopener" class="btn btn--primary btn--lg">Cotizar ahora</a>
+            <p class="hero__note">Respuesta en 24h · Sin compromiso</p>
+          </div>
         </div>
 
-        <div class="services__grid">
-          <article class="service-card service-card--featured">
-            <span class="service-card__badge">Recomendado</span>
-            <div class="service-card__head">
-              <p class="service-card__num">01</p>
-              <span class="service-card__dot" aria-hidden="true"></span>
+        <div class="hero__visual" aria-label="Ecosistema de datos conectado a tus herramientas">
+          <div class="orbit">
+            <div class="orbit__center">Datos</div>
+            <div class="orbit__item" style="--angle:0deg" aria-label="Facebook">
+              <i class="fa-brands fa-facebook" style="color:#1877F2;font-size:30px" aria-hidden="true"></i>
             </div>
-            <h3 class="service-card__title">Sitio Web</h3>
-            <ul class="service-card__list">
-              <li>Landing page o sitio web corporativo</li>
-              <li>Dise&ntilde;o profesional adaptable a m&oacute;viles</li>
-              <li>Posicionamiento en buscadores</li>
-              <li>Hosting y dominio incluidos</li>
-              <li>Mantenimiento y soporte</li>
-            </ul>
-            <a href="#contacto" class="service-card__link">Cotizar este servicio &rarr;</a>
-          </article>
-
-          <article class="service-card">
-            <div class="service-card__head">
-              <p class="service-card__num">02</p>
-              <span class="service-card__dot" aria-hidden="true"></span>
+            <div class="orbit__item" style="--angle:45deg" aria-label="Instagram">
+              <i class="fa-brands fa-instagram" style="color:#E1306C;font-size:30px" aria-hidden="true"></i>
             </div>
-            <h3 class="service-card__title">Aplicaci&oacute;n Web</h3>
-            <ul class="service-card__list">
-              <li>Tienda en l&iacute;nea con carrito de compras</li>
-              <li>Cat&aacute;logo de productos y gesti&oacute;n de pedidos</li>
-              <li>Pagos en l&iacute;nea integrados</li>
-              <li>Panel de administraci&oacute;n de clientes</li>
-              <li>Mantenimiento y soporte</li>
-            </ul>
-            <a href="#contacto" class="service-card__link">Cotizar este servicio &rarr;</a>
-          </article>
-
-          <article class="service-card">
-            <div class="service-card__head">
-              <p class="service-card__num">03</p>
-              <span class="service-card__dot" aria-hidden="true"></span>
+            <div class="orbit__item" style="--angle:90deg" aria-label="X">
+              <i class="fa-brands fa-x-twitter" style="color:#000002;font-size:28px" aria-hidden="true"></i>
             </div>
-            <h3 class="service-card__title">Plataforma Web</h3>
-            <ul class="service-card__list">
-              <li>Gesti&oacute;n de inventarios, proveedores y ventas</li>
-              <li>M&oacute;dulos con roles y permisos de usuario</li>
-              <li>Reportes y paneles de control</li>
-              <li>Acceso multiusuario desde cualquier dispositivo</li>
-              <li>Mantenimiento y soporte</li>
-            </ul>
-            <a href="#contacto" class="service-card__link">Cotizar este servicio &rarr;</a>
-          </article>
-        </div>
-
-        <!-- Cita editorial -->
-        <blockquote class="quote">
-          <p>
-            &ldquo;Un sitio web profesional puede ser tu mejor vendedor. 24/7.&rdquo;
-          </p>
-          <footer>&mdash; Ing. Juan Pablo Aranda Hernandez, CEO de Arhez Tech</footer>
-        </blockquote>
-      </div>
-    </section>
-
-    <!-- ============================================================
-         FILOSOFÍA — Misión, Visión y Valores
-    ============================================================ -->
-    <section class="section" id="filosofia">
-      <div class="section__inner">
-        <div class="section__heading">
-          <h2>Nuestra filosof&iacute;a</h2>
-        </div>
-
-        <div class="philosophy__grid">
-          <article class="idea-card">
-            <p class="idea-card__tag">Qu&eacute; hacemos</p>
-            <h3>Misi&oacute;n</h3>
-            <p>
-              Impulsar la transformaci&oacute;n digital de nuestros clientes con soluciones tecnol&oacute;gicas
-              integrales, dise&ntilde;adas para escalar negocios, optimizar procesos y eliminar barreras
-              t&eacute;cnicas con calidad garantizada.
-            </p>
-          </article>
-
-          <article class="idea-card">
-            <p class="idea-card__tag">A d&oacute;nde vamos</p>
-            <h3>Visi&oacute;n</h3>
-            <p>
-              En 2030, liderar el ecosistema de desarrollo tecnol&oacute;gico en M&eacute;xico, transformando la
-              econom&iacute;a local al democratizar la innovaci&oacute;n y asegurar el &eacute;xito de m&aacute;s
-              negocios en el pa&iacute;s.
-            </p>
-          </article>
-        </div>
-
-        <div class="values">
-          <p class="values__label">C&oacute;mo nos conducimos</p>
-          <div class="values__grid">
-            <div class="value-item">
-              <span class="value-item__num">01</span>
-              <span class="value-item__name">Innovaci&oacute;n</span>
+            <div class="orbit__item" style="--angle:135deg" aria-label="Threads">
+              <i class="fa-brands fa-threads" style="color:#000002;font-size:30px" aria-hidden="true"></i>
             </div>
-            <div class="value-item">
-              <span class="value-item__num">02</span>
-              <span class="value-item__name">Compromiso</span>
+            <div class="orbit__item" style="--angle:180deg" aria-label="Slack">
+              <i class="fa-brands fa-slack" style="color:#E01E5A;font-size:28px" aria-hidden="true"></i>
             </div>
-            <div class="value-item">
-              <span class="value-item__num">03</span>
-              <span class="value-item__name">Adaptabilidad</span>
+            <div class="orbit__item" style="--angle:225deg" aria-label="Gmail">
+              <i class="fa-solid fa-envelope" style="color:#EA4335;font-size:28px" aria-hidden="true"></i>
             </div>
-            <div class="value-item">
-              <span class="value-item__num">04</span>
-              <span class="value-item__name">Disciplina</span>
+            <div class="orbit__item" style="--angle:270deg" aria-label="Google Drive">
+              <i class="fa-brands fa-google-drive" style="color:#1A73E8;font-size:30px" aria-hidden="true"></i>
+            </div>
+            <div class="orbit__item" style="--angle:315deg" aria-label="AWS">
+              <i class="fa-brands fa-aws" style="color:#FF9900;font-size:32px" aria-hidden="true"></i>
             </div>
           </div>
         </div>
       </div>
     </section>
+  </main>
 
-    <!-- ============================================================
-         CONTACTO — CTA / Cotizador
-    ============================================================ -->
-    <section class="section" id="contacto">
-      <div class="section__inner">
-        <div class="cta">
-          <div class="cta__glow" aria-hidden="true"></div>
-
-          <div class="cta__head">
-            <span class="cta__tag">Incluido</span>
-            <h3 class="cta__title">Solicita tu cotizaci&oacute;n</h3>
-          </div>
-
-          <form id="ctaForm" class="cta__grid">
-            <div class="cta__full">
-              <label for="ctaName">Nombre completo</label>
-              <input type="text" id="ctaName" name="name" required placeholder="Ej. Carlos Mart&iacute;nez">
-            </div>
-            <div>
-              <label for="ctaEmail">Correo electr&oacute;nico</label>
-              <input type="email" id="ctaEmail" name="email" required placeholder="correo@empresa.com">
-            </div>
-            <div>
-              <label for="ctaService">Tipo de proyecto</label>
-              <select id="ctaService" name="service" required>
-                <option value="" disabled selected>Selecciona tu proyecto</option>
-                <option value="Sitio Web">Sitio Web</option>
-                <option value="Aplicación Web">Aplicaci&oacute;n Web</option>
-                <option value="Plataforma Web">Plataforma Web</option>
-                <option value="No sé / Quiero asesoría">No s&eacute; / Quiero asesor&iacute;a</option>
-              </select>
-            </div>
-            <div class="cta__full">
-              <label for="ctaMsg">Cu&eacute;ntanos sobre tu proyecto</label>
-              <textarea id="ctaMsg" name="message" required rows="4" placeholder="Describe tu negocio y qu&eacute; necesitas lograr con tu sitio web..."></textarea>
-            </div>
-            <button type="submit" class="cta__btn" id="submitBtn">Quiero mi cotizaci&oacute;n &rarr;</button>
-            <p class="form__success" id="formSuccess" aria-live="polite">
-              Redirigiendo a WhatsApp... &iexcl;Gracias por contactarnos!
-            </p>
-            <p class="cta__note">Cupos limitados por mes. Sin compromiso.</p>
-          </form>
-
-          <div class="cta__methods">
-            <p class="cta-method">
-              WhatsApp Directo:
-              <a href="https://wa.me/524272777153" target="_blank" rel="noopener">+52 427 277 7153</a>
-            </p>
-            <p class="cta-method">
-              Correo Corporativo:
-              <a href="mailto:arhez.tech@gmail.com">arhez.tech@gmail.com</a>
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================================================
-         FOOTER
-    ============================================================ -->
-    <footer class="footer">
-      <div class="footer__inner">
-        <p class="footer__copy">&copy; 2026 Arhez Tech. Todos los derechos reservados.</p>
-        <nav class="footer__links" aria-label="Redes sociales y contacto">
-          <a href="https://wa.me/524272777153" target="_blank" rel="noopener">WhatsApp</a>
-          <a href="https://www.facebook.com/arhez.tech" target="_blank" rel="noopener">Facebook</a>
-          <a href="https://www.instagram.com/arhez.tech/" target="_blank" rel="noopener">Instagram</a>
-        </nav>
-        <a class="footer__brandlink" href="https://pabloaranda.com.mx/" target="_blank" rel="noopener">pabloaranda.com.mx</a>
-      </div>
-    </footer>
-
-  </div>
-
-  <!-- Scripts -->
   <script src="js/main.js"></script>
 </body>
-
 </html>
