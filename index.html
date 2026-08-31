@@ -247,6 +247,60 @@
         </div>
       </div>
     </section>
+
+    <section class="contact" id="contacto" aria-labelledby="contact-title">
+      <div class="container">
+        <div class="contact__header">
+          <span class="contact__eyebrow">Cotiza tu proyecto</span>
+          <h2 id="contact-title" class="contact__title">Hablemos de tu próximo proyecto</h2>
+          <p class="contact__desc">Selecciona el servicio que necesitas y te enviamos una propuesta en 24h.</p>
+        </div>
+
+        <form class="contact__form" id="contactForm" novalidate>
+          <div class="form__row">
+            <div class="form-group">
+              <label for="name">Nombre completo</label>
+              <input type="text" id="name" name="name" required placeholder="Ej. Juan Pérez">
+            </div>
+            <div class="form-group">
+              <label for="company">Empresa</label>
+              <input type="text" id="company" name="company" placeholder="Ej. Mi Empresa S.A.">
+            </div>
+          </div>
+
+          <div class="form__row">
+            <div class="form-group">
+              <label for="email">Correo</label>
+              <input type="email" id="email" name="email" required placeholder="tu@empresa.com">
+            </div>
+            <div class="form-group">
+              <label for="phone">WhatsApp / Teléfono</label>
+              <input type="tel" id="phone" name="phone" placeholder="+52 1 55 1234 5678">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="service">Servicio a cotizar</label>
+            <select id="service" name="service" required>
+              <option value="" disabled selected>Selecciona un servicio</option>
+              <option value="Desarrollo web comercial">Desarrollo web comercial</option>
+              <option value="Desarrollo de plataformas empresariales">Desarrollo de plataformas empresariales</option>
+              <option value="Ciberseguridad">Ciberseguridad</option>
+              <option value="Infraestructura y videoseguridad">Infraestructura y videoseguridad</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Cuéntanos tu necesidad</label>
+            <textarea id="message" name="message" rows="4" placeholder="Describe brevemente qué necesitas, alcance y tiempos..."></textarea>
+          </div>
+
+          <button type="submit" class="btn btn--primary btn--lg btn--full">Enviar cotización por WhatsApp</button>
+          <p class="form__note">Al enviar serás redirigido a WhatsApp con tu cotización pre-llenada. Respuesta en 24h.</p>
+          <p class="form__success" id="formSuccess" role="status" aria-live="polite" hidden>¡Gracias! Te redirigimos a WhatsApp...</p>
+        </form>
+      </div>
+    </section>
   </main>
 
   <script src="js/main.js"></script>
