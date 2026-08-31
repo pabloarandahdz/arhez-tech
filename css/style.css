@@ -125,6 +125,18 @@ a{color:inherit;text-decoration:none}
 }
 .strip__inner span[aria-hidden="true"]{opacity:.4;font-weight:400}
 
+/* Growth - fondo gris como hero */
+.growth{background:var(--bg);padding:56px 0}
+.growth__grid{display:grid;grid-template-columns:1.1fr 1.4fr 0.85fr;gap:32px;align-items:center}
+.growth__title{font-size:clamp(2rem,3.8vw,2.8rem);font-weight:800;line-height:.95;letter-spacing:-.04em;margin-bottom:20px}
+.growth__center{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:18px;box-shadow:var(--shadow)}
+.chart{height:160px}
+.chart svg{width:100%;height:100%;display:block}
+.growth__desc{color:var(--muted);font-size:.95rem;line-height:1.6;margin-bottom:16px;max-width:280px}
+.avatars{display:flex;align-items:center}
+.avatars img{width:40px;height:40px;border-radius:50%;border:2.5px solid var(--card);object-fit:cover;margin-left:-10px;box-shadow:0 2px 8px rgba(0,0,2,.08)}
+.avatars img:first-child{margin-left:0}
+
 /* Responsive */
 @media (max-width: 960px){
   .hero__grid{grid-template-columns:1fr;gap:24px;min-height:auto}
@@ -135,6 +147,11 @@ a{color:inherit;text-decoration:none}
   .orbit{width:340px;height:340px}
   .orbit__item{--r:125px;width:52px;height:52px;margin:-26px 0 0 -26px}
   .orbit__center{width:112px;height:112px;font-size:1.15rem}
+  .growth__grid{grid-template-columns:1fr;gap:24px}
+  .growth__left,.growth__right{text-align:center}
+  .growth__desc{margin-left:auto;margin-right:auto}
+  .avatars{justify-content:center}
+  .chart{height:180px}
 }
 @media (max-width: 480px){
   .container{padding:0 18px}
