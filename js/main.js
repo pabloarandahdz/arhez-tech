@@ -6,9 +6,7 @@ if (form) {
   form.addEventListener('submit', (e) => {
     e.preventDefault();
     const name = document.getElementById('name').value.trim();
-    const company = document.getElementById('company').value.trim();
     const email = document.getElementById('email').value.trim();
-    const phone = document.getElementById('phone').value.trim();
     const service = document.getElementById('service').value;
     const message = document.getElementById('message').value.trim();
 
@@ -18,13 +16,15 @@ if (form) {
       return;
     }
 
+    // honeypot
+    const hp = document.getElementById('website');
+    if (hp && hp.value) return;
+
     const lines = [
       `Hola Arhez Tech, quiero cotizar: *${service}*`,
       ``,
       `*Nombre:* ${name}`,
-      company ? `*Empresa:* ${company}` : null,
       `*Email:* ${email}`,
-      phone ? `*Tel:* ${phone}` : null,
       message ? `*Detalle:* ${message}` : null
     ].filter(Boolean).join('\n');
 
