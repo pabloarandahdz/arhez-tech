@@ -21,10 +21,11 @@
       </a>
       <nav class="header__nav" aria-label="Navegación principal">
         <div class="header__links">
-          <a href="#servicios">Servicios</a>
-          <a href="#nosotros">Nosotros</a>
           <a href="#resultados">Resultados</a>
+          <a href="#proceso">Proceso</a>
+          <a href="#nosotros">Nosotros</a>
           <a href="#contacto">Contacto</a>
+          <a href="#servicios">Servicios</a>
         </div>
         <a href="#contacto" class="btn btn--primary">Cotizar</a>
       </nav>
@@ -111,6 +112,53 @@
       </div>
     </section>
 
+    <section class="contact" id="contacto" aria-labelledby="contact-title">
+      <div class="container">
+        <div class="contact__header">
+          <span class="contact__eyebrow">Cotiza tu proyecto</span>
+          <h2 id="contact-title" class="contact__title">Hablemos de tu próximo proyecto</h2>
+          <p class="contact__desc">Completa el formulario y te contactamos en menos de 24 horas.</p>
+        </div>
+
+        <form class="contact__form" id="contactForm" novalidate>
+          <div class="form__row">
+            <div class="form-group">
+              <label for="name">Nombre completo <span aria-hidden="true">*</span></label>
+              <input type="text" id="name" name="name" required autocomplete="name" placeholder="Ej. Juan Pérez" aria-required="true">
+            </div>
+            <div class="form-group">
+              <label for="email">Correo <span aria-hidden="true">*</span></label>
+              <input type="email" id="email" name="email" required autocomplete="email" inputmode="email" placeholder="tu@empresa.com" aria-required="true">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="service">Servicio a cotizar <span aria-hidden="true">*</span></label>
+            <select id="service" name="service" required aria-required="true">
+              <option value="" disabled selected>Selecciona un servicio</option>
+              <option value="Desarrollo web comercial">Desarrollo web comercial</option>
+              <option value="Desarrollo de plataformas empresariales">Desarrollo de plataformas empresariales</option>
+              <option value="Ciberseguridad">Ciberseguridad</option>
+              <option value="Infraestructura">Infraestructura</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Cuéntanos qué vendes, a quién y cuál es tu objetivo</label>
+            <textarea id="message" name="message" rows="4" placeholder="Ej. Vendo ropa deportiva a jóvenes de 18 a 30 años y quiero vender en línea..."></textarea>
+          </div>
+
+          <div class="hp" aria-hidden="true">
+            <label for="website">No llenar</label>
+            <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+          </div>
+
+          <button type="submit" class="btn btn--primary btn--lg btn--full">Enviar cotización por WhatsApp</button>
+          <p class="form__note">Campos con * son obligatorios. Al enviar serás redirigido a WhatsApp. Respuesta en 24h.</p>
+          <p class="form__success" id="formSuccess" role="status" aria-live="polite" hidden>¡Gracias! Te redirigimos a WhatsApp...</p>
+        </form>
+      </div>
+    </section>
 
     <section class="mv" id="nosotros" aria-labelledby="mv-title">
       <div class="container">
@@ -161,53 +209,6 @@
       </div>
     </section>
 
-    <section class="contact" id="contacto" aria-labelledby="contact-title">
-      <div class="container">
-        <div class="contact__header">
-          <span class="contact__eyebrow">Cotiza tu proyecto</span>
-          <h2 id="contact-title" class="contact__title">Hablemos de tu próximo proyecto</h2>
-          <p class="contact__desc">Completa el formulario y te contactamos en menos de 24 horas.</p>
-        </div>
-
-        <form class="contact__form" id="contactForm" novalidate>
-          <div class="form__row">
-            <div class="form-group">
-              <label for="name">Nombre completo <span aria-hidden="true">*</span></label>
-              <input type="text" id="name" name="name" required autocomplete="name" placeholder="Ej. Juan Pérez" aria-required="true">
-            </div>
-            <div class="form-group">
-              <label for="email">Correo <span aria-hidden="true">*</span></label>
-              <input type="email" id="email" name="email" required autocomplete="email" inputmode="email" placeholder="tu@empresa.com" aria-required="true">
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label for="service">Servicio a cotizar <span aria-hidden="true">*</span></label>
-            <select id="service" name="service" required aria-required="true">
-              <option value="" disabled selected>Selecciona un servicio</option>
-              <option value="Desarrollo web comercial">Desarrollo web comercial</option>
-              <option value="Desarrollo de plataformas empresariales">Desarrollo de plataformas empresariales</option>
-              <option value="Ciberseguridad">Ciberseguridad</option>
-              <option value="Infraestructura">Infraestructura</option>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label for="message">Cuéntanos qué vendes, a quién y cuál es tu objetivo</label>
-            <textarea id="message" name="message" rows="4" placeholder="Ej. Vendo ropa deportiva a jóvenes de 18 a 30 años y quiero vender en línea..."></textarea>
-          </div>
-
-          <div class="hp" aria-hidden="true">
-            <label for="website">No llenar</label>
-            <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
-          </div>
-
-          <button type="submit" class="btn btn--primary btn--lg btn--full">Enviar cotización por WhatsApp</button>
-          <p class="form__note">Campos con * son obligatorios. Al enviar serás redirigido a WhatsApp. Respuesta en 24h.</p>
-          <p class="form__success" id="formSuccess" role="status" aria-live="polite" hidden>¡Gracias! Te redirigimos a WhatsApp...</p>
-        </form>
-      </div>
-    </section>
     <section class="services" id="servicios" aria-labelledby="services-title">
       <div class="container">
         <div class="services__header">
@@ -268,9 +269,11 @@
       <nav class="footer__col" aria-label="Navegación">
         <h4>Navegación</h4>
         <a href="#inicio">Inicio</a>
-        <a href="#servicios">Servicios</a>
-        <a href="#nosotros">Nosotros</a>
         <a href="#resultados">Resultados</a>
+        <a href="#proceso">Proceso</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#contacto">Contacto</a>
+        <a href="#servicios">Servicios</a>
       </nav>
 
       <nav class="footer__col" aria-label="Servicios">
