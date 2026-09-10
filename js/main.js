@@ -1,106 +1,191 @@
 /* ============================================================
-   Arhez Tech — interacciones
-   Menú móvil · Navbar · FAQ · Reveal · WhatsApp flotante · Form
-   Respeta prefers-reduced-motion. Sin dependencias.
+   Arhez Tech — interacción y conversión
+   Menú · FAQ · reveal · CTA · formulario WhatsApp · analytics
    ============================================================ */
-(function() {
+(function () {
   'use strict';
 
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  /* ---------- 1. Menú móvil accesible ---------- */
-  var toggle = document.getElementById('nav-toggle');
+  var header = document.getElementById('site-header');
+  var navToggle = document.getElementById('nav-toggle');
   var nav = document.getElementById('nav-menu');
-  if (toggle && nav) {
-    var closeMenu = function() {
-      toggle.setAttribute('aria-expanded', 'false');
-      toggle.setAttribute('aria-label', 'Abrir menú');
-      nav.classList.remove('open');
-    };
-    toggle.addEventListener('click', function() {
-      var open = nav.classList.toggle('open');
-      toggle.setAttribute('aria-expanded', String(open));
-      toggle.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
+  var waFloat = document.getElementById('wa-float');
+  var mobileCta = document.getElementById('mobile-cta');
+  var contact = document.getElementById('contacto');
+  var form = document.getElementById('contactForm');
+
+  function track(eventName, params) {
+    if (typeof window.gtag === 'function') {
+      window.gtag('event', eventName, params || {});
+    }
+  }
+
+  /* ---------- Navegación móvil ---------- */
+  function closeMenu() {
+    if (!nav || !navToggle) return;
+    nav.classList.remove('open');
+    navToggle.setAttribute('aria-expanded', 'false');
+    navToggle.setAttribute('aria-label', 'Abrir menú');
+  }
+
+  if (navToggle && nav) {
+    navToggle.addEventListener('click', function () {
+      var isOpen = nav.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', String(isOpen));
+      navToggle.setAttribute('aria-label', isOpen ? 'Cerrar menú' : 'Abrir menú');
     });
-    document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape' && nav.classList.contains('open')) {
+
+    nav.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', closeMenu);
+    });
+
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape' && nav.classList.contains('open')) {
         closeMenu();
-        toggle.focus();
+        navToggle.focus();
       }
     });
-    nav.querySelectorAll('a').forEach(function(link) {
-      link.addEventListener('click', closeMenu);
+
+    window.addEventListener('resize', function () {
+      if (window.innerWidth > 800) closeMenu();
     });
   }
 
-  /* ---------- 2. Navbar sólida al hacer scroll + WA flotante ---------- */
-  var header = document.getElementById('site-header');
-  var waFloat = document.getElementById('wa-float');
-  var onScroll = function() {
-    var y = window.pageYOffset || document.documentElement.scrollTop;
-    if (header) header.classList.toggle('header--solid', y > 24);
-    if (waFloat) {
-      var show = y > window.innerHeight * 0.9;
-      waFloat.hidden = false;
-      waFloat.classList.toggle('visible', show);
-    }
-  };
-  window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
+  /* ---------- Header y CTAs flotantes ---------- */
+  function updateScrollUi() {
+    var y = window.scrollY || document.documentElement.scrollTop;
+    if (header) header.classList.toggle('scrolled', y > 16);
 
-  /* ---------- 3. FAQ accordion accesible ---------- */
-  document.querySelectorAll('.faq-item').forEach(function(item) {
-    var btn = item.querySelector('.faq-q');
-    var panel = item.querySelector('.faq-a');
-    if (!btn || !panel) return;
-    btn.addEventListener('click', function() {
-      var expanded = btn.getAttribute('aria-expanded') === 'true';
-      btn.setAttribute('aria-expanded', String(!expanded));
-      if (expanded) {
-        panel.style.maxHeight = '0px';
-        panel.setAttribute('hidden', '');
-      } else {
-        panel.removeAttribute('hidden');
-        panel.style.maxHeight = panel.scrollHeight + 'px';
-      }
+    var showFloating = y > window.innerHeight * 0.72;
+    var contactVisible = false;
+
+    if (contact) {
+      var rect = contact.getBoundingClientRect();
+      contactVisible = rect.top < window.innerHeight * 0.85 && rect.bottom > 0;
+    }
+
+    if (waFloat) {
+      waFloat.hidden = false;
+      waFloat.classList.toggle('visible', showFloating && !contactVisible);
+    }
+
+    if (mobileCta) {
+      mobileCta.hidden = false;
+      mobileCta.classList.toggle('visible', window.innerWidth <= 800 && showFloating && !contactVisible);
+    }
+  }
+
+  window.addEventListener('scroll', updateScrollUi, { passive: true });
+  window.addEventListener('resize', updateScrollUi);
+  updateScrollUi();
+
+  /* ---------- Reveal ---------- */
+  var revealElements = document.querySelectorAll('.reveal');
+  if (reduceMotion || !('IntersectionObserver' in window)) {
+    revealElements.forEach(function (element) { element.classList.add('visible'); });
+  } else {
+    var revealObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -36px 0px' });
+
+    revealElements.forEach(function (element) { revealObserver.observe(element); });
+  }
+
+  /* ---------- FAQ ---------- */
+  document.querySelectorAll('.faq-item').forEach(function (item) {
+    var button = item.querySelector('.faq-question');
+    var answer = item.querySelector('.faq-answer');
+    if (!button || !answer) return;
+
+    button.addEventListener('click', function () {
+      var willOpen = button.getAttribute('aria-expanded') !== 'true';
+
+      document.querySelectorAll('.faq-question[aria-expanded="true"]').forEach(function (openButton) {
+        if (openButton === button) return;
+        openButton.setAttribute('aria-expanded', 'false');
+        var openAnswer = document.getElementById(openButton.getAttribute('aria-controls'));
+        if (openAnswer) openAnswer.hidden = true;
+      });
+
+      button.setAttribute('aria-expanded', String(willOpen));
+      answer.hidden = !willOpen;
+      if (willOpen) track('faq_open', { question: button.textContent.replace('+', '').trim() });
     });
   });
 
-  /* ---------- 4. Reveal on scroll ---------- */
-  var revealEls = document.querySelectorAll('.reveal');
-  if (reduceMotion || !('IntersectionObserver' in window)) {
-    revealEls.forEach(function(el) { el.classList.add('visible'); });
-  } else if (revealEls.length) {
-    var io = new IntersectionObserver(function(entries) {
-      entries.forEach(function(entry) {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          io.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-    revealEls.forEach(function(el) { io.observe(el); });
-  }
+  /* ---------- Preselección del servicio desde CTA ---------- */
+  document.querySelectorAll('[data-service]').forEach(function (link) {
+    link.addEventListener('click', function () {
+      var select = document.getElementById('service');
+      var value = link.getAttribute('data-service');
+      if (!select || !value) return;
 
-  /* ---------- 5. Formulario → WhatsApp ---------- */
-  var form = document.getElementById('contactForm');
+      var optionExists = Array.prototype.some.call(select.options, function (option) {
+        return option.value === value;
+      });
+      if (optionExists) select.value = value;
+    });
+  });
+
+  /* ---------- Tracking de CTA ---------- */
+  document.querySelectorAll('[data-track]').forEach(function (element) {
+    element.addEventListener('click', function () {
+      if (element.type === 'submit') return;
+      track('cta_click', {
+        cta: element.getAttribute('data-track'),
+        text: element.textContent.trim()
+      });
+    });
+  });
+
+  /* ---------- Formulario -> WhatsApp ---------- */
   if (form) {
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
+    var status = document.getElementById('formStatus');
+    var submitButton = form.querySelector('button[type="submit"]');
+    var fields = form.querySelectorAll('input:not(#website), select, textarea');
+
+    fields.forEach(function (field) {
+      field.addEventListener('input', function () { field.classList.remove('field-invalid'); });
+      field.addEventListener('change', function () { field.classList.remove('field-invalid'); });
+    });
+
+    form.addEventListener('focusin', function () {
+      if (!form.dataset.started) {
+        form.dataset.started = 'true';
+        track('form_start');
+      }
+    });
+
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+
+      var honeypot = document.getElementById('website');
+      if (honeypot && honeypot.value.trim()) return;
+
+      if (!form.checkValidity()) {
+        var invalidFields = form.querySelectorAll(':invalid');
+        invalidFields.forEach(function (field) { field.classList.add('field-invalid'); });
+        if (invalidFields[0]) invalidFields[0].focus();
+        form.reportValidity();
+        if (status) {
+          status.hidden = false;
+          status.className = 'form-status is-error';
+          status.textContent = 'Revisa los campos obligatorios antes de continuar.';
+        }
+        track('form_error', { reason: 'validation' });
+        return;
+      }
+
       var name = document.getElementById('name').value.trim();
       var email = document.getElementById('email').value.trim();
       var service = document.getElementById('service').value;
       var budget = document.getElementById('budget').value.trim();
       var message = document.getElementById('message').value.trim();
-
-      if (!name || !email || !message) {
-        var firstInvalid = form.querySelector(':invalid');
-        if (firstInvalid) firstInvalid.focus();
-        return;
-      }
-      // Honeypot anti-spam
-      var hp = document.getElementById('website');
-      if (hp && hp.value) return;
 
       var lines = [
         'Hola, Arhez Tech.',
@@ -109,25 +194,45 @@
         '*Nombre:* ' + name,
         '*Correo:* ' + email,
         '*Tipo de proyecto:* ' + service,
-        budget ? '*Presupuesto:* ' + budget : null,
+        budget ? '*Presupuesto aproximado:* ' + budget : null,
         '',
-        '*Proyecto:* ' + message
+        '*Objetivo / necesidad:*',
+        message
       ].filter(Boolean).join('\n');
 
-      var url = 'https://wa.me/524272777153?text=' + encodeURIComponent(lines);
-      var success = document.getElementById('formSuccess');
-      var submitBtn = form.querySelector('button[type="submit"]');
-      if (submitBtn) submitBtn.disabled = true;
-      if (success) {
-        success.hidden = false;
-        success.textContent = '¡Gracias! Te redirigimos a WhatsApp...';
+      var whatsappUrl = 'https://wa.me/524272777153?text=' + encodeURIComponent(lines);
+
+      if (submitButton) {
+        submitButton.disabled = true;
+        submitButton.setAttribute('aria-disabled', 'true');
       }
-      window.open(url, '_blank', 'noopener');
-      setTimeout(function() {
-        form.reset();
-        if (submitBtn) submitBtn.disabled = false;
-        if (success) success.hidden = true;
-      }, 5000);
+
+      if (status) {
+        status.hidden = false;
+        status.className = 'form-status is-success';
+        status.textContent = 'Listo. Abriremos WhatsApp con tu información preparada.';
+      }
+
+      track('generate_lead', {
+        method: 'whatsapp',
+        service: service,
+        has_budget: Boolean(budget)
+      });
+
+      var popup = window.open('', '_blank');
+      if (popup) {
+        popup.opener = null;
+        popup.location.href = whatsappUrl;
+      } else {
+        window.location.href = whatsappUrl;
+      }
+
+      window.setTimeout(function () {
+        if (submitButton) {
+          submitButton.disabled = false;
+          submitButton.removeAttribute('aria-disabled');
+        }
+      }, 1200);
     });
   }
 })();

@@ -1,47 +1,48 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-MX">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Desarrollo Web Comercial y Empresarial en México | Arhez Tech</title>
-  <meta name="description" content="Arhez Tech diseña y desarrolla soluciones web para negocios y empresas: landing pages que generan clientes, sitios empresariales y plataformas a medida. Cotiza tu proyecto por WhatsApp.">
-  <meta name="theme-color" content="#000002">
+  <title>Desarrollo Web para Empresas en México | Arhez Tech</title>
+  <meta name="description" content="Arhez Tech desarrolla landing pages, sitios web empresariales y plataformas web a medida para negocios y empresas en México. Cotiza tu proyecto por WhatsApp.">
+  <meta name="theme-color" content="#070a0f">
   <link rel="canonical" href="https://arhez-tech.com/">
+
   <meta property="og:type" content="website">
   <meta property="og:locale" content="es_MX">
   <meta property="og:site_name" content="Arhez Tech">
   <meta property="og:title" content="Arhez Tech — Desarrollo Web Comercial y Empresarial">
-  <meta property="og:description" content="De una landing page a una plataforma empresarial. Diseñamos y desarrollamos la solución web que tu empresa necesita.">
+  <meta property="og:description" content="Desarrollo web enfocado en negocio: desde una landing page hasta una plataforma empresarial a medida.">
   <meta property="og:url" content="https://arhez-tech.com/">
   <meta property="og:image" content="https://arhez-tech.com/assets/img/project-shop.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Arhez Tech — Desarrollo Web Comercial y Empresarial">
-  <meta name="twitter:description" content="De una landing page a una plataforma empresarial. Cotiza tu proyecto.">
+  <meta name="twitter:description" content="Desde una landing page hasta una plataforma empresarial a medida.">
   <meta name="twitter:image" content="https://arhez-tech.com/assets/img/project-shop.png">
+
   <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
   <link rel="stylesheet" href="css/style.css">
+
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-CR57KMZY6H"></script>
   <script src="js/gtag.js"></script>
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Organization",
+    "@type": "ProfessionalService",
     "name": "Arhez Tech",
     "url": "https://arhez-tech.com/",
     "logo": "https://arhez-tech.com/assets/img/logotipo.png",
-    "description": "Empresa mexicana especializada en desarrollo web comercial y empresarial: landing pages, sitios empresariales y plataformas a medida.",
+    "description": "Empresa mexicana especializada en desarrollo web comercial y empresarial.",
     "email": "arhez.tech@gmail.com",
     "telephone": "+52 427 277 7153",
-    "address": { "@type": "PostalAddress", "addressCountry": "MX" },
+    "areaServed": "MX",
     "sameAs": [
       "https://www.facebook.com/arhez.tech",
-      "https://www.instagram.com/arhez.tech",
-      "https://x.com/pabloarandahdz",
-      "https://www.threads.net/@pabloarandahdz"
+      "https://www.instagram.com/arhez.tech"
     ]
   }
   </script>
@@ -49,531 +50,331 @@
 <body>
   <a class="skip-link" href="#contenido-principal">Saltar al contenido principal</a>
 
-  <!-- ============ 01 · NAVBAR ============ -->
-  <header class="header" role="banner" id="site-header">
-    <div class="container header__inner">
-      <a href="#inicio" class="header__logo" aria-label="Arhez Tech - Inicio">
+  <header class="site-header" id="site-header">
+    <div class="container nav-wrap">
+      <a href="#inicio" class="brand" aria-label="Arhez Tech — Inicio">
         <img src="assets/img/logotipo.png" alt="Arhez Tech" width="140" height="36" decoding="async" fetchpriority="high">
       </a>
-      <button class="header__toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Abrir menú">
+
+      <button class="nav-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu" aria-label="Abrir menú">
         <span></span><span></span><span></span>
       </button>
-      <nav class="header__nav" id="nav-menu" aria-label="Navegación principal">
-        <div class="header__links">
-          <a href="#servicios">Servicios</a>
-          <a href="#plataformas">Soluciones</a>
-          <a href="#proyectos">Proyectos</a>
-          <a href="#demos">Demos</a>
-          <a href="#caso">Resultados</a>
+
+      <nav class="nav" id="nav-menu" aria-label="Navegación principal">
+        <div class="nav-links">
+          <a href="#soluciones">Soluciones</a>
+          <a href="#resultado">Resultado</a>
           <a href="#proceso">Proceso</a>
-          <a href="#nosotros">Nosotros</a>
+          <a href="#faq">Preguntas</a>
         </div>
-        <a href="#contacto" class="btn btn--primary btn--sm">Cotizar proyecto</a>
+        <a href="#contacto" class="btn btn-primary btn-small" data-track="nav_quote">Cotizar proyecto</a>
       </nav>
     </div>
   </header>
 
   <main id="contenido-principal">
-
-    <!-- ============ 02 · HERO ============ -->
     <section class="hero" id="inicio" aria-labelledby="hero-title">
-      <div class="container hero__grid">
-        <div class="hero__content">
-          <p class="eyebrow">Desarrollo web comercial y empresarial</p>
-          <h1 id="hero-title" class="hero__title">De una landing page a una <span>plataforma empresarial.</span></h1>
-          <p class="hero__desc">Diseñamos y desarrollamos experiencias web para vender, comunicar, capacitar y resolver necesidades específicas de tu empresa.</p>
-          <div class="hero__actions">
-            <a href="#contacto" class="btn btn--primary btn--lg">Cotizar proyecto</a>
-            <a href="#proyectos" class="btn btn--outline btn--lg">Conocer soluciones</a>
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="kicker">Desarrollo web comercial y empresarial</p>
+          <h1 id="hero-title">Tu sitio web debe <span>generar negocio</span>, no solo verse bien.</h1>
+          <p class="hero-lead">Diseñamos y desarrollamos landing pages, sitios empresariales y plataformas web a medida para ayudarte a vender, comunicar y operar mejor.</p>
+
+          <div class="hero-actions">
+            <a href="#contacto" class="btn btn-primary btn-large" data-track="hero_quote">Cotizar mi proyecto</a>
+            <a href="#soluciones" class="btn btn-secondary btn-large" data-track="hero_solutions">Ver soluciones</a>
           </div>
-          <p class="hero__note">Respuesta en menos de 24 h · Sin compromiso</p>
+
+          <div class="hero-assurance" aria-label="Condiciones de contacto">
+            <span>Respuesta en menos de 24 h</span>
+            <span>Sin compromiso</span>
+            <span>Atención directa</span>
+          </div>
         </div>
 
-        <div class="hero__visual" aria-label="Representación del rango de desarrollo: landing, sitio y plataforma">
-          <figure class="mock mock--a" aria-hidden="true">
-            <div class="mock__bar"><span></span><span></span><span></span></div>
-            <div class="wire">
-              <span class="sk sk--title"></span>
-              <span class="sk sk--sub"></span>
-              <span class="sk sk--cta"></span>
-              <span class="sk sk--line"></span>
+        <div class="hero-product" aria-label="Ejemplo visual de soluciones web de Arhez Tech">
+          <div class="browser browser-main" aria-hidden="true">
+            <div class="browser-bar"><i></i><i></i><i></i><b>arhez / proyecto</b></div>
+            <div class="browser-content">
+              <div class="ui-nav"><strong></strong><span></span><span></span><span></span></div>
+              <div class="ui-hero">
+                <div>
+                  <em></em>
+                  <h3></h3>
+                  <p></p>
+                  <button></button>
+                </div>
+                <aside></aside>
+              </div>
+              <div class="ui-cards"><span></span><span></span><span></span></div>
             </div>
-            <figcaption class="mock__tag">Landing</figcaption>
-          </figure>
-          <figure class="mock mock--b" aria-hidden="true">
-            <div class="mock__bar"><span></span><span></span><span></span></div>
-            <div class="wire">
-              <div class="wire__nav"><span></span><span></span><span></span><span></span></div>
-              <span class="sk sk--hero"></span>
-              <div class="wire__cols"><span></span><span></span><span></span></div>
-            </div>
-            <figcaption class="mock__tag">Sitio empresarial</figcaption>
-          </figure>
-          <figure class="mock mock--c" aria-hidden="true">
-            <div class="mock__bar"><span></span><span></span><span></span></div>
-            <div class="wire wire--dash">
-              <div class="wire__side"><span></span><span></span><span></span><span></span></div>
-              <div class="wire__main">
-                <div class="wire__stats"><span></span><span></span><span></span></div>
-                <div class="wire__bars"><span style="height:38%"></span><span style="height:62%"></span><span style="height:45%"></span><span style="height:80%"></span><span style="height:56%"></span></div>
+          </div>
+
+          <div class="browser browser-panel" aria-hidden="true">
+            <div class="browser-bar"><i></i><i></i><i></i><b>panel</b></div>
+            <div class="panel-content">
+              <div class="panel-side"><span></span><span></span><span></span><span></span></div>
+              <div class="panel-main">
+                <div class="panel-stats"><span></span><span></span><span></span></div>
+                <div class="panel-chart"><i></i><i></i><i></i><i></i><i></i><i></i></div>
               </div>
             </div>
-            <figcaption class="mock__tag">Plataforma</figcaption>
-          </figure>
+          </div>
+
+          <div class="range-labels" aria-hidden="true">
+            <span>Landing</span><b>→</b><span>Sitio empresarial</span><b>→</b><span>Plataforma</span>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- ============ 03 · CONFIANZA ============ -->
-    <section class="trust" aria-label="Por qué confiar en Arhez Tech">
-      <div class="container">
-        <ul class="trust__list reveal">
-          <li><i class="fa-solid fa-pen-ruler" aria-hidden="true"></i><span>Diseño y desarrollo a medida</span></li>
-          <li><i class="fa-solid fa-ban" aria-hidden="true"></i><span>Sin plantillas genéricas</span></li>
-          <li><i class="fa-solid fa-bolt" aria-hidden="true"></i><span>Propuesta inicial en 24 h</span></li>
-          <li><i class="fa-brands fa-whatsapp" aria-hidden="true"></i><span>Trato directo, sin intermediarios</span></li>
-        </ul>
+    <section class="proof-strip" aria-label="Ventajas de trabajar con Arhez Tech">
+      <div class="container proof-grid">
+        <div><strong>01</strong><span>Diseño y desarrollo a medida</span></div>
+        <div><strong>02</strong><span>Propuesta inicial en 24 h</span></div>
+        <div><strong>03</strong><span>Enfoque comercial y empresarial</span></div>
+        <div><strong>04</strong><span>Contacto directo durante el proyecto</span></div>
       </div>
     </section>
 
-    <!-- ============ 04 · PROPUESTA DE VALOR / ESCALA ============ -->
-    <section class="scale" aria-labelledby="scale-title">
-      <div class="container scale__inner">
-        <p class="eyebrow">Tu necesidad define la solución</p>
-        <h2 id="scale-title" class="scale__title">No hacemos únicamente páginas web.</h2>
-        <p class="scale__desc">Una landing para captar prospectos. Un sitio empresarial para fortalecer tu presencia. Una plataforma para resolver una necesidad interna. Diseñamos y desarrollamos alrededor de tu objetivo.</p>
-        <ol class="scale__steps reveal">
-          <li><strong>Landing</strong><span>Sitio empresarial</span></li>
-          <li><strong>Sitio empresarial</strong><span>Presencia y credibilidad</span></li>
-          <li><strong>Plataforma</strong><span>Procesos y colaboración</span></li>
-          <li><strong>A medida</strong><span>Necesidades específicas</span></li>
-        </ol>
+    <section class="problem section-dark" aria-labelledby="problem-title">
+      <div class="container problem-grid">
+        <div>
+          <p class="kicker kicker-light">Tu web como herramienta de negocio</p>
+          <h2 id="problem-title">Una página bonita no es suficiente.</h2>
+        </div>
+        <div class="problem-copy">
+          <p>Una web efectiva debe explicar con claridad lo que vendes, generar confianza y llevar al visitante a dar el siguiente paso.</p>
+          <p>En Arhez Tech desarrollamos alrededor de un objetivo concreto: <strong>captar clientes, presentar tu empresa o resolver una necesidad interna.</strong></p>
+        </div>
       </div>
     </section>
 
-    <!-- ============ 05 · SERVICIOS ============ -->
-    <section class="services" id="servicios" aria-labelledby="services-title">
+    <section class="solutions" id="soluciones" aria-labelledby="solutions-title">
       <div class="container">
-        <div class="section-head">
-          <p class="eyebrow">01 — Servicios</p>
-          <h2 id="services-title" class="section-title">Soluciones web para cada necesidad.</h2>
-          <p class="section-desc">Cuéntanos qué necesitas lograr. Nosotros te ayudamos a definir cómo construirlo.</p>
+        <div class="section-heading">
+          <p class="kicker">Soluciones</p>
+          <h2 id="solutions-title">Desde captar clientes hasta construir una plataforma para tu empresa.</h2>
+          <p>No necesitas saber qué tecnología usar. Cuéntanos qué quieres lograr y definimos contigo la solución adecuada.</p>
         </div>
 
-        <div class="services__grid">
-          <article class="service-card reveal">
-            <div class="service-card__icon" aria-hidden="true"><i class="fa-solid fa-bullseye"></i></div>
-            <span class="service-card__num">01</span>
-            <h3 class="service-card__title">Landing Pages</h3>
-            <p class="service-card__text">Páginas enfocadas en una sola acción comercial: convertir visitas en oportunidades reales para tu negocio.</p>
-            <ul class="service-card__features">
-              <li>Comunicación enfocada</li>
-              <li>Llamado a la acción estratégico</li>
-              <li>Integración con WhatsApp</li>
-              <li>Optimización para buscadores</li>
-              <li>Carga rápida</li>
+        <div class="solution-list">
+          <article class="solution-row reveal">
+            <div class="solution-number">01</div>
+            <div class="solution-main">
+              <p class="solution-tag">Conversión</p>
+              <h3>Landing Pages</h3>
+              <p>Para campañas, servicios o negocios que necesitan convertir tráfico en prospectos mediante una propuesta clara y un llamado a la acción directo.</p>
+            </div>
+            <ul>
+              <li>Mensaje orientado a conversión</li>
+              <li>WhatsApp y formularios</li>
+              <li>Responsive y rendimiento</li>
+              <li>SEO técnico base</li>
             </ul>
-            <a href="#contacto" class="service-card__link">Cuéntanos qué necesitas <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+            <a href="#contacto" class="text-link" data-service="Landing Page" data-track="service_landing">Cotizar landing <span>→</span></a>
           </article>
 
-          <article class="service-card reveal">
-            <div class="service-card__icon" aria-hidden="true"><i class="fa-solid fa-store"></i></div>
-            <span class="service-card__num">02</span>
-            <h3 class="service-card__title">Sitios Web Empresariales</h3>
-            <p class="service-card__text">Tu empresa presentada como un activo comercial: información clara, imagen profesional y estructura pensada para captar clientes.</p>
-            <ul class="service-card__features">
-              <li>Presentación de servicios</li>
-              <li>Muestra de proyectos</li>
-              <li>Solicitudes de cotización</li>
-              <li>Catálogos</li>
-              <li>Contenido corporativo</li>
+          <article class="solution-row reveal">
+            <div class="solution-number">02</div>
+            <div class="solution-main">
+              <p class="solution-tag">Presencia empresarial</p>
+              <h3>Sitios Web Empresariales</h3>
+              <p>Para empresas que necesitan presentar servicios, proyectos y capacidades con una presencia profesional que genere confianza y oportunidades.</p>
+            </div>
+            <ul>
+              <li>Arquitectura clara de servicios</li>
+              <li>Casos, proyectos y catálogos</li>
+              <li>Captación de prospectos</li>
+              <li>Diseño alineado a tu marca</li>
             </ul>
-            <a href="#contacto" class="service-card__link">Cuéntanos qué necesitas <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+            <a href="#contacto" class="text-link" data-service="Sitio Web Empresarial" data-track="service_business">Cotizar sitio empresarial <span>→</span></a>
           </article>
 
-          <article class="service-card reveal">
-            <div class="service-card__icon" aria-hidden="true"><i class="fa-solid fa-layer-group"></i></div>
-            <span class="service-card__num">03</span>
-            <h3 class="service-card__title">Plataformas Empresariales</h3>
-            <p class="service-card__text">Soluciones web para necesidades más avanzadas: espacios privados y herramientas diseñadas alrededor de tus procesos.</p>
-            <ul class="service-card__features">
-              <li>Portales internos</li>
-              <li>Portales para clientes</li>
-              <li>Paneles de información</li>
-              <li>Gestión de información</li>
-              <li>Herramientas empresariales</li>
-            </ul>
-            <a href="#contacto" class="service-card__link">Cuéntanos qué necesitas <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
-          </article>
-
-          <article class="service-card reveal">
-            <div class="service-card__icon" aria-hidden="true"><i class="fa-solid fa-puzzle-piece"></i></div>
-            <span class="service-card__num">04</span>
-            <h3 class="service-card__title">Desarrollo Web a Medida</h3>
-            <p class="service-card__text">Si tu empresa necesita una solución web específica, podemos diseñarla alrededor de tu operación.</p>
-            <ul class="service-card__features">
+          <article class="solution-row reveal">
+            <div class="solution-number">03</div>
+            <div class="solution-main">
+              <p class="solution-tag">Operación y experiencia</p>
+              <h3>Plataformas Web Empresariales</h3>
+              <p>Para necesidades que van más allá de un sitio público: portales internos, plataformas de capacitación, paneles y herramientas web específicas.</p>
+            </div>
+            <ul>
+              <li>Portales internos o de clientes</li>
               <li>Plataformas de capacitación</li>
-              <li>Plataformas internas de cursos</li>
-              <li>Portales especializados</li>
-              <li>Aplicaciones web empresariales</li>
-              <li>Herramientas operativas</li>
+              <li>Paneles e interfaces de gestión</li>
+              <li>Flujos definidos a tu operación</li>
             </ul>
-            <a href="#contacto" class="service-card__link">Cuéntanos qué necesitas <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+            <a href="#contacto" class="text-link" data-service="Plataforma Empresarial" data-track="service_platform">Cotizar plataforma <span>→</span></a>
           </article>
+        </div>
+
+        <div class="custom-callout reveal">
+          <div>
+            <p class="kicker">Desarrollo web a medida</p>
+            <h3>¿Tu proyecto no encaja en una categoría?</h3>
+            <p>Explícanos la necesidad. Podemos diseñar la experiencia y el alcance alrededor de tu operación.</p>
+          </div>
+          <a href="#contacto" class="btn btn-primary" data-service="Desarrollo Web a Medida" data-track="custom_quote">Cuéntanos tu proyecto</a>
         </div>
       </div>
     </section>
 
-    <!-- ============ 06 · PLATAFORMAS / CAPACITACIÓN ============ -->
-    <section class="platforms" id="plataformas" aria-labelledby="platforms-title">
-      <div class="container">
-        <div class="section-head">
-          <p class="eyebrow">02 — Soluciones empresariales</p>
-          <h2 id="platforms-title" class="section-title">Cuando una página web no es suficiente.</h2>
-          <p class="section-desc">Diseñamos plataformas web adaptadas a las necesidades internas de tu empresa.</p>
+    <section class="capability section-soft" aria-labelledby="capability-title">
+      <div class="container capability-grid">
+        <div class="capability-copy">
+          <p class="kicker">Ejemplo de capacidad</p>
+          <h2 id="capability-title">Una plataforma web también puede vivir dentro de tu empresa.</h2>
+          <p>Por ejemplo, una plataforma interna de capacitación puede organizar cursos, materiales y evaluaciones para colaboradores en una sola experiencia.</p>
+          <p class="microcopy">Ejemplo conceptual. La funcionalidad final se define de acuerdo con cada proyecto.</p>
+          <a href="#contacto" class="text-link" data-service="Plataforma de Capacitación" data-track="training_quote">Cotizar una plataforma similar <span>→</span></a>
         </div>
 
-        <div class="platforms__grid">
-          <article class="platform-card reveal">
-            <div class="platform-card__icon" aria-hidden="true"><i class="fa-solid fa-graduation-cap"></i></div>
-            <h3>Capacitación</h3>
-            <p>Plataformas internas de cursos, materiales y evaluaciones para tus colaboradores.</p>
-          </article>
-          <article class="platform-card reveal">
-            <div class="platform-card__icon" aria-hidden="true"><i class="fa-solid fa-building"></i></div>
-            <h3>Portales internos</h3>
-            <p>Espacios digitales para centralizar recursos e información de tu empresa.</p>
-          </article>
-          <article class="platform-card reveal">
-            <div class="platform-card__icon" aria-hidden="true"><i class="fa-solid fa-gears"></i></div>
-            <h3>Plataformas empresariales</h3>
-            <p>Herramientas web diseñadas alrededor de tus procesos y necesidades específicas.</p>
-          </article>
-          <article class="platform-card reveal">
-            <div class="platform-card__icon" aria-hidden="true"><i class="fa-solid fa-user-lock"></i></div>
-            <h3>Portales para clientes</h3>
-            <p>Experiencias privadas para compartir información y servicios con tus clientes.</p>
-          </article>
-        </div>
-
-      </div>
-    </section>
-
-    <section class="projects" id="proyectos" aria-labelledby="projects-title">
-      <div class="container">
-        <div class="section-head">
-          <p class="eyebrow">Proyectos</p>
-          <h2 id="projects-title" class="section-title">Del catálogo al panel de control.</h2>
-          <p class="section-desc">El mismo equipo, el mismo rigor: explora el rango de soluciones que desarrollamos.</p>
-        </div>
-        <div class="projects__grid">
-          <article class="project-card reveal">
-            <div class="project-card__media project-card__media--icon">
-              <i class="fa-solid fa-cart-shopping" aria-hidden="true"></i>
-              <span class="project-card__tag">Comercial</span>
-            </div>
-            <h3 class="project-card__title">Sitio web comercial</h3>
-            <p class="project-card__text">Catálogo, ficha de producto y flujo de compra pensado para convertir.</p>
-            <a href="#contacto" class="project-card__link">Cotizar un proyecto similar <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
-          </article>
-          <article class="project-card reveal">
-            <div class="project-card__media project-card__media--icon">
-              <i class="fa-solid fa-building" aria-hidden="true"></i>
-              <span class="project-card__tag">Empresarial</span>
-            </div>
-            <h3 class="project-card__title">Sitio web empresarial</h3>
-            <p class="project-card__text">Servicios, proyectos y contacto estructurados para generar confianza.</p>
-            <a href="#contacto" class="project-card__link">Cotizar un proyecto similar <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
-          </article>
-          <article class="project-card reveal">
-            <div class="project-card__media project-card__media--icon">
-              <i class="fa-solid fa-chart-line" aria-hidden="true"></i>
-              <span class="project-card__tag">Plataforma</span>
-            </div>
-            <h3 class="project-card__title">Plataforma con panel</h3>
-            <p class="project-card__text">Información centralizada y visualizada para operar mejor.</p>
-            <a href="#contacto" class="project-card__link">Cotizar un proyecto similar <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="demos" id="demos" aria-labelledby="demos-title">
-      <div class="container">
-        <div class="section-head">
-          <p class="eyebrow">Demos</p>
-          <h2 id="demos-title" class="section-title">Imagina tu plataforma funcionando.</h2>
-          <p class="section-desc">Ejemplo conceptual de plataforma de capacitación empresarial.</p>
-        </div>
-
-                <div class="demo reveal" aria-label="Ejemplo conceptual de plataforma de capacitación">
-                  <div class="demo__head">
-                    <div>
-                      <p class="demo__eyebrow">Ejemplo conceptual</p>
-                      <h3 class="demo__title">Plataforma de capacitación empresarial</h3>
-                      <p class="demo__desc">Una experiencia web interna donde tu empresa organiza contenidos y formación para sus colaboradores.</p>
-                    </div>
-                    <a href="#contacto" class="btn btn--primary">Cotizar proyecto</a>
-                  </div>
-                  <div class="demo__body">
-                    <div class="demo__courses">
-                      <article class="course">
-                        <div class="course__cover course__cover--a" aria-hidden="true"><i class="fa-solid fa-helmet-safety"></i></div>
-                        <div class="course__info">
-                          <h4>Inducción y seguridad</h4>
-                          <p>8 módulos · 120 colaboradores</p>
-                          <div class="progress" role="img" aria-label="Avance promedio 72 por ciento"><span style="width:72%"></span></div>
-                        </div>
-                      </article>
-                      <article class="course">
-                        <div class="course__cover course__cover--b" aria-hidden="true"><i class="fa-solid fa-handshake"></i></div>
-                        <div class="course__info">
-                          <h4>Atención al cliente</h4>
-                          <p>6 módulos · 85 colaboradores</p>
-                          <div class="progress" role="img" aria-label="Avance promedio 45 por ciento"><span style="width:45%"></span></div>
-                        </div>
-                      </article>
-                      <article class="course">
-                        <div class="course__cover course__cover--c" aria-hidden="true"><i class="fa-solid fa-boxes-stacked"></i></div>
-                        <div class="course__info">
-                          <h4>Procesos y operación</h4>
-                          <p>10 módulos · 64 colaboradores</p>
-                          <div class="progress" role="img" aria-label="Avance promedio 58 por ciento"><span style="width:58%"></span></div>
-                        </div>
-                      </article>
-                    </div>
-                    <aside class="demo__side" aria-label="Panel de ejemplo">
-                      <h4>Módulos recientes</h4>
-                      <ul>
-                        <li><i class="fa-solid fa-circle-play" aria-hidden="true"></i>Introducción a la operación<span>12 min</span></li>
-                        <li><i class="fa-solid fa-circle-play" aria-hidden="true"></i>Protocolos de atención<span>18 min</span></li>
-                        <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i>Evaluación del módulo 3<span>Listo</span></li>
-                      </ul>
-                      <h4>Equipo activo</h4>
-                      <div class="demo__users" aria-hidden="true"><span>MG</span><span>JR</span><span>AL</span><span>+</span></div>
-                    </aside>
-                  </div>
-                </div>
-      </div>
-    </section>
-
-    <!-- ============ 07 · CASO OMCARTRACK ============ -->
-    <section class="case" id="caso" aria-labelledby="case-title">
-      <div class="container">
-        <div class="section-head">
-          <p class="eyebrow">03 — Resultados</p>
-          <h2 id="case-title" class="section-title">Tecnología que resuelve necesidades reales.</h2>
-        </div>
-        <div class="case__card reveal">
-          <p class="case__stars" aria-label="Calificación: 5 de 5">★★★★★</p>
-          <blockquote class="case__quote">“Antes todo era por teléfono y WhatsApp. Hoy gestionamos mejor con nuestra web: los clientes consultan y dan seguimiento en línea. Si aún operas por teléfono, una web te ordena todo.”</blockquote>
-          <div class="case__author">
-            <div class="case__initials" aria-hidden="true">CT</div>
-            <div>
-              <p class="case__name">Lic. Carlos Trejo</p>
-              <p class="case__role">Director, OMCARTRACK · 2026</p>
+        <div class="dashboard reveal" aria-label="Ejemplo conceptual de plataforma empresarial">
+          <div class="dash-top">
+            <div><strong>Capacitación interna</strong><span>Panel de ejemplo</span></div>
+            <span class="status">Activo</span>
+          </div>
+          <div class="dash-body">
+            <aside class="dash-menu" aria-hidden="true"><b></b><span></span><span></span><span></span><span></span></aside>
+            <div class="dash-content">
+              <div class="dash-stats">
+                <article><span>Cursos</span><strong>12</strong></article>
+                <article><span>En progreso</span><strong>08</strong></article>
+                <article><span>Completados</span><strong>04</strong></article>
+              </div>
+              <div class="course-list">
+                <article><div class="course-icon">01</div><div><strong>Inducción y seguridad</strong><span>Contenido de ejemplo</span></div><i style="--p:72%"></i></article>
+                <article><div class="course-icon">02</div><div><strong>Atención al cliente</strong><span>Contenido de ejemplo</span></div><i style="--p:45%"></i></article>
+                <article><div class="course-icon">03</div><div><strong>Procesos y operación</strong><span>Contenido de ejemplo</span></div><i style="--p:58%"></i></article>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ============ 08 · PROCESO ============ -->
-    <section class="process" id="proceso" aria-labelledby="process-title">
-      <div class="container">
-        <div class="section-head">
-          <p class="eyebrow">04 — Proceso</p>
-          <h2 id="process-title" class="section-title">De tu idea al lanzamiento.</h2>
-          <p class="section-desc">Un proceso claro que funciona tanto para una landing como para una plataforma empresarial.</p>
+    <section class="result" id="resultado" aria-labelledby="result-title">
+      <div class="container result-grid">
+        <div class="result-label">
+          <p class="kicker">Resultado real</p>
+          <h2 id="result-title">La mejor prueba es resolver una necesidad real.</h2>
         </div>
-        <ol class="process__grid">
-          <li class="process-card reveal">
-            <div class="process-card__icon" aria-hidden="true"><i class="fa-solid fa-comments"></i></div>
-            <span class="process-card__num">01</span>
-            <h3>Entendemos</h3>
-            <p>Nos cuentas qué necesitas, para quién y cuál es el objetivo.</p>
-          </li>
-          <li class="process-card reveal">
-            <div class="process-card__icon" aria-hidden="true"><i class="fa-solid fa-pen-ruler"></i></div>
-            <span class="process-card__num">02</span>
-            <h3>Definimos</h3>
-            <p>Analizamos el proyecto y definimos alcance, experiencia y solución.</p>
-          </li>
-          <li class="process-card reveal">
-            <div class="process-card__icon" aria-hidden="true"><i class="fa-solid fa-code"></i></div>
-            <span class="process-card__num">03</span>
-            <h3>Diseñamos y desarrollamos</h3>
-            <p>Construimos la experiencia web alrededor de tus necesidades.</p>
-          </li>
-          <li class="process-card reveal">
-            <div class="process-card__icon" aria-hidden="true"><i class="fa-solid fa-rocket"></i></div>
-            <span class="process-card__num">04</span>
-            <h3>Lanzamos</h3>
-            <p>Probamos, optimizamos y preparamos la solución para su implementación.</p>
-          </li>
+        <figure class="testimonial reveal">
+          <div class="rating" aria-label="Calificación de 5 de 5">★★★★★</div>
+          <blockquote>“Antes todo era por teléfono y WhatsApp. Hoy gestionamos mejor con nuestra web: los clientes consultan y dan seguimiento en línea. Si aún operas por teléfono, una web te ordena todo.”</blockquote>
+          <figcaption>
+            <span class="avatar" aria-hidden="true">CT</span>
+            <span><strong>Lic. Carlos Trejo</strong><small>Director, OMCARTRACK · 2026</small></span>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="process section-dark" id="proceso" aria-labelledby="process-title">
+      <div class="container">
+        <div class="section-heading section-heading-dark">
+          <p class="kicker kicker-light">Proceso</p>
+          <h2 id="process-title">Claridad desde la primera conversación hasta el lanzamiento.</h2>
+          <p>El alcance cambia según el proyecto; el proceso no tiene por qué ser confuso.</p>
+        </div>
+
+        <ol class="process-grid">
+          <li class="reveal"><span>01</span><h3>Entendemos</h3><p>Nos cuentas qué vendes, a quién y qué necesitas lograr.</p></li>
+          <li class="reveal"><span>02</span><h3>Definimos</h3><p>Aterrizamos alcance, estructura, prioridades y propuesta.</p></li>
+          <li class="reveal"><span>03</span><h3>Diseñamos y desarrollamos</h3><p>Construimos la experiencia y sus funcionalidades con foco en tu objetivo.</p></li>
+          <li class="reveal"><span>04</span><h3>Probamos y lanzamos</h3><p>Revisamos experiencia, responsive y funcionamiento antes de publicar.</p></li>
         </ol>
-        <p class="process__note reveal">Recibe una propuesta inicial en menos de 24 horas. <a href="#contacto">Cotizar proyecto →</a></p>
+
+        <div class="process-note reveal">
+          <strong>Propuesta inicial en menos de 24 horas.</strong>
+          <span>Las landing pages de alcance definido pueden desarrollarse desde 7 días, sujeto a contenidos y alcance.</span>
+        </div>
       </div>
     </section>
 
-    <!-- ============ 09 · POR QUÉ ARHEZ ============ -->
     <section class="why" aria-labelledby="why-title">
-      <div class="container">
-        <div class="section-head">
-          <p class="eyebrow">05 — Por qué Arhez Tech</p>
-          <h2 id="why-title" class="section-title">Un aliado, no un proveedor más.</h2>
+      <div class="container why-grid">
+        <div class="section-heading section-heading-left">
+          <p class="kicker">Por qué Arhez Tech</p>
+          <h2 id="why-title">Menos ruido. Más claridad sobre lo que tu proyecto necesita.</h2>
         </div>
-        <div class="why__grid">
-          <article class="why-card reveal">
-            <div class="why-card__icon" aria-hidden="true"><i class="fa-solid fa-puzzle-piece"></i></div>
-            <h3>Desarrollo a medida</h3>
-            <p>Cada proyecto parte de tu objetivo. Nada de plantillas: diseñamos alrededor de lo que tu empresa necesita lograr.</p>
-          </article>
-          <article class="why-card reveal">
-            <div class="why-card__icon" aria-hidden="true"><i class="fa-solid fa-phone"></i></div>
-            <h3>Comunicación directa</h3>
-            <p>Hablas con quien desarrolla tu proyecto. Contacto claro durante cada etapa, sin intermediarios.</p>
-          </article>
-          <article class="why-card reveal">
-            <div class="why-card__icon" aria-hidden="true"><i class="fa-solid fa-briefcase"></i></div>
-            <h3>Enfoque empresarial</h3>
-            <p>Diseñamos pensando en la necesidad del negocio: vender, comunicar, capacitar u operar mejor.</p>
-          </article>
-          <article class="why-card reveal">
-            <div class="why-card__icon" aria-hidden="true"><i class="fa-solid fa-bolt"></i></div>
-            <h3>Respuesta rápida</h3>
-            <p>Propuesta inicial en menos de 24 horas para que avances sin esperar semanas.</p>
-          </article>
+        <div class="why-points">
+          <article class="reveal"><span>01</span><div><h3>Desarrollo a medida</h3><p>El proyecto parte de tu objetivo, no de una plantilla que haya que adaptar a la fuerza.</p></div></article>
+          <article class="reveal"><span>02</span><div><h3>Enfoque empresarial</h3><p>Priorizamos lo que necesita el negocio: vender, comunicar, capacitar u operar mejor.</p></div></article>
+          <article class="reveal"><span>03</span><div><h3>Comunicación directa</h3><p>Contacto claro durante el proyecto para evitar vueltas innecesarias y decisiones ambiguas.</p></div></article>
+          <article class="reveal"><span>04</span><div><h3>Rendimiento y responsive</h3><p>La experiencia se diseña para funcionar correctamente en celular, tableta y computadora.</p></div></article>
         </div>
       </div>
     </section>
 
-    <!-- ============ NOSOTROS ============ -->
-    <section class="about" id="nosotros" aria-labelledby="about-title">
-      <div class="container">
-        <div class="section-head">
-          <p class="eyebrow">06 — Nosotros</p>
-          <h2 id="about-title" class="section-title">Una empresa enfocada en desarrollo web.</h2>
+    <section class="faq section-soft" id="faq" aria-labelledby="faq-title">
+      <div class="container faq-grid">
+        <div class="section-heading section-heading-left faq-heading">
+          <p class="kicker">Preguntas frecuentes</p>
+          <h2 id="faq-title">Lo que necesitas saber antes de cotizar.</h2>
+          <p>Si todavía no sabes exactamente qué necesitas, también podemos ayudarte a definirlo.</p>
+          <a href="#contacto" class="text-link" data-track="faq_quote">Cuéntanos tu idea <span>→</span></a>
         </div>
-        <div class="about__grid">
-          <article class="about-card reveal">
-            <div class="about-card__icon" aria-hidden="true"><i class="fa-solid fa-bullseye"></i></div>
-            <h3>Misión</h3>
-            <p>Impulsar la transformación digital de nuestros clientes con soluciones tecnológicas integrales, diseñadas para escalar negocios, optimizar procesos y eliminar barreras técnicas con calidad garantizada.</p>
-          </article>
-          <article class="about-card reveal">
-            <div class="about-card__icon" aria-hidden="true"><i class="fa-solid fa-eye"></i></div>
-            <h3>Visión</h3>
-            <p>En 2030, liderar el desarrollo tecnológico en México como el principal aliado de las empresas, impulsando la democratización de la innovación como pilar central de los negocios.</p>
-          </article>
-        </div>
-        <div class="values__grid">
-          <article class="value-card reveal">
-            <div class="value-card__icon" aria-hidden="true"><i class="fa-solid fa-lightbulb"></i></div>
-            <span class="value-card__num">01</span>
-            <h4>Innovación</h4>
-            <p>Buscamos mejores formas de resolver cada necesidad.</p>
-          </article>
-          <article class="value-card reveal">
-            <div class="value-card__icon" aria-hidden="true"><i class="fa-solid fa-handshake"></i></div>
-            <span class="value-card__num">02</span>
-            <h4>Corresponsabilidad</h4>
-            <p>Trabajamos contigo, no únicamente para ti.</p>
-          </article>
-          <article class="value-card reveal">
-            <div class="value-card__icon" aria-hidden="true"><i class="fa-solid fa-arrows-rotate"></i></div>
-            <span class="value-card__num">03</span>
-            <h4>Estandarización</h4>
-            <p>Construimos con procesos y criterios consistentes.</p>
-          </article>
-          <article class="value-card reveal">
-            <div class="value-card__icon" aria-hidden="true"><i class="fa-solid fa-list-check"></i></div>
-            <span class="value-card__num">04</span>
-            <h4>Disciplina</h4>
-            <p>Cumplimos cada etapa con orden y atención al detalle.</p>
-          </article>
-        </div>
-      </div>
-    </section>
 
-    <!-- ============ 10 · FAQ ============ -->
-    <section class="faq" id="faq" aria-labelledby="faq-title">
-      <div class="container faq__inner">
-        <div class="section-head">
-          <p class="eyebrow">07 — Preguntas frecuentes</p>
-          <h2 id="faq-title" class="section-title">Resolvemos tus dudas.</h2>
-        </div>
-        <div class="faq__list">
+        <div class="faq-list">
           <div class="faq-item reveal">
-            <button class="faq-q" aria-expanded="false" aria-controls="faq-a1" id="faq-q1">¿Cuánto cuesta desarrollar un sitio web?<i class="fa-solid fa-plus" aria-hidden="true"></i></button>
-            <div class="faq-a" id="faq-a1" role="region" aria-labelledby="faq-q1" hidden><p>Depende del alcance: una landing page es el punto de partida más accesible y una plataforma a medida requiere un análisis previo. Cuéntanos tu proyecto y te enviamos una cotización clara sin compromiso.</p></div>
+            <button class="faq-question" id="faq-q1" aria-expanded="false" aria-controls="faq-a1">¿Cuánto cuesta desarrollar un sitio web?<span aria-hidden="true">+</span></button>
+            <div class="faq-answer" id="faq-a1" role="region" aria-labelledby="faq-q1" hidden><p>Depende del alcance, cantidad de contenido y funcionalidades. Cuéntanos tu objetivo y te enviamos una propuesta clara sin compromiso.</p></div>
           </div>
           <div class="faq-item reveal">
-            <button class="faq-q" aria-expanded="false" aria-controls="faq-a2" id="faq-q2">¿Cuánto tarda un proyecto?<i class="fa-solid fa-plus" aria-hidden="true"></i></button>
-            <div class="faq-a" id="faq-a2" role="region" aria-labelledby="faq-q2" hidden><p>Depende del alcance y de la disponibilidad de tus contenidos. Las landing pages parten desde 7 días; los sitios y plataformas se calendarizan por etapas que acordamos contigo.</p></div>
+            <button class="faq-question" id="faq-q2" aria-expanded="false" aria-controls="faq-a2">¿Cuánto tarda un proyecto?<span aria-hidden="true">+</span></button>
+            <div class="faq-answer" id="faq-a2" role="region" aria-labelledby="faq-q2" hidden><p>Depende del alcance y de la disponibilidad de contenidos. Una landing de alcance definido puede partir desde 7 días; los sitios y plataformas se calendarizan de acuerdo con el proyecto.</p></div>
           </div>
           <div class="faq-item reveal">
-            <button class="faq-q" aria-expanded="false" aria-controls="faq-a3" id="faq-q3">¿Una landing realmente puede estar lista en 7 días?<i class="fa-solid fa-plus" aria-hidden="true"></i></button>
-            <div class="faq-a" id="faq-a3" role="region" aria-labelledby="faq-q3" hidden><p>Sí, en proyectos de alcance definido y con tus contenidos listos (textos, logo e imágenes). Si falta material, te ayudamos a prepararlo y ajustamos el calendario contigo.</p></div>
+            <button class="faq-question" id="faq-q3" aria-expanded="false" aria-controls="faq-a3">¿También desarrollan plataformas empresariales?<span aria-hidden="true">+</span></button>
+            <div class="faq-answer" id="faq-a3" role="region" aria-labelledby="faq-q3" hidden><p>Sí. Podemos desarrollar portales internos, plataformas de capacitación, portales para clientes y otras soluciones web definidas alrededor de una necesidad concreta.</p></div>
           </div>
           <div class="faq-item reveal">
-            <button class="faq-q" aria-expanded="false" aria-controls="faq-a4" id="faq-q4">¿También desarrollan plataformas empresariales?<i class="fa-solid fa-plus" aria-hidden="true"></i></button>
-            <div class="faq-a" id="faq-a4" role="region" aria-labelledby="faq-q4" hidden><p>Sí. Además de sitios comerciales, desarrollamos portales internos, plataformas para clientes y herramientas web alrededor de tus procesos.</p></div>
+            <button class="faq-question" id="faq-q4" aria-expanded="false" aria-controls="faq-a4">¿Necesito saber exactamente qué tipo de solución necesito?<span aria-hidden="true">+</span></button>
+            <div class="faq-answer" id="faq-a4" role="region" aria-labelledby="faq-q4" hidden><p>No. Cuéntanos qué quieres lograr y te ayudamos a definir si conviene una landing, un sitio empresarial o una plataforma.</p></div>
           </div>
           <div class="faq-item reveal">
-            <button class="faq-q" aria-expanded="false" aria-controls="faq-a5" id="faq-q5">¿Pueden crear una plataforma interna de capacitación?<i class="fa-solid fa-plus" aria-hidden="true"></i></button>
-            <div class="faq-a" id="faq-a5" role="region" aria-labelledby="faq-q5" hidden><p>Sí. Podemos desarrollar una plataforma donde organices cursos, materiales y evaluaciones para tus colaboradores. Mira el ejemplo conceptual en la sección de soluciones.</p></div>
+            <button class="faq-question" id="faq-q5" aria-expanded="false" aria-controls="faq-a5">¿Mi sitio funcionará correctamente en celular?<span aria-hidden="true">+</span></button>
+            <div class="faq-answer" id="faq-a5" role="region" aria-labelledby="faq-q5" hidden><p>Sí. Diseñamos y probamos la experiencia para adaptarse a celular, tableta y computadora.</p></div>
           </div>
           <div class="faq-item reveal">
-            <button class="faq-q" aria-expanded="false" aria-controls="faq-a6" id="faq-q6">¿Mi página funcionará correctamente en celulares?<i class="fa-solid fa-plus" aria-hidden="true"></i></button>
-            <div class="faq-a" id="faq-a6" role="region" aria-labelledby="faq-q6" hidden><p>Sí. Todo lo que desarrollamos se adapta a celular, tableta y computadora, y lo probamos en cada etapa antes de entregar.</p></div>
-          </div>
-          <div class="faq-item reveal">
-            <button class="faq-q" aria-expanded="false" aria-controls="faq-a7" id="faq-q7">¿Puedo solicitar funcionalidades específicas?<i class="fa-solid fa-plus" aria-hidden="true"></i></button>
-            <div class="faq-a" id="faq-a7" role="region" aria-labelledby="faq-q7" hidden><p>Por supuesto. Si tu operación necesita algo específico —un cotizador, un registro, un panel—, lo analizamos y lo integramos a tu solución.</p></div>
-          </div>
-          <div class="faq-item reveal">
-            <button class="faq-q" aria-expanded="false" aria-controls="faq-a8" id="faq-q8">¿Necesito saber exactamente qué tipo de página necesito?<i class="fa-solid fa-plus" aria-hidden="true"></i></button>
-            <div class="faq-a" id="faq-a8" role="region" aria-labelledby="faq-q8" hidden><p>No. Cuéntanos qué necesitas lograr y nosotros te ayudamos a definir si conviene una landing, un sitio o una plataforma.</p></div>
-          </div>
-          <div class="faq-item reveal">
-            <button class="faq-q" aria-expanded="false" aria-controls="faq-a9" id="faq-q9">¿Pueden ayudarme a definir mi proyecto?<i class="fa-solid fa-plus" aria-hidden="true"></i></button>
-            <div class="faq-a" id="faq-a9" role="region" aria-labelledby="faq-q9" hidden><p>Sí, es parte de nuestro proceso: entendemos tu objetivo, definimos el alcance contigo y te proponemos la solución adecuada antes de desarrollar.</p></div>
-          </div>
-          <div class="faq-item reveal">
-            <button class="faq-q" aria-expanded="false" aria-controls="faq-a10" id="faq-q10">¿Trabajan con empresas de cualquier sector?<i class="fa-solid fa-plus" aria-hidden="true"></i></button>
-            <div class="faq-a" id="faq-a10" role="region" aria-labelledby="faq-q10" hidden><p>Sí. Trabajamos con negocios, PyMEs y empresas de distintos sectores, así como con departamentos internos que necesitan una solución web profesional.</p></div>
+            <button class="faq-question" id="faq-q6" aria-expanded="false" aria-controls="faq-a6">¿Puedo solicitar funcionalidades específicas?<span aria-hidden="true">+</span></button>
+            <div class="faq-answer" id="faq-a6" role="region" aria-labelledby="faq-q6" hidden><p>Sí. Primero analizamos la necesidad y el alcance; después definimos cómo integrarla de forma coherente dentro de la solución.</p></div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ============ 11 · CONTACTO ============ -->
     <section class="contact" id="contacto" aria-labelledby="contact-title">
-      <div class="container">
-        <div class="contact__header">
-          <p class="eyebrow">08 — Contacto</p>
-          <h2 id="contact-title" class="contact__title">Hablemos de tu próximo proyecto.</h2>
-          <p class="contact__desc">Cuéntanos qué necesitas. Analizamos tu proyecto y te contactamos en menos de 24 horas.</p>
+      <div class="container contact-grid">
+        <div class="contact-copy">
+          <p class="kicker kicker-light">Cotiza tu proyecto</p>
+          <h2 id="contact-title">Cuéntanos qué quieres lograr.</h2>
+          <p>No necesitas llegar con un documento técnico. Explícanos tu idea, necesidad u objetivo y comenzamos desde ahí.</p>
+          <div class="contact-promises">
+            <span><strong>&lt; 24 h</strong> respuesta inicial</span>
+            <span><strong>Sin compromiso</strong> para cotizar</span>
+            <span><strong>WhatsApp</strong> como contacto directo</span>
+          </div>
         </div>
 
-        <form class="contact__form" id="contactForm" novalidate>
-          <div class="form__row">
+        <form class="contact-form" id="contactForm" novalidate>
+          <div class="form-row">
             <div class="form-group">
-              <label for="name">Nombre completo <span aria-hidden="true">*</span></label>
-              <input type="text" id="name" name="name" required autocomplete="name" placeholder="Ej. Juan Pérez" aria-required="true">
+              <label for="name">Nombre completo <span>*</span></label>
+              <input type="text" id="name" name="name" required autocomplete="name" placeholder="Tu nombre">
             </div>
             <div class="form-group">
-              <label for="email">Correo <span aria-hidden="true">*</span></label>
-              <input type="email" id="email" name="email" required autocomplete="email" inputmode="email" placeholder="tu@empresa.com" aria-required="true">
+              <label for="email">Correo <span>*</span></label>
+              <input type="email" id="email" name="email" required autocomplete="email" inputmode="email" placeholder="tu@empresa.com">
             </div>
           </div>
 
-          <div class="form__row">
+          <div class="form-row">
             <div class="form-group">
-              <label for="service">Tipo de proyecto <span aria-hidden="true">*</span></label>
-              <select id="service" name="service" required aria-required="true">
-                <option value="" disabled selected>Selecciona el tipo de proyecto</option>
+              <label for="service">Tipo de proyecto <span>*</span></label>
+              <select id="service" name="service" required>
+                <option value="" selected disabled>Selecciona una opción</option>
                 <option value="Landing Page">Landing Page</option>
                 <option value="Sitio Web Empresarial">Sitio Web Empresarial</option>
                 <option value="Plataforma Empresarial">Plataforma Empresarial</option>
@@ -583,105 +384,88 @@
               </select>
             </div>
             <div class="form-group">
-              <label for="budget">Presupuesto aproximado <span class="optional">(opcional)</span></label>
+              <label for="budget">Presupuesto <small>opcional</small></label>
               <input type="text" id="budget" name="budget" autocomplete="off" placeholder="Ej. $15,000 MXN">
             </div>
           </div>
 
           <div class="form-group">
-            <label for="message">Mensaje <span aria-hidden="true">*</span></label>
-            <input type="hidden" id="website" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
-            <textarea id="message" name="message" rows="4" required placeholder="¿Qué necesitas desarrollar y cuál es el objetivo?" aria-required="true"></textarea>
+            <label for="message">¿Qué necesitas lograr? <span>*</span></label>
+            <textarea id="message" name="message" rows="5" required placeholder="Ej. Quiero generar prospectos para mi empresa / necesito una plataforma interna para capacitar personal..."></textarea>
           </div>
 
-          <button type="submit" class="btn btn--primary btn--lg btn--full">Cotizar por WhatsApp</button>
-          <p class="form__note">Sin compromiso · Respuesta en menos de 24 h</p>
-          <p class="form__success" id="formSuccess" role="status" aria-live="polite" hidden>¡Gracias! Te redirigimos a WhatsApp...</p>
+          <div class="honeypot" aria-hidden="true">
+            <label for="website">Sitio web</label>
+            <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+          </div>
+
+          <button type="submit" class="btn btn-accent btn-large btn-full" data-track="form_submit">Cotizar por WhatsApp <span aria-hidden="true">→</span></button>
+          <p class="form-note">Al enviar, abriremos WhatsApp con tu información preparada. No almacenamos estos datos en una base de datos.</p>
+          <p class="form-status" id="formStatus" role="status" aria-live="polite" hidden></p>
         </form>
       </div>
     </section>
 
-    <!-- ============ 12 · CTA FINAL ============ -->
-    <section class="final-cta" aria-label="Contacto directo">
-      <div class="container final-cta__inner">
-        <h2 class="final-cta__title">¿Prefieres hablar directo?</h2>
-        <p class="final-cta__desc">Cuéntanos tu proyecto por WhatsApp y empezamos hoy mismo.</p>
-        <a href="https://wa.me/524272777153?text=Hola%20Arhez%20Tech%2C%20quiero%20cotizar%20un%20proyecto%20web." target="_blank" rel="noopener" class="btn btn--primary btn--lg"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i> Cuéntanos tu proyecto</a>
+    <section class="final-cta" aria-label="Llamado final a contacto">
+      <div class="container final-cta-inner">
+        <p class="kicker kicker-light">¿Prefieres escribir directamente?</p>
+        <h2>Tu próximo proyecto puede empezar con un mensaje.</h2>
+        <a href="https://wa.me/524272777153?text=Hola%20Arhez%20Tech%2C%20quiero%20cotizar%20un%20proyecto%20web." target="_blank" rel="noopener" class="btn btn-accent btn-large" data-track="final_whatsapp">Hablar por WhatsApp <span aria-hidden="true">→</span></a>
       </div>
     </section>
   </main>
 
-  <!-- ============ 13 · FOOTER ============ -->
-  <footer class="footer" role="contentinfo">
-    <div class="container footer__grid">
-      <div class="footer__brand">
-        <a href="#inicio" class="footer__logo" aria-label="Arhez Tech">
-          <img src="assets/img/logotipo.png" alt="Arhez Tech" width="140" height="36" loading="lazy" decoding="async">
-        </a>
-        <p class="footer__desc">Desarrollamos soluciones web comerciales y empresariales, desde landing pages hasta plataformas a medida.</p>
-        <div class="footer__social" aria-label="Redes sociales">
-          <a href="https://www.facebook.com/arhez.tech" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
-          <a href="https://www.instagram.com/arhez.tech" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-          <a href="https://x.com/pabloarandahdz" target="_blank" rel="noopener" aria-label="X @pabloarandahdz"><i class="fa-brands fa-x-twitter"></i></a>
-          <a href="https://www.threads.net/@pabloarandahdz" target="_blank" rel="noopener" aria-label="Threads @pabloarandahdz"><i class="fa-brands fa-threads"></i></a>
-          <a href="https://wa.me/524272777153" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
-        </div>
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="#inicio" aria-label="Arhez Tech — Inicio"><img src="assets/img/logotipo.png" alt="Arhez Tech" width="140" height="36" loading="lazy" decoding="async"></a>
+        <p>Desarrollo web comercial y empresarial: desde landing pages hasta plataformas web a medida.</p>
       </div>
 
-      <nav class="footer__col" aria-label="Navegación">
-        <h4>Navegación</h4>
-        <a href="#inicio">Inicio</a>
-        <a href="#servicios">Servicios</a>
-        <a href="#plataformas">Soluciones</a>
-        <a href="#proyectos">Proyectos</a>
-        <a href="#demos">Demos</a>
-        <a href="#caso">Resultados</a>
+      <nav class="footer-col" aria-label="Navegación del pie">
+        <strong>Navegación</strong>
+        <a href="#soluciones">Soluciones</a>
+        <a href="#resultado">Resultado</a>
         <a href="#proceso">Proceso</a>
+        <a href="#faq">Preguntas</a>
+        <a href="#contacto">Contacto</a>
       </nav>
 
-      <nav class="footer__col" aria-label="Servicios">
-        <h4>Servicios</h4>
-        <a href="#servicios">Landing Pages</a>
-        <a href="#servicios">Sitios Web Empresariales</a>
-        <a href="#servicios">Plataformas Empresariales</a>
-        <a href="#servicios">Desarrollo Web a Medida</a>
-      </nav>
-
-      <div class="footer__col">
-        <h4>Contacto</h4>
+      <div class="footer-col">
+        <strong>Contacto</strong>
         <a href="mailto:arhez.tech@gmail.com">arhez.tech@gmail.com</a>
         <a href="https://wa.me/524272777153" target="_blank" rel="noopener">+52 427 277 7153</a>
-        <a href="https://www.instagram.com/arhez.tech" target="_blank" rel="noopener">@arhez.tech</a>
-        <a href="https://www.facebook.com/arhez.tech" target="_blank" rel="noopener">@arhez.tech</a>
+        <a href="https://www.instagram.com/arhez.tech" target="_blank" rel="noopener">Instagram · @arhez.tech</a>
+        <a href="https://www.facebook.com/arhez.tech" target="_blank" rel="noopener">Facebook · @arhez.tech</a>
       </div>
     </div>
 
-    <div class="container footer__bottom">
-      <p>© 2026 Arhez Tech. Todos los derechos reservados.</p>
-      <p><a href="https://pabloaranda.com.mx" target="_blank" rel="noopener">pabloaranda.com.mx</a></p>
+    <div class="container footer-bottom">
+      <span>© 2026 Arhez Tech. Todos los derechos reservados.</span>
+      <a href="https://pabloaranda.com.mx" target="_blank" rel="noopener">pabloaranda.com.mx</a>
     </div>
   </footer>
 
-  <!-- ============ 24 · WHATSAPP FLOTANTE ============ -->
-  <a href="https://wa.me/524272777153?text=Hola%20Arhez%20Tech%2C%20quiero%20cotizar%20un%20proyecto%20web." target="_blank" rel="noopener" class="wa-float" id="wa-float" aria-label="Escríbenos por WhatsApp" hidden>
-    <i class="fa-brands fa-whatsapp" aria-hidden="true"></i><span>Cuéntanos tu proyecto</span>
+  <a href="https://wa.me/524272777153?text=Hola%20Arhez%20Tech%2C%20quiero%20cotizar%20un%20proyecto%20web." target="_blank" rel="noopener" class="wa-float" id="wa-float" aria-label="Cotizar proyecto por WhatsApp" data-track="floating_whatsapp" hidden>
+    <span class="wa-dot" aria-hidden="true"></span>
+    <span>WhatsApp</span>
   </a>
+
+  <div class="mobile-cta" id="mobile-cta" hidden>
+    <a href="#contacto" class="btn btn-accent btn-full" data-track="mobile_quote">Cotizar proyecto</a>
+  </div>
 
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
-      {"@type": "Question", "name": "¿Cuánto cuesta desarrollar un sitio web?", "acceptedAnswer": {"@type": "Answer", "text": "Depende del alcance del proyecto. Cuéntanos tu objetivo y te enviamos una cotización clara sin compromiso."}},
-      {"@type": "Question", "name": "¿Cuánto tarda un proyecto?", "acceptedAnswer": {"@type": "Answer", "text": "Depende del alcance y la disponibilidad de contenidos. Las landing pages parten desde 7 días."}},
-      {"@type": "Question", "name": "¿Una landing realmente puede estar lista en 7 días?", "acceptedAnswer": {"@type": "Answer", "text": "Sí, en proyectos de alcance definido y con tus contenidos listos."}},
-      {"@type": "Question", "name": "¿También desarrollan plataformas empresariales?", "acceptedAnswer": {"@type": "Answer", "text": "Sí: portales internos, plataformas para clientes y herramientas alrededor de tus procesos."}},
-      {"@type": "Question", "name": "¿Pueden crear una plataforma interna de capacitación?", "acceptedAnswer": {"@type": "Answer", "text": "Sí, con cursos, materiales y evaluaciones para tus colaboradores."}},
-      {"@type": "Question", "name": "¿Mi página funcionará correctamente en celulares?", "acceptedAnswer": {"@type": "Answer", "text": "Sí, todo se adapta a celular, tableta y computadora y se prueba antes de entregar."}},
-      {"@type": "Question", "name": "¿Puedo solicitar funcionalidades específicas?", "acceptedAnswer": {"@type": "Answer", "text": "Sí, analizamos tu necesidad y la integramos a tu solución."}},
-      {"@type": "Question", "name": "¿Necesito saber exactamente qué tipo de página necesito?", "acceptedAnswer": {"@type": "Answer", "text": "No, te ayudamos a definir si conviene una landing, un sitio o una plataforma."}},
-      {"@type": "Question", "name": "¿Pueden ayudarme a definir mi proyecto?", "acceptedAnswer": {"@type": "Answer", "text": "Sí, es parte de nuestro proceso antes de desarrollar."}},
-      {"@type": "Question", "name": "¿Trabajan con empresas de cualquier sector?", "acceptedAnswer": {"@type": "Answer", "text": "Sí, con negocios, PyMEs, empresas y departamentos internos."}}
+      {"@type":"Question","name":"¿Cuánto cuesta desarrollar un sitio web?","acceptedAnswer":{"@type":"Answer","text":"Depende del alcance, cantidad de contenido y funcionalidades. Arhez Tech prepara una propuesta de acuerdo con el proyecto."}},
+      {"@type":"Question","name":"¿Cuánto tarda un proyecto?","acceptedAnswer":{"@type":"Answer","text":"Depende del alcance y la disponibilidad de contenidos. Una landing de alcance definido puede partir desde 7 días."}},
+      {"@type":"Question","name":"¿También desarrollan plataformas empresariales?","acceptedAnswer":{"@type":"Answer","text":"Sí. Arhez Tech desarrolla portales internos, plataformas de capacitación, portales para clientes y otras soluciones web según la necesidad."}},
+      {"@type":"Question","name":"¿Necesito saber exactamente qué tipo de solución necesito?","acceptedAnswer":{"@type":"Answer","text":"No. Arhez Tech ayuda a definir si conviene una landing, un sitio empresarial o una plataforma."}},
+      {"@type":"Question","name":"¿Mi sitio funcionará correctamente en celular?","acceptedAnswer":{"@type":"Answer","text":"Sí. La experiencia se diseña y prueba para celular, tableta y computadora."}},
+      {"@type":"Question","name":"¿Puedo solicitar funcionalidades específicas?","acceptedAnswer":{"@type":"Answer","text":"Sí. Primero se analiza la necesidad y el alcance para definir cómo integrarla dentro de la solución."}}
     ]
   }
   </script>
