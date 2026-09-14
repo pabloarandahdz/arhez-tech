@@ -1,6 +1,7 @@
 /* ============================================================
    Arhez Tech — interacción y conversión
-   Menú · FAQ · reveal · CTA · formulario WhatsApp · analytics
+   Menú · navbar · reveal · FAQ · preselect · tracking · form WA
+   Sin dependencias. Respeta prefers-reduced-motion.
    ============================================================ */
 (function () {
   'use strict';
@@ -10,7 +11,6 @@
   var navToggle = document.getElementById('nav-toggle');
   var nav = document.getElementById('nav-menu');
   var waFloat = document.getElementById('wa-float');
-  var mobileCta = document.getElementById('mobile-cta');
   var contact = document.getElementById('contacto');
   var form = document.getElementById('contactForm');
 
@@ -20,7 +20,7 @@
     }
   }
 
-  /* ---------- Navegación móvil ---------- */
+  /* ---------- Navegación móvil accesible ---------- */
   function closeMenu() {
     if (!nav || !navToggle) return;
     nav.classList.remove('open');
@@ -34,147 +34,183 @@
       navToggle.setAttribute('aria-expanded', String(isOpen));
       navToggle.setAttribute('aria-label', isOpen ? 'Cerrar menú' : 'Abrir menú');
     });
-
     nav.querySelectorAll('a').forEach(function (link) {
       link.addEventListener('click', closeMenu);
     });
-
     document.addEventListener('keydown', function (event) {
       if (event.key === 'Escape' && nav.classList.contains('open')) {
         closeMenu();
         navToggle.focus();
       }
     });
-
     window.addEventListener('resize', function () {
-      if (window.innerWidth > 800) closeMenu();
+      if (window.innerWidth > 768) closeMenu();
     });
   }
 
-  /* ---------- Header y CTAs flotantes ---------- */
+  /* ---------- Navbar sólida + WhatsApp flotante ---------- */
   function updateScrollUi() {
     var y = window.scrollY || document.documentElement.scrollTop;
-    if (header) header.classList.toggle('scrolled', y > 16);
-
-    var showFloating = y > window.innerHeight * 0.72;
+    if (header) header.classList.toggle('header--solid', y > 16);
+    var showFloating = y > window.innerHeight * 0.85;
     var contactVisible = false;
-
     if (contact) {
       var rect = contact.getBoundingClientRect();
       contactVisible = rect.top < window.innerHeight * 0.85 && rect.bottom > 0;
     }
-
     if (waFloat) {
       waFloat.hidden = false;
       waFloat.classList.toggle('visible', showFloating && !contactVisible);
     }
-
-    if (mobileCta) {
-      mobileCta.hidden = false;
-      mobileCta.classList.toggle('visible', window.innerWidth <= 800 && showFloating && !contactVisible);
-    }
   }
-
   window.addEventListener('scroll', updateScrollUi, { passive: true });
   window.addEventListener('resize', updateScrollUi);
   updateScrollUi();
 
-  /* ---------- Reveal ---------- */
+  /* ---------- Reveal on scroll ---------- */
   var revealElements = document.querySelectorAll('.reveal');
   if (reduceMotion || !('IntersectionObserver' in window)) {
-    revealElements.forEach(function (element) { element.classList.add('visible'); });
-  } else {
-    var revealObserver = new IntersectionObserver(function (entries) {
+    revealElements.forEach(function (el) { el.classList.add('visible'); });
+  } else if (revealElements.length) {
+    var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
         if (entry.isIntersecting) {
           entry.target.classList.add('visible');
-          revealObserver.unobserve(entry.target);
+          io.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.12, rootMargin: '0px 0px -36px 0px' });
-
-    revealElements.forEach(function (element) { revealObserver.observe(element); });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    revealElements.forEach(function (el) { io.observe(el); });
   }
 
-  /* ---------- FAQ ---------- */
+  /* ---------- FAQ accordion (uno abierto a la vez) ---------- */
+  function faqOpen(btn, panel) {
+    btn.setAttribute('aria-expanded', 'true');
+    panel.dataset.state = 'open';
+    panel.hidden = false;
+    panel.style.maxHeight = panel.scrollHeight + 'px';
+    var done = function (e) {
+      if (e.propertyName !== 'max-height') return;
+      if (panel.dataset.state === 'open') panel.style.maxHeight = 'none';
+      panel.removeEventListener('transitionend', done);
+    };
+    panel.addEventListener('transitionend', done);
+  }
+  function faqClose(btn, panel) {
+    btn.setAttribute('aria-expanded', 'false');
+    panel.dataset.state = 'closed';
+    if (panel.hidden) return;
+    panel.style.maxHeight = panel.scrollHeight + 'px';
+    void panel.offsetHeight;
+    panel.style.maxHeight = '0px';
+    var done = function (e) {
+      if (e.propertyName !== 'max-height') return;
+      if (panel.dataset.state === 'closed') panel.hidden = true;
+      panel.removeEventListener('transitionend', done);
+    };
+    panel.addEventListener('transitionend', done);
+  }
   document.querySelectorAll('.faq-item').forEach(function (item) {
-    var button = item.querySelector('.faq-question');
-    var answer = item.querySelector('.faq-answer');
-    if (!button || !answer) return;
-
-    button.addEventListener('click', function () {
-      var willOpen = button.getAttribute('aria-expanded') !== 'true';
-
-      document.querySelectorAll('.faq-question[aria-expanded="true"]').forEach(function (openButton) {
-        if (openButton === button) return;
-        openButton.setAttribute('aria-expanded', 'false');
-        var openAnswer = document.getElementById(openButton.getAttribute('aria-controls'));
-        if (openAnswer) openAnswer.hidden = true;
+    var btn = item.querySelector('.faq-q');
+    var panel = item.querySelector('.faq-panel');
+    if (!btn || !panel) return;
+    btn.addEventListener('click', function () {
+      var willOpen = btn.getAttribute('aria-expanded') !== 'true';
+      document.querySelectorAll('.faq-q[aria-expanded="true"]').forEach(function (openBtn) {
+        if (openBtn === btn) return;
+        var openPanel = document.getElementById(openBtn.getAttribute('aria-controls'));
+        if (openPanel) faqClose(openBtn, openPanel);
       });
-
-      button.setAttribute('aria-expanded', String(willOpen));
-      answer.hidden = !willOpen;
-      if (willOpen) track('faq_open', { question: button.textContent.replace('+', '').trim() });
+      if (willOpen) {
+        faqOpen(btn, panel);
+        track('faq_open', { question: btn.textContent.replace('+', '').trim() });
+      } else {
+        faqClose(btn, panel);
+      }
     });
   });
 
-  /* ---------- Preselección del servicio desde CTA ---------- */
+  /* ---------- Preselección del servicio desde CTAs ---------- */
   document.querySelectorAll('[data-service]').forEach(function (link) {
     link.addEventListener('click', function () {
       var select = document.getElementById('service');
       var value = link.getAttribute('data-service');
       if (!select || !value) return;
-
-      var optionExists = Array.prototype.some.call(select.options, function (option) {
-        return option.value === value;
-      });
-      if (optionExists) select.value = value;
-    });
-  });
-
-  /* ---------- Tracking de CTA ---------- */
-  document.querySelectorAll('[data-track]').forEach(function (element) {
-    element.addEventListener('click', function () {
-      if (element.type === 'submit') return;
-      track('cta_click', {
-        cta: element.getAttribute('data-track'),
-        text: element.textContent.trim()
-      });
-    });
-  });
-
-  /* ---------- Formulario -> WhatsApp ---------- */
-  if (form) {
-    var status = document.getElementById('formStatus');
-    var submitButton = form.querySelector('button[type="submit"]');
-    var fields = form.querySelectorAll('input:not(#website), select, textarea');
-
-    fields.forEach(function (field) {
-      field.addEventListener('input', function () { field.classList.remove('field-invalid'); });
-      field.addEventListener('change', function () { field.classList.remove('field-invalid'); });
-    });
-
-    form.addEventListener('focusin', function () {
-      if (!form.dataset.started) {
-        form.dataset.started = 'true';
-        track('form_start');
+      var exists = Array.prototype.some.call(select.options, function (o) { return o.value === value; });
+      if (exists) {
+        select.value = value;
+        track('service_select', { service: value });
       }
     });
+  });
 
-    form.addEventListener('submit', function (event) {
-      event.preventDefault();
+  /* ---------- Tracking de tipo de proyecto en el form ---------- */
+  var serviceSelect = document.getElementById('service');
+  if (serviceSelect) {
+    serviceSelect.addEventListener('change', function () {
+      if (serviceSelect.value) track('service_select', { service: serviceSelect.value });
+    });
+  }
 
-      var honeypot = document.getElementById('website');
-      if (honeypot && honeypot.value.trim()) return;
+  /* ---------- Tracking genérico de CTAs ---------- */
+  document.querySelectorAll('[data-track]').forEach(function (el) {
+    el.addEventListener('click', function () {
+      if (el.type === 'submit') return;
+      track('cta_click', { cta: el.getAttribute('data-track'), text: el.textContent.trim().slice(0, 80) });
+    });
+  });
+
+  /* ---------- Demos tabs accesibles ---------- */
+  var demoTabs = document.querySelectorAll('.demo-tab');
+  if (demoTabs.length) {
+    demoTabs.forEach(function (tab) {
+      tab.addEventListener('click', function () {
+        selectDemoTab(tab, false);
+      });
+      tab.addEventListener('keydown', function (e) {
+        var tabs = Array.prototype.slice.call(demoTabs);
+        var i = tabs.indexOf(tab);
+        var next = null;
+        if (e.key === 'ArrowRight') next = tabs[(i + 1) % tabs.length];
+        if (e.key === 'ArrowLeft') next = tabs[(i - 1 + tabs.length) % tabs.length];
+        if (next) {
+          e.preventDefault();
+          selectDemoTab(next, true);
+          next.focus();
+        }
+      });
+    });
+  }
+  function selectDemoTab(tab, moveFocus) {
+    demoTabs.forEach(function (t) {
+      var selected = t === tab;
+      t.classList.toggle('active', selected);
+      t.setAttribute('aria-selected', String(selected));
+      t.tabIndex = selected ? 0 : -1;
+      var panel = document.getElementById(t.getAttribute('data-target'));
+      if (panel) panel.hidden = !selected;
+    });
+    if (moveFocus) return;
+    track('demo_tab', { tab: tab.getAttribute('data-target') });
+  }
+
+  /* ---------- Formulario → WhatsApp ---------- */
+  if (form) {
+    var status = document.getElementById('formSuccess');
+    var submitBtn = form.querySelector('button[type="submit"]');
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      var hp = document.getElementById('website');
+      if (hp && hp.value.trim()) return;
 
       if (!form.checkValidity()) {
-        var invalidFields = form.querySelectorAll(':invalid');
-        invalidFields.forEach(function (field) { field.classList.add('field-invalid'); });
-        if (invalidFields[0]) invalidFields[0].focus();
+        var firstInvalid = form.querySelector(':invalid');
+        if (firstInvalid) firstInvalid.focus();
         form.reportValidity();
         if (status) {
           status.hidden = false;
-          status.className = 'form-status is-error';
           status.textContent = 'Revisa los campos obligatorios antes de continuar.';
         }
         track('form_error', { reason: 'validation' });
@@ -182,6 +218,7 @@
       }
 
       var name = document.getElementById('name').value.trim();
+      var company = document.getElementById('company').value.trim();
       var email = document.getElementById('email').value.trim();
       var service = document.getElementById('service').value;
       var budget = document.getElementById('budget').value.trim();
@@ -192,47 +229,26 @@
         'Quiero cotizar un proyecto web.',
         '',
         '*Nombre:* ' + name,
+        company ? '*Empresa:* ' + company : null,
         '*Correo:* ' + email,
         '*Tipo de proyecto:* ' + service,
-        budget ? '*Presupuesto aproximado:* ' + budget : null,
+        budget ? '*Presupuesto:* ' + budget : null,
         '',
-        '*Objetivo / necesidad:*',
-        message
+        '*Proyecto:* ' + message
       ].filter(Boolean).join('\n');
 
-      var whatsappUrl = 'https://wa.me/524272777153?text=' + encodeURIComponent(lines);
-
-      if (submitButton) {
-        submitButton.disabled = true;
-        submitButton.setAttribute('aria-disabled', 'true');
-      }
-
+      if (submitBtn) submitBtn.disabled = true;
       if (status) {
         status.hidden = false;
-        status.className = 'form-status is-success';
-        status.textContent = 'Listo. Abriremos WhatsApp con tu información preparada.';
+        status.textContent = '¡Gracias! Te redirigimos a WhatsApp...';
       }
-
-      track('generate_lead', {
-        method: 'whatsapp',
-        service: service,
-        has_budget: Boolean(budget)
-      });
-
-      var popup = window.open('', '_blank');
-      if (popup) {
-        popup.opener = null;
-        popup.location.href = whatsappUrl;
-      } else {
-        window.location.href = whatsappUrl;
-      }
-
-      window.setTimeout(function () {
-        if (submitButton) {
-          submitButton.disabled = false;
-          submitButton.removeAttribute('aria-disabled');
-        }
-      }, 1200);
+      track('generate_lead', { method: 'whatsapp', service: service, has_budget: Boolean(budget) });
+      window.open('https://wa.me/524272777153?text=' + encodeURIComponent(lines), '_blank', 'noopener');
+      setTimeout(function () {
+        form.reset();
+        if (submitBtn) submitBtn.disabled = false;
+        if (status) status.hidden = true;
+      }, 5000);
     });
   }
 })();
