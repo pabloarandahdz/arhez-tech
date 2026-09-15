@@ -237,6 +237,27 @@ section{padding:72px 0}
 .form-group textarea{resize:vertical;min-height:110px}
 .btn--full{width:100%}
 .form__note{font-size:.82rem;color:var(--muted);text-align:center;margin-top:10px}
+.privacy-micro{font-size:.8rem;color:var(--muted);text-align:center;margin-top:10px;line-height:1.5}
+.privacy-micro a{color:var(--text);font-weight:600;text-decoration:underline;text-underline-offset:2px}
+.privacy-details{margin-top:8px;border:1px solid var(--border);border-radius:12px;background:var(--bg);font-size:.8rem;color:var(--muted)}
+.privacy-details summary{cursor:pointer;padding:10px 14px;font-weight:600;color:var(--text);list-style:none;display:flex;align-items:center;justify-content:space-between;gap:8px;min-height:44px}
+.privacy-details summary::-webkit-details-marker{display:none}
+.privacy-details summary::after{content:'+';font-weight:700;color:var(--brand)}
+.privacy-details[open] summary::after{content:'−'}
+.privacy-details p{padding:0 14px 12px;line-height:1.6}
+.privacy-details a{color:var(--text);font-weight:600;text-decoration:underline;text-underline-offset:2px}
+
+/* Página legal */
+.legal{padding:56px 0 72px}
+.legal__inner{max-width:780px;margin:0 auto}
+.legal__title{font-size:clamp(2rem,4vw,2.8rem);font-weight:800;line-height:1.05;letter-spacing:-.04em;margin-bottom:8px}
+.legal__inner h2{font-size:1.25rem;font-weight:700;margin:32px 0 10px;letter-spacing:-.01em}
+.legal__inner p, .legal__inner li{color:#3a3d42;line-height:1.7;font-size:.98rem;text-align:justify;hyphens:auto}
+.legal__inner p{margin-bottom:12px}
+.legal__inner ol{padding-left:22px;margin-bottom:12px;display:grid;gap:6px}
+.legal__inner a{color:var(--text);font-weight:600;text-decoration:underline;text-underline-offset:2px}
+.legal__date{margin-top:32px;padding-top:20px;border-top:1px solid var(--border)}
+mark.ph{background:var(--brand-soft);color:var(--text);font-weight:700;padding:1px 6px;border-radius:6px;border:1px dashed var(--brand)}
 .form__success{font-size:.9rem;font-weight:600;color:#0a7a2b;background:#e6f7e9;border:1px solid #b9e8c0;border-radius:12px;padding:10px 14px;text-align:center;margin-top:10px}
 
 /* FAQ */
