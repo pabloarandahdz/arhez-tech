@@ -105,7 +105,6 @@
               <span class="sk sk--cta"></span>
               <span class="sk sk--line"></span>
             </div>
-            <figcaption class="mock__tag">Landing</figcaption>
           </figure>
           <figure class="mock mock--b">
             <div class="mock__bar" aria-hidden="true"><span></span><span></span><span></span></div>
@@ -114,7 +113,6 @@
               <span class="sk sk--hero"></span>
               <div class="wire__cols"><span></span><span></span><span></span></div>
             </div>
-            <figcaption class="mock__tag">Sitio empresarial</figcaption>
           </figure>
           <figure class="mock mock--c">
             <div class="mock__bar" aria-hidden="true"><span></span><span></span><span></span></div>
@@ -125,12 +123,12 @@
                 <div class="wire__bars"><span style="height:38%"></span><span style="height:62%"></span><span style="height:45%"></span><span style="height:80%"></span><span style="height:56%"></span></div>
               </div>
             </div>
-            <figcaption class="mock__tag">Plataforma</figcaption>
           </figure>
         </div>
       </div>
       <div class="container">
-        <p class="hero__range reveal"><span class="hero__range-label">De una landing page a una plataforma empresarial</span><span aria-hidden="true" class="hero__range-sep">·</span><span>Landing</span><span aria-hidden="true">→</span><span>Sitio empresarial</span><span aria-hidden="true">→</span><span>Plataforma</span></p>
+        <p class="hero__range-label reveal">De una landing page a una plataforma empresarial</p>
+        <p class="hero__range reveal" aria-label="Progresión de soluciones"><span>Landing</span><span aria-hidden="true">→</span><span>Sitio empresarial</span><span aria-hidden="true">→</span><span>Plataforma</span></p>
       </div>
     </section>
 
@@ -239,21 +237,29 @@
     <section class="platforms" id="plataformas" aria-labelledby="platforms-title">
       <div class="container">
         <div class="section-head">
-          <p class="eyebrow">02 — Más que páginas web</p>
+          <p class="eyebrow">02 — Capacidades</p>
           <h2 id="platforms-title" class="section-title">Más que páginas web.</h2>
           <p class="section-desc">También desarrollamos herramientas digitales alrededor de procesos reales de tu empresa.</p>
         </div>
 
-        <ul class="cap-chips reveal" aria-label="Capacidades empresariales">
-          <li>Plataformas de capacitación</li>
-          <li>Portales internos</li>
-          <li>Portales para clientes</li>
-          <li>Dashboards</li>
-          <li>Herramientas empresariales</li>
-          <li>Gestión de información</li>
-          <li>Seguimiento de procesos</li>
-          <li>Aplicaciones web a medida</li>
-        </ul>
+        <div class="cap-grid reveal" role="list" aria-label="Categorías de capacidades">
+          <article class="cap-cat" role="listitem">
+            <h3>Capacitación</h3>
+            <p>Cursos, contenidos, evaluaciones y seguimiento de colaboradores.</p>
+          </article>
+          <article class="cap-cat" role="listitem">
+            <h3>Portales</h3>
+            <p>Espacios privados para colaboradores o clientes.</p>
+          </article>
+          <article class="cap-cat" role="listitem">
+            <h3>Información y dashboards</h3>
+            <p>Centralización, consulta y visualización de información.</p>
+          </article>
+          <article class="cap-cat" role="listitem">
+            <h3>Herramientas a medida</h3>
+            <p>Aplicaciones y flujos desarrollados alrededor de la operación.</p>
+          </article>
+        </div>
 
         <div class="demo reveal" aria-label="Ejemplo conceptual de plataforma de capacitación">
           <div class="demo__head">
@@ -270,36 +276,34 @@
                 <div class="course__cover course__cover--a" aria-hidden="true"><i class="fa-solid fa-helmet-safety"></i></div>
                 <div class="course__info">
                   <h4>Inducción y seguridad</h4>
-                  <p>8 módulos · 120 colaboradores</p>
-                  <div class="progress" role="img" aria-label="Avance promedio 72 por ciento"><span style="width:72%"></span></div>
+                  <p>8 módulos · Contenido de ejemplo</p>
+                  <div class="progress" role="img" aria-label="Ejemplo de avance"><span style="width:72%"></span></div>
                 </div>
               </article>
               <article class="course">
                 <div class="course__cover course__cover--b" aria-hidden="true"><i class="fa-solid fa-handshake"></i></div>
                 <div class="course__info">
                   <h4>Atención al cliente</h4>
-                  <p>6 módulos · 85 colaboradores</p>
-                  <div class="progress" role="img" aria-label="Avance promedio 45 por ciento"><span style="width:45%"></span></div>
+                  <p>6 módulos · Contenido de ejemplo</p>
+                  <div class="progress" role="img" aria-label="Ejemplo de avance"><span style="width:45%"></span></div>
                 </div>
               </article>
               <article class="course">
                 <div class="course__cover course__cover--c" aria-hidden="true"><i class="fa-solid fa-boxes-stacked"></i></div>
                 <div class="course__info">
                   <h4>Procesos y operación</h4>
-                  <p>10 módulos · 64 colaboradores</p>
-                  <div class="progress" role="img" aria-label="Avance promedio 58 por ciento"><span style="width:58%"></span></div>
+                  <p>10 módulos · Contenido de ejemplo</p>
+                  <div class="progress" role="img" aria-label="Ejemplo de avance"><span style="width:58%"></span></div>
                 </div>
               </article>
             </div>
             <aside class="demo__side" aria-label="Panel de ejemplo">
               <h4>Módulos recientes</h4>
               <ul>
-                <li><i class="fa-solid fa-circle-play" aria-hidden="true"></i>Introducción a la operación<span>12 min</span></li>
-                <li><i class="fa-solid fa-circle-play" aria-hidden="true"></i>Protocolos de atención<span>18 min</span></li>
-                <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i>Evaluación del módulo 3<span>Listo</span></li>
+                <li><i class="fa-solid fa-circle-play" aria-hidden="true"></i><span>Introducción a la operación</span><span>12 min</span></li>
+                <li><i class="fa-solid fa-circle-play" aria-hidden="true"></i><span>Protocolos de atención</span><span>18 min</span></li>
+                <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i><span>Evaluación del módulo 3</span><span>Listo</span></li>
               </ul>
-              <h4>Equipo activo</h4>
-              <div class="demo__users" aria-hidden="true"><span>MG</span><span>JR</span><span>AL</span><span>+</span></div>
             </aside>
           </div>
         </div>
@@ -325,7 +329,7 @@
           <li class="case-card reveal">
             <span class="case-card__num">02</span>
             <h3>Solución</h3>
-            <p>Una experiencia web que permite al cliente consultar información y dar seguimiento.</p>
+            <p>Una plataforma web que permite al cliente consultar información y dar seguimiento en línea.</p>
           </li>
           <li class="case-card reveal">
             <span class="case-card__num">03</span>
@@ -390,8 +394,8 @@
       <div class="container">
         <div class="section-head">
           <p class="eyebrow">05 — Por qué Arhez Tech</p>
-          <h2 id="why-title" class="section-title">Un aliado, no un proveedor más.</h2>
-          <p class="section-desc">Primero entendemos el objetivo. Después definimos la tecnología.</p>
+          <h2 id="why-title" class="section-title">Tecnología diseñada alrededor de tu objetivo.</h2>
+          <p class="section-desc">Diseñamos cada proyecto con alcance claro, comunicación directa y enfoque empresarial.</p>
         </div>
         <div class="why__grid">
           <article class="why-card reveal">
@@ -585,10 +589,6 @@
 
           <button type="submit" class="btn btn--primary btn--lg btn--full">Cotizar por WhatsApp</button>
           <p class="privacy-micro">Al continuar, reconoces haber leído nuestro <a href="aviso-de-privacidad.html">Aviso de Privacidad</a>. Usaremos tus datos únicamente para atender y cotizar tu solicitud.</p>
-          <details class="privacy-details">
-            <summary>Aviso de privacidad simplificado</summary>
-            <p>Arhez Tech utiliza los datos que nos proporcionas voluntariamente (nombre, correo, teléfono/WhatsApp, empresa y detalles de tu proyecto) únicamente para atender tu solicitud y prepararte una cotización. No vendemos ni comercializamos tus datos. Puedes ejercer tus derechos ARCO escribiendo a arhez.tech@gmail.com. Lee el Aviso de Privacidad Integral en <a href="aviso-de-privacidad.html">arhez-tech.com/aviso-de-privacidad</a>.</p>
-          </details>
           <p class="form__note">Sin compromiso · Respuesta en menos de 24 h</p>
           <p class="form__success" id="formSuccess" role="status" aria-live="polite" hidden>¡Gracias! Te redirigimos a WhatsApp...</p>
         </form>
