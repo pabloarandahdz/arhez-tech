@@ -70,10 +70,8 @@
       </button>
       <nav class="header__nav" id="nav-menu" aria-label="Navegación principal">
         <div class="header__links">
-          <a href="#servicios">Servicios</a>
-          <a href="#plataformas">Soluciones</a>
-          <a href="#proyectos">Proyectos</a>
-          <a href="#demos">Demos</a>
+          <a href="#servicios">Soluciones</a>
+          <a href="#caso">Resultados</a>
           <a href="#proceso">Proceso</a>
           <a href="#nosotros">Nosotros</a>
         </div>
@@ -89,11 +87,11 @@
       <div class="container hero__grid">
         <div class="hero__content">
           <p class="eyebrow">Desarrollo web comercial y empresarial</p>
-          <h1 id="hero-title" class="hero__title">De una landing page a una <span>plataforma empresarial.</span></h1>
-          <p class="hero__desc">Diseñamos y desarrollamos experiencias web para vender, comunicar, capacitar y resolver necesidades específicas de tu empresa.</p>
+          <h1 id="hero-title" class="hero__title">Tu sitio web debe <span>generar negocio,</span> no solo verse bien.</h1>
+          <p class="hero__desc">Diseñamos y desarrollamos soluciones web que pueden crecer contigo: desde una landing enfocada en conversión hasta una plataforma empresarial construida alrededor de tu operación.</p>
           <div class="hero__actions">
             <a href="#contacto" class="btn btn--primary btn--lg" data-track="hero_quote">Cotizar proyecto</a>
-            <a href="#proyectos" class="btn btn--outline btn--lg" data-track="hero_solutions">Conocer soluciones</a>
+            <a href="#servicios" class="btn btn--outline btn--lg" data-track="hero_solutions">Conocer soluciones</a>
           </div>
           <p class="hero__note">Respuesta en menos de 24 h · Sin compromiso</p>
         </div>
@@ -130,6 +128,9 @@
             <figcaption class="mock__tag">Plataforma</figcaption>
           </figure>
         </div>
+      </div>
+      <div class="container">
+        <p class="hero__range reveal"><span class="hero__range-label">De una landing page a una plataforma empresarial</span><span aria-hidden="true" class="hero__range-sep">·</span><span>Landing</span><span aria-hidden="true">→</span><span>Sitio empresarial</span><span aria-hidden="true">→</span><span>Plataforma</span></p>
       </div>
     </section>
 
@@ -238,40 +239,28 @@
     <section class="platforms" id="plataformas" aria-labelledby="platforms-title">
       <div class="container">
         <div class="section-head">
-          <p class="eyebrow">02 — Soluciones empresariales</p>
-          <h2 id="platforms-title" class="section-title">Cuando una página web no es suficiente.</h2>
-          <p class="section-desc">Diseñamos plataformas web adaptadas a las necesidades internas de tu empresa.</p>
+          <p class="eyebrow">02 — Más que páginas web</p>
+          <h2 id="platforms-title" class="section-title">Más que páginas web.</h2>
+          <p class="section-desc">También desarrollamos herramientas digitales alrededor de procesos reales de tu empresa.</p>
         </div>
 
-        <div class="platforms__grid">
-          <article class="platform-card reveal">
-            <div class="platform-card__icon" aria-hidden="true"><i class="fa-solid fa-graduation-cap"></i></div>
-            <h3>Capacitación</h3>
-            <p>Plataformas internas de cursos, materiales y evaluaciones para tus colaboradores.</p>
-          </article>
-          <article class="platform-card reveal">
-            <div class="platform-card__icon" aria-hidden="true"><i class="fa-solid fa-building"></i></div>
-            <h3>Portales internos</h3>
-            <p>Espacios digitales para centralizar recursos e información de tu empresa.</p>
-          </article>
-          <article class="platform-card reveal">
-            <div class="platform-card__icon" aria-hidden="true"><i class="fa-solid fa-gears"></i></div>
-            <h3>Plataformas empresariales</h3>
-            <p>Herramientas web diseñadas alrededor de tus procesos y necesidades específicas.</p>
-          </article>
-          <article class="platform-card reveal">
-            <div class="platform-card__icon" aria-hidden="true"><i class="fa-solid fa-user-lock"></i></div>
-            <h3>Portales para clientes</h3>
-            <p>Experiencias privadas para compartir información y servicios con tus clientes.</p>
-          </article>
-        </div>
+        <ul class="cap-chips reveal" aria-label="Capacidades empresariales">
+          <li>Plataformas de capacitación</li>
+          <li>Portales internos</li>
+          <li>Portales para clientes</li>
+          <li>Dashboards</li>
+          <li>Herramientas empresariales</li>
+          <li>Gestión de información</li>
+          <li>Seguimiento de procesos</li>
+          <li>Aplicaciones web a medida</li>
+        </ul>
 
         <div class="demo reveal" aria-label="Ejemplo conceptual de plataforma de capacitación">
           <div class="demo__head">
             <div>
               <p class="demo__eyebrow">Ejemplo conceptual</p>
               <h3 class="demo__title">Plataforma de capacitación empresarial</h3>
-              <p class="demo__desc">Una experiencia web interna donde tu empresa organiza contenidos y formación para sus colaboradores.</p>
+              <p class="demo__desc">Una experiencia web interna donde tu empresa puede organizar contenidos, materiales, evaluaciones y seguimiento de colaboradores.</p>
             </div>
             <a href="#contacto" class="btn btn--primary" data-track="demo_quote">Cotizar proyecto</a>
           </div>
@@ -317,110 +306,7 @@
       </div>
     </section>
 
-    <!-- ============ PROYECTOS ============ -->
-    <section class="projects" id="proyectos" aria-labelledby="projects-title">
-      <div class="container">
-        <div class="section-head">
-          <p class="eyebrow">Proyectos</p>
-          <h2 id="projects-title" class="section-title">Del catálogo al panel de control.</h2>
-          <p class="section-desc">El mismo equipo, el mismo rigor: explora el rango de soluciones que desarrollamos.</p>
-        </div>
-        <div class="projects__grid">
-          <article class="project-card reveal">
-            <div class="project-card__media project-card__media--icon">
-              <i class="fa-solid fa-cart-shopping" aria-hidden="true"></i>
-              <span class="project-card__tag">Comercial</span>
-            </div>
-            <h3 class="project-card__title">Sitio web comercial</h3>
-            <p class="project-card__text">Catálogo, ficha de producto y flujo de compra pensado para convertir.</p>
-            <a href="#contacto" class="project-card__link" data-track="project_quote">Cotizar un proyecto similar <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
-          </article>
-          <article class="project-card reveal">
-            <div class="project-card__media project-card__media--icon">
-              <i class="fa-solid fa-building" aria-hidden="true"></i>
-              <span class="project-card__tag">Empresarial</span>
-            </div>
-            <h3 class="project-card__title">Sitio web empresarial</h3>
-            <p class="project-card__text">Servicios, proyectos y contacto estructurados para generar confianza.</p>
-            <a href="#contacto" class="project-card__link" data-track="project_quote">Cotizar un proyecto similar <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
-          </article>
-          <article class="project-card reveal">
-            <div class="project-card__media project-card__media--icon">
-              <i class="fa-solid fa-chart-line" aria-hidden="true"></i>
-              <span class="project-card__tag">Plataforma</span>
-            </div>
-            <h3 class="project-card__title">Plataforma con panel</h3>
-            <p class="project-card__text">Información centralizada y visualizada para operar mejor.</p>
-            <a href="#contacto" class="project-card__link" data-track="project_quote">Cotizar un proyecto similar <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
-          </article>
-        </div>
-      </div>
-    </section>
 
-    <!-- ============ DEMOS ============ -->
-    <section class="demos" id="demos" aria-labelledby="demos-title">
-      <div class="container">
-        <div class="section-head">
-          <p class="eyebrow">Demos</p>
-          <h2 id="demos-title" class="section-title">Imagina tu plataforma funcionando.</h2>
-          <p class="section-desc">Explora el tipo de experiencia que podemos desarrollar para tu empresa.</p>
-        </div>
-        <div class="demos__tabs" role="tablist" aria-label="Tipos de demo">
-          <button class="demo-tab active" role="tab" aria-selected="true" aria-controls="demo-p-comercial" id="demo-t-comercial" data-target="demo-p-comercial">Comercial</button>
-          <button class="demo-tab" role="tab" aria-selected="false" aria-controls="demo-p-empresarial" id="demo-t-empresarial" data-target="demo-p-empresarial" tabindex="-1">Empresarial</button>
-          <button class="demo-tab" role="tab" aria-selected="false" aria-controls="demo-p-plataforma" id="demo-t-plataforma" data-target="demo-p-plataforma" tabindex="-1">Plataforma</button>
-        </div>
-        <div class="demo-panel" id="demo-p-comercial" role="tabpanel" aria-labelledby="demo-t-comercial" tabindex="0">
-          <div class="mock">
-            <div class="mock__bar" aria-hidden="true"><span></span><span></span><span></span></div>
-            <div class="wire" aria-hidden="true">
-              <div class="wire__nav"><span></span><span></span><span></span><span></span></div>
-              <span class="sk sk--hero"></span>
-              <div class="wire__cols"><span></span><span></span><span></span></div>
-              <span class="sk sk--cta"></span>
-            </div>
-          </div>
-          <div class="demo-panel__body">
-            <h3>Experiencia de compra completa</h3>
-            <p>Catálogo, ficha de producto y pago en un flujo diseñado para convertir.</p>
-            <a href="#contacto" class="btn btn--primary" data-track="demo_quote">Cotizar proyecto</a>
-          </div>
-        </div>
-        <div class="demo-panel" id="demo-p-empresarial" role="tabpanel" aria-labelledby="demo-t-empresarial" tabindex="0" hidden>
-          <div class="mock">
-            <div class="mock__bar" aria-hidden="true"><span></span><span></span><span></span></div>
-            <div class="wire" aria-hidden="true">
-              <div class="wire__nav"><span></span><span></span><span></span><span></span></div>
-              <span class="sk sk--title"></span>
-              <span class="sk sk--sub"></span>
-              <div class="wire__cols"><span></span><span></span><span></span></div>
-            </div>
-          </div>
-          <div class="demo-panel__body">
-            <h3>Portal corporativo profesional</h3>
-            <p>Servicios, proyectos y contacto estructurados para generar confianza.</p>
-            <a href="#contacto" class="btn btn--primary" data-track="demo_quote">Cotizar proyecto</a>
-          </div>
-        </div>
-        <div class="demo-panel" id="demo-p-plataforma" role="tabpanel" aria-labelledby="demo-t-plataforma" tabindex="0" hidden>
-          <div class="mock">
-            <div class="mock__bar" aria-hidden="true"><span></span><span></span><span></span></div>
-            <div class="wire wire--dash" aria-hidden="true">
-              <div class="wire__side"><span></span><span></span><span></span></div>
-              <div class="wire__main">
-                <div class="wire__stats"><span></span><span></span><span></span></div>
-                <div class="wire__bars"><span style="height:38%"></span><span style="height:62%"></span><span style="height:45%"></span><span style="height:80%"></span><span style="height:56%"></span></div>
-              </div>
-            </div>
-          </div>
-          <div class="demo-panel__body">
-            <h3>Panel con métricas en tiempo real</h3>
-            <p>Información centralizada y visualizada para operar y decidir mejor.</p>
-            <a href="#contacto" class="btn btn--primary" data-track="demo_quote">Cotizar proyecto</a>
-          </div>
-        </div>
-      </div>
-    </section>
 
     <!-- ============ 07 · CASO OMCARTRACK ============ -->
     <section class="case" id="caso" aria-labelledby="case-title">
@@ -505,6 +391,7 @@
         <div class="section-head">
           <p class="eyebrow">05 — Por qué Arhez Tech</p>
           <h2 id="why-title" class="section-title">Un aliado, no un proveedor más.</h2>
+          <p class="section-desc">Primero entendemos el objetivo. Después definimos la tecnología.</p>
         </div>
         <div class="why__grid">
           <article class="why-card reveal">
@@ -548,7 +435,7 @@
           <article class="about-card reveal">
             <div class="about-card__icon" aria-hidden="true"><i class="fa-solid fa-eye"></i></div>
             <h3>Visión</h3>
-            <p>En 2030, ser la empresa de desarrollo web empresarial de referencia para negocios en México.</p>
+            <p>En 2030, ser una empresa tecnológica de referencia en México para el desarrollo de soluciones web empresariales.</p>
           </article>
         </div>
         <div class="values__grid">
@@ -677,11 +564,11 @@
             <label for="budget">Presupuesto aproximado <span class="optional">(opcional)</span></label>
             <select id="budget" name="budget">
               <option value="" selected>Selecciona un rango (opcional)</option>
-              <option value="Menos de $15,000 MXN">Menos de $15,000 MXN</option>
-              <option value="$15,000–$30,000 MXN">$15,000–$30,000 MXN</option>
-              <option value="$30,000–$60,000 MXN">$30,000–$60,000 MXN</option>
-              <option value="$60,000–$100,000 MXN">$60,000–$100,000 MXN</option>
-              <option value="$100,000+ MXN">$100,000+ MXN</option>
+              <option value="Estoy definiendo presupuesto">Estoy definiendo presupuesto</option>
+              <option value="$20,000–$40,000 MXN">$20,000–$40,000 MXN</option>
+              <option value="$40,000–$80,000 MXN">$40,000–$80,000 MXN</option>
+              <option value="$80,000–$150,000 MXN">$80,000–$150,000 MXN</option>
+              <option value="$150,000+ MXN">$150,000+ MXN</option>
               <option value="Necesito ayuda para estimarlo">Necesito ayuda para estimarlo</option>
             </select>
           </div>
@@ -703,14 +590,6 @@
       </div>
     </section>
 
-    <!-- ============ 12 · CTA FINAL ============ -->
-    <section class="final-cta" aria-label="Contacto directo">
-      <div class="container final-cta__inner">
-        <h2 class="final-cta__title">¿Prefieres hablar directo?</h2>
-        <p class="final-cta__desc">Cuéntanos tu proyecto por WhatsApp y empezamos hoy mismo.</p>
-        <a href="https://wa.me/524272777153?text=Hola%20Arhez%20Tech%2C%20quiero%20cotizar%20un%20proyecto%20web." target="_blank" rel="noopener" class="btn btn--primary btn--lg" data-track="whatsapp_final"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i> Cuéntanos tu proyecto</a>
-      </div>
-    </section>
   </main>
 
   <!-- ============ 13 · FOOTER ============ -->
@@ -734,9 +613,10 @@
       <nav class="footer__col" aria-label="Navegación">
         <h4>Navegación</h4>
         <a href="#inicio">Inicio</a>
-        <a href="#servicios">Servicios</a>
-        <a href="#proyectos">Proyectos</a>
+        <a href="#servicios">Soluciones</a>
+        <a href="#caso">Resultados</a>
         <a href="#proceso">Proceso</a>
+        <a href="#nosotros">Nosotros</a>
         <a href="#contacto">Contacto</a>
       </nav>
 

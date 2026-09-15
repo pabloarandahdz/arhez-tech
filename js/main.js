@@ -162,40 +162,6 @@
     });
   });
 
-  /* ---------- Demos tabs accesibles ---------- */
-  var demoTabs = document.querySelectorAll('.demo-tab');
-  if (demoTabs.length) {
-    demoTabs.forEach(function (tab) {
-      tab.addEventListener('click', function () {
-        selectDemoTab(tab, false);
-      });
-      tab.addEventListener('keydown', function (e) {
-        var tabs = Array.prototype.slice.call(demoTabs);
-        var i = tabs.indexOf(tab);
-        var next = null;
-        if (e.key === 'ArrowRight') next = tabs[(i + 1) % tabs.length];
-        if (e.key === 'ArrowLeft') next = tabs[(i - 1 + tabs.length) % tabs.length];
-        if (next) {
-          e.preventDefault();
-          selectDemoTab(next, true);
-          next.focus();
-        }
-      });
-    });
-  }
-  function selectDemoTab(tab, moveFocus) {
-    demoTabs.forEach(function (t) {
-      var selected = t === tab;
-      t.classList.toggle('active', selected);
-      t.setAttribute('aria-selected', String(selected));
-      t.tabIndex = selected ? 0 : -1;
-      var panel = document.getElementById(t.getAttribute('data-target'));
-      if (panel) panel.hidden = !selected;
-    });
-    if (moveFocus) return;
-    track('demo_tab', { tab: tab.getAttribute('data-target') });
-  }
-
   /* ---------- Formulario → WhatsApp ---------- */
   if (form) {
     var status = document.getElementById('formSuccess');
