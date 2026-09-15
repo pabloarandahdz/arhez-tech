@@ -26,6 +26,7 @@
     nav.classList.remove('open');
     navToggle.setAttribute('aria-expanded', 'false');
     navToggle.setAttribute('aria-label', 'Abrir menú');
+    document.body.style.overflow = '';
   }
 
   if (navToggle && nav) {
@@ -33,6 +34,7 @@
       var isOpen = nav.classList.toggle('open');
       navToggle.setAttribute('aria-expanded', String(isOpen));
       navToggle.setAttribute('aria-label', isOpen ? 'Cerrar menú' : 'Abrir menú');
+      document.body.style.overflow = isOpen ? 'hidden' : '';
     });
     nav.querySelectorAll('a').forEach(function (link) {
       link.addEventListener('click', closeMenu);

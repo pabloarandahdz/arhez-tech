@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-MX">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,6 +21,7 @@
   <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
   <link rel="stylesheet" href="css/style.css">
@@ -53,6 +54,7 @@
     "url": "https://arhez-tech.com/"
   }
   </script>
+  <noscript><style>.reveal{opacity:1!important;transform:none!important}.wa-float{display:none!important}</style></noscript>
 </head>
 <body>
   <a class="skip-link" href="#contenido-principal">Saltar al contenido principal</a>
@@ -75,7 +77,7 @@
           <a href="#proceso">Proceso</a>
           <a href="#nosotros">Nosotros</a>
         </div>
-        <a href="#contacto" class="btn btn--primary btn--sm">Cotizar proyecto</a>
+        <a href="#contacto" class="btn btn--primary btn--sm" data-track="nav_quote">Cotizar proyecto</a>
       </nav>
     </div>
   </header>
@@ -90,8 +92,8 @@
           <h1 id="hero-title" class="hero__title">De una landing page a una <span>plataforma empresarial.</span></h1>
           <p class="hero__desc">Diseñamos y desarrollamos experiencias web para vender, comunicar, capacitar y resolver necesidades específicas de tu empresa.</p>
           <div class="hero__actions">
-            <a href="#contacto" class="btn btn--primary btn--lg">Cotizar proyecto</a>
-            <a href="#proyectos" class="btn btn--outline btn--lg">Conocer soluciones</a>
+            <a href="#contacto" class="btn btn--primary btn--lg" data-track="hero_quote">Cotizar proyecto</a>
+            <a href="#proyectos" class="btn btn--outline btn--lg" data-track="hero_solutions">Conocer soluciones</a>
           </div>
           <p class="hero__note">Respuesta en menos de 24 h · Sin compromiso</p>
         </div>
@@ -181,7 +183,7 @@
               <li>Optimización para buscadores</li>
               <li>Carga rápida</li>
             </ul>
-            <a href="#contacto" class="service-card__link">Cuéntanos qué necesitas <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+            <a href="#contacto" class="service-card__link" data-track="service_quote">Cuéntanos qué necesitas <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
           </article>
 
           <article class="service-card reveal">
@@ -197,7 +199,7 @@
               <li>Catálogos</li>
               <li>Contenido corporativo</li>
             </ul>
-            <a href="#contacto" class="service-card__link">Cuéntanos qué necesitas <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+            <a href="#contacto" class="service-card__link" data-track="service_quote">Cuéntanos qué necesitas <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
           </article>
 
           <article class="service-card reveal">
@@ -212,7 +214,7 @@
               <li>Gestión de información</li>
               <li>Herramientas empresariales</li>
             </ul>
-            <a href="#contacto" class="service-card__link">Cuéntanos qué necesitas <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+            <a href="#contacto" class="service-card__link" data-track="service_quote">Cuéntanos qué necesitas <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
           </article>
 
           <article class="service-card reveal">
@@ -226,7 +228,7 @@
               <li>Herramientas operativas</li>
               <li>Aplicaciones web empresariales</li>
             </ul>
-            <a href="#contacto" class="service-card__link">Cuéntanos qué necesitas <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+            <a href="#contacto" class="service-card__link" data-track="service_quote">Cuéntanos qué necesitas <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
           </article>
         </div>
       </div>
@@ -271,7 +273,7 @@
               <h3 class="demo__title">Plataforma de capacitación empresarial</h3>
               <p class="demo__desc">Una experiencia web interna donde tu empresa organiza contenidos y formación para sus colaboradores.</p>
             </div>
-            <a href="#contacto" class="btn btn--primary">Cotizar proyecto</a>
+            <a href="#contacto" class="btn btn--primary" data-track="demo_quote">Cotizar proyecto</a>
           </div>
           <div class="demo__body">
             <div class="demo__courses">
@@ -331,7 +333,7 @@
             </div>
             <h3 class="project-card__title">Sitio web comercial</h3>
             <p class="project-card__text">Catálogo, ficha de producto y flujo de compra pensado para convertir.</p>
-            <a href="#contacto" class="project-card__link">Cotizar un proyecto similar <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+            <a href="#contacto" class="project-card__link" data-track="project_quote">Cotizar un proyecto similar <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
           </article>
           <article class="project-card reveal">
             <div class="project-card__media project-card__media--icon">
@@ -340,7 +342,7 @@
             </div>
             <h3 class="project-card__title">Sitio web empresarial</h3>
             <p class="project-card__text">Servicios, proyectos y contacto estructurados para generar confianza.</p>
-            <a href="#contacto" class="project-card__link">Cotizar un proyecto similar <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+            <a href="#contacto" class="project-card__link" data-track="project_quote">Cotizar un proyecto similar <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
           </article>
           <article class="project-card reveal">
             <div class="project-card__media project-card__media--icon">
@@ -349,7 +351,7 @@
             </div>
             <h3 class="project-card__title">Plataforma con panel</h3>
             <p class="project-card__text">Información centralizada y visualizada para operar mejor.</p>
-            <a href="#contacto" class="project-card__link">Cotizar un proyecto similar <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+            <a href="#contacto" class="project-card__link" data-track="project_quote">Cotizar un proyecto similar <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
           </article>
         </div>
       </div>
@@ -381,7 +383,7 @@
           <div class="demo-panel__body">
             <h3>Experiencia de compra completa</h3>
             <p>Catálogo, ficha de producto y pago en un flujo diseñado para convertir.</p>
-            <a href="#contacto" class="btn btn--primary">Cotizar proyecto</a>
+            <a href="#contacto" class="btn btn--primary" data-track="demo_quote">Cotizar proyecto</a>
           </div>
         </div>
         <div class="demo-panel" id="demo-p-empresarial" role="tabpanel" aria-labelledby="demo-t-empresarial" tabindex="0" hidden>
@@ -397,7 +399,7 @@
           <div class="demo-panel__body">
             <h3>Portal corporativo profesional</h3>
             <p>Servicios, proyectos y contacto estructurados para generar confianza.</p>
-            <a href="#contacto" class="btn btn--primary">Cotizar proyecto</a>
+            <a href="#contacto" class="btn btn--primary" data-track="demo_quote">Cotizar proyecto</a>
           </div>
         </div>
         <div class="demo-panel" id="demo-p-plataforma" role="tabpanel" aria-labelledby="demo-t-plataforma" tabindex="0" hidden>
@@ -414,7 +416,7 @@
           <div class="demo-panel__body">
             <h3>Panel con métricas en tiempo real</h3>
             <p>Información centralizada y visualizada para operar y decidir mejor.</p>
-            <a href="#contacto" class="btn btn--primary">Cotizar proyecto</a>
+            <a href="#contacto" class="btn btn--primary" data-track="demo_quote">Cotizar proyecto</a>
           </div>
         </div>
       </div>
@@ -493,7 +495,7 @@
             <p>Probamos, optimizamos y preparamos el proyecto para su lanzamiento.</p>
           </li>
         </ol>
-        <p class="process__note reveal">Recibe una propuesta inicial en menos de 24 horas. <a href="#contacto">Cotizar proyecto →</a></p>
+        <p class="process__note reveal">Recibe una propuesta inicial en menos de 24 horas. <a href="#contacto" data-track="process_quote">Cotizar proyecto →</a></p>
       </div>
     </section>
 
@@ -706,7 +708,7 @@
       <div class="container final-cta__inner">
         <h2 class="final-cta__title">¿Prefieres hablar directo?</h2>
         <p class="final-cta__desc">Cuéntanos tu proyecto por WhatsApp y empezamos hoy mismo.</p>
-        <a href="https://wa.me/524272777153?text=Hola%20Arhez%20Tech%2C%20quiero%20cotizar%20un%20proyecto%20web." target="_blank" rel="noopener" class="btn btn--primary btn--lg"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i> Cuéntanos tu proyecto</a>
+        <a href="https://wa.me/524272777153?text=Hola%20Arhez%20Tech%2C%20quiero%20cotizar%20un%20proyecto%20web." target="_blank" rel="noopener" class="btn btn--primary btn--lg" data-track="whatsapp_final"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i> Cuéntanos tu proyecto</a>
       </div>
     </section>
   </main>
@@ -748,8 +750,8 @@
 
       <div class="footer__col">
         <h4>Contacto</h4>
-        <a href="mailto:arhez.tech@gmail.com">arhez.tech@gmail.com</a>
-        <a href="https://wa.me/524272777153" target="_blank" rel="noopener">+52 427 277 7153</a>
+        <a href="mailto:arhez.tech@gmail.com" data-track="email">arhez.tech@gmail.com</a>
+        <a href="https://wa.me/524272777153" target="_blank" rel="noopener" data-track="whatsapp">+52 427 277 7153</a>
         <a href="https://www.instagram.com/arhez.tech" target="_blank" rel="noopener">@arhez.tech</a>
         <a href="https://www.facebook.com/arhez.tech" target="_blank" rel="noopener">@arhez.tech</a>
       </div>
@@ -762,7 +764,7 @@
   </footer>
 
   <!-- ============ 24 · WHATSAPP FLOTANTE ============ -->
-  <a href="https://wa.me/524272777153?text=Hola%20Arhez%20Tech%2C%20quiero%20cotizar%20un%20proyecto%20web." target="_blank" rel="noopener" class="wa-float" id="wa-float" aria-label="Cotizar por WhatsApp" hidden>
+  <a href="https://wa.me/524272777153?text=Hola%20Arhez%20Tech%2C%20quiero%20cotizar%20un%20proyecto%20web." target="_blank" rel="noopener" class="wa-float" id="wa-float" data-track="whatsapp_float" aria-label="Cotizar por WhatsApp" hidden>
     <i class="fa-brands fa-whatsapp" aria-hidden="true"></i><span>Cuéntanos tu proyecto</span>
   </a>
 

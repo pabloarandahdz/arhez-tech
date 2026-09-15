@@ -298,9 +298,6 @@ section{padding:72px 0}
 .footer__founder{margin-top:16px;font-size:.82rem;color:rgba(255,255,255,.5)}
 .footer__founder a{color:rgba(255,255,255,.75);text-decoration:underline;text-underline-offset:3px}
 .footer__founder a:hover{color:var(--brand)}
-.footer__founder{margin-top:16px;font-size:.82rem;color:rgba(255,255,255,.5)}
-.footer__founder a{color:rgba(255,255,255,.75);text-decoration:underline;text-underline-offset:3px}
-.footer__founder a:hover{color:var(--brand)}
 .footer__bottom{margin-top:32px;padding-top:20px;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:.82rem;color:rgba(255,255,255,.5)}
 .footer__legal{font-style:normal}
 
