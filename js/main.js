@@ -20,6 +20,10 @@
     }
   }
 
+  /* ---------- Año del copyright ---------- */
+  var yearEl = document.getElementById('year');
+  if (yearEl) yearEl.textContent = String(new Date().getFullYear());
+
   /* ---------- Navegación móvil accesible ---------- */
   function closeMenu() {
     if (!nav || !navToggle) return;

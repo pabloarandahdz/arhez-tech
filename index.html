@@ -24,7 +24,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=Geist+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
   <link rel="stylesheet" href="css/style.css">
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-CR57KMZY6H"></script>
@@ -100,7 +100,7 @@
           <a href="#soluciones">Soluciones</a>
           <a href="#infraestructura">Infraestructura</a>
           <a href="#proceso">Cómo trabajamos</a>
-          <a href="#por-que">Por qué Arhez</a>
+          <a href="#nosotros">Nosotros</a>
           <a href="#preguntas">Preguntas</a>
           <a href="#contacto">Contacto</a>
         </div>
@@ -126,26 +126,37 @@
         </div>
 
         <div class="hero__visual">
-          <div class="infra-diagram" role="img" aria-label="Diagrama de infraestructura administrada: núcleo central conectado a hosting, servidores y nube, respaldo, seguridad, monitoreo, y correo y DNS">
-            <svg class="infra-diagram__lines" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
-              <line x1="50" y1="50" x2="50" y2="8" class="flow flow--1"></line>
-              <line x1="50" y1="50" x2="86" y2="29" class="flow flow--2"></line>
-              <line x1="50" y1="50" x2="86" y2="71" class="flow flow--3"></line>
-              <line x1="50" y1="50" x2="50" y2="92" class="flow flow--4"></line>
-              <line x1="50" y1="50" x2="14" y2="71" class="flow flow--5"></line>
-              <line x1="50" y1="50" x2="14" y2="29" class="flow flow--6"></line>
+          <div class="infra-diagram" role="img" aria-label="Esquema de infraestructura administrada: núcleo central conectado a hosting, servidores y nube, correo y DNS, respaldo, seguridad y monitoreo">
+            <svg class="infra-diagram__lines" viewBox="0 0 120 90" preserveAspectRatio="none" aria-hidden="true">
+              <path class="flow" d="M18,22 V27 H44 V32"></path>
+              <path class="flow" d="M60,22 V32"></path>
+              <path class="flow" d="M102,22 V27 H76 V32"></path>
+              <path class="flow" d="M18,68 V63 H44 V58"></path>
+              <path class="flow" d="M60,68 V58"></path>
+              <path class="flow" d="M102,68 V63 H76 V58"></path>
+              <circle class="joint" cx="44" cy="32" r="1.2"></circle>
+              <circle class="joint" cx="60" cy="32" r="1.2"></circle>
+              <circle class="joint" cx="76" cy="32" r="1.2"></circle>
+              <circle class="joint" cx="44" cy="58" r="1.2"></circle>
+              <circle class="joint" cx="60" cy="58" r="1.2"></circle>
+              <circle class="joint" cx="76" cy="58" r="1.2"></circle>
             </svg>
+
             <div class="infra-diagram__core">
-              <i class="fa-solid fa-server" aria-hidden="true"></i>
-              <span class="infra-diagram__core-label">Infraestructura<br>administrada</span>
-              <span class="infra-diagram__status"><i class="dot" aria-hidden="true"></i>Operando</span>
+              <div class="infra-diagram__core-bar"><span></span><span></span><span></span><em>Núcleo</em></div>
+              <div class="infra-diagram__core-body">
+                <i class="fa-solid fa-server" aria-hidden="true"></i>
+                <p>Infraestructura<br>administrada</p>
+                <span class="infra-diagram__status"><i class="dot" aria-hidden="true"></i>Administrado</span>
+              </div>
             </div>
-            <div class="infra-diagram__node infra-diagram__node--1"><i class="fa-solid fa-hard-drive" aria-hidden="true"></i><span>Hosting</span></div>
-            <div class="infra-diagram__node infra-diagram__node--2"><i class="fa-solid fa-cloud" aria-hidden="true"></i><span>Servidores &amp; Nube</span></div>
-            <div class="infra-diagram__node infra-diagram__node--3"><i class="fa-solid fa-box-archive" aria-hidden="true"></i><span>Respaldo</span></div>
-            <div class="infra-diagram__node infra-diagram__node--4"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i><span>Seguridad</span></div>
-            <div class="infra-diagram__node infra-diagram__node--5"><i class="fa-solid fa-gauge-high" aria-hidden="true"></i><span>Monitoreo</span></div>
-            <div class="infra-diagram__node infra-diagram__node--6"><i class="fa-solid fa-at" aria-hidden="true"></i><span>Correo &amp; DNS</span></div>
+
+            <div class="infra-diagram__node infra-diagram__node--a"><i class="fa-solid fa-hard-drive" aria-hidden="true"></i><span>Hosting</span></div>
+            <div class="infra-diagram__node infra-diagram__node--b"><i class="fa-solid fa-cloud" aria-hidden="true"></i><span>Servidores &amp; Nube</span></div>
+            <div class="infra-diagram__node infra-diagram__node--c"><i class="fa-solid fa-at" aria-hidden="true"></i><span>Correo &amp; DNS</span></div>
+            <div class="infra-diagram__node infra-diagram__node--d"><i class="fa-solid fa-box-archive" aria-hidden="true"></i><span>Respaldo</span></div>
+            <div class="infra-diagram__node infra-diagram__node--e"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i><span>Seguridad</span></div>
+            <div class="infra-diagram__node infra-diagram__node--f"><i class="fa-solid fa-gauge-high" aria-hidden="true"></i><span>Monitoreo</span></div>
           </div>
         </div>
       </div>
@@ -184,7 +195,7 @@
     </section>
 
     <!-- ============ 05 · SOLUCIONES ============ -->
-    <section class="solutions" id="soluciones" aria-labelledby="solutions-title">
+    <section class="solutions section--light" id="soluciones" aria-labelledby="solutions-title">
       <div class="container">
         <div class="section-head">
           <p class="eyebrow">01 — Soluciones</p>
@@ -294,7 +305,7 @@
     </section>
 
     <!-- ============ 07 · CÓMO TRABAJAMOS ============ -->
-    <section class="workflow" id="proceso" aria-labelledby="workflow-title">
+    <section class="workflow section--light" id="proceso" aria-labelledby="workflow-title">
       <div class="container">
         <div class="section-head">
           <p class="eyebrow">03 — Cómo trabajamos</p>
@@ -302,30 +313,33 @@
           <p class="section-desc">Analizamos la necesidad, implementamos la infraestructura adecuada y continuamos acompañando su operación.</p>
         </div>
 
+        <div class="workflow__rail" aria-hidden="true">
+          <span></span><span></span><span></span><span></span><span></span><span class="is-current"></span>
+        </div>
         <ol class="workflow__timeline">
           <li class="workflow__step reveal">
-            <div class="workflow__marker"><span>01</span></div>
-            <div class="workflow__content"><h3>Diagnóstico</h3><p>Revisamos tu infraestructura actual y detectamos riesgos y oportunidades de mejora.</p></div>
+            <span class="workflow__num">01</span>
+            <h3>Diagnóstico</h3><p>Revisamos tu infraestructura actual y detectamos riesgos y oportunidades de mejora.</p>
           </li>
           <li class="workflow__step reveal">
-            <div class="workflow__marker"><span>02</span></div>
-            <div class="workflow__content"><h3>Diseño de solución</h3><p>Definimos la arquitectura, los servicios y el nivel de administración adecuados para tu operación.</p></div>
+            <span class="workflow__num">02</span>
+            <h3>Diseño de solución</h3><p>Definimos la arquitectura, los servicios y el nivel de administración adecuados para tu operación.</p>
           </li>
           <li class="workflow__step reveal">
-            <div class="workflow__marker"><span>03</span></div>
-            <div class="workflow__content"><h3>Configuración</h3><p>Preparamos servidores, servicios, accesos y políticas antes de poner nada en producción.</p></div>
+            <span class="workflow__num">03</span>
+            <h3>Configuración</h3><p>Preparamos servidores, servicios, accesos y políticas antes de poner nada en producción.</p>
           </li>
           <li class="workflow__step reveal">
-            <div class="workflow__marker"><span>04</span></div>
-            <div class="workflow__content"><h3>Implementación</h3><p>Ponemos en marcha la infraestructura con el menor impacto posible en tu operación diaria.</p></div>
+            <span class="workflow__num">04</span>
+            <h3>Implementación</h3><p>Ponemos en marcha la infraestructura con el menor impacto posible en tu operación diaria.</p>
           </li>
           <li class="workflow__step reveal">
-            <div class="workflow__marker"><span>05</span></div>
-            <div class="workflow__content"><h3>Monitoreo</h3><p>Supervisamos disponibilidad y funcionamiento de forma continua.</p></div>
+            <span class="workflow__num">05</span>
+            <h3>Monitoreo</h3><p>Supervisamos disponibilidad y funcionamiento de forma continua.</p>
           </li>
           <li class="workflow__step reveal">
-            <div class="workflow__marker"><span>06</span></div>
-            <div class="workflow__content"><h3>Soporte y mejora</h3><p>Atendemos incidencias y ajustamos la infraestructura conforme tu empresa crece.</p></div>
+            <span class="workflow__num">06</span>
+            <h3>Soporte y mejora</h3><p>Atendemos incidencias y ajustamos la infraestructura conforme tu empresa crece.</p>
           </li>
         </ol>
         <p class="workflow__note reveal">Recibe un diagnóstico inicial en menos de 24 horas. <a href="#contacto" data-track="process_quote">Solicitar diagnóstico →</a></p>
@@ -371,7 +385,7 @@
     </section>
 
     <!-- ============ 10 · SECTORES ============ -->
-    <section class="sectors" id="sectores" aria-labelledby="sectors-title">
+    <section class="sectors section--light" id="sectores" aria-labelledby="sectors-title">
       <div class="container">
         <p class="eyebrow">06 — Sectores</p>
         <h2 id="sectors-title" class="section-title section-title--left">Infraestructura para empresas que necesitan operar sin interrupciones.</h2>
@@ -389,43 +403,11 @@
       </div>
     </section>
 
-    <!-- ============ 11 · POR QUÉ ARHEZ TECH ============ -->
-    <section class="why" id="por-que" aria-labelledby="why-title">
-      <div class="container">
-        <div class="section-head">
-          <p class="eyebrow">07 — Por qué Arhez Tech</p>
-          <h2 id="why-title" class="section-title">Infraestructura clara. Soporte real. Tecnología que funciona.</h2>
-        </div>
-        <div class="why__grid">
-          <article class="why-card reveal">
-            <div class="why-card__icon" aria-hidden="true"><i class="fa-solid fa-chart-line"></i></div>
-            <h3>Estabilidad</h3>
-            <p>Infraestructura diseñada para operar consistentemente.</p>
-          </article>
-          <article class="why-card reveal">
-            <div class="why-card__icon" aria-hidden="true"><i class="fa-solid fa-shield-halved"></i></div>
-            <h3>Seguridad</h3>
-            <p>Buenas prácticas integradas en la implementación.</p>
-          </article>
-          <article class="why-card reveal">
-            <div class="why-card__icon" aria-hidden="true"><i class="fa-solid fa-headset"></i></div>
-            <h3>Soporte</h3>
-            <p>Acompañamiento técnico cuando la operación lo requiere.</p>
-          </article>
-          <article class="why-card reveal">
-            <div class="why-card__icon" aria-hidden="true"><i class="fa-solid fa-arrow-trend-up"></i></div>
-            <h3>Escalabilidad</h3>
-            <p>Infraestructura capaz de crecer con la empresa.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ 12 · NOSOTROS (PRINCIPIOS + MISIÓN/VISIÓN) ============ -->
+    <!-- ============ 11 · NOSOTROS (MISIÓN / VISIÓN / PRINCIPIOS) ============ -->
     <section class="about" id="nosotros" aria-labelledby="about-title">
       <div class="container">
         <div class="section-head">
-          <p class="eyebrow">08 — Nosotros</p>
+          <p class="eyebrow">07 — Nosotros</p>
           <h2 id="about-title" class="section-title">Trabajamos con principios, no solo con procesos.</h2>
         </div>
         <div class="about__grid">
@@ -440,7 +422,7 @@
             <p>Ser un aliado tecnológico confiable para las empresas en México, proporcionando la infraestructura y el soporte que necesitan para operar, crecer y proteger su información.</p>
           </article>
         </div>
-        <div class="values__grid">
+        <div class="values__grid" id="principios">
           <article class="value-card reveal">
             <div class="value-card__icon" aria-hidden="true"><i class="fa-solid fa-lightbulb"></i></div>
             <span class="value-card__num">01</span>
@@ -470,10 +452,10 @@
     </section>
 
     <!-- ============ 13 · FAQ ============ -->
-    <section class="faq" id="preguntas" aria-labelledby="faq-title">
+    <section class="faq section--light" id="preguntas" aria-labelledby="faq-title">
       <div class="container faq__inner">
         <div class="section-head">
-          <p class="eyebrow">09 — Preguntas frecuentes</p>
+          <p class="eyebrow">08 — Preguntas frecuentes</p>
           <h2 id="faq-title" class="section-title">Resolvemos tus dudas.</h2>
           <p class="section-desc">Si todavía no sabes exactamente qué necesitas, también podemos ayudarte a definirlo.</p>
         </div>
@@ -526,7 +508,7 @@
     <section class="contact" id="contacto" aria-labelledby="contact-title">
       <div class="container">
         <div class="contact__header">
-          <p class="eyebrow">10 — Contacto</p>
+          <p class="eyebrow">09 — Contacto</p>
           <h2 id="contact-title" class="contact__title">Hablemos de tu infraestructura.</h2>
           <p class="contact__desc">Cuéntanos cómo opera actualmente tu infraestructura tecnológica y qué necesitas mejorar.</p>
         </div>
@@ -592,59 +574,48 @@
 
   <!-- ============ 15 · FOOTER ============ -->
   <footer class="footer" role="contentinfo">
-    <div class="container footer__grid">
+    <div class="container footer__top">
       <div class="footer__brand">
         <a href="#inicio" class="footer__logo" aria-label="Arhez Tech">
           <img src="assets/img/logotipo-light.png" alt="Arhez Tech" width="140" height="37" loading="lazy" decoding="async">
         </a>
-        <p class="footer__desc">Infraestructura IT empresarial.<br>Hosting · Nube · Soporte · Respaldo · Ciberseguridad.</p>
-        <div class="footer__social" aria-label="Redes sociales">
-          <a href="https://www.facebook.com/arhez.tech" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
-          <a href="https://www.instagram.com/arhez.tech" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-          <a href="https://x.com/pabloarandahdz" target="_blank" rel="noopener" aria-label="X @pabloarandahdz"><i class="fa-brands fa-x-twitter"></i></a>
-          <a href="https://www.threads.net/@pabloarandahdz" target="_blank" rel="noopener" aria-label="Threads @pabloarandahdz"><i class="fa-brands fa-threads"></i></a>
-          <a href="https://wa.me/524272777153" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
-        </div>
+        <p class="footer__desc">Infraestructura IT empresarial para mantener tu operación disponible, protegida y administrada.</p>
         <p class="footer__domain">www.arhez-tech.com</p>
-        <p class="footer__founder">Fundador: <a href="https://pabloaranda.com.mx" target="_blank" rel="noopener">Pablo Aranda</a></p>
       </div>
-
-      <nav class="footer__col" aria-label="Navegación">
-        <h4>Navegación</h4>
-        <a href="#inicio">Inicio</a>
-        <a href="#soluciones">Soluciones</a>
-        <a href="#infraestructura">Infraestructura</a>
-        <a href="#proceso">Cómo trabajamos</a>
-        <a href="#por-que">Por qué Arhez</a>
-        <a href="#nosotros">Nosotros</a>
-        <a href="#preguntas">Preguntas</a>
-        <a href="#contacto">Contacto</a>
-      </nav>
 
       <nav class="footer__col" aria-label="Soluciones">
         <h4>Soluciones</h4>
-        <a href="#soluciones">Hosting Administrado</a>
-        <a href="#soluciones">Servidores y Nube</a>
-        <a href="#soluciones">Respaldo y Almacenamiento</a>
-        <a href="#soluciones">Soporte Técnico</a>
+        <a href="#soluciones">Hosting administrado</a>
+        <a href="#soluciones">Servidores y nube</a>
+        <a href="#soluciones">Respaldo</a>
+        <a href="#soluciones">Soporte técnico</a>
         <a href="#soluciones">Ciberseguridad</a>
-        <a href="#soluciones">Correo y Dominios</a>
-        <a href="#soluciones">Monitoreo</a>
-        <a href="#soluciones">Migraciones</a>
+        <a href="#soluciones">Correo y dominios</a>
       </nav>
 
-      <div class="footer__col">
-        <h4>Contacto</h4>
-        <a href="mailto:arhez.tech@gmail.com" data-track="email">arhez.tech@gmail.com</a>
-        <a href="https://wa.me/524272777153" target="_blank" rel="noopener" data-track="whatsapp">+52 427 277 7153</a>
-        <a href="https://www.instagram.com/arhez.tech" target="_blank" rel="noopener">@arhez.tech</a>
-        <a href="https://www.facebook.com/arhez.tech" target="_blank" rel="noopener">@arhez.tech</a>
+      <nav class="footer__col" aria-label="Arhez Tech">
+        <h4>Arhez Tech</h4>
+        <a href="#proceso">Cómo trabajamos</a>
+        <a href="#principios">Principios</a>
+        <a href="#preguntas">Preguntas frecuentes</a>
+        <a href="#contacto">Contacto</a>
+        <p class="footer__founder"><span>Fundador</span><a href="https://pabloaranda.com.mx" target="_blank" rel="noopener">Pablo Aranda</a></p>
+      </nav>
+    </div>
+
+    <div class="container footer__social-row">
+      <div class="footer__social" aria-label="Redes sociales">
+        <a href="https://www.facebook.com/arhez.tech" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+        <a href="https://www.instagram.com/arhez.tech" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://x.com/pabloarandahdz" target="_blank" rel="noopener" aria-label="X @pabloarandahdz"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="https://www.threads.net/@pabloarandahdz" target="_blank" rel="noopener" aria-label="Threads @pabloarandahdz"><i class="fa-brands fa-threads"></i></a>
+        <a href="https://wa.me/524272777153" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
       </div>
     </div>
 
     <div class="container footer__bottom">
-      <p>© 2026 Arhez Tech. Todos los derechos reservados.</p>
-      <p class="footer__legal"><a href="aviso-de-privacidad.html">Aviso de privacidad</a> · <a href="terminos.html">Términos</a> · <a href="#contacto">Contacto</a></p>
+      <p>© <span id="year">2026</span> Arhez Tech. Todos los derechos reservados.</p>
+      <p class="footer__legal"><a href="aviso-de-privacidad.html">Aviso de privacidad</a> · <a href="terminos.html">Términos</a></p>
     </div>
   </footer>
 
