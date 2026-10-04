@@ -24,6 +24,55 @@
   var yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = String(new Date().getFullYear());
 
+  /* ---------- Redes sociales (config única, sin enlaces inventados) ----------
+     Arhez Tech y Pablo Aranda son cuentas de Instagram distintas y ambas deben
+     poder mostrarse. Una entrada vacía ("") simplemente no se renderiza: nunca
+     se pinta un href="#" ni un ícono roto. Si más adelante se gestiona también
+     pabloaranda.com.mx desde este mismo patrón, bastaría con reutilizar este
+     objeto allí y cambiar PRIORITY_ORDER.pablo como orden activo. */
+  var socialLinks = {
+    instagramArhez: 'https://www.instagram.com/arhez.tech',
+    instagramPablo: 'https://www.instagram.com/pabloarandahdz',
+    facebook: 'https://www.facebook.com/arhez.tech',
+    x: 'https://x.com/pabloarandahdz',
+    threads: 'https://www.threads.net/@pabloarandahdz',
+    github: '', // pendiente: URL de GitHub
+    whatsapp: 'https://wa.me/524272777153'
+  };
+  var socialMeta = {
+    facebook: { icon: 'fa-facebook', label: 'Facebook' },
+    instagramArhez: { icon: 'fa-instagram', label: 'Instagram — Arhez Tech' },
+    instagramPablo: { icon: 'fa-instagram', label: 'Instagram — Pablo Aranda' },
+    x: { icon: 'fa-x-twitter', label: 'X' },
+    threads: { icon: 'fa-threads', label: 'Threads' },
+    github: { icon: 'fa-github', label: 'GitHub' },
+    whatsapp: { icon: 'fa-whatsapp', label: 'WhatsApp' }
+  };
+  var PRIORITY_ORDER = {
+    // arhez-tech.com: prioriza la marca; Instagram de Pablo aparece como
+    // enlace relacionado con el fundador, sin competir con el de la marca.
+    arhez: ['facebook', 'instagramArhez', 'instagramPablo', 'x', 'threads', 'github', 'whatsapp'],
+    // pabloaranda.com.mx (referencia, no se renderiza desde este proyecto):
+    // prioriza al fundador; Instagram de Arhez aparece como enlace relacionado.
+    pablo: ['instagramPablo', 'instagramArhez', 'github', 'facebook', 'x', 'threads', 'whatsapp']
+  };
+  var socialMount = document.getElementById('footer-social');
+  if (socialMount) {
+    var site = socialMount.getAttribute('data-site') || 'arhez';
+    var order = PRIORITY_ORDER[site] || PRIORITY_ORDER.arhez;
+    order.forEach(function (key) {
+      var url = socialLinks[key];
+      if (!url) return; // sin URL configurada: no se pinta enlace roto ni "#"
+      var meta = socialMeta[key];
+      var a = document.createElement('a');
+      a.href = url;
+      a.target = '_blank';
+      a.rel = 'noopener';
+      a.innerHTML = '<i class="fa-brands ' + meta.icon + '" aria-hidden="true"></i><span>' + meta.label + '</span>';
+      socialMount.appendChild(a);
+    });
+  }
+
   /* ---------- Navegación móvil accesible ---------- */
   function closeMenu() {
     if (!nav || !navToggle) return;
