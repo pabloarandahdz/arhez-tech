@@ -1,18 +1,27 @@
-<h1>Landing Page de ARHEZ TECH</h1>
-<h3>🛰️ Resumen General</h3>
+<h1>Sitio web de ARHEZ TECH</h1>
+<h3>🛰️ Resumen general</h3>
 <p>
-ARHEZ TECH tiene la misión de impulsar la transformación digital de nuestros clientes con soluciones tecnológicas integrales, diseñadas para escalar negocios, optimizar procesos y eliminar barreras técnicas con calidad garantizada.
+ARHEZ TECH es un proveedor de infraestructura IT empresarial: hosting administrado, servidores y nube, respaldo y almacenamiento, soporte técnico, ciberseguridad, correo y dominios, monitoreo y migraciones. Este sitio es la landing page de presentación y captación de diagnósticos de infraestructura.
 </p>
-<h3>🚀 Características Principales</h3>
+<h3>🚀 Características principales</h3>
 <ul>
-<li>Diseño Responsive: Adaptado para dispositivos móviles, tablets y escritorio.</li>
-<li>Estructura por secciones: Inicio, Servicios y Contacto.</li>
-<li>Formulario de Contacto: Integración para captación de leads y solicitudes de cotización.</li>
+<li>Diseño responsive: adaptado para móvil, tablet y escritorio.</li>
+<li>Diagrama de infraestructura original (hero) construido en HTML/CSS/SVG, sin imágenes de stock.</li>
+<li>FAQ con acordeones accesibles y formulario de contacto validado en el cliente.</li>
+<li>Formulario de contacto que genera una solicitud de diagnóstico por WhatsApp.</li>
 </ul>
-<h3>🛠️ Tecnologías Utilizadas</h3>
+<h3>🛠️ Tecnologías utilizadas</h3>
 <ul>
-<li>Frontend: HTML5, CSS3, JavaScript (ES6+).</li>
-<li>Framework de Estilos: Bootstrap 5.</li>
-<li>Iconografía: Bootstrap Icons.</li>
+<li>Frontend: HTML5, CSS3 (variables nativas, sin framework), JavaScript (ES6+, sin dependencias).</li>
+<li>Iconografía: Font Awesome 6.</li>
+<li>Tipografía: Inter (Google Fonts).</li>
 </ul>
-<h3>💻 Página diseñada y desarrollada por el Ing. Juan Pablo Aranda Hernandez</h3>
+<h3>📁 Estructura</h3>
+<ul>
+<li><code>index.html</code> — landing page principal.</li>
+<li><code>aviso-de-privacidad.html</code> / <code>terminos.html</code> — páginas legales.</li>
+<li><code>css/style.css</code> — sistema visual completo.</li>
+<li><code>js/main.js</code> — interacción (menú, FAQ, formulario, tracking).</li>
+<li><code>assets/</code> — logotipo, favicon e imágenes.</li>
+</ul>
+<h3>💻 Página diseñada y desarrollada por el Ing. Juan Pablo Aranda Hernández</h3>

@@ -188,21 +188,21 @@
       var name = document.getElementById('name').value.trim();
       var company = document.getElementById('company').value.trim();
       var email = document.getElementById('email').value.trim();
+      var phone = document.getElementById('phone').value.trim();
       var service = document.getElementById('service').value;
-      var budget = document.getElementById('budget').value.trim();
       var message = document.getElementById('message').value.trim();
 
       var lines = [
         'Hola, Arhez Tech.',
-        'Quiero cotizar un proyecto web.',
+        'Quiero solicitar un diagnóstico de mi infraestructura IT.',
         '',
         '*Nombre:* ' + name,
         company ? '*Empresa:* ' + company : null,
         '*Correo:* ' + email,
-        '*Tipo de proyecto:* ' + service,
-        budget ? '*Presupuesto:* ' + budget : null,
+        phone ? '*Teléfono/WhatsApp:* ' + phone : null,
+        '*Servicio de interés:* ' + service,
         '',
-        '*Proyecto:* ' + message
+        '*Necesidad:* ' + message
       ].filter(Boolean).join('\n');
 
       if (submitBtn) submitBtn.disabled = true;
@@ -210,7 +210,7 @@
         status.hidden = false;
         status.textContent = '¡Gracias! Te redirigimos a WhatsApp...';
       }
-      track('generate_lead', { method: 'whatsapp', service: service, has_budget: Boolean(budget) });
+      track('generate_lead', { method: 'whatsapp', service: service, has_phone: Boolean(phone) });
       window.open('https://wa.me/524272777153?text=' + encodeURIComponent(lines), '_blank', 'noopener');
       setTimeout(function () {
         form.reset();
